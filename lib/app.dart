@@ -5,6 +5,7 @@ import 'screens/prelearn_screen.dart';
 import 'screens/puzzle_screen.dart';
 import 'services/corpus_service.dart';
 import 'services/persistence_service.dart';
+import 'services/scoring_service.dart';
 
 class WorpaloxApp extends StatelessWidget {
   const WorpaloxApp({super.key});
@@ -15,6 +16,7 @@ class WorpaloxApp extends StatelessWidget {
       providers: [
         Provider(create: (_) => CorpusService()),
         Provider(create: (_) => PersistenceService()),
+        Provider(create: (_) => ScoringService()),
       ],
       child: MaterialApp(
         title: 'WORPALOX',

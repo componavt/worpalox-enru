@@ -4,11 +4,7 @@ class HintOverlay extends StatelessWidget {
   final List<bool> hints;
   final List<String> words;
 
-  const HintOverlay({
-    super.key,
-    required this.hints,
-    required this.words,
-  });
+  const HintOverlay({super.key, required this.hints, required this.words});
 
   @override
   Widget build(BuildContext context) {

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/level.dart';
 import '../models/puzzle_state.dart';
+import '../models/score_result.dart';
 import '../services/hint_service.dart';
 import '../services/scoring_service.dart';
 import '../services/persistence_service.dart';
+import '../services/corpus_service.dart';
 import '../widgets/word_token.dart';
 import '../widgets/swap_button.dart';
 
@@ -18,25 +20,46 @@ class PuzzleScreen extends StatefulWidget {
 class _PuzzleScreenState extends State<PuzzleScreen> {
   PuzzleState? _puzzle;
   bool _hintsVisible = false;
-  int _score = 0;
+  ScoreResult? _scoreResult;
   bool _showingResult = false;
+  bool _saved = false;
+  int _prelearnCorrect = 0;
+  int _prelearnTotal = 0;
+  bool _prelearnSkipped = false;
 
   @override
-  void initState() {
-    super.initState();
-    _initializePuzzle();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_puzzle == null) {
+      _initializePuzzle();
+    }
   }
 
   void _initializePuzzle() {
-    final level = ModalRoute.of(context)?.settings.arguments as Level?;
+    final args = ModalRoute.of(context)?.settings.arguments;
+
+    Level? level;
+
+    if (args is _PreLearnResult) {
+      level = args.level;
+      _prelearnCorrect = args.correctAnswers;
+      _prelearnTotal = args.totalQuestions;
+      _prelearnSkipped = args.skipped;
+    } else if (args is Level) {
+      level = args;
+    }
+
     if (level == null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Navigator.pop(context);
+        if (mounted) Navigator.pop(context);
       });
       return;
     }
+
+    final levelToUse = level;
+
     setState(() {
-      _puzzle = PuzzleState(level: level);
+      _puzzle = PuzzleState(level: levelToUse);
     });
   }
 
@@ -55,7 +78,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         _hintsVisible = false;
         _showingResult = true;
         _calculateScore();
-        _saveProgress();
+        if (!_saved) {
+          _saveProgress();
+        }
       } else {
         _hintsVisible = true;
       }
@@ -65,43 +90,100 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   void _calculateScore() {
     if (_puzzle == null) return;
     final firstCheckSolved = _puzzle!.checkCount == 1;
-    _score = ScoringService().calculateScore(
+    _scoreResult = ScoringService().calculateScore(
       swaps: _puzzle!.swapCount,
       checks: _puzzle!.checkCount,
       hints: _puzzle!.hintCount,
       solved: true,
       firstCheckSolved: firstCheckSolved,
+      difficulty: _puzzle!.level.difficulty,
+      prelearnCorrect: _prelearnCorrect,
+      isRepeatLevel: false,
     );
   }
 
   Future<void> _saveProgress() async {
-    if (_puzzle == null) return;
-    final persistenceService =
-        Provider.of<PersistenceService>(context, listen: false);
-    final stats = await persistenceService.loadStats();
-    stats.totalSolved++;
+    if (_puzzle == null || _saved) return;
+    _saved = true;
+
+    final persistenceService = Provider.of<PersistenceService>(
+      context,
+      listen: false,
+    );
+    final profile = await persistenceService.loadActiveProfile();
+    if (profile == null) return;
+
+    final stats = profile.stats;
+    stats.totalGameScore += _scoreResult!.totalGameScore;
+    stats.learningProgress += _scoreResult!.totalLearningProgress;
+    stats.totalSolvedRuns++;
     stats.totalSwaps += _puzzle!.swapCount;
     stats.totalChecks += _puzzle!.checkCount;
     stats.totalHints += _puzzle!.hintCount;
-    stats.levelsCompleted.add(_puzzle!.level.id);
-    await persistenceService.saveStats(stats);
+
+    if (_prelearnSkipped) {
+      stats.prelearnSkipped++;
+    } else {
+      stats.prelearnCorrect += _prelearnCorrect;
+      stats.prelearnSkipped += (_prelearnTotal - _prelearnCorrect);
+    }
+
+    stats.addSolvedLevel(_puzzle!.level.id);
+    stats.incrementDifficultyCount(_puzzle!.level.difficulty);
+
+    await persistenceService.updateActiveProfileStats(stats);
     await persistenceService.setLastPlayedLevelId(_puzzle!.level.id);
   }
 
-  void _handleNext() {
-    Navigator.pushReplacementNamed(context, '/prelearn');
+  Future<void> _handleNext() async {
+    final corpusService = Provider.of<CorpusService>(context, listen: false);
+    final persistenceService = Provider.of<PersistenceService>(
+      context,
+      listen: false,
+    );
+    final profile = await persistenceService.loadActiveProfile();
+
+    if (profile == null) {
+      if (mounted) Navigator.pushReplacementNamed(context, '/');
+      return;
+    }
+
+    final nextLevel = corpusService.getNextLevelForProfile(profile);
+    if (nextLevel == null) {
+      if (mounted) Navigator.pushReplacementNamed(context, '/');
+      return;
+    }
+
+    if (mounted) {
+      Navigator.pushReplacementNamed(
+        context,
+        '/prelearn',
+        arguments: nextLevel,
+      );
+    }
   }
 
   void _handleHome() {
     Navigator.pushReplacementNamed(context, '/');
   }
 
+  void _toggleHints() {
+    if (_puzzle == null) return;
+    setState(() {
+      if (!_hintsVisible) {
+        _puzzle!.useHint();
+        _hintsVisible = true;
+      } else {
+        _puzzle!.hideHints();
+        _hintsVisible = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_puzzle == null) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     return Scaffold(
@@ -123,7 +205,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             _buildStatus(),
             const SizedBox(height: 24),
             _buildButtons(),
-            if (_showingResult) ...[
+            if (_showingResult && _scoreResult != null) ...[
               const SizedBox(height: 24),
               _buildResultCard(),
             ],
@@ -155,9 +237,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           Text(
             _puzzle!.level.russian,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple[700],
-                ),
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple[700],
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -168,7 +250,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   Widget _buildWordRow() {
     final hintService = HintService();
     final hints = _hintsVisible
-        ? hintService.getHintBooleans(_puzzle!.wordsCurrent, _puzzle!.wordsCorrect)
+        ? hintService.getHintBooleans(
+            _puzzle!.wordsCurrent,
+            _puzzle!.wordsCorrect,
+          )
         : <bool>[];
 
     return Container(
@@ -204,11 +289,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   Widget _buildStatus() {
     if (_puzzle!.solved) {
       return Text(
-        'Solved! Score: $_score',
+        'Solved!',
         style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: Colors.green[700],
-              fontWeight: FontWeight.bold,
-            ),
+          color: Colors.green[700],
+          fontWeight: FontWeight.bold,
+        ),
       );
     }
 
@@ -244,16 +329,14 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             label: const Text('Check'),
           ),
           OutlinedButton.icon(
-            onPressed: () {
-              setState(() => _hintsVisible = !_hintsVisible);
-            },
+            onPressed: _toggleHints,
             icon: const Icon(Icons.lightbulb_outline),
             label: Text(_hintsVisible ? 'Hide Hints' : 'Show Hints'),
           ),
           OutlinedButton.icon(
             onPressed: () {
               setState(() {
-                _puzzle = PuzzleState(level: _puzzle!.level);
+                _puzzle = _puzzle!.copyWithReset();
                 _hintsVisible = false;
               });
             },
@@ -272,26 +355,95 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Icon(
-              Icons.celebration,
-              size: 48,
-              color: Colors.green[700],
-            ),
+            Icon(Icons.celebration, size: 48, color: Colors.green[700]),
             const SizedBox(height: 12),
             Text(
               'Excellent!',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: Colors.green[700],
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: Colors.green[700],
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.green[200]!),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    _puzzle!.level.english,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    _puzzle!.level.russian,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyLarge?.copyWith(color: Colors.grey[700]),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  const Text(
+                    'Learning Note:',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    _puzzle!.level.commentaryRu,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: Colors.blue[900]),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
             Text(
-              'Score: $_score points',
+              'Game Score: +${_scoreResult!.totalGameScore}',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Colors.green[700],
-                  ),
+                color: Colors.green[700],
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            Text(
+              'Learning Progress: +${_scoreResult!.totalLearningProgress}',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: Colors.blue[700],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            if (_prelearnTotal > 0 && !_prelearnSkipped) ...[
+              const SizedBox(height: 8),
+              Text(
+                'Pre-learning: $_prelearnCorrect/$_prelearnTotal correct',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
+              ),
+            ],
             const SizedBox(height: 16),
             ElevatedButton.icon(
               onPressed: _handleNext,
@@ -300,6 +452,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],
                 foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
               ),
             ),
           ],
@@ -307,4 +463,18 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       ),
     );
   }
+}
+
+class _PreLearnResult {
+  final Level level;
+  final int correctAnswers;
+  final int totalQuestions;
+  final bool skipped;
+
+  _PreLearnResult({
+    required this.level,
+    required this.correctAnswers,
+    required this.totalQuestions,
+    required this.skipped,
+  });
 }

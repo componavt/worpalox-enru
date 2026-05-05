@@ -12,15 +12,17 @@ class PuzzleState extends ChangeNotifier {
   bool _solved;
   final DateTime _startTime;
   DateTime? _solveTime;
+  int _hintRequests;
 
   PuzzleState({required this.level})
-      : _wordsCorrect = _tokenize(level.english),
-        _wordsCurrent = _tokenize(level.english),
-        _swapCount = 0,
-        _checkCount = 0,
-        _hintCount = 0,
-        _solved = false,
-        _startTime = DateTime.now() {
+    : _wordsCorrect = _tokenize(level.english),
+      _wordsCurrent = _tokenize(level.english),
+      _swapCount = 0,
+      _checkCount = 0,
+      _hintCount = 0,
+      _solved = false,
+      _startTime = DateTime.now(),
+      _hintRequests = 0 {
     _shuffle();
   }
 
@@ -64,6 +66,7 @@ class PuzzleState extends ChangeNotifier {
   int get swapCount => _swapCount;
   int get checkCount => _checkCount;
   int get hintCount => _hintCount;
+  int get hintRequests => _hintRequests;
   bool get solved => _solved;
   Duration get elapsed => (_solveTime ?? DateTime.now()).difference(_startTime);
 
@@ -91,16 +94,26 @@ class PuzzleState extends ChangeNotifier {
   }
 
   void useHint() {
-    _hintCount++;
+    _hintRequests++;
+    if (_hintRequests % 2 == 1) {
+      _hintCount++;
+    }
     notifyListeners();
   }
+
+  void hideHints() {}
 
   Map<String, dynamic> toSnapshot() => {
     'levelId': level.id,
     'swapCount': _swapCount,
     'checkCount': _checkCount,
     'hintCount': _hintCount,
+    'hintRequests': _hintRequests,
     'solved': _solved,
     'elapsedMs': elapsed.inMilliseconds,
   };
+
+  PuzzleState copyWithReset() {
+    return PuzzleState(level: level);
+  }
 }

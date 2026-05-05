@@ -4,7 +4,7 @@
 /// - Track user sessions, level completion times
 /// - Identify problematic levels
 /// - A/B test scoring formulas
-/// 
+///
 /// For MVP: no analytics (offline-first, privacy-focused).
 class AnalyticsService {
   void logLevelStart(int levelId) {}

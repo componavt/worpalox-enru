@@ -37,8 +37,8 @@ class WordToken extends StatelessWidget {
           color: isCorrect == true
               ? Colors.green[400]!
               : isCorrect == false
-                  ? Colors.red[400]!
-                  : Colors.grey[300]!,
+              ? Colors.red[400]!
+              : Colors.grey[300]!,
           width: 2,
         ),
       ),

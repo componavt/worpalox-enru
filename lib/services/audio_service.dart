@@ -4,7 +4,7 @@
 /// - Text-to-speech for Russian clues
 /// - Text-to-speech for English sentences
 /// - Sound effects for swap, check, success
-/// 
+///
 /// For MVP: no audio.
 class AudioService {
   Future<void> initialize() async {}

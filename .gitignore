@@ -74,3 +74,13 @@ pubspec.lock
 # Android Studio
 .caches
 .DS_Store
+
+# Signing keys and secrets
+android/key.properties
+*.jks
+*.keystore
+
+# Signing keys and secrets
+android/key.properties
+*.jks
+*.keystore

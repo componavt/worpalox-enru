@@ -6,9 +6,7 @@ void main() {
   testWidgets('WordToken displays word correctly', (WidgetTester tester) async {
     await tester.pumpWidget(
       const MaterialApp(
-        home: Scaffold(
-          body: WordToken(word: 'Hello'),
-        ),
+        home: Scaffold(body: WordToken(word: 'Hello')),
       ),
     );
 
@@ -18,9 +16,7 @@ void main() {
   testWidgets('WordToken shows green when solved', (WidgetTester tester) async {
     await tester.pumpWidget(
       const MaterialApp(
-        home: Scaffold(
-          body: WordToken(word: 'World', isSolved: true),
-        ),
+        home: Scaffold(body: WordToken(word: 'World', isSolved: true)),
       ),
     );
 

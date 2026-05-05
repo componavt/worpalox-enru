@@ -4,11 +4,7 @@ class SwapButton extends StatelessWidget {
   final bool enabled;
   final VoidCallback onTap;
 
-  const SwapButton({
-    super.key,
-    required this.enabled,
-    required this.onTap,
-  });
+  const SwapButton({super.key, required this.enabled, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
