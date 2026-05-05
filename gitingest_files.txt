@@ -1,0 +1,28 @@
+# Whole-file include rules
+LICENSE
+README.md
+analysis_options.yaml
+pubspec.yaml
+pubspec.lock
+gitingest.py
+gitingest_files.txt
+lib/
+test/
+assets/corpus/levels.json
+
+# Truncated files
+assets/corpus/enru.src|1000
+assets/corpus/enru.talp|1000
+assets/corpus/enru.tgt|1000
+
+# Exclude rules
+- build/
+- output/
+- .git/
+- .dart_tool/
+- .idea/
+- .vscode/
+- __pycache__/
+- *.pyc
+- *.class
+- *.log
