@@ -11,17 +11,12 @@ flutter/
 .pub-cache/
 .pub/
 /build/
-pubspec.lock
+# pubspec.lock
 
 # Android
-**/android/**/gradle-wrapper.jar
 **/android/.gradle
 **/android/captures/
-**/android/gradlew
-**/android/gradlew.bat
 **/android/local.properties
-**/android/**/GeneratedPluginRegistrant.java
-**/android/**/GeneratedPluginRegistrant.kt
 **/android/**/*AppLock.java
 
 # iOS
@@ -62,6 +57,15 @@ pubspec.lock
 !*.xcworkspace/contents.xcworkspacedata
 *.xcscheme
 
+# Flutter metadata (local file)
+.metadata
+
+# Явное игнорирование артефактов сборки Android (для надёжности)
+android/build/
+android/app/build/
+android/.gradle/
+android/.idea/
+
 # VS Code
 .vscode/
 
@@ -74,11 +78,6 @@ pubspec.lock
 # Android Studio
 .caches
 .DS_Store
-
-# Signing keys and secrets
-android/key.properties
-*.jks
-*.keystore
 
 # Signing keys and secrets
 android/key.properties
