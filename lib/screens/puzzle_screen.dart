@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/level.dart';
 import '../models/puzzle_state.dart';
 import '../models/score_result.dart';
+import '../models/route_arguments.dart';
 import '../services/hint_service.dart';
 import '../services/scoring_service.dart';
 import '../services/persistence_service.dart';
@@ -40,7 +41,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
     Level? level;
 
-    if (args is _PreLearnResult) {
+    if (args is PreLearnResult) {
       level = args.level;
       _prelearnCorrect = args.correctAnswers;
       _prelearnTotal = args.totalQuestions;
@@ -87,9 +88,18 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     });
   }
 
-  void _calculateScore() {
+  Future<void> _calculateScore() async {
     if (_puzzle == null) return;
     final firstCheckSolved = _puzzle!.checkCount == 1;
+    
+    final persistenceService = Provider.of<PersistenceService>(
+      context,
+      listen: false,
+    );
+    final profile = await persistenceService.loadActiveProfile();
+    final isRepeatLevel =
+        profile?.stats.hasSolvedLevel(_puzzle!.level.id) ?? false;
+
     _scoreResult = ScoringService().calculateScore(
       swaps: _puzzle!.swapCount,
       checks: _puzzle!.checkCount,
@@ -98,7 +108,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       firstCheckSolved: firstCheckSolved,
       difficulty: _puzzle!.level.difficulty,
       prelearnCorrect: _prelearnCorrect,
-      isRepeatLevel: false,
+      isRepeatLevel: isRepeatLevel,
     );
   }
 
@@ -160,12 +170,16 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         '/prelearn',
         arguments: nextLevel,
       );
-    }
   }
+}
+
 
   void _handleHome() {
     Navigator.pushReplacementNamed(context, '/');
   }
+
+
+
 
   void _toggleHints() {
     if (_puzzle == null) return;
@@ -463,18 +477,4 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       ),
     );
   }
-}
-
-class _PreLearnResult {
-  final Level level;
-  final int correctAnswers;
-  final int totalQuestions;
-  final bool skipped;
-
-  _PreLearnResult({
-    required this.level,
-    required this.correctAnswers,
-    required this.totalQuestions,
-    required this.skipped,
-  });
 }

@@ -1,4 +1,4 @@
-package com.example.worpalox
+package com.componavt.worpalox
 
 import io.flutter.embedding.android.FlutterActivity
 

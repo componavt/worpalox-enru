@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/level.dart';
+import '../models/route_arguments.dart';
 import '../services/corpus_service.dart';
 import '../services/persistence_service.dart';
 
@@ -12,6 +13,7 @@ class PreLearnScreen extends StatefulWidget {
 }
 
 class _PreLearnScreenState extends State<PreLearnScreen> {
+  Level? _initialLevel;
   Level? _currentLevel;
   int _currentIndex = 0;
   List<_QuestionPair> _questions = [];
@@ -19,28 +21,37 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
   bool _completed = false;
   bool _skipped = false;
   bool _showingFeedback = false;
-  bool _lastAnswerCorrect = false;
 
   @override
   void initState() {
     super.initState();
+    final args = ModalRoute.of(context)?.settings.arguments;
+    if (args is Level) {
+      _initialLevel = args;
+    }
     _loadLevel();
   }
 
   Future<void> _loadLevel() async {
-    final corpusService = Provider.of<CorpusService>(context, listen: false);
+    final corpusService = Provider.of<CorpusService>(
+      context,
+      listen: false,
+    );
     final persistenceService = Provider.of<PersistenceService>(
       context,
       listen: false,
     );
 
-    final profile = await persistenceService.loadActiveProfile();
-    Level? nextLevel;
-    if (profile != null) {
-      nextLevel = corpusService.getNextLevelForProfile(profile);
-    }
-    if (nextLevel == null && corpusService.playableLevels.isNotEmpty) {
-      nextLevel = corpusService.playableLevels.first;
+    // Use initial level if provided (from home screen "Continue"), otherwise select new
+    Level? nextLevel = _initialLevel;
+    if (nextLevel == null) {
+      final profile = await persistenceService.loadActiveProfile();
+      if (profile != null) {
+        nextLevel = corpusService.getNextLevelForProfile(profile);
+      }
+      if (nextLevel == null && corpusService.playableLevels.isNotEmpty) {
+        nextLevel = corpusService.playableLevels.first;
+      }
     }
 
     if (nextLevel == null) {
@@ -48,9 +59,10 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
       return;
     }
 
+    final levelToUse = nextLevel;
     setState(() {
-      _currentLevel = nextLevel!;
-      _prepareQuestions(nextLevel!);
+      _currentLevel = levelToUse;
+      _prepareQuestions(levelToUse);
     });
   }
 
@@ -102,7 +114,6 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
   void _handleAnswer(String selected, String correct) {
     final isCorrect = selected == correct;
     setState(() {
-      _lastAnswerCorrect = isCorrect;
       if (isCorrect) {
         _correctAnswers++;
       }
@@ -141,7 +152,7 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
           Navigator.pushReplacementNamed(
             context,
             '/puzzle',
-            arguments: _PreLearnResult(
+            arguments: PreLearnResult(
               level: _currentLevel!,
               correctAnswers: _correctAnswers,
               totalQuestions: _questions.length,
@@ -159,7 +170,7 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
           Navigator.pushReplacementNamed(
             context,
             '/puzzle',
-            arguments: _PreLearnResult(
+            arguments: PreLearnResult(
               level: _currentLevel!,
               correctAnswers: 0,
               totalQuestions: 0,
@@ -288,16 +299,4 @@ class _QuestionPair {
   });
 }
 
-class _PreLearnResult {
-  final Level level;
-  final int correctAnswers;
-  final int totalQuestions;
-  final bool skipped;
 
-  _PreLearnResult({
-    required this.level,
-    required this.correctAnswers,
-    required this.totalQuestions,
-    required this.skipped,
-  });
-}

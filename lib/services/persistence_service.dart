@@ -203,19 +203,14 @@ class PersistenceService {
   }
 
   Future<int?> getLastPlayedLevelId() async {
-    final profile = await loadActiveProfile();
-    if (profile == null || profile.stats.recentLevelIds.isEmpty) return null;
-    return profile.stats.recentLevelIds.last;
+    final data = await _loadData();
+    return data['lastPlayedLevelId'] as int?;
   }
 
   Future<void> setLastPlayedLevelId(int? id) async {
-    final profile = await loadActiveProfile();
-    if (profile != null) {
-      if (id != null) {
-        profile.stats.addSolvedLevel(id);
-      }
-      await saveActiveProfile(profile);
-    }
+    final data = await _loadData();
+    data['lastPlayedLevelId'] = id;
+    await _saveData(data);
   }
 
   Map<String, dynamic> _defaultSave() => {
