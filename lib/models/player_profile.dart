@@ -1,5 +1,6 @@
-/// Represents a local player profile for single-device multiplayer support.
 import 'stats.dart';
+
+/// A local player profile; several players can share one device.
 
 class PlayerProfile {
   final String id;

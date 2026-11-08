@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../models/level.dart';
 import '../models/puzzle_state.dart';
-import '../models/score_result.dart';
 import '../models/route_arguments.dart';
-import '../services/hint_service.dart';
-import '../services/scoring_service.dart';
-import '../services/persistence_service.dart';
+import '../models/score_result.dart';
 import '../services/corpus_service.dart';
+import '../services/persistence_service.dart';
+import '../services/scoring_service.dart';
 import '../widgets/word_token.dart';
-import '../widgets/swap_button.dart';
 
+/// Stage 2 of a round: restore the English word order using the Russian
+/// sentence as a clue.
+///
+/// Controls: drag any word onto the place where it belongs, or tap a word
+/// and then tap the place for it. The puzzle is checked after every move.
 class PuzzleScreen extends StatefulWidget {
+  static const title = 'Step 2 · Puzzle';
+
   const PuzzleScreen({super.key});
 
   @override
@@ -19,209 +25,202 @@ class PuzzleScreen extends StatefulWidget {
 }
 
 class _PuzzleScreenState extends State<PuzzleScreen> {
+  final _scrollController = ScrollController();
+
   PuzzleState? _puzzle;
+  PreLearnResult? _prelearn;
   bool _hintsVisible = false;
+  int? _selectedIndex;
   ScoreResult? _scoreResult;
-  bool _showingResult = false;
-  bool _saved = false;
-  int _prelearnCorrect = 0;
-  int _prelearnTotal = 0;
-  bool _prelearnSkipped = false;
+  String? _saveError;
+  int _lastReward = 0;
+  int _rewardTick = 0;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_puzzle == null) {
-      _initializePuzzle();
-    }
-  }
-
-  void _initializePuzzle() {
+    if (_puzzle != null) return;
     final args = ModalRoute.of(context)?.settings.arguments;
-
     Level? level;
-
     if (args is PreLearnResult) {
+      _prelearn = args;
       level = args.level;
-      _prelearnCorrect = args.correctAnswers;
-      _prelearnTotal = args.totalQuestions;
-      _prelearnSkipped = args.skipped;
     } else if (args is Level) {
       level = args;
     }
-
     if (level == null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) Navigator.pop(context);
       });
       return;
     }
-
-    final levelToUse = level;
-
-    setState(() {
-      _puzzle = PuzzleState(level: levelToUse);
-    });
-  }
-
-  void _handleSwap(int index) {
-    if (_puzzle == null || _puzzle!.solved) return;
-    setState(() {
-      _puzzle!.swapAdjacent(index);
-    });
-  }
-
-  void _handleCheck() {
-    if (_puzzle == null || _puzzle!.solved) return;
-    final solved = _puzzle!.check();
-    setState(() {
-      if (solved) {
-        _hintsVisible = false;
-        _showingResult = true;
-        _calculateScore();
-        if (!_saved) {
-          _saveProgress();
-        }
-      } else {
-        _hintsVisible = true;
-      }
-    });
-  }
-
-  Future<void> _calculateScore() async {
-    if (_puzzle == null) return;
-    final firstCheckSolved = _puzzle!.checkCount == 1;
-    
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    final profile = await persistenceService.loadActiveProfile();
-    final isRepeatLevel =
-        profile?.stats.hasSolvedLevel(_puzzle!.level.id) ?? false;
-
-    _scoreResult = ScoringService().calculateScore(
-      swaps: _puzzle!.swapCount,
-      checks: _puzzle!.checkCount,
-      hints: _puzzle!.hintCount,
-      solved: true,
-      firstCheckSolved: firstCheckSolved,
-      difficulty: _puzzle!.level.difficulty,
-      prelearnCorrect: _prelearnCorrect,
-      isRepeatLevel: isRepeatLevel,
-    );
-  }
-
-  Future<void> _saveProgress() async {
-    if (_puzzle == null || _saved) return;
-    _saved = true;
-
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    final profile = await persistenceService.loadActiveProfile();
-    if (profile == null) return;
-
-    final stats = profile.stats;
-    stats.totalGameScore += _scoreResult!.totalGameScore;
-    stats.learningProgress += _scoreResult!.totalLearningProgress;
-    stats.totalSolvedRuns++;
-    stats.totalSwaps += _puzzle!.swapCount;
-    stats.totalChecks += _puzzle!.checkCount;
-    stats.totalHints += _puzzle!.hintCount;
-
-    if (_prelearnSkipped) {
-      stats.prelearnSkipped++;
-    } else {
-      stats.prelearnCorrect += _prelearnCorrect;
-      stats.prelearnSkipped += (_prelearnTotal - _prelearnCorrect);
-    }
-
-    stats.addSolvedLevel(_puzzle!.level.id);
-    stats.incrementDifficultyCount(_puzzle!.level.difficulty);
-
-    await persistenceService.updateActiveProfileStats(stats);
-    await persistenceService.setLastPlayedLevelId(_puzzle!.level.id);
-  }
-
-  Future<void> _handleNext() async {
-    final corpusService = Provider.of<CorpusService>(context, listen: false);
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    final profile = await persistenceService.loadActiveProfile();
-
-    if (profile == null) {
-      if (mounted) Navigator.pushReplacementNamed(context, '/');
-      return;
-    }
-
-    final nextLevel = corpusService.getNextLevelForProfile(profile);
-    if (nextLevel == null) {
-      if (mounted) Navigator.pushReplacementNamed(context, '/');
-      return;
-    }
-
-    if (mounted) {
-      Navigator.pushReplacementNamed(
-        context,
-        '/prelearn',
-        arguments: nextLevel,
-      );
-  }
-}
-
-
-  void _handleHome() {
-    Navigator.pushReplacementNamed(context, '/');
-  }
-
-
-
-
-  void _toggleHints() {
-    if (_puzzle == null) return;
-    setState(() {
-      if (!_hintsVisible) {
-        _puzzle!.useHint();
-        _hintsVisible = true;
-      } else {
-        _puzzle!.hideHints();
-        _hintsVisible = false;
-      }
-    });
+    _puzzle = PuzzleState(level: level);
   }
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  // ---------------------------------------------------------------- actions
+
+  void _move(int from, int to) {
+    final puzzle = _puzzle!;
+    final reward = puzzle.moveToken(from, to);
+    if (reward < 0) return;
+    setState(() {
+      _selectedIndex = null;
+      _hintsVisible = false;
+      if (reward > 0) {
+        _lastReward = reward * ScoringService.placementPoints;
+        _rewardTick++;
+      }
+    });
+    if (puzzle.solved) _onSolved();
+  }
+
+  void _handleTap(int index) {
+    if (_puzzle!.solved) return;
+    final selected = _selectedIndex;
+    if (selected == null) {
+      setState(() => _selectedIndex = index);
+    } else if (selected == index) {
+      setState(() => _selectedIndex = null);
+    } else {
+      _move(selected, index);
+    }
+  }
+
+  void _toggleHints() {
+    final puzzle = _puzzle!;
+    if (puzzle.solved) return;
+    setState(() {
+      if (_hintsVisible) {
+        _hintsVisible = false;
+      } else {
+        puzzle.useHint();
+        _hintsVisible = true;
+      }
+    });
+  }
+
+  void _reshuffle() {
+    setState(() {
+      _puzzle!.reshuffle();
+      _selectedIndex = null;
+      _hintsVisible = false;
+    });
+  }
+
+  Future<void> _onSolved() async {
+    final puzzle = _puzzle!;
+    final prelearn = _prelearn;
+    final persistence = context.read<PersistenceService>();
+
+    try {
+      final before = await persistence.loadActiveProfile();
+      final isRepeat = before?.stats.hasSolvedLevel(puzzle.level.id) ?? false;
+      final score = ScoringService().calculateScore(
+        solved: true,
+        moves: puzzle.moveCount,
+        minMoves: puzzle.minMoves,
+        placements: puzzle.placementRewards,
+        hints: puzzle.hintCount,
+        prelearnCorrect: prelearn?.skipped == false
+            ? prelearn!.correctAnswers
+            : 0,
+        isRepeatLevel: isRepeat,
+      );
+
+      await persistence.updateActiveProfileStats((stats) {
+        stats.totalGameScore += score.totalGameScore;
+        stats.learningProgress += score.totalLearningProgress;
+        stats.totalSolvedRuns++;
+        stats.totalMoves += puzzle.moveCount;
+        stats.totalHints += puzzle.hintCount;
+        if (prelearn != null && prelearn.totalQuestions > 0) {
+          if (prelearn.skipped) {
+            stats.prelearnSkipped++;
+          } else {
+            stats.prelearnCorrect += prelearn.correctAnswers;
+            stats.prelearnWrong += prelearn.wrongAnswers;
+          }
+        }
+        stats.addSolvedLevel(puzzle.level.id);
+        stats.incrementDifficultyCount(puzzle.level.difficulty);
+      });
+
+      if (!mounted) return;
+      setState(() => _scoreResult = score);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _saveError = 'Progress could not be saved: $e';
+        _scoreResult = ScoreResult.failure;
+      });
+    }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+  Future<void> _handleNext() async {
+    final corpus = context.read<CorpusService>();
+    final profile = await context
+        .read<PersistenceService>()
+        .loadActiveProfile();
+    if (!mounted) return;
+    final next = profile != null
+        ? corpus.getNextLevelForProfile(profile)
+        : null;
+    if (next == null) {
+      Navigator.pop(context);
+      return;
+    }
+    Navigator.pushReplacementNamed(context, '/prelearn', arguments: next);
+  }
+
+  // ---------------------------------------------------------------- UI
+
+  @override
   Widget build(BuildContext context) {
-    if (_puzzle == null) {
+    final puzzle = _puzzle;
+    if (puzzle == null) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Puzzle'),
+        title: const Text(PuzzleScreen.title),
         leading: IconButton(
           icon: const Icon(Icons.home),
-          onPressed: _handleHome,
+          tooltip: 'Back to menu',
+          onPressed: () => Navigator.pop(context),
         ),
       ),
       body: SingleChildScrollView(
+        controller: _scrollController,
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            _buildRussianClue(),
-            const SizedBox(height: 24),
-            _buildWordRow(),
-            const SizedBox(height: 24),
-            _buildStatus(),
-            const SizedBox(height: 24),
-            _buildButtons(),
-            if (_showingResult && _scoreResult != null) ...[
-              const SizedBox(height: 24),
-              _buildResultCard(),
+            _buildRussianClue(puzzle),
+            const SizedBox(height: 20),
+            _buildSentence(puzzle),
+            const SizedBox(height: 12),
+            _buildStatus(puzzle),
+            const SizedBox(height: 16),
+            if (!puzzle.solved) _buildButtons(),
+            if (_scoreResult != null) ...[
+              const SizedBox(height: 8),
+              _buildResultCard(puzzle, _scoreResult!),
             ],
           ],
         ),
@@ -229,7 +228,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     );
   }
 
-  Widget _buildRussianClue() {
+  Widget _buildRussianClue(PuzzleState puzzle) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -237,96 +236,141 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         color: Colors.deepPurple[50],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        children: [
-          const Text(
-            'Russian Clue:',
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            _puzzle!.level.russian,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple[700],
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+      child: Text(
+        puzzle.level.russian,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontWeight: FontWeight.bold,
+          color: Colors.deepPurple[700],
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }
 
-  Widget _buildWordRow() {
-    final hintService = HintService();
-    final hints = _hintsVisible
-        ? hintService.getHintBooleans(
-            _puzzle!.wordsCurrent,
-            _puzzle!.wordsCorrect,
-          )
-        : <bool>[];
+  WordTokenState _stateFor(PuzzleState puzzle, int index) {
+    if (puzzle.solved) return WordTokenState.solved;
+    if (_selectedIndex == index) return WordTokenState.selected;
+    if (_hintsVisible) {
+      return puzzle.isPositionCorrect(index)
+          ? WordTokenState.hintCorrect
+          : WordTokenState.hintWrong;
+    }
+    return WordTokenState.normal;
+  }
 
+  Widget _buildSentence(PuzzleState puzzle) {
+    final tokens = puzzle.tokens;
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+      constraints: const BoxConstraints(minHeight: 120),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
       decoration: BoxDecoration(
-        color: Colors.grey[100],
+        color: puzzle.solved ? Colors.green[50] : Colors.grey[100],
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[300]!),
+        border: Border.all(
+          color: puzzle.solved ? Colors.green[300]! : Colors.grey[300]!,
+        ),
       ),
       child: Wrap(
-        spacing: 4,
+        spacing: 6,
         runSpacing: 12,
         alignment: WrapAlignment.center,
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          for (int i = 0; i < _puzzle!.wordsCurrent.length; i++) ...[
-            if (i > 0)
-              SwapButton(
-                enabled: !_puzzle!.solved,
-                onTap: () => _handleSwap(i - 1),
-              ),
-            WordToken(
-              word: _puzzle!.wordsCurrent[i],
-              isCorrect: _hintsVisible ? hints[i] : null,
-              isSolved: _puzzle!.solved,
+          for (var i = 0; i < tokens.length; i++)
+            _buildToken(puzzle, tokens, i),
+          if (puzzle.terminalPunctuation.isNotEmpty)
+            Text(
+              puzzle.terminalPunctuation,
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
-          ],
         ],
       ),
     );
   }
 
-  Widget _buildStatus() {
-    if (_puzzle!.solved) {
-      return Text(
-        'Solved!',
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-          color: Colors.green[700],
-          fontWeight: FontWeight.bold,
-        ),
-      );
+  Widget _buildToken(PuzzleState puzzle, List<PuzzleToken> tokens, int index) {
+    final token = tokens[index];
+    final state = _stateFor(puzzle, index);
+
+    if (puzzle.solved) {
+      return WordToken(word: token.text, state: state);
     }
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildStatChip('Swaps', '${_puzzle!.swapCount}'),
-        const SizedBox(width: 12),
-        _buildStatChip('Checks', '${_puzzle!.checkCount}'),
-        const SizedBox(width: 12),
-        _buildStatChip('Hints', '${_puzzle!.hintCount}'),
-      ],
+    return DragTarget<int>(
+      key: ValueKey(token.id),
+      onWillAcceptWithDetails: (d) => d.data != token.id,
+      onAcceptWithDetails: (d) {
+        final from = puzzle.tokens.indexWhere((t) => t.id == d.data);
+        _move(from, index);
+      },
+      builder: (context, candidates, _) {
+        var side = DropSide.none;
+        if (candidates.isNotEmpty) {
+          final from = tokens.indexWhere((t) => t.id == candidates.first);
+          side = from > index ? DropSide.before : DropSide.after;
+        }
+        final chip = WordToken(word: token.text, state: state, dropSide: side);
+        return Draggable<int>(
+          data: token.id,
+          onDragStarted: () => setState(() => _selectedIndex = null),
+          feedback: Material(
+            color: Colors.transparent,
+            elevation: 6,
+            borderRadius: BorderRadius.circular(10),
+            child: WordToken(word: token.text, state: WordTokenState.selected),
+          ),
+          childWhenDragging: WordToken(word: token.text, faded: true),
+          child: GestureDetector(onTap: () => _handleTap(index), child: chip),
+        );
+      },
     );
   }
 
-  Widget _buildStatChip(String label, String value) {
-    return Chip(
-      label: Text('$label: $value'),
-      backgroundColor: Colors.grey[200],
+  Widget _buildStatus(PuzzleState puzzle) {
+    if (puzzle.solved) {
+      return Text(
+        'Solved!',
+        style: Theme.of(context).textTheme.titleLarge
+            ?.copyWith(color: Colors.green[700], fontWeight: FontWeight.bold),
+      );
+    }
+    return Column(
+      children: [
+        Text(
+          _selectedIndex == null
+              ? 'Drag a word to its place, or tap a word and then tap where it goes.'
+              : 'Now tap the place for "${puzzle.tokens[_selectedIndex!].text}".',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.grey[700]),
+        ),
+        const SizedBox(height: 8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Chip(label: Text('Moves: ${puzzle.moveCount}')),
+            const SizedBox(width: 8),
+            Chip(label: Text('Hints: ${puzzle.hintCount}')),
+            const SizedBox(width: 8),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 250),
+              transitionBuilder: (child, anim) =>
+                  ScaleTransition(scale: anim, child: child),
+              child: _rewardTick == 0
+                  ? const SizedBox.shrink()
+                  : Text(
+                      '+$_lastReward',
+                      key: ValueKey(_rewardTick),
+                      style: TextStyle(
+                        color: Colors.green[700],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 
@@ -336,33 +380,29 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       runSpacing: 12,
       alignment: WrapAlignment.center,
       children: [
-        if (!_puzzle!.solved) ...[
-          ElevatedButton.icon(
-            onPressed: _handleCheck,
-            icon: const Icon(Icons.check),
-            label: const Text('Check'),
+        OutlinedButton.icon(
+          onPressed: _toggleHints,
+          icon: const Icon(Icons.lightbulb_outline),
+          label: Text(
+            _hintsVisible
+                ? 'Hide hint'
+                : 'Hint (-${ScoringService.hintPenalty})',
           ),
-          OutlinedButton.icon(
-            onPressed: _toggleHints,
-            icon: const Icon(Icons.lightbulb_outline),
-            label: Text(_hintsVisible ? 'Hide Hints' : 'Show Hints'),
-          ),
-          OutlinedButton.icon(
-            onPressed: () {
-              setState(() {
-                _puzzle = _puzzle!.copyWithReset();
-                _hintsVisible = false;
-              });
-            },
-            icon: const Icon(Icons.refresh),
-            label: const Text('Reset'),
-          ),
-        ],
+        ),
+        OutlinedButton.icon(
+          onPressed: _reshuffle,
+          icon: const Icon(Icons.shuffle),
+          label: const Text('Shuffle'),
+        ),
       ],
     );
   }
 
-  Widget _buildResultCard() {
+  Widget _buildResultCard(PuzzleState puzzle, ScoreResult score) {
+    final theme = Theme.of(context);
+    final perfect =
+        score.efficiencyBonus == ScoringService.perfectEfficiencyBonus &&
+        score.hintPenalty == 0;
     return Card(
       color: Colors.green[50],
       child: Padding(
@@ -370,16 +410,17 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         child: Column(
           children: [
             Icon(Icons.celebration, size: 48, color: Colors.green[700]),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
             Text(
-              'Excellent!',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              perfect ? 'Perfect!' : 'Excellent!',
+              style: theme.textTheme.headlineSmall?.copyWith(
                 color: Colors.green[700],
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 16),
             Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -389,83 +430,78 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
               child: Column(
                 children: [
                   Text(
-                    _puzzle!.level.english,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    puzzle.level.english,
+                    style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    _puzzle!.level.russian,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyLarge?.copyWith(color: Colors.grey[700]),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Learning Note:',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                    puzzle.level.russian,
+                    style: theme.textTheme.bodyLarge?.copyWith(
+                      color: Colors.grey[700],
                     ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    _puzzle!.level.commentaryRu,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium?.copyWith(color: Colors.blue[900]),
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 16),
-            Text(
-              'Game Score: +${_scoreResult!.totalGameScore}',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Colors.green[700],
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Learning Progress: +${_scoreResult!.totalLearningProgress}',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Colors.blue[700],
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            if (_prelearnTotal > 0 && !_prelearnSkipped) ...[
-              const SizedBox(height: 8),
-              Text(
-                'Pre-learning: $_prelearnCorrect/$_prelearnTotal correct',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
+            if (puzzle.level.commentaryRu.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue[50],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  puzzle.level.commentaryRu,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: Colors.blue[900],
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
             const SizedBox(height: 16),
-            ElevatedButton.icon(
+            if (_saveError != null)
+              Text(_saveError!, style: const TextStyle(color: Colors.red))
+            else ...[
+              _scoreLine('Words placed', score.placementPoints),
+              _scoreLine('Solved', score.solveBonus),
+              if (score.efficiencyBonus > 0)
+                _scoreLine(
+                  'Moves: ${puzzle.moveCount} (best ${puzzle.minMoves})',
+                  score.efficiencyBonus,
+                ),
+              if (score.hintPenalty > 0)
+                _scoreLine('Hints', -score.hintPenalty),
+              const Divider(),
+              Text(
+                'Game Score: +${score.totalGameScore}',
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: Colors.green[700],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'Learning Progress: +${score.totalLearningProgress}'
+                '${score.isRepeat ? ' (repeat)' : ''}',
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: Colors.blue[700],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+            const SizedBox(height: 16),
+            FilledButton.icon(
               onPressed: _handleNext,
               icon: const Icon(Icons.arrow_forward),
-              label: const Text('Next Level'),
-              style: ElevatedButton.styleFrom(
+              label: const Text('Next sentence'),
+              style: FilledButton.styleFrom(
                 backgroundColor: Colors.green[700],
-                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,
                   vertical: 16,
@@ -474,6 +510,24 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _scoreLine(String label, int points) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        children: [
+          Expanded(child: Text(label)),
+          Text(
+            points >= 0 ? '+$points' : '$points',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: points >= 0 ? Colors.green[800] : Colors.red[700],
+            ),
+          ),
+        ],
       ),
     );
   }

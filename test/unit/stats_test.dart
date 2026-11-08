@@ -31,7 +31,8 @@ void main() {
         stats.addSolvedLevel(i);
       }
 
-      expect(stats.recentLevelIds.length, lessThanOrEqualTo(22));
+      expect(stats.recentLevelIds.length, equals(20));
+      expect(stats.recentLevelIds.last, equals(24));
     });
 
     test('hasSolvedLevel returns correct boolean', () {
@@ -59,9 +60,9 @@ void main() {
         learningProgress: 50,
         totalSolvedRuns: 5,
         uniqueSolvedLevelIds: [1, 2, 3],
-        totalSwaps: 20,
-        totalChecks: 10,
+        totalMoves: 20,
         totalHints: 5,
+        prelearnWrong: 3,
       );
 
       final json = original.toJson();
@@ -70,10 +71,31 @@ void main() {
       expect(restored.totalGameScore, equals(original.totalGameScore));
       expect(restored.learningProgress, equals(original.learningProgress));
       expect(restored.totalSolvedRuns, equals(original.totalSolvedRuns));
+      expect(restored.totalMoves, equals(20));
+      expect(restored.prelearnWrong, equals(3));
       expect(
         restored.uniqueSolvedLevelIds,
         equals(original.uniqueSolvedLevelIds),
       );
+    });
+
+    test('reads legacy totalSwaps and tolerates bad values', () {
+      final restored = Stats.fromJson({
+        'totalSwaps': 7,
+        'totalGameScore': 12.0,
+        'recentLevelIds': [1, 'x', 2],
+      });
+      expect(restored.totalMoves, equals(7));
+      expect(restored.totalGameScore, equals(12));
+      expect(restored.recentLevelIds, equals([1, 2]));
+    });
+
+    test('replaying a level moves it to the end of the recent list', () {
+      final stats = Stats();
+      stats.addSolvedLevel(1);
+      stats.addSolvedLevel(2);
+      stats.addSolvedLevel(1);
+      expect(stats.recentLevelIds, equals([2, 1]));
     });
   });
 }

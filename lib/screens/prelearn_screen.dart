@@ -1,11 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../models/level.dart';
 import '../models/route_arguments.dart';
 import '../services/corpus_service.dart';
-import '../services/persistence_service.dart';
 
+/// Stage 1 of a round: quick multiple-choice warm-up on words from the
+/// sentence that follows in the puzzle.
 class PreLearnScreen extends StatefulWidget {
+  static const title = 'Step 1 · Learn Words';
+
   const PreLearnScreen({super.key});
 
   @override
@@ -13,197 +19,121 @@ class PreLearnScreen extends StatefulWidget {
 }
 
 class _PreLearnScreenState extends State<PreLearnScreen> {
-  Level? _initialLevel;
-  Level? _currentLevel;
+  static const _feedbackDelay = Duration(milliseconds: 900);
+
+  Level? _level;
+  List<_Question> _questions = [];
   int _currentIndex = 0;
-  List<_QuestionPair> _questions = [];
   int _correctAnswers = 0;
-  bool _completed = false;
-  bool _skipped = false;
-  bool _showingFeedback = false;
+  int _wrongAnswers = 0;
+  String? _selected;
+  bool _finished = false;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_level != null) return;
     final args = ModalRoute.of(context)?.settings.arguments;
-    if (args is Level) {
-      _initialLevel = args;
-    }
-    _loadLevel();
-  }
-
-  Future<void> _loadLevel() async {
-    final corpusService = Provider.of<CorpusService>(
-      context,
-      listen: false,
-    );
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-
-    // Use initial level if provided (from home screen "Continue"), otherwise select new
-    Level? nextLevel = _initialLevel;
-    if (nextLevel == null) {
-      final profile = await persistenceService.loadActiveProfile();
-      if (profile != null) {
-        nextLevel = corpusService.getNextLevelForProfile(profile);
-      }
-      if (nextLevel == null && corpusService.playableLevels.isNotEmpty) {
-        nextLevel = corpusService.playableLevels.first;
-      }
-    }
-
-    if (nextLevel == null) {
-      _showError('No levels available');
+    if (args is! Level) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) Navigator.pop(context);
+      });
       return;
     }
-
-    final levelToUse = nextLevel;
-    setState(() {
-      _currentLevel = levelToUse;
-      _prepareQuestions(levelToUse);
-    });
-  }
-
-  void _prepareQuestions(Level level) {
-    final pairs = level.prelearnPairs;
-    if (pairs.isEmpty) {
-      _questions = [];
-      return;
-    }
-
-    final allEnglishTokens = level.english
-        .split(' ')
-        .where((t) => t.isNotEmpty)
-        .toList();
-
-    _questions = pairs.map((pair) {
-      final distractors = allEnglishTokens
-          .where((t) => t != pair.en && t.isNotEmpty)
-          .toList();
-
-      while (distractors.length < 3) {
-        distractors.add('word${distractors.length + 1}');
-      }
-
-      return _QuestionPair(
-        correctEn: pair.en,
-        correctRu: pair.ru,
-        options: [pair.en, ...distractors.take(3)]..shuffle(),
+    _level = args;
+    _questions = _buildQuestions(
+      args,
+      context.read<CorpusService>().vocabulary,
+    );
+    if (_questions.isEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _finish(skipped: true),
       );
+    }
+  }
+
+  static List<_Question> _buildQuestions(Level level, List<String> vocabulary) {
+    final random = Random();
+    return level.prelearnPairs.map((pair) {
+      final correct = pair.en.toLowerCase();
+      final distractors = vocabulary.where((w) => w != correct).toList()
+        ..shuffle(random);
+      final options = [correct, ...distractors.take(3)]..shuffle(random);
+      return _Question(english: correct, russian: pair.ru, options: options);
     }).toList();
   }
 
-  void _showError(String message) {
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Error'),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _handleAnswer(String selected, String correct) {
-    final isCorrect = selected == correct;
+  void _handleAnswer(String option) {
+    if (_selected != null) return;
+    final question = _questions[_currentIndex];
     setState(() {
-      if (isCorrect) {
+      _selected = option;
+      if (option == question.english) {
         _correctAnswers++;
+      } else {
+        _wrongAnswers++;
       }
-      _showingFeedback = true;
     });
 
-    Future.delayed(const Duration(milliseconds: 800), () {
-      if (mounted) {
+    Future.delayed(_feedbackDelay, () {
+      if (!mounted) return;
+      if (_currentIndex + 1 >= _questions.length) {
+        _finish(skipped: false);
+      } else {
         setState(() {
           _currentIndex++;
-          _showingFeedback = false;
-          if (_currentIndex >= _questions.length) {
-            _completed = true;
-          }
+          _selected = null;
         });
       }
     });
   }
 
-  void _handleSkip() {
-    setState(() {
-      _skipped = true;
-      _completed = true;
-    });
+  void _finish({required bool skipped}) {
+    if (_finished || !mounted || _level == null) return;
+    _finished = true;
+    Navigator.pushReplacementNamed(
+      context,
+      '/puzzle',
+      arguments: PreLearnResult(
+        level: _level!,
+        correctAnswers: skipped ? 0 : _correctAnswers,
+        wrongAnswers: skipped ? 0 : _wrongAnswers,
+        totalQuestions: _questions.length,
+        skipped: skipped,
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_currentLevel == null) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
-    }
-
-    if (_completed) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          Navigator.pushReplacementNamed(
-            context,
-            '/puzzle',
-            arguments: PreLearnResult(
-              level: _currentLevel!,
-              correctAnswers: _correctAnswers,
-              totalQuestions: _questions.length,
-              skipped: _skipped,
-            ),
-          );
-        }
-      });
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
-    }
-
-    if (_questions.isEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          Navigator.pushReplacementNamed(
-            context,
-            '/puzzle',
-            arguments: PreLearnResult(
-              level: _currentLevel!,
-              correctAnswers: 0,
-              totalQuestions: 0,
-              skipped: true,
-            ),
-          );
-        }
-      });
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
-    }
-
-    if (_currentIndex >= _questions.length) {
-      setState(() => _completed = true);
+    if (_level == null || _questions.isEmpty) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     final question = _questions[_currentIndex];
-    final progress = (_currentIndex + 1) / _questions.length;
+    final progress =
+        (_currentIndex + (_selected != null ? 1 : 0)) / _questions.length;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Learn Words'),
+        title: const Text(PreLearnScreen.title),
         leading: IconButton(
           icon: const Icon(Icons.close),
+          tooltip: 'Back to menu',
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
             LinearProgressIndicator(value: progress),
-            const SizedBox(height: 32),
+            const SizedBox(height: 8),
+            Text(
+              'Word ${_currentIndex + 1} of ${_questions.length}',
+              style: TextStyle(color: Colors.grey[600]),
+            ),
+            const SizedBox(height: 24),
             Text(
               'Find the English word for:',
               style: Theme.of(context).textTheme.titleLarge,
@@ -216,7 +146,7 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                question.correctRu,
+                question.russian,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.deepPurple[700],
@@ -231,20 +161,16 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
               alignment: WrapAlignment.center,
               children: [
                 for (final option in question.options)
-                  _buildOption(option, question.correctEn),
+                  _buildOption(option, question.english),
               ],
             ),
             const SizedBox(height: 32),
-            OutlinedButton.icon(
-              onPressed: _handleSkip,
+            TextButton.icon(
+              onPressed: _selected == null
+                  ? () => _finish(skipped: true)
+                  : null,
               icon: const Icon(Icons.skip_next),
-              label: const Text('Skip Pre-learning'),
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 12,
-                ),
-              ),
+              label: const Text('Skip to puzzle'),
             ),
           ],
         ),
@@ -252,34 +178,33 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
     );
   }
 
-  Widget _buildOption(String text, String correct) {
-    final isSelected = _showingFeedback;
-    final isCorrect = text == correct;
+  Widget _buildOption(String option, String correct) {
+    final answered = _selected != null;
+    final isCorrect = option == correct;
+    final isChosen = option == _selected;
 
-    Color? buttonColor;
+    Color? background;
     IconData? icon;
-
-    if (isSelected) {
-      if (isCorrect) {
-        buttonColor = Colors.green;
-        icon = Icons.check;
-      } else {
-        buttonColor = Colors.red;
-        icon = Icons.close;
-      }
+    if (answered && isCorrect) {
+      background = Colors.green;
+      icon = Icons.check;
+    } else if (answered && isChosen) {
+      background = Colors.red;
+      icon = Icons.close;
     }
 
     return ElevatedButton(
-      onPressed: _showingFeedback ? null : () => _handleAnswer(text, correct),
+      onPressed: answered ? null : () => _handleAnswer(option),
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        backgroundColor: buttonColor,
-        disabledBackgroundColor: buttonColor,
+        backgroundColor: background,
+        disabledBackgroundColor: background,
+        disabledForegroundColor: background != null ? Colors.white : null,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(text, style: const TextStyle(fontSize: 16)),
+          Text(option, style: const TextStyle(fontSize: 18)),
           if (icon != null) ...[const SizedBox(width: 8), Icon(icon, size: 20)],
         ],
       ),
@@ -287,16 +212,14 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
   }
 }
 
-class _QuestionPair {
-  final String correctEn;
-  final String correctRu;
+class _Question {
+  final String english;
+  final String russian;
   final List<String> options;
 
-  _QuestionPair({
-    required this.correctEn,
-    required this.correctRu,
+  const _Question({
+    required this.english,
+    required this.russian,
     required this.options,
   });
 }
-
-

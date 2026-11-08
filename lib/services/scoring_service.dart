@@ -1,97 +1,57 @@
 import '../models/score_result.dart';
 
-/// Scoring formula (transparent, motivating):
+/// Scoring formula (transparent, rewards every useful action):
 ///
-/// Game Score:
-/// - Each valid swap: +1 point
-/// - Each check (even wrong): +2 points
-/// - Solve bonus: +50 points
-/// - First-check solve: +20 bonus
-/// - Hint used: -5 points per hint
+/// Game score:
+/// - Word lands on its correct place for the first time: +2 per word
+/// - Solve bonus: +50
+/// - Efficiency: +20 if solved in the minimal number of moves,
+///   +10 if within twice the minimum
+/// - Each hint: -5
+/// - The total for a run is never negative
 ///
-/// Learning Progress:
-/// - Base progress: +30 points for solving
-/// - First-check solve: +10 bonus
-/// - Pre-learning correct: +10 per correct answer
-/// - Repeated easy level: 30% progress gain (anti-grinding)
+/// Learning progress:
+/// - Base: +30 for solving
+/// - No hints used: +10
+/// - Pre-learning: +10 per correct answer
+/// - Repeated level: 30% of the above (anti-grinding)
 class ScoringService {
-  static const swapPoints = 1;
-  static const checkPoints = 2;
+  static const placementPoints = 2;
   static const solveBonus = 50;
-  static const perfectBonus = 20;
+  static const perfectEfficiencyBonus = 20;
+  static const goodEfficiencyBonus = 10;
   static const hintPenalty = 5;
   static const baseLearningProgress = 30;
-  static const perfectLearningBonus = 10;
+  static const noHintLearningBonus = 10;
   static const prelearnPoints = 10;
 
   ScoreResult calculateScore({
-    required int swaps,
-    required int checks,
-    required int hints,
     required bool solved,
-    required bool firstCheckSolved,
-    required String difficulty,
+    required int moves,
+    required int minMoves,
+    required int placements,
+    required int hints,
     int prelearnCorrect = 0,
     bool isRepeatLevel = false,
   }) {
-    if (!solved) {
-      return ScoreResult.failure();
+    if (!solved) return ScoreResult.failure;
+
+    var efficiency = 0;
+    if (moves <= minMoves) {
+      efficiency = perfectEfficiencyBonus;
+    } else if (moves <= minMoves * 2) {
+      efficiency = goodEfficiencyBonus;
     }
-
-    int gameScoreDelta = 0;
-    int learningProgressDelta = baseLearningProgress;
-
-    gameScoreDelta += swaps * swapPoints;
-    gameScoreDelta += checks * checkPoints;
-    gameScoreDelta += solveBonus;
-
-    if (firstCheckSolved) {
-      gameScoreDelta += perfectBonus;
-      learningProgressDelta += perfectLearningBonus;
-    }
-
-    int hintPenaltyTotal = hints * hintPenalty;
-    int firstCheckBonus = firstCheckSolved ? perfectBonus : 0;
-    int repeatPenalty = 0;
-
-    if (isRepeatLevel) {
-      learningProgressDelta = (learningProgressDelta * 0.3).floor();
-      repeatPenalty = 10;
-    }
-
-    int prelearnScoreDelta = prelearnCorrect * prelearnPoints;
 
     return ScoreResult(
-      gameScoreDelta: gameScoreDelta,
-      learningProgressDelta: learningProgressDelta,
-      prelearnScoreDelta: prelearnScoreDelta,
-      hintPenalty: hintPenaltyTotal,
-      firstCheckBonus: firstCheckBonus,
-      repeatPenalty: repeatPenalty,
-      solved: true,
-    );
-  }
-
-  ScoreResult calculatePrelearnScore({
-    required int correctAnswers,
-    required int totalQuestions,
-    bool skipped = false,
-  }) {
-    if (skipped) {
-      return const ScoreResult(
-        gameScoreDelta: 0,
-        learningProgressDelta: 0,
-        prelearnScoreDelta: 0,
-        solved: false,
-      );
-    }
-
-    int prelearnScoreDelta = correctAnswers * prelearnPoints;
-
-    return ScoreResult(
-      gameScoreDelta: 0,
-      learningProgressDelta: 0,
-      prelearnScoreDelta: prelearnScoreDelta,
+      placementPoints: placements * placementPoints,
+      solveBonus: solveBonus,
+      efficiencyBonus: efficiency,
+      hintPenalty: hints * hintPenalty,
+      baseLearning: baseLearningProgress,
+      noHintLearningBonus: hints == 0 ? noHintLearningBonus : 0,
+      prelearnLearning: prelearnCorrect * prelearnPoints,
+      isRepeat: isRepeatLevel,
       solved: true,
     );
   }

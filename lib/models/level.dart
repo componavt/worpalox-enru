@@ -32,7 +32,11 @@ class Level {
       id: json['id'] as int,
       english: json['english'] as String,
       russian: json['russian'] as String,
-      tokenCount: json['tokenCount'] as int,
+      // Always derived from the text so that it cannot drift from the data.
+      tokenCount: (json['english'] as String)
+          .split(RegExp(r'\s+'))
+          .where((t) => t.isNotEmpty)
+          .length,
       difficulty: json['difficulty'] as String? ?? 'medium',
       commentaryRu: json['commentaryRu'] as String? ?? '',
       prelearnPairs: prelearnPairs,

@@ -3,12 +3,18 @@
     "id": 101,
     "english": "The doors flew open .",
     "russian": "Двери распахнулись .",
-    "tokenCount": 4,
+    "tokenCount": 5,
     "difficulty": "easy",
     "commentaryRu": "Обратите внимание: в английском подлежащее обычно идёт перед сказуемым.",
     "prelearnPairs": [
-      {"en": "doors", "ru": "двери"},
-      {"en": "open", "ru": "распахнулись"}
+      {
+        "en": "doors",
+        "ru": "двери"
+      },
+      {
+        "en": "open",
+        "ru": "распахнулись"
+      }
     ],
     "alignment": null
   },
@@ -16,12 +22,18 @@
     "id": 102,
     "english": "This is not a mistake .",
     "russian": "Это не ошибка .",
-    "tokenCount": 5,
+    "tokenCount": 6,
     "difficulty": "easy",
     "commentaryRu": "Отрицание 'not' ставится после глагола to be.",
     "prelearnPairs": [
-      {"en": "mistake", "ru": "ошибка"},
-      {"en": "not", "ru": "не"}
+      {
+        "en": "mistake",
+        "ru": "ошибка"
+      },
+      {
+        "en": "not",
+        "ru": "не"
+      }
     ],
     "alignment": null
   },
@@ -29,25 +41,37 @@
     "id": 103,
     "english": "A nod was the answer .",
     "russian": "В ответ он молча кивнул .",
-    "tokenCount": 5,
+    "tokenCount": 6,
     "difficulty": "easy",
     "commentaryRu": "Пассивный залог: 'was the answer' = 'был ответом'.",
     "prelearnPairs": [
-      {"en": "nod", "ru": "кивок"},
-      {"en": "answer", "ru": "ответ"}
+      {
+        "en": "nod",
+        "ru": "кивок"
+      },
+      {
+        "en": "answer",
+        "ru": "ответ"
+      }
     ],
     "alignment": null
   },
   {
     "id": 104,
     "english": "There was nothing to be done .",
-    "russian": "К тому моменту , как я появился , сделать ничего нельзя было .",
-    "tokenCount": 6,
+    "russian": "Сделать ничего было нельзя .",
+    "tokenCount": 7,
     "difficulty": "medium",
     "commentaryRu": "Конструкция 'there was nothing to be done' означает невозможность действий.",
     "prelearnPairs": [
-      {"en": "nothing", "ru": "ничего"},
-      {"en": "done", "ru": "сделано"}
+      {
+        "en": "nothing",
+        "ru": "ничего"
+      },
+      {
+        "en": "done",
+        "ru": "сделано"
+      }
     ],
     "alignment": null
   },
@@ -55,12 +79,18 @@
     "id": 105,
     "english": "She had been dead some hours .",
     "russian": "Она была мертва уже несколько часов .",
-    "tokenCount": 6,
+    "tokenCount": 7,
     "difficulty": "medium",
     "commentaryRu": "Past Perfect показывает действие, завершившееся до другого момента в прошлом.",
     "prelearnPairs": [
-      {"en": "dead", "ru": "мертва"},
-      {"en": "hours", "ru": "часов"}
+      {
+        "en": "dead",
+        "ru": "мертва"
+      },
+      {
+        "en": "hours",
+        "ru": "часов"
+      }
     ],
     "alignment": null
   },
@@ -68,25 +98,37 @@
     "id": 106,
     "english": "Most people were already seated .",
     "russian": "Многие уже расположились в креслах .",
-    "tokenCount": 5,
+    "tokenCount": 6,
     "difficulty": "easy",
     "commentaryRu": "'Seated' означает 'сидящие, расположившиеся'.",
     "prelearnPairs": [
-      {"en": "people", "ru": "люди"},
-      {"en": "seated", "ru": "сидящие"}
+      {
+        "en": "people",
+        "ru": "люди"
+      },
+      {
+        "en": "seated",
+        "ru": "сидящие"
+      }
     ],
     "alignment": null
   },
   {
     "id": 107,
-    "english": "The doors flew open .",
-    "russian": "Двери распахнулись .",
-    "tokenCount": 4,
-    "difficulty": "easy",
-    "commentaryRu": "Глагол 'flew' (прошедшее от fly) здесь означает быстрое движение.",
+    "english": "He hesitated for a moment .",
+    "russian": "Он мгновение помедлил .",
+    "tokenCount": 6,
+    "difficulty": "medium",
+    "commentaryRu": "'For a moment' — «на мгновение»: обстоятельство времени стоит в конце, а не перед глаголом, как в русском.",
     "prelearnPairs": [
-      {"en": "flew", "ru": "распахнулись"},
-      {"en": "doors", "ru": "двери"}
+      {
+        "en": "hesitated",
+        "ru": "помедлил"
+      },
+      {
+        "en": "moment",
+        "ru": "мгновение"
+      }
     ],
     "alignment": null
   },
@@ -94,12 +136,18 @@
     "id": 108,
     "english": "There is , however , one catch ...",
     "russian": "Здесь есть , однако , одно обстоятельство ...",
-    "tokenCount": 6,
+    "tokenCount": 8,
     "difficulty": "medium",
     "commentaryRu": "'Catch' в значении 'подвох, особенность'.",
     "prelearnPairs": [
-      {"en": "however", "ru": "однако"},
-      {"en": "catch", "ru": "обстоятельство"}
+      {
+        "en": "however",
+        "ru": "однако"
+      },
+      {
+        "en": "catch",
+        "ru": "обстоятельство"
+      }
     ],
     "alignment": null
   },
@@ -107,12 +155,18 @@
     "id": 109,
     "english": "Antimatter is highly unstable .",
     "russian": "Антивещество крайне нестабильно .",
-    "tokenCount": 4,
+    "tokenCount": 5,
     "difficulty": "easy",
     "commentaryRu": "Наречие 'highly' усиливает прилагательное 'unstable'.",
     "prelearnPairs": [
-      {"en": "antimatter", "ru": "антивещество"},
-      {"en": "unstable", "ru": "нестабильно"}
+      {
+        "en": "antimatter",
+        "ru": "антивещество"
+      },
+      {
+        "en": "unstable",
+        "ru": "нестабильно"
+      }
     ],
     "alignment": null
   },
@@ -120,25 +174,37 @@
     "id": 110,
     "english": "His name was John Turnbull Angus .",
     "russian": "Прозывался юноша Джон Тэрнбул Энгус .",
-    "tokenCount": 6,
+    "tokenCount": 7,
     "difficulty": "medium",
     "commentaryRu": "В английском имя следует после 'His name was'.",
     "prelearnPairs": [
-      {"en": "name", "ru": "имя"},
-      {"en": "was", "ru": "было"}
+      {
+        "en": "name",
+        "ru": "имя"
+      },
+      {
+        "en": "was",
+        "ru": "было"
+      }
     ],
     "alignment": null
   },
   {
     "id": 111,
     "english": "Where do you say ?",
-    "russian": "Как вы говорите ?",
+    "russian": "Где , вы говорите ?",
     "tokenCount": 5,
     "difficulty": "easy",
     "commentaryRu": "Вопросительная конструкция с вспомогательным 'do'.",
     "prelearnPairs": [
-      {"en": "where", "ru": "как"},
-      {"en": "say", "ru": "говорите"}
+      {
+        "en": "where",
+        "ru": "где"
+      },
+      {
+        "en": "say",
+        "ru": "говорите"
+      }
     ],
     "alignment": null
   },
@@ -146,12 +212,18 @@
     "id": 112,
     "english": "Then their jewelry catching the sun .",
     "russian": "Затем - солнечные зайчики на их украшениях .",
-    "tokenCount": 5,
+    "tokenCount": 7,
     "difficulty": "medium",
     "commentaryRu": "Причастие 'catching' показывает одновременное действие.",
     "prelearnPairs": [
-      {"en": "jewelry", "ru": "украшения"},
-      {"en": "sun", "ru": "солнце"}
+      {
+        "en": "jewelry",
+        "ru": "украшения"
+      },
+      {
+        "en": "sun",
+        "ru": "солнце"
+      }
     ],
     "alignment": null
   },
@@ -159,12 +231,18 @@
     "id": 113,
     "english": "Like royalty in exile .",
     "russian": "Точно королевы в изгнании .",
-    "tokenCount": 4,
+    "tokenCount": 5,
     "difficulty": "easy",
     "commentaryRu": "Сравнение с 'like' = 'как, точно'.",
     "prelearnPairs": [
-      {"en": "royalty", "ru": "королевы"},
-      {"en": "exile", "ru": "изгнании"}
+      {
+        "en": "royalty",
+        "ru": "королевы"
+      },
+      {
+        "en": "exile",
+        "ru": "изгнании"
+      }
     ],
     "alignment": null
   },
@@ -172,12 +250,18 @@
     "id": 114,
     "english": "This was invitation enough .",
     "russian": "Большего от него не требовалось .",
-    "tokenCount": 4,
+    "tokenCount": 5,
     "difficulty": "medium",
     "commentaryRu": "'Enough' после существительного = 'достаточно'.",
     "prelearnPairs": [
-      {"en": "invitation", "ru": "приглашение"},
-      {"en": "enough", "ru": "достаточно"}
+      {
+        "en": "invitation",
+        "ru": "приглашение"
+      },
+      {
+        "en": "enough",
+        "ru": "достаточно"
+      }
     ],
     "alignment": null
   },
@@ -185,12 +269,18 @@
     "id": 115,
     "english": "Sabrina prayed they were all still alive .",
     "russian": "Сабрина лишь молила о том , чтобы все они были живы .",
-    "tokenCount": 7,
+    "tokenCount": 8,
     "difficulty": "hard",
     "commentaryRu": "Придаточное предложение с 'that' (опущено) после 'prayed'.",
     "prelearnPairs": [
-      {"en": "prayed", "ru": "молила"},
-      {"en": "alive", "ru": "живы"}
+      {
+        "en": "prayed",
+        "ru": "молила"
+      },
+      {
+        "en": "alive",
+        "ru": "живы"
+      }
     ],
     "alignment": null
   },
@@ -198,12 +288,18 @@
     "id": 116,
     "english": "A capital fellow !",
     "russian": "Превосходный человек !",
-    "tokenCount": 3,
+    "tokenCount": 4,
     "difficulty": "easy",
     "commentaryRu": "'Capital' в значении 'превосходный, отличный'.",
     "prelearnPairs": [
-      {"en": "capital", "ru": "превосходный"},
-      {"en": "fellow", "ru": "человек"}
+      {
+        "en": "capital",
+        "ru": "превосходный"
+      },
+      {
+        "en": "fellow",
+        "ru": "человек"
+      }
     ],
     "alignment": null
   },
@@ -211,12 +307,18 @@
     "id": 117,
     "english": "This is certainly a beautiful country !",
     "russian": "Место поистине прекрасное !",
-    "tokenCount": 6,
+    "tokenCount": 7,
     "difficulty": "easy",
     "commentaryRu": "'Certainly' усиливает утверждение = 'несомненно'.",
     "prelearnPairs": [
-      {"en": "certainly", "ru": "поистине"},
-      {"en": "beautiful", "ru": "прекрасное"}
+      {
+        "en": "certainly",
+        "ru": "поистине"
+      },
+      {
+        "en": "beautiful",
+        "ru": "прекрасное"
+      }
     ],
     "alignment": null
   },
@@ -224,38 +326,265 @@
     "id": 118,
     "english": "Oh , yes ...",
     "russian": "О да .",
-    "tokenCount": 3,
+    "tokenCount": 4,
     "difficulty": "easy",
     "commentaryRu": "Короткое подтверждение с эмоциональной окраской.",
     "prelearnPairs": [
-      {"en": "oh", "ru": "о"},
-      {"en": "yes", "ru": "да"}
+      {
+        "en": "oh",
+        "ru": "о"
+      },
+      {
+        "en": "yes",
+        "ru": "да"
+      }
     ],
     "alignment": null
   },
   {
     "id": 119,
-    "english": "This summer ' s houseguest .",
+    "english": "This summer's houseguest .",
     "russian": "Наш летний гость .",
     "tokenCount": 4,
     "difficulty": "easy",
     "commentaryRu": "Притяжательная форма с апострофом 's'.",
     "prelearnPairs": [
-      {"en": "summer", "ru": "летний"},
-      {"en": "houseguest", "ru": "гость"}
+      {
+        "en": "summer",
+        "ru": "летний"
+      },
+      {
+        "en": "houseguest",
+        "ru": "гость"
+      }
     ],
     "alignment": null
   },
   {
     "id": 120,
-    "english": "Jane ' s lips twisted slightly .",
+    "english": "Jane's lips twisted slightly .",
     "russian": "Губы Джейн слегка искривились .",
     "tokenCount": 5,
     "difficulty": "medium",
     "commentaryRu": "Притяжательный падеж имён собственных с 's.",
     "prelearnPairs": [
-      {"en": "lips", "ru": "губы"},
-      {"en": "twisted", "ru": "искривились"}
+      {
+        "en": "lips",
+        "ru": "губы"
+      },
+      {
+        "en": "twisted",
+        "ru": "искривились"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 121,
+    "english": "She wants to know what I know .",
+    "russian": "Она хочет знать то , что знаю я .",
+    "tokenCount": 8,
+    "difficulty": "hard",
+    "commentaryRu": "В английском порядок «подлежащее + сказуемое» сохраняется и в придаточном: what I know, а не «что знаю я».",
+    "prelearnPairs": [
+      {
+        "en": "wants",
+        "ru": "хочет"
+      },
+      {
+        "en": "know",
+        "ru": "знать"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 122,
+    "english": "The guard began checking the map .",
+    "russian": "Гвардеец начал изучать карту .",
+    "tokenCount": 7,
+    "difficulty": "medium",
+    "commentaryRu": "После began часто идёт форма на -ing: began checking — «начал проверять».",
+    "prelearnPairs": [
+      {
+        "en": "guard",
+        "ru": "гвардеец"
+      },
+      {
+        "en": "map",
+        "ru": "карту"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 123,
+    "english": "For years I have loved her .",
+    "russian": "Долгие годы я любил ее .",
+    "tokenCount": 7,
+    "difficulty": "medium",
+    "commentaryRu": "Present Perfect (have loved) показывает действие, длящееся до сих пор.",
+    "prelearnPairs": [
+      {
+        "en": "years",
+        "ru": "годы"
+      },
+      {
+        "en": "loved",
+        "ru": "любил"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 124,
+    "english": "They are still there in warehouses in Liverpool .",
+    "russian": "Они и по сей день там , в пакгаузах Ливерпуля .",
+    "tokenCount": 9,
+    "difficulty": "hard",
+    "commentaryRu": "Still ставится после глагола to be: they are still there.",
+    "prelearnPairs": [
+      {
+        "en": "warehouses",
+        "ru": "пакгаузах"
+      },
+      {
+        "en": "still",
+        "ru": "всё ещё"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 125,
+    "english": "The young lady is Miss Manette .",
+    "russian": "Эта молодая особа — мисс Манетт .",
+    "tokenCount": 7,
+    "difficulty": "medium",
+    "commentaryRu": "В английском связка is обязательна там, где в русском стоит тире.",
+    "prelearnPairs": [
+      {
+        "en": "young",
+        "ru": "молодая"
+      },
+      {
+        "en": "lady",
+        "ru": "особа"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 126,
+    "english": "Raymond stared at him .",
+    "russian": "Реймонд с удивлением посмотрел на него .",
+    "tokenCount": 5,
+    "difficulty": "easy",
+    "commentaryRu": "Stare at — «пристально смотреть на»; предлог at стоит сразу после глагола.",
+    "prelearnPairs": [
+      {
+        "en": "stared",
+        "ru": "уставился"
+      },
+      {
+        "en": "him",
+        "ru": "него"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 127,
+    "english": "Brasti waved a hand .",
+    "russian": "Брасти махнул рукой .",
+    "tokenCount": 5,
+    "difficulty": "easy",
+    "commentaryRu": "В английском нужен артикль: waved a hand, хотя в русском просто «рукой».",
+    "prelearnPairs": [
+      {
+        "en": "waved",
+        "ru": "махнул"
+      },
+      {
+        "en": "hand",
+        "ru": "рука"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 128,
+    "english": "She broke four toes kicking at the walls .",
+    "russian": "Сломала четыре пальца на ногах , колотя ими по стенам .",
+    "tokenCount": 9,
+    "difficulty": "hard",
+    "commentaryRu": "Форма на -ing (kicking) здесь заменяет русское деепричастие «колотя».",
+    "prelearnPairs": [
+      {
+        "en": "toes",
+        "ru": "пальцы ног"
+      },
+      {
+        "en": "walls",
+        "ru": "стены"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 129,
+    "english": "You will not like what you find out .",
+    "russian": "То , что вам предстоит увидеть , вам не понравится .",
+    "tokenCount": 9,
+    "difficulty": "hard",
+    "commentaryRu": "Русская фраза начинается с придаточного, а английская — с главного: you will not like...",
+    "prelearnPairs": [
+      {
+        "en": "like",
+        "ru": "нравиться"
+      },
+      {
+        "en": "find",
+        "ru": "находить"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 130,
+    "english": "I want to watch television !",
+    "russian": "Хочу смотреть телевизор !",
+    "tokenCount": 6,
+    "difficulty": "medium",
+    "commentaryRu": "Подлежащее I в английском обязательно, хотя по-русски можно сказать просто «хочу».",
+    "prelearnPairs": [
+      {
+        "en": "watch",
+        "ru": "смотреть"
+      },
+      {
+        "en": "television",
+        "ru": "телевизор"
+      }
+    ],
+    "alignment": null
+  },
+  {
+    "id": 131,
+    "english": "Stay until you are relieved .",
+    "russian": "Сиди там , пока тебя не сменят .",
+    "tokenCount": 6,
+    "difficulty": "medium",
+    "commentaryRu": "Until уже содержит отрицание «пока не», поэтому not в придаточном не нужно.",
+    "prelearnPairs": [
+      {
+        "en": "stay",
+        "ru": "оставаться"
+      },
+      {
+        "en": "until",
+        "ru": "пока не"
+      }
     ],
     "alignment": null
   }

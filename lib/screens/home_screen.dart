@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../app.dart';
 import '../models/player_profile.dart';
 import '../services/corpus_service.dart';
+import '../services/difficulty_service.dart';
 import '../services/persistence_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,11 +14,11 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with RouteAware {
   PlayerProfile? _activeProfile;
   int _totalLevels = 0;
+  String? _loadError;
   bool _loaded = false;
-  String? _recommendedDifficulty;
 
   @override
   void initState() {
@@ -23,75 +26,111 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadData();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = ModalRoute.of(context);
+    if (route != null) routeObserver.subscribe(this, route);
+  }
+
+  @override
+  void dispose() {
+    routeObserver.unsubscribe(this);
+    super.dispose();
+  }
+
+  /// Called when the player comes back from a game: refresh stats.
+  @override
+  void didPopNext() => _loadData();
+
   Future<void> _loadData() async {
-    final corpusService = Provider.of<CorpusService>(context, listen: false);
+    final corpusService = context.read<CorpusService>();
+    final persistenceService = context.read<PersistenceService>();
     await corpusService.load();
-
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
     final profile = await persistenceService.loadActiveProfile();
-
+    if (!mounted) return;
     setState(() {
       _activeProfile = profile;
       _totalLevels = corpusService.playableLevels.length;
-      _recommendedDifficulty = profile != null
-          ? _getRecommendedDifficulty(profile.stats)
-          : null;
+      _loadError = corpusService.loadError;
       _loaded = true;
     });
   }
 
-  String _getRecommendedDifficulty(dynamic stats) {
-    final progress = stats.learningProgress;
-    final totalSolved = stats.totalSolvedRuns;
+  Future<void> _handlePlay() async {
+    final corpusService = context.read<CorpusService>();
+    final persistenceService = context.read<PersistenceService>();
 
-    if (totalSolved < 3) {
-      return 'easy';
-    }
-
-    if (progress < 100) {
-      return 'easy';
-    }
-
-    final mediumCount = stats.difficultyPerformance['medium'] ?? 0;
-    if (mediumCount < 5) {
-      return 'medium';
-    }
-
-    return 'medium';
-  }
-
-  Future<void> _handleStartGame() async {
-    final corpusService = Provider.of<CorpusService>(context, listen: false);
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    final profile = await persistenceService.loadActiveProfile();
-
+    var profile = await persistenceService.loadActiveProfile();
     if (profile == null) {
-      _showError('No active profile');
-      return;
+      if (!mounted) return;
+      final name = await _askNewProfileName(firstLaunch: true);
+      if (name == null) return;
+      profile = await persistenceService.createProfile(name);
+      await _loadData();
     }
 
     final nextLevel = corpusService.getNextLevelForProfile(profile);
+    if (!mounted) return;
     if (nextLevel == null) {
-      _showError('No levels available');
+      _showMessage(
+        'No levels available',
+        corpusService.loadError ?? 'The level list is empty.',
+      );
       return;
     }
-
-    if (mounted) {
-      Navigator.pushNamed(context, '/prelearn', arguments: nextLevel);
-    }
+    Navigator.pushNamed(context, '/prelearn', arguments: nextLevel);
   }
 
-  void _showError(String message) {
+  /// Asks for a profile name. Returns null if the dialog was dismissed.
+  Future<String?> _askNewProfileName({bool firstLaunch = false}) {
+    final controller = TextEditingController(
+      text: firstLaunch ? PersistenceService.defaultProfileName : '',
+    );
+    return showDialog<String>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(firstLaunch ? 'Welcome to WORPALOX!' : 'New profile'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (firstLaunch)
+              const Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: Text('What should we call you?'),
+              ),
+            TextField(
+              controller: controller,
+              autofocus: true,
+              textCapitalization: TextCapitalization.words,
+              decoration: const InputDecoration(
+                labelText: 'Your name',
+                border: OutlineInputBorder(),
+              ),
+              onSubmitted: (v) => Navigator.pop(ctx, v),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, controller.text),
+            child: Text(firstLaunch ? "Let's play" : 'Create'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showMessage(String title, String message) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Error'),
+        title: Text(title),
         content: Text(message),
         actions: [
           TextButton(
@@ -103,23 +142,25 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _showProfileDialog() {
-    showDialog(
+  Future<void> _showProfileDialog() async {
+    await showDialog(
       context: context,
       builder: (ctx) => _ProfileDialog(
-        activeProfile: _activeProfile,
-        onProfileChanged: () {
-          if (mounted) {
-            Navigator.pop(ctx);
-            _loadData();
-          }
-        },
+        activeProfileId: _activeProfile?.id,
+        askName: () => _askNewProfileName(),
       ),
     );
+    await _loadData();
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final stats = _activeProfile?.stats;
+    final recommended = stats != null
+        ? DifficultyService().getRecommendedDifficulty(stats)
+        : null;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('WORPALOX'),
@@ -132,9 +173,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: _loaded
-          ? Center(
-              child: Padding(
+      body: !_loaded
+          ? const Center(child: CircularProgressIndicator())
+          : Center(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.all(24.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -147,82 +189,70 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 24),
                     Text(
                       'WORPALOX',
-                      style: Theme.of(context).textTheme.headlineLarge
-                          ?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
-                          ),
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       'English-Russian Word Puzzle',
-                      style: Theme.of(
-                        context,
-                      ).textTheme.bodyLarge?.copyWith(color: Colors.grey[600]),
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: Colors.grey[600],
+                      ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 24),
                     if (_activeProfile != null) ...[
                       Text(
                         'Playing as: ${_activeProfile!.name}',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        style: theme.textTheme.bodyMedium?.copyWith(
                           color: Colors.deepPurple[700],
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 16),
                     ],
-                    const SizedBox(height: 24),
-                    if (_activeProfile != null &&
-                        _activeProfile!.stats.totalSolvedRuns > 0) ...[
-                      _buildStatRow(
-                        'Game Score',
-                        '${_activeProfile!.stats.totalGameScore}',
-                      ),
+                    if (stats != null && stats.totalSolvedRuns > 0) ...[
+                      _buildStatRow('Game Score', '${stats.totalGameScore}'),
                       const SizedBox(height: 8),
                       _buildStatRow(
                         'Learning Progress',
-                        '${_activeProfile!.stats.learningProgress}',
+                        '${stats.learningProgress}',
                       ),
                       const SizedBox(height: 8),
                       _buildStatRow(
-                        'Levels Solved',
-                        '${_activeProfile!.stats.uniqueSolvedLevelIds.length}',
+                        'Sentences Solved',
+                        '${stats.uniqueSolvedLevelIds.length} / $_totalLevels',
                       ),
                       const SizedBox(height: 8),
-                      _buildStatRow(
-                        'Recommended',
-                        _recommendedDifficulty ?? 'easy',
-                      ),
+                      _buildStatRow('Level', recommended ?? 'easy'),
                       const SizedBox(height: 32),
                     ],
-                    ElevatedButton(
-                      onPressed: _handleStartGame,
-                      style: ElevatedButton.styleFrom(
+                    FilledButton.icon(
+                      onPressed: _loadError == null ? _handlePlay : null,
+                      icon: const Icon(Icons.play_arrow),
+                      label: const Text('Play', style: TextStyle(fontSize: 18)),
+                      style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 48,
                           vertical: 16,
                         ),
                       ),
-                      child: Text(
-                        _activeProfile != null &&
-                                _activeProfile!.stats.totalSolvedRuns > 0
-                            ? 'Continue'
-                            : 'Start Game',
-                        style: const TextStyle(fontSize: 18),
-                      ),
                     ),
                     const SizedBox(height: 32),
                     Text(
-                      '$_totalLevels levels available',
-                      style: Theme.of(
-                        context,
-                      ).textTheme.bodyMedium?.copyWith(color: Colors.grey[500]),
+                      _loadError ?? '$_totalLevels sentences available',
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: _loadError != null
+                            ? Colors.red
+                            : Colors.grey[500],
+                      ),
                     ),
                   ],
                 ),
               ),
-            )
-          : const Center(child: CircularProgressIndicator()),
+            ),
     );
   }
 
@@ -246,69 +276,71 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class _ProfileDialog extends StatefulWidget {
-  final PlayerProfile? activeProfile;
-  final VoidCallback onProfileChanged;
+  final String? activeProfileId;
+  final Future<String?> Function() askName;
 
-  const _ProfileDialog({
-    required this.activeProfile,
-    required this.onProfileChanged,
-  });
+  const _ProfileDialog({required this.activeProfileId, required this.askName});
 
   @override
   State<_ProfileDialog> createState() => _ProfileDialogState();
 }
 
 class _ProfileDialogState extends State<_ProfileDialog> {
-  final _nameController = TextEditingController();
   List<PlayerProfile> _profiles = [];
+  String? _activeId;
 
   @override
   void initState() {
     super.initState();
+    _activeId = widget.activeProfileId;
     _loadProfiles();
   }
 
   Future<void> _loadProfiles() async {
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    final profiles = await persistenceService.loadProfiles();
+    final service = context.read<PersistenceService>();
+    final profiles = await service.loadProfiles();
+    final active = await service.loadActiveProfile();
+    if (!mounted) return;
     setState(() {
       _profiles = profiles;
+      _activeId = active?.id;
     });
   }
 
   Future<void> _createProfile() async {
-    if (_nameController.text.trim().isEmpty) return;
-
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    await persistenceService.createProfile(_nameController.text.trim());
-    _nameController.clear();
+    final service = context.read<PersistenceService>();
+    final name = await widget.askName();
+    if (name == null) return;
+    await service.createProfile(name);
     await _loadProfiles();
-    widget.onProfileChanged();
   }
 
   Future<void> _switchProfile(String id) async {
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
-    );
-    await persistenceService.setActiveProfileId(id);
-    widget.onProfileChanged();
+    await context.read<PersistenceService>().setActiveProfileId(id);
+    if (mounted) Navigator.pop(context);
   }
 
-  Future<void> _deleteProfile(String id) async {
-    final persistenceService = Provider.of<PersistenceService>(
-      context,
-      listen: false,
+  Future<void> _deleteProfile(PlayerProfile profile) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Delete profile?'),
+        content: Text('All progress of "${profile.name}" will be lost.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Delete', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
     );
-    await persistenceService.deleteProfile(id);
+    if (confirmed != true || !mounted) return;
+    await context.read<PersistenceService>().deleteProfile(profile.id);
     await _loadProfiles();
-    widget.onProfileChanged();
   }
 
   @override
@@ -317,68 +349,39 @@ class _ProfileDialogState extends State<_ProfileDialog> {
       title: const Text('Player Profiles'),
       content: SizedBox(
         width: double.maxFinite,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      labelText: 'New profile name',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                ElevatedButton(
-                  onPressed: _createProfile,
-                  child: const Text('Add'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            if (_profiles.isEmpty)
-              const Text('No profiles yet')
-            else
-              ListView.builder(
+        child: _profiles.isEmpty
+            ? const Text('No profiles yet')
+            : ListView.builder(
                 shrinkWrap: true,
                 itemCount: _profiles.length,
                 itemBuilder: (ctx, index) {
                   final profile = _profiles[index];
-                  final isActive = profile.id == widget.activeProfile?.id;
+                  final isActive = profile.id == _activeId;
                   return ListTile(
                     title: Text(profile.name),
                     subtitle: Text(
-                      '${profile.stats.totalSolvedRuns} levels solved',
-                    ),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if (!isActive)
-                          IconButton(
-                            icon: const Icon(Icons.check),
-                            onPressed: () => _switchProfile(profile.id),
-                            tooltip: 'Switch to this profile',
-                          ),
-                        if (_profiles.length > 1)
-                          IconButton(
-                            icon: const Icon(Icons.delete, color: Colors.red),
-                            onPressed: () => _deleteProfile(profile.id),
-                            tooltip: 'Delete profile',
-                          ),
-                      ],
+                      '${profile.stats.uniqueSolvedLevelIds.length} sentences solved',
                     ),
                     selected: isActive,
                     selectedTileColor: Colors.deepPurple[50],
+                    onTap: isActive ? null : () => _switchProfile(profile.id),
+                    trailing: _profiles.length > 1
+                        ? IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () => _deleteProfile(profile),
+                            tooltip: 'Delete profile',
+                          )
+                        : null,
                   );
                 },
               ),
-          ],
-        ),
       ),
       actions: [
+        TextButton.icon(
+          onPressed: _createProfile,
+          icon: const Icon(Icons.person_add),
+          label: const Text('New'),
+        ),
         TextButton(
           onPressed: () => Navigator.pop(context),
           child: const Text('Close'),

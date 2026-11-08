@@ -1,28 +1,27 @@
 import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../models/stats.dart';
 import '../models/player_profile.dart';
 
-/// Versioned persistence schema for profiles and progress.
+/// Versioned persistence for profiles and progress (shared_preferences).
 ///
 /// Schema v2:
 /// {
 ///   "schemaVersion": 2,
-///   "activeProfileId": "default",
-///   "profiles": [
-///     {
-///       "id": "default",
-///       "name": "Player 1",
-///       "createdAt": "...",
-///       "lastPlayedAt": "...",
-///       "stats": { ... }
-///     }
-///   ]
+///   "activeProfileId": "1714900000000",
+///   "profiles": [ { "id": ..., "name": ..., "createdAt": ..., "lastPlayedAt": ..., "stats": { ... } } ]
 /// }
+///
+/// An unreadable save is never silently overwritten: its raw text is first
+/// copied to [_corruptKey] so it can be recovered.
 class PersistenceService {
   static const _key = 'worpalox_save_v2';
   static const _schemaVersion = 2;
   static const _oldKey = 'worpalox_save_v1';
+  static const _corruptKey = 'worpalox_save_v2_corrupt_backup';
+  static const defaultProfileName = 'Player 1';
 
   Future<Map<String, dynamic>> _loadData() async {
     final prefs = await SharedPreferences.getInstance();
@@ -30,11 +29,18 @@ class PersistenceService {
     final jsonStr = prefs.getString(_key);
     if (jsonStr != null) {
       try {
-        final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-        if (data['schemaVersion'] == _schemaVersion) {
+        final data = jsonDecode(jsonStr);
+        if (data is Map<String, dynamic> &&
+            data['schemaVersion'] == _schemaVersion &&
+            data['profiles'] is List) {
           return data;
         }
-      } catch (e) {}
+      } catch (_) {
+        // Falls through to the backup below.
+      }
+      await prefs.setString(_corruptKey, jsonStr);
+      await prefs.remove(_key);
+      return _defaultSave();
     }
 
     final oldJsonStr = prefs.getString(_oldKey);
@@ -48,40 +54,27 @@ class PersistenceService {
   Map<String, dynamic> _migrateFromV1(String oldJsonStr) {
     try {
       final oldData = jsonDecode(oldJsonStr) as Map<String, dynamic>;
-      final oldStatsJson = oldData['stats'] as Map<String, dynamic>? ?? {};
-      final oldTotalSolved = oldStatsJson['totalSolved'] as int? ?? 0;
-      final oldLevelsCompleted =
-          (oldStatsJson['levelsCompleted'] as List<dynamic>?)
-              ?.map((e) => e as int)
-              .toList() ??
-          [];
-
-      final defaultProfile = PlayerProfile(
+      final old = oldData['stats'] as Map<String, dynamic>? ?? {};
+      final oldTotalSolved = (old['totalSolved'] as num?)?.toInt() ?? 0;
+      final migrated = Stats.fromJson({
+        ...old,
+        'totalGameScore': oldTotalSolved * 50,
+        'learningProgress': oldTotalSolved * 30,
+        'totalSolvedRuns': oldTotalSolved,
+        'uniqueSolvedLevelIds': old['levelsCompleted'],
+      });
+      final profile = PlayerProfile(
         id: 'default',
-        name: 'Player 1',
+        name: defaultProfileName,
         createdAt: DateTime.now(),
-        stats: Stats(
-          totalGameScore: oldTotalSolved * 50,
-          learningProgress: oldTotalSolved * 30,
-          totalSolvedRuns: oldTotalSolved,
-          uniqueSolvedLevelIds: oldLevelsCompleted,
-          totalSwaps: oldStatsJson['totalSwaps'] as int? ?? 0,
-          totalChecks: oldStatsJson['totalChecks'] as int? ?? 0,
-          totalHints: oldStatsJson['totalHints'] as int? ?? 0,
-          problemWords:
-              (oldStatsJson['problemWords'] as Map<String, dynamic>?)?.map(
-                (k, v) => MapEntry(k, v as int),
-              ) ??
-              {},
-        ),
+        stats: migrated,
       );
-
       return {
         'schemaVersion': _schemaVersion,
-        'activeProfileId': 'default',
-        'profiles': [defaultProfile.toJson()],
+        'activeProfileId': profile.id,
+        'profiles': [profile.toJson()],
       };
-    } catch (e) {
+    } catch (_) {
       return _defaultSave();
     }
   }
@@ -92,25 +85,23 @@ class PersistenceService {
     await prefs.setString(_key, jsonEncode(data));
   }
 
-  Future<List<PlayerProfile>> loadProfiles() async {
-    final data = await _loadData();
-    final profilesJson = data['profiles'] as List<dynamic>?;
-    if (profilesJson == null) return [];
-    return profilesJson
-        .map((p) => PlayerProfile.fromJson(p as Map<String, dynamic>))
-        .toList();
+  List<PlayerProfile> _profilesFrom(Map<String, dynamic> data) {
+    final result = <PlayerProfile>[];
+    for (final p in (data['profiles'] as List? ?? const [])) {
+      try {
+        result.add(PlayerProfile.fromJson(p as Map<String, dynamic>));
+      } catch (_) {
+        // Skip a single broken profile instead of losing all of them.
+      }
+    }
+    return result;
   }
 
-  Future<void> saveProfiles(List<PlayerProfile> profiles) async {
-    final data = await _loadData();
-    data['profiles'] = profiles.map((p) => p.toJson()).toList();
-    await _saveData(data);
-  }
+  Future<List<PlayerProfile>> loadProfiles() async =>
+      _profilesFrom(await _loadData());
 
-  Future<String?> getActiveProfileId() async {
-    final data = await _loadData();
-    return data['activeProfileId'] as String?;
-  }
+  Future<String?> getActiveProfileId() async =>
+      (await _loadData())['activeProfileId'] as String?;
 
   Future<void> setActiveProfileId(String? id) async {
     final data = await _loadData();
@@ -118,104 +109,69 @@ class PersistenceService {
     await _saveData(data);
   }
 
+  /// Creates a profile and makes it active.
   Future<PlayerProfile> createProfile(String name) async {
-    final profiles = await loadProfiles();
-    final newProfile = PlayerProfile(
+    final data = await _loadData();
+    final profiles = _profilesFrom(data);
+    final trimmed = name.trim();
+    final profile = PlayerProfile(
       id: PlayerProfile.generateId(),
-      name: name,
+      name: trimmed.isEmpty ? defaultProfileName : trimmed,
       createdAt: DateTime.now(),
     );
-    profiles.add(newProfile);
-    await saveProfiles(profiles);
-    return newProfile;
-  }
-
-  Future<void> renameProfile(String id, String newName) async {
-    final profiles = await loadProfiles();
-    final index = profiles.indexWhere((p) => p.id == id);
-    if (index != -1) {
-      final profile = profiles[index];
-      profiles[index] = PlayerProfile(
-        id: profile.id,
-        name: newName,
-        createdAt: profile.createdAt,
-        lastPlayedAt: profile.lastPlayedAt,
-        stats: profile.stats,
-      );
-      await saveProfiles(profiles);
-    }
+    profiles.add(profile);
+    data['profiles'] = profiles.map((p) => p.toJson()).toList();
+    data['activeProfileId'] = profile.id;
+    await _saveData(data);
+    return profile;
   }
 
   Future<void> deleteProfile(String id) async {
-    final profiles = await loadProfiles();
-    profiles.removeWhere((p) => p.id == id);
-
-    if (profiles.isEmpty) {
-      final defaultProfile = PlayerProfile(
-        id: PlayerProfile.generateId(),
-        name: 'Player 1',
-        createdAt: DateTime.now(),
-      );
-      profiles.add(defaultProfile);
-      await setActiveProfileId(defaultProfile.id);
-    } else if (await getActiveProfileId() == id) {
-      await setActiveProfileId(profiles.first.id);
+    final data = await _loadData();
+    final profiles = _profilesFrom(data)..removeWhere((p) => p.id == id);
+    data['profiles'] = profiles.map((p) => p.toJson()).toList();
+    if (data['activeProfileId'] == id) {
+      data['activeProfileId'] = profiles.isNotEmpty ? profiles.first.id : null;
     }
-
-    await saveProfiles(profiles);
+    await _saveData(data);
   }
 
   Future<PlayerProfile?> loadActiveProfile() async {
-    final profiles = await loadProfiles();
-    final activeId = await getActiveProfileId();
-    if (activeId == null) return profiles.isNotEmpty ? profiles.first : null;
-    try {
-      return profiles.firstWhere((p) => p.id == activeId);
-    } catch (e) {
-      return profiles.isNotEmpty ? profiles.first : null;
-    }
-  }
-
-  Future<void> saveActiveProfile(PlayerProfile profile) async {
-    final profiles = await loadProfiles();
-    final index = profiles.indexWhere((p) => p.id == profile.id);
-    if (index != -1) {
-      profiles[index] = profile;
-    } else {
-      profiles.add(profile);
-    }
-    await saveProfiles(profiles);
-    await setActiveProfileId(profile.id);
-  }
-
-  Future<void> updateActiveProfileStats(Stats stats) async {
-    final profile = await loadActiveProfile();
-    if (profile != null) {
-      final updatedProfile = PlayerProfile(
-        id: profile.id,
-        name: profile.name,
-        createdAt: profile.createdAt,
-        lastPlayedAt: DateTime.now(),
-        stats: stats,
-      );
-      await saveActiveProfile(updatedProfile);
-    }
-  }
-
-  Future<int?> getLastPlayedLevelId() async {
     final data = await _loadData();
-    return data['lastPlayedLevelId'] as int?;
+    final profiles = _profilesFrom(data);
+    if (profiles.isEmpty) return null;
+    final activeId = data['activeProfileId'] as String?;
+    return profiles.firstWhere(
+      (p) => p.id == activeId,
+      orElse: () => profiles.first,
+    );
   }
 
-  Future<void> setLastPlayedLevelId(int? id) async {
+  /// Applies [update] to the active profile's stats and saves the result.
+  /// Returns the updated profile, or null if there is no profile.
+  Future<PlayerProfile?> updateActiveProfileStats(
+    void Function(Stats stats) update,
+  ) async {
     final data = await _loadData();
-    data['lastPlayedLevelId'] = id;
+    final profiles = _profilesFrom(data);
+    if (profiles.isEmpty) return null;
+    final activeId = data['activeProfileId'] as String?;
+    var index = profiles.indexWhere((p) => p.id == activeId);
+    if (index == -1) index = 0;
+
+    final profile = profiles[index];
+    update(profile.stats);
+    profile.lastPlayedAt = DateTime.now();
+
+    data['profiles'] = profiles.map((p) => p.toJson()).toList();
+    data['activeProfileId'] = profile.id;
     await _saveData(data);
+    return profile;
   }
 
   Map<String, dynamic> _defaultSave() => {
     'schemaVersion': _schemaVersion,
     'activeProfileId': null,
-    'profiles': [],
+    'profiles': <dynamic>[],
   };
 }

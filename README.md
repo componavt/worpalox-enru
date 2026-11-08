@@ -4,7 +4,7 @@
 
 ## Overview
 
-Restore shuffled English sentences to their correct order using Russian translations as clues. Swap adjacent words to solve each puzzle. Designed for language learners who want a fun, bite-sized gameplay experience.
+Restore shuffled English sentences to their correct order using Russian translations as clues. Drag any word to its place (or tap a word, then tap its place); the puzzle is solved automatically as soon as the order is right. Designed for language learners who want a fun, bite-sized gameplay experience.
 
 ## Features
 
@@ -12,18 +12,19 @@ Restore shuffled English sentences to their correct order using Russian translat
 - **Local player profiles**: Multiple profiles on one device
 - **Adaptive level selection**: Random levels from appropriate difficulty pool
 - **Separate scoring**: Game score and learning progress tracked independently
-- **Pre-learning stage**: Optional vocabulary preview with Skip button
+- **Two-step rounds**: "Step 1 · Learn Words" (multiple-choice warm-up, can be skipped) and "Step 2 · Puzzle"
 - **Pedagogical result card**: Full sentence, translation, and learning commentary
-- **Short levels**: 20 curated sentences (3-7 words each) for quick play sessions
-- **Adjacent swap controls**: Tap swap buttons between neighboring words to reorder
+- **Short levels**: 31 curated literary sentences (3-8 words each) for quick play sessions
+- **Free word movement**: drag a word anywhere, or tap-to-select and tap-to-place
+- **Automatic solve detection**: no "Check" button needed
 - **Diff-style hints**: Visual feedback showing correct/incorrect word positions
-- **Progress tracking**: Total solved, average swaps/checks, hint usage statistics
+- **Progress tracking**: Total solved, average moves, hint usage statistics
 
 ## Installation
 
 ### Prerequisites
 
-- Flutter SDK 3.9.0 or later
+- Flutter SDK 3.47 or later (Dart 3.13)
 - Android Studio or VS Code with Flutter extensions
 
 ### Setup
@@ -44,9 +45,26 @@ flutter run
 
 ```bash
 flutter build apk --release
+flutter install --release      # phone connected via USB with USB debugging on
 ```
 
-The APK will be at `build/app/outputs/flutter-apk/app-release.apk`
+Without `android/key.properties` this build is signed with the debug key and
+uses the application id `com.componavt.worpalox.dev` and the label
+"WORPALOX dev", so it installs next to the Google Play version. Debug builds
+(`flutter run`) use the same `.dev` id.
+
+### Build for Google Play
+
+Create `android/key.properties` (not tracked by git) pointing to your upload
+keystore, then:
+
+```bash
+flutter build appbundle --release
+```
+
+The bundle will be at `build/app/outputs/bundle/release/app-release.aab`.
+Only a bundle built with `key.properties` (application id
+`com.componavt.worpalox`) can be uploaded to Google Play.
 
 ## Corpus Data
 
@@ -56,7 +74,7 @@ The game uses a curated subset of aligned English-Russian sentence pairs:
 ### Level Selection Criteria
 
 For Release 2.0, levels are filtered to:
-- 3-7 tokens (short, playable sentences)
+- 3-9 tokens including punctuation (short, playable sentences)
 - Literary prose content
 - Each level includes:
   - `difficulty` (easy/medium/hard)
@@ -65,23 +83,21 @@ For Release 2.0, levels are filtered to:
 
 ## Gameplay Flow
 
-1. **Home Screen**: Select/create profile, view stats, tap "Start Game" or "Continue"
-2. **Pre-learning** (optional): Match English words to Russian equivalents, or tap Skip
-3. **Puzzle Screen**: 
+1. **Home Screen**: tap "Play". On first launch the game asks for a player name.
+2. **Step 1 · Learn Words** (optional): pick the English word for a Russian one, or tap "Skip to puzzle"
+3. **Step 2 · Puzzle**:
    - Russian sentence appears at top as clue
-   - English sentence words are shuffled below
-   - Tap swap buttons (↔) between adjacent words to reorder
-   - Tap "Check" to verify solution
-   - If incorrect, hints activate showing correct/incorrect positions
-   - On success: score reveal, full sentence display, learning commentary
+   - English words are shuffled below; final punctuation stays fixed at the end
+   - Move words until the order is right; the result appears immediately
+   - On success: score breakdown, full sentence, translation, learning commentary
 4. **Progress**: Stats auto-save to active profile after each completed level
 
 ## Controls
 
-- **Swap**: Tap the ↔ button between two adjacent words
-- **Check**: Verify current word order; activates hints if wrong
-- **Show/Hide Hints**: Toggle visual hints manually (each show counts as hint use)
-- **Reset**: Shuffle words and restart the puzzle
+- **Drag**: drag a word onto another word to take its place (a bar shows where it will land)
+- **Tap, tap**: tap a word to select it, then tap the word whose place it should take; tap it again to cancel
+- **Hint**: colors words green (right place) or red (wrong place) until the next move; each hint costs 5 points
+- **Shuffle**: mix the words again (move and hint counters are kept)
 
 ## Project Structure
 
@@ -95,28 +111,27 @@ worpalox-enru/
 │   │   ├── puzzle_state.dart     # Runtime puzzle state
 │   │   ├── stats.dart            # Per-profile statistics (v2 schema)
 │   │   ├── player_profile.dart   # Local player profile model
+│   │   ├── route_arguments.dart  # Learn Words -> Puzzle hand-over
 │   │   └── score_result.dart     # Score breakdown (game vs learning)
 │   ├── services/
 │   │   ├── corpus_service.dart   # Level loading & adaptive selection
 │   │   ├── persistence_service.dart # JSON persistence (v2 schema, profiles)
 │   │   ├── scoring_service.dart  # Separate game/learning score calculation
-│   │   ├── hint_service.dart     # Diff-based hints
 │   │   └── difficulty_service.dart # Difficulty pool selection
 │   ├── screens/
 │   │   ├── home_screen.dart      # Profile selection and stats
 │   │   ├── prelearn_screen.dart  # Vocabulary preview with validation
 │   │   └── puzzle_screen.dart    # Main puzzle gameplay
 │   └── widgets/
-│       ├── word_token.dart       # Word chip with hint coloring
-│       ├── swap_button.dart      # Adjacent swap control
-│       └── hint_overlay.dart     # Hint display helper
+│       └── word_token.dart       # Word chip with hint/drag states
 ├── assets/corpus/
 │   └── levels.json               # Playable dataset with metadata
 ├── test/
 │   ├── unit/
 │   │   ├── puzzle_state_test.dart
 │   │   ├── scoring_service_test.dart
-│   │   └── hint_service_test.dart
+│   │   ├── services_test.dart    # corpus + persistence
+│   │   └── ...
 │   └── widget/
 │       └── app_smoke_test.dart
 ├── pubspec.yaml
@@ -146,10 +161,10 @@ Save data uses a versioned JSON schema stored via `shared_preferences`:
         "totalSolvedRuns": 0,
         "uniqueSolvedLevelIds": [],
         "recentLevelIds": [],
-        "totalSwaps": 0,
-        "totalChecks": 0,
+        "totalMoves": 0,
         "totalHints": 0,
         "prelearnCorrect": 0,
+        "prelearnWrong": 0,
         "prelearnSkipped": 0,
         "problemWords": {},
         "difficultyPerformance": {
@@ -163,7 +178,9 @@ Save data uses a versioned JSON schema stored via `shared_preferences`:
 }
 ```
 
-Schema v1 saves are automatically migrated to v2 on first load.
+Schema v1 saves are automatically migrated to v2 on first load. Older v2 saves
+with `totalSwaps` are read as `totalMoves`. An unreadable save is copied to
+`worpalox_save_v2_corrupt_backup` instead of being silently overwritten.
 
 ## Scoring Formula
 
@@ -172,19 +189,21 @@ Transparent and motivating:
 ### Game Score
 | Event | Points |
 |-------|--------|
-| Each swap | +1 |
-| Each check | +2 |
+| A word lands on its correct place for the first time | +2 |
 | Solve bonus | +50 |
-| First-check solve | +20 (bonus) |
+| Solved in the minimal number of moves | +20 |
+| Solved within twice the minimal number of moves | +10 |
 | Each hint used | -5 |
+
+Extra moves never add points, so the shortest solution is always the best one.
 
 ### Learning Progress
 | Event | Points |
 |-------|--------|
 | Base solve | +30 |
-| First-check solve | +10 (bonus) |
+| Solved without hints | +10 |
 | Pre-learning correct | +10 per answer |
-| Repeated level | 30% gain (anti-grinding) |
+| Repeated level | 30% of the total above (anti-grinding) |
 
 Score is clamped to never go negative.
 
@@ -218,7 +237,7 @@ flutter test
 ### Format code
 
 ```bash
-flutter format lib/ test/
+dart format lib/ test/
 ```
 
 ### Analyze code
@@ -229,7 +248,8 @@ flutter analyze
 
 ## License
 
-Same license as the original corpus data. See `LICENSE` file.
+Code: MIT, see `LICENSE`. The sentences come from the RNC EN-RU aligned
+corpus and remain subject to its terms.
 
 ## Acknowledgments
 

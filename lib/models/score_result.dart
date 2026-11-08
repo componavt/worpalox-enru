@@ -1,66 +1,42 @@
-/// Represents the result of a completed puzzle run.
+/// Breakdown of points earned for one completed puzzle run.
 ///
-/// Separates game score from learning progress to prevent grinding distortion.
+/// Game score and learning progress are kept separate so that replaying
+/// trivial levels cannot inflate learning progress.
 class ScoreResult {
-  final int gameScoreDelta;
-  final int learningProgressDelta;
-  final int prelearnScoreDelta;
+  final int placementPoints;
+  final int solveBonus;
+  final int efficiencyBonus;
   final int hintPenalty;
-  final int firstCheckBonus;
-  final int repeatPenalty;
+
+  final int baseLearning;
+  final int noHintLearningBonus;
+  final int prelearnLearning;
+  final bool isRepeat;
   final bool solved;
 
   const ScoreResult({
-    required this.gameScoreDelta,
-    required this.learningProgressDelta,
-    this.prelearnScoreDelta = 0,
+    this.placementPoints = 0,
+    this.solveBonus = 0,
+    this.efficiencyBonus = 0,
     this.hintPenalty = 0,
-    this.firstCheckBonus = 0,
-    this.repeatPenalty = 0,
+    this.baseLearning = 0,
+    this.noHintLearningBonus = 0,
+    this.prelearnLearning = 0,
+    this.isRepeat = false,
     required this.solved,
   });
 
-  int get totalGameScore =>
-      gameScoreDelta - hintPenalty + firstCheckBonus - repeatPenalty;
-
-  int get totalLearningProgress => learningProgressDelta + prelearnScoreDelta;
-
-  factory ScoreResult.success({
-    required int baseGameScore,
-    required int baseLearningProgress,
-    int prelearnCorrect = 0,
-    int hintsUsed = 0,
-    bool firstCheckSolved = false,
-    bool isRepeatLevel = false,
-  }) {
-    int hintPenalty = hintsUsed * 5;
-    int firstCheckBonus = firstCheckSolved ? 20 : 0;
-    int repeatPenalty = isRepeatLevel ? 10 : 0;
-    int prelearnBonus = prelearnCorrect * 10;
-
-    int gameScoreDelta = baseGameScore;
-    int learningProgressDelta = baseLearningProgress;
-
-    if (isRepeatLevel) {
-      learningProgressDelta = (learningProgressDelta * 0.3).floor();
-    }
-
-    return ScoreResult(
-      gameScoreDelta: gameScoreDelta,
-      learningProgressDelta: learningProgressDelta,
-      prelearnScoreDelta: prelearnBonus,
-      hintPenalty: hintPenalty,
-      firstCheckBonus: firstCheckBonus,
-      repeatPenalty: repeatPenalty,
-      solved: true,
-    );
+  /// Game score earned in this run, never negative.
+  int get totalGameScore {
+    final raw = placementPoints + solveBonus + efficiencyBonus - hintPenalty;
+    return raw < 0 ? 0 : raw;
   }
 
-  factory ScoreResult.failure() {
-    return const ScoreResult(
-      gameScoreDelta: 0,
-      learningProgressDelta: 0,
-      solved: false,
-    );
+  /// Learning progress earned in this run. Repeated levels give 30%.
+  int get totalLearningProgress {
+    final raw = baseLearning + noHintLearningBonus + prelearnLearning;
+    return isRepeat ? (raw * 0.3).floor() : raw;
   }
+
+  static const failure = ScoreResult(solved: false);
 }
