@@ -89,3 +89,4 @@ android/key.properties
 # Ignore logs and output files
 flutter_*.log
 output/ai_concat/
+/ai-notes
