@@ -249,9 +249,12 @@ flutter analyze
 ## License
 
 Code: MIT, see `LICENSE`. The sentences come from the RNC EN-RU aligned
-corpus and remain subject to its terms.
+corpus (ruscorpora/rnc_enru_aligned), distributed under
+CC BY-NC-SA 4.0, and remain subject to its terms: attribution required,
+no commercial use, derivatives share alike.
 
 ## Acknowledgments
 
 - Corpus data from Ruscorpora RNC EN-RU aligned corpus
+  (https://huggingface.co/datasets/ruscorpora/rnc_enru_aligned), CC BY-NC-SA 4.0
 - Original Python/Flet prototype provided gameplay concept reference
