@@ -17,6 +17,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 1,
@@ -51,6 +52,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 0,
@@ -123,6 +125,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 0,
@@ -188,6 +191,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 0,
@@ -222,6 +226,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 0,
@@ -473,6 +478,7 @@
       }
     ],
     "alignment": {
+      "source": "talp_import",
       "links": [
         {
           "en": 1,

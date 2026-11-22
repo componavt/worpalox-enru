@@ -99,8 +99,8 @@ void main() {
     service.onEmit = (_, _) => emitted++;
     await tester.pumpWidget(_wrap(service));
 
-    await service.select('drop_001');
-    expect(service.selectedId, 'drop_001');
+    await service.select('drop_003');
+    expect(service.selectedId, 'drop_003');
     await _makeCorrectMove(tester);
     expect(emitted, 1);
   });

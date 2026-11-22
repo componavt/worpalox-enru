@@ -46,12 +46,15 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   int _lastReward = 0;
   int _rewardTick = 0;
 
-  // Placement celebration: one flash per chip that the PLAYER moved into
-  // its correct place for the first time in this run. Keyed by token id,
-  // independent of the score bookkeeping above.
-  final Set<int> _celebratedTokenIds = {};
+  // Placement celebration: one flash per chip the player locked (placed
+  // correctly; green and immovable afterwards). Keyed by token id.
   int? _burstTokenId;
   int _burstSerial = 0;
+
+  // Drag-target hysteresis: keys of every chip target plus the target the
+  // marker is currently shown on.
+  final Map<int, GlobalKey> _tokenKeys = {};
+  int? _activeDragTargetId;
 
   @override
   void didChangeDependencies() {
@@ -74,7 +77,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       });
       return;
     }
-    _puzzle = PuzzleState(level: level);
+    _puzzle = PuzzleState(level: level, locking: true);
   }
 
   Timer? _rewardClearTimer;
@@ -94,18 +97,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     if (from < 0 || from >= tokens.length) return;
 
     final moved = tokens[from];
-    final wasCorrect = puzzle.isPositionCorrect(from);
     final reward = puzzle.moveToken(from, to);
     if (reward < 0) return;
 
-    // Celebrate the chip the PLAYER placed: it must have moved from a
-    // wrong position into a right one, for the first time in this run.
-    // Text-based checks match what the player sees (duplicate chips).
-    final shouldCelebrate =
-        !puzzle.solved &&
-        !wasCorrect &&
-        puzzle.isPositionCorrect(to) &&
-        _celebratedTokenIds.add(moved.id);
+    // The lock event is the celebration: the chip the player placed is
+    // correct and immovable now.
+    final lockedNow = puzzle.newlyLockedSlot != null;
 
     setState(() {
       _selectedIndex = null;
@@ -115,8 +112,8 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         _lastReward = reward * ScoringService.placementPoints;
         _rewardTick++;
       }
-      _burstTokenId = shouldCelebrate ? moved.id : null;
-      if (shouldCelebrate) _burstSerial++;
+      _burstTokenId = lockedNow ? moved.id : null;
+      if (lockedNow) _burstSerial++;
     });
     // The +N badge is temporary: it disappears shortly after the move
     // instead of hanging there until the end of the level.
@@ -130,7 +127,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       });
     }
 
-    if (shouldCelebrate) {
+    if (lockedNow) {
       // Fire and forget: audio failure must never interrupt the puzzle.
       context.read<PlacementAudio>().playCorrectPlacement();
     }
@@ -196,6 +193,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             ? prelearn!.correctAnswers
             : 0,
         isRepeatLevel: isRepeat,
+        lockingMode: puzzle.lockingEnabled,
       );
 
       await persistence.updateActiveProfileStats((stats) {
@@ -428,6 +426,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
   WordTokenState _stateFor(PuzzleState puzzle, int index) {
     if (puzzle.solved) return WordTokenState.solved;
+    if (puzzle.isSlotLocked(index)) return WordTokenState.locked;
     if (_selectedIndex == index) return WordTokenState.selected;
     if (_hintsVisible) {
       return puzzle.isPositionCorrect(index)
@@ -479,20 +478,22 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   /// front, so aiming near the punctuation works and nothing shifts when a
   /// drag starts.
   Widget _buildEndZone(PuzzleState puzzle) {
-    final lastIndex = puzzle.tokens.length - 1;
+    final lastFree = puzzle.lastFreeSlot;
     return DragTarget<int>(
       onWillAcceptWithDetails: (details) {
         final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
-        return from >= 0 && from != lastIndex;
+        if (from < 0 || from == lastFree) return false;
+        return _hysteresisAllows(-1, details.offset);
       },
       onAcceptWithDetails: (details) {
         final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
-        if (from >= 0 && from != lastIndex) {
-          _move(from, lastIndex);
+        if (from >= 0 && from != lastFree) {
+          _move(from, lastFree);
         }
       },
       builder: (context, candidates, _) {
         final hovering = candidates.isNotEmpty;
+        if (hovering) _activeDragTargetId = -1;
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
           child: Row(
@@ -535,13 +536,24 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     final translated = _lensRuIndex != null &&
         (lensTargets[_lensRuIndex]?.contains(token.id) ?? false);
 
-    if (puzzle.solved) {
-      return WordToken(word: token.text, state: state);
+    if (puzzle.solved || puzzle.isSlotLocked(index)) {
+      // Locked chips are green and immovable: no drag source, no target.
+      return withPlacementBurst(
+        chip: WordToken(word: token.text, state: state),
+        active: _burstTokenId == token.id,
+        serial: _burstSerial,
+      );
     }
 
     return DragTarget<int>(
-      key: ValueKey(token.id),
-      onWillAcceptWithDetails: (d) => d.data != token.id,
+      key: _tokenKeys.putIfAbsent(token.id, () => GlobalKey()),
+      onWillAcceptWithDetails: (d) {
+        final from = puzzle.tokens.indexWhere((t) => t.id == d.data);
+        if (from < 0 || from == index) return false;
+        // Hysteresis: while the finger stays within 8 logical pixels of the
+        // currently shown target, the marker does not jump to a neighbour.
+        return _hysteresisAllows(index, d.offset);
+      },
       onAcceptWithDetails: (d) {
         final from = puzzle.tokens.indexWhere((t) => t.id == d.data);
         _move(from, index);
@@ -549,6 +561,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       builder: (context, candidates, _) {
         var side = DropSide.none;
         if (candidates.isNotEmpty) {
+          _activeDragTargetId = token.id;
           final from = tokens.indexWhere((t) => t.id == candidates.first);
           side = from > index ? DropSide.before : DropSide.after;
         }
@@ -580,6 +593,20 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         );
       },
     );
+  }
+
+  /// Keeps the shown target stable while the finger oscillates on the
+  /// boundary: the previously shown target owns an 8-logical-pixel band.
+  /// Commit always goes to exactly the target the marker shows.
+  bool _hysteresisAllows(int newTokenId, Offset globalPosition) {
+    final previous = _activeDragTargetId;
+    if (previous == null || previous == newTokenId) return true;
+    final prevBox =
+        _tokenKeys[previous]?.currentContext?.findRenderObject() as RenderBox?;
+    if (prevBox == null || !prevBox.attached) return true;
+    final bounds =
+        prevBox.localToGlobal(Offset.zero) & prevBox.size;
+    return !bounds.inflate(8).contains(globalPosition);
   }
 
   Widget _buildStatus(PuzzleState puzzle) {
@@ -801,7 +828,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 /// Strips the horizontal gap before a separately written terminal mark
 /// when a sentence is DISPLAYED (data and chip indices stay untouched).
 String formatResultSentence(String raw) {
-  final text = raw.trimRight();
+  final text = raw.trim();
+  // Commas and terminal marks attach to the preceding word in these
+  // display strings; inner tokens and data stay untouched.
+  final withoutCommaGaps =
+      text.replaceAll(RegExp(r'[ \t\u00A0]+(?=,)'), '');
   final separatedMark = RegExp(r'[ \t\u00A0]+(\.\.\.|…|\?!|!\?|[.!?])$');
-  return text.replaceFirstMapped(separatedMark, (m) => m.group(1)!);
+  return withoutCommaGaps.replaceFirstMapped(
+      separatedMark, (m) => m.group(1)!);
 }

@@ -216,18 +216,40 @@ def run_import(root: Path, strict: bool):
             report["skipped_levels"].append({"level": level_id, "reason": problem})
             exported[level_id] = None
             continue
-        exported[level_id] = {"links": unique}
+        exported[level_id] = {"source": "talp_import", "links": unique}
         report["approved"].append({"level": level_id, "corpus_line": line,
                                    "links": len(unique)})
 
     # Managed levels always receive the fresh result (None on failure):
     # stale generated links must never survive a failed re-import.
-    managed_ids = set(APPROVED)
+    # Levels managed by a PREVIOUS run but no longer in APPROVED are
+    # cleared too (the manifest records who managed what last time);
+    # manual alignments (source != talp_import) are never touched.
+    manifest_path = out / "managed_levels.json"
+    previous_managed = set()
+    if manifest_path.exists():
+        previous_managed = set(
+            json.loads(manifest_path.read_text(encoding="utf-8"))
+        )
+    managed_ids = set(APPROVED) | previous_managed
     for lv in levels:
-        if lv["id"] in managed_ids:
-            lv["alignment"] = exported.get(lv["id"])
-        elif not isinstance(lv.get("alignment"), dict):
+        lv_id = lv["id"]
+        current = lv.get("alignment")
+        current_is_talp = (
+            isinstance(current, dict) and current.get("source") == "talp_import"
+        )
+        if lv_id in managed_ids:
+            lv["alignment"] = exported.get(lv_id)
+        elif current_is_talp:
+            # Managed before, removed from APPROVED now: clear the stale
+            # generated links instead of keeping them alive.
             lv["alignment"] = None
+            report.setdefault("cleared_stale", []).append(lv_id)
+        elif not isinstance(current, dict):
+            lv["alignment"] = None
+    manifest_path.write_text(
+        json.dumps(sorted(managed_ids)), encoding="utf-8"
+    )
     # The story-only level is managed by this importer too: created when
     # missing, and its storyOnly flag is enforced when it already exists
     # (older imports created it without the flag).

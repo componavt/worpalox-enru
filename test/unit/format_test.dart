@@ -8,7 +8,16 @@ void main() {
     expect(formatResultSentence('Двери распахнулись .'),
         'Двери распахнулись.');
     expect(formatResultSentence('Здесь есть , однако , одно обстоятельство ...'),
-        'Здесь есть , однако , одно обстоятельство...');
+        'Здесь есть, однако, одно обстоятельство...');
+  });
+
+  test('formatResultSentence glues commas (owner examples)', () {
+    expect(formatResultSentence('Oh , yes ...'), 'Oh, yes...');
+    expect(formatResultSentence('Сиди там , пока тебя не сменят .'),
+        'Сиди там, пока тебя не сменят.');
+    expect(formatResultSentence('Oh, yes...'), 'Oh, yes...');
+    expect(formatResultSentence('Сиди там, пока тебя не сменят.'),
+        'Сиди там, пока тебя не сменят.');
   });
 
   test('formatResultSentence keeps already glued marks and inner punctuation',
@@ -18,7 +27,7 @@ void main() {
         'I was sent for at eight o ’ clock on the 17th.');
     // Inner punctuation is display-untouched: only the terminal mark moves.
     expect(formatResultSentence('Wait , one , two , three !'),
-        'Wait , one , two , three!');
+        'Wait, one, two, three!');
   });
 
   test('formatResultSentence trims trailing whitespace', () {

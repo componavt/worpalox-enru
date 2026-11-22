@@ -1,4 +1,10 @@
 {
+  "source_checksums": {
+    "enru.src.sha256": "ed8b363353e39a57ff324359294ea8067b897e59c312eafcb8a9bb381309c545",
+    "enru.tgt.sha256": "d515044434312d30d0d02f17c18eac3c267003c69fbb660051b81a43dd5e9bcd",
+    "enru.talp.sha256": "3120cb872f5c05804578170f0b661ce3611b859ee4b58fbc2a0ec22d1a481ace",
+    "levels.json.sha256": "a57f3ef2feed19406d31aa400af6e537e987da3a03b5643314f1649903ab1536"
+  },
   "total_lines": 881,
   "files_in_sync": true,
   "talp_base": "1-based (verified on line 205: 2-1 3-2 4-2 5-3)",
@@ -241,6 +247,18 @@
   "length_ratio_min": 0.31,
   "length_ratio_max": 14.0,
   "length_ratio_outliers_15": 147,
-  "levels_found": 31,
-  "levels_total": 31
+  "levels_found": 32,
+  "levels_total": 32,
+  "pass1_verdicts": {
+    "ok": 863,
+    "duplicate": 13,
+    "no_links": 3,
+    "out_of_bounds": 2
+  },
+  "boundary_flags": {
+    "all_caps": 31,
+    "no_terminal": 158,
+    "lowercase_start": 2,
+    "unclosed_quote": 41
+  }
 }

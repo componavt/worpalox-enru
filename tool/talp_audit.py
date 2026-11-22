@@ -14,6 +14,7 @@ Everything here is descriptive; no game data is modified. talp indices are
 """
 
 import argparse
+import hashlib
 import csv
 import json
 import random
@@ -58,7 +59,16 @@ def main():
     talp_lines = (CORPUS / "enru.talp").read_text(encoding="utf-8").splitlines()
     levels = json.loads((CORPUS / "levels.json").read_text(encoding="utf-8"))
 
+    def sha256(path):
+        return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
     summary = {}
+    summary["source_checksums"] = {
+        "enru.src.sha256": sha256(CORPUS / "enru.src"),
+        "enru.tgt.sha256": sha256(CORPUS / "enru.tgt"),
+        "enru.talp.sha256": sha256(CORPUS / "enru.talp"),
+        "levels.json.sha256": sha256(CORPUS / "levels.json"),
+    }
     if not (len(src_lines) == len(tgt_lines) == len(talp_lines)):
         print(
             "FATAL: file line counts differ: "
@@ -145,6 +155,20 @@ def main():
         else:
             en_text_seen[norm_en] = number
 
+        # Source-boundary heuristics (pass 1, GPT scheme): cheap signals
+        # that a line is a heading/author/fragment, not narrative prose.
+        stripped_en = en.strip()
+        letters = sum(ch.isalpha() for ch in stripped_en)
+        all_caps = (
+            letters >= 3
+            and stripped_en == stripped_en.upper()
+            and any(ch.isalpha() for ch in stripped_en)
+        )
+        ends_terminal = bool(en_toks) and en_toks[-1] in terminal
+        starts_lowercase = bool(en_toks) and en_toks[0][:1].islower()
+        quotes = stripped_en.count('"') + stripped_en.count(chr(8220)) + stripped_en.count(chr(8221))
+        unclosed_quote = quotes % 2 == 1
+
         rows.append(
             {
                 "line_id": number,
@@ -164,6 +188,17 @@ def main():
                 "inversion_pairs": " ".join(f"{b}<{a}" for b, a in inversions),
                 "length_ratio": ratio,
                 "duplicate_of": "",
+                "flag_all_caps": int(all_caps),
+                "flag_no_terminal": int(not ends_terminal),
+                "flag_lowercase_start": int(starts_lowercase),
+                "flag_unclosed_quote": int(unclosed_quote),
+                "verdict": (
+                    "out_of_bounds" if oob
+                    else "duplicate" if norm_en in en_text_seen and False
+                    else "no_links" if not links
+                    else "duplicate" if number in {d[0] for d in duplicates}
+                    else "ok"
+                ),
             }
         )
 
@@ -247,6 +282,13 @@ def main():
             ),
             "levels_found": found,
             "levels_total": len(levels),
+            "pass1_verdicts": dict(Counter(r["verdict"] for r in rows)),
+            "boundary_flags": {
+                "all_caps": sum(r["flag_all_caps"] for r in rows),
+                "no_terminal": sum(r["flag_no_terminal"] for r in rows),
+                "lowercase_start": sum(r["flag_lowercase_start"] for r in rows),
+                "unclosed_quote": sum(r["flag_unclosed_quote"] for r in rows),
+            },
         }
     )
 

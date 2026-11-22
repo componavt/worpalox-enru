@@ -38,6 +38,7 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
       _puzzle = PuzzleState.fixed(
         level: soundLabLevel(),
         order: _startOrder,
+        locking: true,
       );
       _selectedIndex = null;
       _burstTokenId = null;
@@ -51,29 +52,26 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
     if (from < 0 || from >= tokens.length) return;
 
     final moved = tokens[from];
-    final wasCorrect = puzzle.isPositionCorrect(from);
     final reward = puzzle.moveToken(from, to);
     if (reward < 0) return;
 
-    final shouldCelebrate =
-        !puzzle.solved &&
-        !wasCorrect &&
-        puzzle.isPositionCorrect(to) &&
-        _celebratedTokenIds.add(moved.id);
+    // Same locking event as the main game: the placed chip turns green and
+    // the single placement sound plays for the newlyLockedSlot.
+    final lockedNow = puzzle.newlyLockedSlot != null;
 
     setState(() {
       _selectedIndex = null;
-      _burstTokenId = shouldCelebrate ? moved.id : null;
-      if (shouldCelebrate) _burstSerial++;
+      _burstTokenId = lockedNow ? moved.id : null;
+      if (lockedNow) _burstSerial++;
     });
 
-    if (shouldCelebrate) {
+    if (lockedNow) {
       context.read<PlacementAudio>().playCorrectPlacement();
     }
   }
 
   void _handleTap(int index) {
-    if (_puzzle.solved) return;
+    if (_puzzle.solved || _puzzle.isSlotLocked(index)) return;
     final selected = _selectedIndex;
     if (selected == null) {
       setState(() => _selectedIndex = index);
@@ -86,6 +84,7 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
 
   WordTokenState _stateFor(int index) {
     if (_puzzle.solved) return WordTokenState.solved;
+    if (_puzzle.isSlotLocked(index)) return WordTokenState.locked;
     if (_selectedIndex == index) return WordTokenState.selected;
     return WordTokenState.normal;
   }
@@ -93,6 +92,15 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
   Widget _buildToken(int index) {
     final token = _puzzle.tokens[index];
     final state = _stateFor(index);
+
+    if (_puzzle.isSlotLocked(index)) {
+      // Locked chips are green and immovable — same rule as the main game.
+      return withPlacementBurst(
+        chip: WordToken(word: token.text, state: state),
+        active: _burstTokenId == token.id,
+        serial: _burstSerial,
+      );
+    }
 
     Widget chip = WordToken(word: token.text, state: state);
     chip = withPlacementBurst(
@@ -106,12 +114,10 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
   @override
   Widget build(BuildContext context) {
     final audio = context.watch<PlacementAudio>();
-    final currentLabel = audio.selectedId == offSoundId
-        ? 'Off'
-        : placementSounds
-            .where((s) => s.id == audio.selectedId)
-            .map((s) => s.label)
-            .first;
+    var currentLabel = 'Off';
+    for (final sound in placementSounds) {
+      if (sound.id == audio.selectedId) currentLabel = sound.label;
+    }
 
     return Scaffold(
       appBar: AppBar(

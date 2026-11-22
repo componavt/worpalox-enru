@@ -26,6 +26,7 @@ class ScoringService {
   static const prelearnPoints = 10;
 
   ScoreResult calculateScore({
+    bool lockingMode = false,
     required bool solved,
     required int moves,
     required int minMoves,
@@ -46,7 +47,9 @@ class ScoringService {
     return ScoreResult(
       placementPoints: placements * placementPoints,
       solveBonus: solveBonus,
-      efficiencyBonus: efficiency,
+      // In green-locking mode n - LCS no longer bounds the best play
+      // (locks change the game), so the Perfect bonus is withheld.
+      efficiencyBonus: lockingMode ? 0 : efficiency,
       hintPenalty: hints * hintPenalty,
       baseLearning: baseLearningProgress,
       noHintLearningBonus: hints == 0 ? noHintLearningBonus : 0,

@@ -37,19 +37,31 @@ class PuzzleState {
   final Set<int> _rewardedPositions = {};
   int _placementRewards = 0;
 
+  /// Green-locking mode: chips the player placed correctly become
+  /// immovable for the rest of the run; other chips reorder within the
+  /// free slots and jump over locked ones.
+  bool lockingEnabled = false;
+  final Set<int> _lockedSlots = {};
+  int? _newlyLockedSlot;
+
   /// Minimal number of moves needed to solve the initial shuffle.
   late final int minMoves;
 
   PuzzleState._(this.level, this._correct, this.terminalPunctuation)
     : _current = const [];
 
-  factory PuzzleState({required Level level, Random? random}) {
+  factory PuzzleState({
+    required Level level,
+    Random? random,
+    bool locking = false,
+  }) {
     final tokens = tokenize(level.english);
     var terminal = '';
     if (tokens.length > 1 && _terminalMarks.contains(tokens.last)) {
       terminal = tokens.removeLast();
     }
     final state = PuzzleState._(level, tokens, terminal);
+    state.lockingEnabled = locking;
     state._current = state._shuffled(random ?? Random());
     state.minMoves = minimalMoves(
       state._current.map((t) => t.text).toList(),
@@ -97,6 +109,26 @@ class PuzzleState {
   int get hintCount => _hintCount;
   int get placementRewards => _placementRewards;
   bool get solved => _solved;
+
+  /// True when the chip at [index] sits in a locked (green) slot.
+  bool isSlotLocked(int index) => _lockedSlots.contains(index);
+
+  /// Display indices of the movable (non-locked) chips, in order.
+  List<int> get freeSlots => [
+    for (var i = 0; i < _current.length; i++)
+      if (!_lockedSlots.contains(i)) i,
+  ];
+
+  /// The insertion point for the end drop zone: the last FREE slot (the
+  /// terminal mark of the sentence never becomes a lock target).
+  int get lastFreeSlot {
+    final free = freeSlots;
+    return free.isEmpty ? 0 : free.last;
+  }
+
+  /// The slot the last player move locked, if any. The screens use it for
+  /// the green state and the single placement-sound request.
+  int? get newlyLockedSlot => _newlyLockedSlot;
   Duration get elapsed => (_solveTime ?? DateTime.now()).difference(_startTime);
 
   bool isPositionCorrect(int index) => _current[index].text == _correct[index];
@@ -114,9 +146,35 @@ class PuzzleState {
         to >= _current.length) {
       return -1;
     }
-    final token = _current.removeAt(from);
-    _current.insert(to, token);
-    _moveCount++;
+    _newlyLockedSlot = null;
+    if (lockingEnabled) {
+      if (_lockedSlots.contains(from) || _lockedSlots.contains(to)) {
+        return -1;
+      }
+      // Reorder only the free slots; locked chips keep their positions and
+      // the moving chip jumps over them.
+      final free = [
+        for (var i = 0; i < _current.length; i++)
+          if (!_lockedSlots.contains(i)) i,
+      ];
+      final fromRank = free.indexOf(from);
+      final toRank = free.indexOf(to);
+      final movable = [for (final i in free) _current[i]];
+      final movedToken = movable.removeAt(fromRank);
+      movable.insert(toRank, movedToken);
+      for (var rank = 0; rank < free.length; rank++) {
+        _current[free[rank]] = movable[rank];
+      }
+      _moveCount++;
+      if (_current[to].text == _correct[to]) {
+        _lockedSlots.add(to);
+        _newlyLockedSlot = to;
+      }
+    } else {
+      final token = _current.removeAt(from);
+      _current.insert(to, token);
+      _moveCount++;
+    }
 
     var newlyCorrect = 0;
     for (var i = 0; i < _current.length; i++) {
@@ -145,6 +203,7 @@ class PuzzleState {
   factory PuzzleState.fixed({
     required Level level,
     required List<String> order,
+    bool locking = false,
   }) {
     final tokens = tokenize(level.english);
     var terminal = '';
@@ -152,6 +211,7 @@ class PuzzleState {
       terminal = tokens.removeLast();
     }
     final state = PuzzleState._(level, tokens, terminal);
+    state.lockingEnabled = locking;
     final correct = state._correct;
     final used = List<bool>.filled(correct.length, false);
     final ids = <int>[];

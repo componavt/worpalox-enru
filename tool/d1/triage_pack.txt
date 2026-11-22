@@ -1,0 +1,1743 @@
+=== 34 | mov2 lnk2 rel1 caps0 noterm1 lcase0 q0
+EN: Mind games
+RU: Интеллектуальные игры
+=== 35 | mov28 lnk31 rel20 caps0 noterm0 lcase0 q0
+EN: Lieutenant - Colonel Steven Collins assesses the Coalition ’ s perception management operations before , during and after Operation Iraqi Freedom as well as their implications for NATO .
+RU: Подполковник Стивен Коллинз оценивает коалиционные операции по управлению восприятием в период до операции « Иракская свобода », в ходе ее проведения и после ее окончания , а также их значимость для НАТО .
+=== 36 | mov3 lnk4 rel2 caps0 noterm0 lcase0 q0
+EN: Why so glum ?
+RU: Что такая мрачная ?
+=== 37 | mov29 lnk28 rel14 caps0 noterm0 lcase0 q0
+EN: She slid open the glass door and , once inside the car , looked around , then right away dumped her backpack on the empty seat next to mine .
+RU: Она открыла раздвижную стеклянную дверь и , оказавшись в вагоне , огляделась по сторонам и тут же бросила рюкзак на свободное место рядом со мной .
+=== 38 | mov10 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: I watched her get on at the station in Florence .
+RU: Я смотрел , как она садится в поезд во Флоренции .
+=== 39 | mov48 lnk32 rel20 caps0 noterm0 lcase0 q0
+EN: She took off her leather jacket , put down the English - language paperback she was reading , then placed a square white box on the luggage rack and threw herself onto the seat diagonally across from mine in what seemed a restless , ill - tempered huff .
+RU: Она сняла кожаную куртку , положила на сиденье книгу на английском языке в бумажной обложке , поставила квадратную белую коробку на багажную полку и уселась в кресло наискосок от меня , недовольно фыркнув , как будто никак не могла успокоиться .
+=== 40 | mov34 lnk33 rel19 caps0 noterm0 lcase0 q0
+EN: She reminded me of someone who ’ d just had a heated argument seconds before boarding and was still stewing over the cutting words either she or someone else had spoken before hanging up .
+RU: Было похоже , что за несколько секунд до того , как сесть в поезд , она с кем - то ожесточенно спорила и все еще переваривала резкие слова , которые она сама или кто - то другой сказал , прежде чем повесить трубку .
+=== 41 | mov30 lnk21 rel12 caps0 noterm0 lcase0 q0
+EN: Her dog , which she was trying to keep tucked between her ankles while holding a red leash looped around her fist , seemed no less jittery than she was .
+RU: Она пыталась удержать между лодыжками собаку на красном поводке , обмотанном вокруг кулака : та как будто нервничала не меньше хозяйки .
+=== 42 | mov36 lnk34 rel23 caps0 noterm0 lcase0 q0
+EN: “ Buona , good girl ,” she finally said , hoping to calm it down , “ buona ,” she repeated , as the dog still fidgeted and tried to squirm out of the firm grip .
+RU: « Buona , хорошая девочка », — сказала моя попутчица , пытаясь ее успокоить . « Buona », — повторила она , но собака по - прежнему ерзала и пыталась вырваться из ее хватки .
+=== 43 | mov23 lnk29 rel10 caps0 noterm0 lcase0 q0
+EN: The presence of the dog annoyed me , and instinctively I refused to uncross my legs or budge to make room for it .
+RU: Присутствие собаки меня раздражало , и я намеренно продолжал сидеть , закинув ногу на ногу , и даже не пытался подвинуться , чтобы дать ей больше места .
+=== 44 | mov14 lnk19 rel6 caps0 noterm0 lcase0 q0
+EN: But she didn ’ t seem to notice either me or my body language .
+RU: Но девушка как будто бы не замечала ни меня , ни того , что говорило мое тело .
+=== 45 | mov41 lnk29 rel18 caps0 noterm0 lcase0 q0
+EN: Instead , she immediately rummaged through the backpack , found a slim plastic bag , and took out two tiny bone - shaped treats for the dog , then laid them in her palm and watched the dog lick them off .
+RU: Она сразу же принялась рыться в рюкзаке , нашла тонкий пакетик и , достав из него две крошечные печенюшки в форме косточки , положила на ладонь , а собака их тут же слизала .
+=== 51 | mov8 lnk6 rel5 caps0 noterm0 lcase0 q0
+EN: The word , the voice , the attitude .
+RU: Его слово , голос , манера .
+=== 52 | mov14 lnk18 rel9 caps0 noterm0 lcase0 q0
+EN: I ’ d never heard anyone use “ later ” to say goodbye before .
+RU: Я ни разу прежде не слышал , чтобы кто - то использовал « после » в качестве прощания .
+=== 53 | mov27 lnk26 rel12 caps0 noterm0 lcase0 q0
+EN: It sounded harsh , curt , and dismissive , spoken with the veiled indifference of people who may not care to see or hear from you again .
+RU: Оно звучало дерзко , нахально , пренебрежительно , с едва скрытым безразличием человека , не предполагающего встретиться вновь или получить весточку от вас .
+=== 54 | mov17 lnk15 rel8 caps0 noterm0 lcase0 q0
+EN: It is the first thing I remember about him , and I can hear it still today .
+RU: Это первое , что я помню о нем и что ясно слышу по сей день .
+=== 55 | mov1 lnk2 rel2 caps0 noterm0 lcase0 q0
+EN: Later !
+RU: После !
+=== 57 | mov29 lnk21 rel19 caps0 noterm0 lcase0 q0
+EN: Suddenly he ’ s shaking my hand , handing me his backpack , removing his suitcase from the trunk of the cab , asking if my father is home .
+RU: Он быстро пожимает мне руку , вручает свой рюкзак , вынимает чемодан из багажника , спрашивает , дома ли мой отец .
+=== 58 | mov56 lnk40 rel20 caps0 noterm0 lcase0 q0
+EN: It might have started right there and then : the shirt , the rolled - up sleeves , the rounded balls of his heels slipping in and out of his frayed espadrilles , eager to test the hot gravel path that led to our house , every stride already asking , Which way to the beach ?
+RU: Возможно , все началось именно тогда : с рубашки , с закатанных до локтей рукавов , с округлых пяток , то и дело выскальзывающих из поношенных эспадрилий в стремлении поскорее ощутить нагретую гравийную дорожку , ведущую к дому . В каждом шаге вопрос , Где тут пляж ?
+=== 59 | mov21 lnk10 rel4 caps0 noterm1 lcase0 q0
+EN: Douglas Adams : The Hitch Hiker ' s Guide to the Galaxy [ artefact . list . ru / library ]
+RU: Дуглас Адамс : Путеводитель хитч - хайкера по Галактике ; Вадим Филиппов [ Lib . ru ]
+=== 60 | mov18 lnk14 rel14 caps0 noterm1 lcase0 q0
+EN: For Jonny Brock and Clare Gorst and all other Arlingtonians for tea , sympathy , and a sofa
+RU: Броку и Клэр Горст , и всем прочим арлингтонцам -- с благодарностью за чай , диван и сочувствие
+=== 61 | mov24 lnk20 rel7 caps0 noterm0 lcase0 q0
+EN: Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun .
+RU: На самом конце Западного Завитка Галактики , в захолустье , даже не занесенном на звездные карты , есть маленькая желтая звезда , не привлекающая особого внимания .
+=== 62 | mov39 lnk39 rel15 caps0 noterm0 lcase0 q0
+EN: Orbiting this at a distance of roughly ninety - two million miles is an utterly insignificant little blue green planet whose undescended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea .
+RU: В 149 миллионах километров от нее вертится маленькая зелено - голубая планета . Населяющие ее разумные формы жизни , происходящие от обезьян , настолько примитивны , что до сих пор считают электронные часы едва ли не высшим достижением техники .
+=== 63 | mov75 lnk64 rel25 caps0 noterm0 lcase0 q0
+EN: This planet has -- or rather had -- a problem , which was this : most of the people on it were unhappy for pretty much of the time . Many solutions were suggested for this problem , but most of these were largely concerned with the movements of small green pieces of paper , which is odd because on the whole it wasn ' t the small green pieces of paper that were unhappy .
+RU: У этой планеты есть -- точнее , была -- своя Проблема : большая часть ее обитателей большую часть своей жизни было несчастно . Чтобы справиться с этой проблемой , предлагалось множество способов , но большинство из них сводилось к перемещению разноцветных бумажек . Почему перемещаться должны были бумажки , неясно -- ведь несчастны были отнюдь не они .
+=== 64 | mov26 lnk19 rel8 caps0 noterm0 lcase0 q0
+EN: And so the problem remained ; lots of the people were mean , and most of them were miserable , even the ones with digital watches .
+RU: Итак , справиться с этой Проблемой не удалось . К тому же , особыми талантами большинство обитателей этой планеты не отличалось , да что там -- они были просто посредственностями . Возможно , именно поэтому они и были несчастны , даже те , кто носил электронные часы .
+=== 65 | mov25 lnk21 rel5 caps0 noterm0 lcase0 q0
+EN: Many were increasingly of the opinion that they ' d all made a big mistake in coming down from the trees in the first place .
+RU: Все больше землян утверждало , что главной жизненной ошибкой их предков было то , что в далекой древности те спустились с деревьев .
+=== 66 | mov23 lnk23 rel13 caps0 noterm0 lcase0 q0
+EN: And some said that even the trees had been a bad move , and that no one should ever have left the oceans .
+RU: А некоторые даже говорили , что эволюция , создав сами деревья , сделала неверный шаг , и что вообще никому не стоило вылезать из океана .
+=== 67 | mov76 lnk74 rel31 caps0 noterm0 lcase0 q0
+EN: And then , one Thursday , nearly two thousand years after one man had been nailed to a tree for saying how great it would be to be nice to people for a change , one girl sitting on her own in a small cafe in Rickmansworth suddenly realized what it was that had been going wrong all this time , and she finally knew how the world could be made a good and happy place .
+RU: А как - то в четверг -- примерно через две тысячи лет после того , как одного из землян сородичи прибили к столбу гвоздями , за то , что он их призывал хоть немного подобреть , разнообразия ради -- одиноко сидевшая в маленьком кафе в Рикмэнсуорте молодая землянка неожиданно поняла , почему до сих пор все шло не так , как надо , и как сделать весь мир добрым и счастливым .
+=== 68 | mov20 lnk21 rel10 caps0 noterm0 lcase0 q0
+EN: This time it was right , it would work , and no one would have to get nailed to anything .
+RU: Ее идея была верна , и на этот раз все могло получиться , и никого ни к чему не прибили бы .
+=== 69 | mov24 lnk8 rel7 caps0 noterm0 lcase0 q0
+EN: The surface on which you work ( preferably marble ), the tools , the ingredients and your fingers should be chilled throughout the operation …
+RU: Хорошенько охладите поверхность стола ( желательно иметь мраморную доску ), а также продукты , посуду и кончики пальцев …
+=== 70 | mov9 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: ( Recipe for Puff Pastry in I . S .
+RU: Из рецепта бисквитного теста ( Л . С .
+=== 71 | mov16 lnk8 rel3 caps0 noterm1 lcase0 q1
+EN: And most men look at something besides your teeth , for god ’ s sake .”
+RU: А смотрели они только на мои зубы .
+=== 72 | mov16 lnk8 rel3 caps0 noterm1 lcase0 q1
+EN: And most men look at something besides your teeth , for god ’ s sake .”
+RU: А смотрели они только на мои зубы .
+=== 73 | mov4 lnk5 rel5 caps0 noterm0 lcase0 q0
+EN: Rombauerand M . R .
+RU: Ромбауэри М . Р .
+=== 74 | mov7 lnk4 rel2 caps0 noterm1 lcase0 q0
+EN: Becker , The Joy of Cooking .)
+RU: Бекер . Радости кулинара ).
+=== 75 | mov2 lnk2 rel1 caps1 noterm1 lcase0 q0
+EN: PART ONE
+RU: ЧАСТЬ ПЕРВАЯ
+=== 77 | mov22 lnk24 rel6 caps0 noterm0 lcase0 q0
+EN: I know I was all right on Friday when I got up ; if anything I was feeling more stolid than usual .
+RU: В пятницу утром я чувствовала себя вполне здоровой ; настроение у меня было даже ровнее обычного .
+=== 78 | mov28 lnk29 rel7 caps0 noterm0 lcase0 q0
+EN: When I went out to the kitchen to get breakfast Ainsley was there , moping : she said she had been to a bad party the night before .
+RU: Выйдя завтракать , я увидела Эйнсли , сидевшую на кухне с самым мрачным видом : оказалось , что накануне она попала на вечеринку , где , по ее словам , все мужчины были студенты - дантисты .
+=== 79 | mov22 lnk10 rel7 caps0 noterm0 lcase0 q0
+EN: She swore there had been nothing but dentistry students , which depressed her so much she had consoled herself by getting drunk .
+RU: Это подействовало на нее так угнетающе , что ей пришлось напиться .
+=== 80 | mov27 lnk22 rel6 caps0 noterm0 lcase0 q1
+EN: “ You have no idea how soggy it is ,” she said , “ having to go through twenty conversations about the insides of peoples ’ mouths .
+RU: — Ты не представляешь себе , какая это тоска , — сказала она . — Двадцать человек , один за другим , говорили со мной о болезнях полости рта !
+=== 81 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Jane Austen
+RU: ДЖЕЙН ОСТИН
+=== 82 | mov1 lnk2 rel0 caps0 noterm1 lcase0 q0
+EN: Persuasion
+RU: Доводы рассудка
+=== 83 | mov21 lnk23 rel6 caps0 noterm0 lcase0 q0
+EN: Vanity was the beginning and the end of Sir Walter Elliot ' s character ; vanity of person and of situation .
+RU: Тщеславие составляло главную черту в натуре сэра Уолтера ; Тщеславился он своими качествами и положением .
+=== 84 | mov22 lnk31 rel11 caps0 noterm0 lcase0 q0
+EN: He had been remarkably handsome in his youth ; and , at fifty - four , was still a very fine man .
+RU: В молодости он был до чрезвычайности хорош собой ; и в пятьдесят четыре года черты его еще сохраняли привлекательность .
+=== 85 | mov32 lnk28 rel10 caps0 noterm0 lcase0 q0
+EN: Few women could think more of their personal appearance than he did , nor could the valet of any new made lord be more delighted with the place he held in society .
+RU: Редко какая красавица так печется о своей свежести , как заботился о ней сэр Уолтер , и едва ли камердинер новоиспеченного лорда может более восхищаться своим положением в обществе .
+=== 86 | mov2 lnk2 rel1 caps0 noterm1 lcase0 q0
+EN: Chapter 1
+RU: ГЛАВА I
+=== 87 | mov116 lnk106 rel47 caps0 noterm0 lcase0 q0
+EN: Sir Walter Elliot , of Kellynch Hall , in Somersetshire , was a man who , for his own amusement , never took up any book but the Baronetage ; there he found occupation for an idle hour , and consolation in a distressed one ; there his faculties were roused into admiration and respect , by contemplating the limited remnant of the earliest patents ; there any unwelcome sensations , arising from domestic affairs changed naturally into pity and contempt as he turned over the almost endless creations of the last century ; and there , if every other leaf were powerless , he could read his own history with an interest which never failed .
+RU: Сэр Уолтер Эллиот из Киллинч - холла в Сомерсете был не такой человек , чтобы собственного удовольствия ради брать в руки другую какую - нибудь книгу , кроме " Книги баронетов "; в ней искал он занятий в час досуга и рассеяния в час печали ; в ней рассматривал он немногие из древних уцелевших грамот , возносясь духом от восторга и почтения ; в ней пропускал он бессчетные почти имена выскочек минувшего века с жалостью и презреньем , легко уводившими его помыслы от обременительных мирских забот ; и в ней же , когда уж не помогали все прочие страницы , всегда он мог с живым интересом прочесть собственную историю .
+=== 88 | mov12 lnk8 rel4 caps0 noterm1 lcase0 q0
+EN: This was the page at which the favorite volume always opened :
+RU: На этом месте и открывался обыкновенно любимый том :
+=== 89 | mov6 lnk6 rel5 caps1 noterm1 lcase0 q0
+EN: " ELLIOT OF KELLYNCH HALL ”.
+RU: " Эллиот из Киллинч - холла ”.
+=== 90 | mov81 lnk87 rel54 caps0 noterm1 lcase0 q0
+EN: Walter Elliot , born March 1 , 1760 , married , July 15 , 1784 , Elizabeth , daughter of James Stevenson , Esq . of South Park , in the county of Gloucester , by which lady ( who died 1800 ) he has issue Elizabeth , born June 1 , 1785 ; Anne , born August 9 , 1787 ; a still - born son , November 5 , 1789 ; Mary , born November 20 , 1791 ».
+RU: Уолтер Эллиот , рожденный марта 1 дня 1760 года , сочетался браком июля 15 дня 1784 года с Элизабет , дочерью Джеймса Стивенсона , поместье Саут - парк , что в Глостерском графстве ; От каковой супруги ( скончавшейся в 1800 году ) произвел он на свет Элизабет , рожденную июня 1 дня 1785 года ; Энн , рожденную августа 9 дня 1787 года ; мертворожденного сына , ноября 5 дня 1789 года ; Мэри , рожденную ноября 20 дня 1791 года ".
+=== 91 | mov89 lnk75 rel39 caps0 noterm0 lcase0 q0
+EN: Precisely such had the paragraph originally stood from the printer ' s hands ; but Sir Walter had improved it by adding , for the information of himself and his family , these words , after the date of Mary ' s birth -- " Married , December 16 , 1810 , Charles , son and heir of Charles Musgrove , Esq . of Uppercross , in the county of Somerset ", and by inserting most accurately the day of the month on which he had lost his wife .
+RU: В таком точно виде вышло некогда сие введение из рук печатника ; однако сэр Уолтер усовершенствовал его , добавив для собственного сведения и для сведения потомков после года рождения Мэри следующие слова : " Сочеталась браком декабря 16 дня 1810 года с Чарлзом , сыном и наследником Чарлза Мазгроува , поместье Апперкросс , что в Сомерсетском графстве ", и присовокупив день и месяц к тому году , когда лишился он супруги .
+=== 92 | mov112 lnk97 rel48 caps0 noterm1 lcase0 q0
+EN: Then followed the history and rise of the ancient and respectable family , in the usual terms ; how it had been first settled in Cheshire ; how mentioned in Dugdale , serving the office of high sheriff , representing a borough in three successive parliaments , exertions of loyalty , and dignity of baronet , in the first year of Charles II , with all the Marys and Elizabeths they had married ; forming altogether two handsome duodecimo pages , and concluding with the arms and motto :--" Principal seat , Kellynch Hall , in the county of Somerset ", and Sir Walter ' s handwriting again in this finale :--
+RU: Далее , как водится , следовала история восхождения древнего и славного семейства ; как впервые обосновалось оно в Чешире ; как затем обнаружилось в Дагдэйле , подарив округу нескольких шерифов и представителей в трех парламентах кряду , как выказывали сыны его верность короне и обрели баронетское достоинство в первый год правления Карла Второго -- с перечислением всех Элизабет и Мэри , которых брали они себе в жены ; все это составляло целых две страницы в осьмушку и заключалось гербом и девизом : " Главное поместье Киллинч - холл ", после чего , уже снова рукою сэра Уолтера , было начертано :
+=== 93 | mov18 lnk14 rel12 caps0 noterm1 lcase0 q1
+EN: " Heir presumptive , William Walter Elliot , Esq ., great grandson of the second Sir Walter ».
+RU: " Предполагаемый наследник Уильям Уолтер Эллиот , правнук второго сына Уолтера ".
+=== 94 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Jane Austen
+RU: Джейн Остен
+=== 100 | mov49 lnk43 rel24 caps0 noterm0 lcase0 q0
+EN: However little known the feelings or views of such a man may be on his first entering a neighbourhood , this truth is so well fixed in the minds of the surrounding families , that he is considered the rightful property of some one or other of their daughters .
+RU: Как бы мало ни были известны намерения и взгляды такого человека после того , как он поселился на новом месте , эта ИСТИНА настолько прочно овладевает умами неподалеку живущих семейств , что на него тут же начинают смотреть как на законную добычу той или другой соседской дочки .
+=== 101 | mov26 lnk34 rel21 caps0 noterm0 lcase0 q1
+EN: " My dear Mr . Bennet ," said his lady to him one day , " have you heard that Netherfield Park is let at last ?
+RU: — Дорогой мистер Беннет , — сказала как - то раз миссис Беннет своему мужу , — слышали вы , что Незерфилд - парк наконец больше не будет пустовать ?
+=== 102 | mov8 lnk10 rel5 caps0 noterm0 lcase0 q0
+EN: Mr . Bennet replied that he had not .
+RU: Мистер Беннет ответил , что он этого не слышал .
+=== 103 | mov25 lnk27 rel5 caps0 noterm0 lcase0 q1
+EN: " But it is ," returned she ; " for Mrs . Long has just been here , and she told me all about it .
+RU: — Тем не менее это так , — продолжала она . — Только что заходила миссис Лонг и сообщила мне эту новость !
+=== 104 | mov6 lnk7 rel2 caps0 noterm0 lcase0 q0
+EN: Mr . Bennet made no answer .
+RU: Мистер Беннет промолчал .
+=== 106 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Isaac Asimov
+RU: Айзек Азимов
+=== 108 | mov7 lnk8 rel2 caps0 noterm0 lcase0 q1
+EN: “ I didn ’ t get anywhere .
+RU: — Я ничего не добился .
+=== 109 | mov24 lnk19 rel7 caps0 noterm0 lcase0 q1
+EN: ” He had a brooding look about him that went with his deep - set eyes and the slight asymmetry of his long chin .
+RU: Лицо его было хмурым . Оно и всегда казалось насупленным из - за глубоко посаженных глаз и чуть скошенного набок подбородка .
+=== 110 | mov21 lnk22 rel2 caps0 noterm0 lcase0 q0
+EN: There was a brooding look about him at the best of times , and this was not the best of times .
+RU: Даже когда он был в хорошем настроении . Но сейчас его настроение никак нельзя было назвать хорошим .
+=== 111 | mov18 lnk17 rel12 caps0 noterm1 lcase0 q0
+EN: DEDICATION To Mankind and the hope that the war against folly may someday be won , after all
+RU: Посвящается Человечеству в надежде , что война с безрассудством все - таки будет выиграна .
+=== 112 | mov1 lnk1 rel0 caps0 noterm1 lcase0 q0
+EN: 1
+RU: ЧАСТЬ ПЕРВАЯ .
+=== 118 | mov8 lnk9 rel3 caps0 noterm0 lcase0 q0
+EN: “ No good !” said Lamont , sharply .
+RU: — Без толку ! — резко бросил Ламонт .
+=== 119 | mov4 lnk5 rel3 caps0 noterm1 lcase0 q0
+EN: L . Frank Baum
+RU: Л . Ф . Баум
+=== 120 | mov5 lnk5 rel3 caps1 noterm1 lcase0 q0
+EN: THE WONDERFUL WIZARD OF OZ
+RU: УДИВИТЕЛЬНЫЙ ВОЛШЕБНИК ИЗ СТРАНЫ ОЗ
+=== 121 | mov22 lnk29 rel9 caps0 noterm0 lcase0 q0
+EN: When Dorothy stood in the doorway and looked around , she could see nothing but the great gray prairie on every side .
+RU: Выйдя из дому и глядя по сторонам , Дороти видела вокруг только степь .
+=== 122 | mov24 lnk13 rel4 caps0 noterm0 lcase0 q0
+EN: Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions .
+RU: Она тянулась до самого горизонта : унылая равнина — ни деревца , ни домика .
+=== 123 | mov1 lnk2 rel2 caps0 noterm0 lcase0 q0
+EN: 1 .
+RU: 1 .
+=== 124 | mov2 lnk1 rel0 caps0 noterm1 lcase0 q0
+EN: The Cyclone
+RU: УРАГАН
+=== 125 | mov31 lnk18 rel14 caps0 noterm0 lcase0 q0
+EN: Dorothy lived in the midst of the great Kansas prairies , with Uncle Henry , who was a farmer , and Aunt Em , who was the farmer ' s wife .
+RU: Девочка Дороти жила в маленьком домике посреди огромной канзасской степи . Ее дядя Генри был фермером , а тетя Эм вела хозяйство .
+=== 126 | mov19 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: Their house was small , for the lumber to build it had to be carried by wagon many miles .
+RU: Домик был маленький , потому что доски для его постройки пришлось везти на повозке издалека .
+=== 127 | mov42 lnk25 rel16 caps0 noterm0 lcase0 q0
+EN: There were four walls , a floor and a roof , which made one room ; and this room contained a rusty looking cookstove , a cupboard for the dishes , a table , three or four chairs , and the beds .
+RU: В нем были четыре стены , крыша , пол и одна - единственная комната , в которой стояли старая ржавая плита , буфет , стол , несколько стульев и две кровати .
+=== 128 | mov21 lnk19 rel17 caps0 noterm0 lcase0 q0
+EN: Uncle Henry and Aunt Em had a big bed in one corner , and Dorothy a little bed in another corner .
+RU: В одном углу помещалась большая кровать дяди Генри и тети Эм , а в другом — маленькая кроватка Дороти .
+=== 129 | mov48 lnk33 rel10 caps0 noterm0 lcase0 q0
+EN: There was no garret at all , and no cellar — except a small hole dug in the ground , called a cyclone cellar , where the family could go in case one of those great whirlwinds arose , mighty enough to crush any building in its path .
+RU: В доме не было чердака , да и подвала тоже , если не считать ямы под полом , где семья спасалась от ураганов . В этих местах ураганы бывали такими свирепыми , что им ничего не стоило смести со своего пути маленький домик .
+=== 130 | mov26 lnk21 rel11 caps0 noterm0 lcase0 q0
+EN: It was reached by a trap door in the middle of the floor , from which a ladder led down into the small , dark hole .
+RU: На полу посреди комнаты был люк , а под ним — лестница , которая вела в убежище .
+=== 131 | mov3 lnk4 rel2 caps0 noterm1 lcase0 q0
+EN: Ozma of Oz
+RU: ОЗМА ИЗ СТРАНЫ ОЗ
+=== 132 | mov1 lnk2 rel2 caps0 noterm0 lcase0 q0
+EN: 1 .
+RU: 1 .
+=== 133 | mov36 lnk24 rel8 caps0 noterm0 lcase0 q0
+EN: And the clouds were so thick in the sky that the sunlight couldn ' t get through them ; so that the day grew dark as night , which added to the terrors of the storm .
+RU: Небо затянулось серыми тучами , солнце скрылось . Стало темно как ночью . Добавьте к этому волны чуть не до небес , и вы получите впечатляющее зрелище .
+=== 134 | mov6 lnk4 rel4 caps0 noterm1 lcase0 q0
+EN: The Girl in the Chicken Coop
+RU: ДЕВОЧКА В КУРЯТНИКЕ
+=== 135 | mov17 lnk5 rel2 caps0 noterm0 lcase0 q0
+EN: The wind blew hard and joggled the water of the ocean , sending ripples across its surface .
+RU: Над бескрайними океанскими просторами выл - завывал ветер .
+=== 136 | mov23 lnk13 rel1 caps0 noterm0 lcase0 q0
+EN: Then the wind pushed the edges of the ripples until they became waves , and shoved the waves around until they became billows .
+RU: Озорнику нравилось поднимать волны , становившиеся с каждой минутой все больше и больше .
+=== 137 | mov13 lnk0 rel0 caps0 noterm0 lcase0 q0
+EN: The billows rolled dreadfully high : higher even than the tops of houses .
+RU: ---
+=== 138 | mov32 lnk31 rel5 caps0 noterm0 lcase0 q0
+EN: Some of them , indeed , rolled as high as the tops of tall trees , and seemed like mountains ; and the gulfs between the great billows were like deep valleys .
+RU: Сначала они были с фермерский домик , потом с высокое дерево , наконец с огромную гору . Между этими водяными Альпами или Гималаями открывались широкие , уходившие к горизонту долины .
+=== 139 | mov50 lnk46 rel7 caps0 noterm0 lcase0 q0
+EN: All this mad dashing and splashing of the waters of the big ocean , which the mischievous wind caused without any good reason whatever , resulted in a terrible storm , and a storm on the ocean is liable to cut many queer pranks and do a lot of damage .
+RU: Эти шалости привели к тому , что ветер нагнал жуткий шторм , а это , как известно , может натворить немало бед и причинить неприятности тем , кого непогода застала в открытом море .
+=== 140 | mov18 lnk14 rel5 caps0 noterm0 lcase0 q0
+EN: At the time the wind began to blow , a ship was sailing far out upon the waters .
+RU: Как раз в это самое время далеко от берегов оказался корабль .
+=== 141 | mov70 lnk48 rel6 caps0 noterm0 lcase0 q0
+EN: When the waves began to tumble and toss and to grow bigger and bigger the ship rolled up and down , and tipped sidewise — first one way and then the other — and was jostled around so roughly that even the sailor - men had to hold fast to the ropes and railings to keep themselves from being swept away by the wind or pitched headlong into the sea .
+RU: Волны - гиганты кидали его из стороны в сторону , подбрасывали то вверх , то вниз , наклоняли то вправо , то влево , и даже бывалым морякам приходилось крепко держаться за поручни и канаты : внезапный порыв урагана или сильная волна могли швырнуть зазевавшегося за борт , в морскую пучину .
+=== 142 | mov4 lnk5 rel3 caps0 noterm1 lcase0 q0
+EN: L . Frank Baum
+RU: Л . Ф . Баум
+=== 143 | mov6 lnk6 rel5 caps0 noterm1 lcase0 q0
+EN: Dorothy and the Wizard in Oz
+RU: ДОРОТИ И ВОЛШЕБНИК В СТРАНЕ ОЗ
+=== 144 | mov46 lnk35 rel19 caps0 noterm0 lcase0 q0
+EN: The reason he was so late was because all through the night there were times when the solid earth shook and trembled under him , and the engineer was afraid that at any moment the rails might spread apart and an accident happen to his passengers .
+RU: Запаздывал он потому , что накануне всю ночь напролет земля под рельсами вздрагивала и сотрясалась . Машинист опасался , что рельсы того и гляди разойдутся , и тогда пассажирам несдобровать .
+=== 145 | mov9 lnk9 rel5 caps0 noterm0 lcase0 q0
+EN: So he moved the cars slowly and with caution .
+RU: Поэтому он вел паровоз медленно и осторожно .
+=== 146 | mov1 lnk2 rel2 caps0 noterm0 lcase0 q0
+EN: 1 .
+RU: 1 .
+=== 147 | mov2 lnk1 rel1 caps0 noterm1 lcase0 q0
+EN: The Earthquake
+RU: ЗЕМЛЕТРЯСЕНИЕ
+=== 181 | mov31 lnk25 rel12 caps0 noterm0 lcase0 q0
+EN: At night , when the trees washed together , he flashed his gaze like a beacon from this lighthouse in all directions over swarming seas of elm and oak and maple .
+RU: По ночам , когда вязы , дубы и клены сливались в одно беспокойное море , Дуглас окидывал его взглядом , пронзавшим тьму , точно маяк .
+=== 182 | mov2 lnk2 rel1 caps0 noterm1 lcase0 q0
+EN: Now ...
+RU: И сегодня ...
+=== 183 | mov19 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: “ Boy ,” whispered Douglas . A whole summer ahead to cross off the calendar , day by day .
+RU: — Вот здорово ! — шепнул он . Впереди целое лето , несчетное множество дней — чуть не полкалендаря .
+=== 184 | mov25 lnk26 rel13 caps0 noterm0 lcase0 q0
+EN: Like the goddess Siva in the travel books , he saw his hands jump everywhere , pluck sour apples , peaches , and midnight plums .
+RU: Он уже видел себя многоруким , как божество Шива из книжки про путешествия : только поспевай рвать еще зеленые яблоки , персики , черные как ночь сливы .
+=== 186 | mov14 lnk14 rel7 caps0 noterm1 lcase0 q0
+EN: FAHRENHEIT 451 -- The temperature at which book - paper catches fire and burns
+RU: 451 ° по Фаренгейту температура , при которой воспламеняется и горит бумага .
+=== 187 | mov16 lnk12 rel9 caps0 noterm0 lcase0 q0
+EN: IT was a special pleasure to see things eaten , to see things blackened and changed .
+RU: Какое - то особое наслаждение видеть , как огонь пожирает вещи , как они чернеют и меняются .
+=== 188 | mov55 lnk46 rel19 caps0 noterm0 lcase0 q0
+EN: With the brass nozzle in his fists , with this great python spitting its venomous kerosene upon the world , the blood pounded in his head , and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history .
+RU: Медный наконечник брандспойта зажат в кулаках , громадный питон изрыгает на мир ядовитую струю керосина , кровь стучит в висках , а руки кажутся руками диковинного дирижера , исполняющего симфонию огня и разрушения , превращая в пепел изорванные , обуглившиеся страницы истории .
+=== 189 | mov48 lnk39 rel23 caps0 noterm0 lcase0 q0
+EN: With his symbolic helmet numbered 451 on his stolid head , and his eyes all orange flame with the thought of what came next , he flicked the igniter and the house jumped up in a gorging fire that burned the evening sky red and yellow and black .
+RU: Символический шлем , украшенный цифрой 451 , низко надвинут на лоб , глаза сверкают оранжевым пламенем при мысли о том , что должно сейчас произойти : он нажимает воспламенитель — и огонь жадно бросается на дом , окрашивая вечернее небо в багрово - желто - черные тона .
+=== 190 | mov64 lnk61 rel28 caps0 noterm0 lcase0 q0
+EN: He strode in a swarm of fireflies , he wanted above all , like the old joke , to shove a marshmallow on a stick in the furnace , while the flapping pigeon - winged books died on the porch and lawn of the house , while the books went up in sparkling whirls and blew away on a wind turned dark with burning .
+RU: Он шагает в рое огненно - красных светляков , и больше всего ему хочется сделать сейчас то , чем он так часто забавлялся в детстве , — сунуть в огонь прутик с леденцом , пока книги , как голуби , шелестя крыльями - страницами , умирают на крыльце и на лужайке перед домом , они взлетают в огненном вихре , и черный от копоти ветер уносит их прочь .
+=== 191 | mov14 lnk20 rel3 caps0 noterm0 lcase0 q0
+EN: Montag grinned the fierce grin of all men singed and driven back by flame .
+RU: Жесткая улыбка застыла на лице Монтэга , улыбка - гримаса , которая появляется на губах у человека , когда его вдруг опалит огнем и он стремительно отпрянет назад от его жаркого прикосновения .
+=== 192 | mov27 lnk26 rel16 caps0 noterm0 lcase0 q0
+EN: He knew that when he returned to the firehouse , he might wink at himself , a minstrel man , burnt - corked , in the mirror .
+RU: Он знал , что , вернувшись в пожарное депо , он , менестрель огня , взглянув в зеркало , дружески подмигнет своему обожженному , измазанному сажей лицу .
+=== 193 | mov22 lnk20 rel11 caps0 noterm0 lcase0 q0
+EN: Later , going to sleep , he would feel the fiery smile still gripped by his face muscles , in the dark .
+RU: И позже в темноте , уже засыпая , он все еще будет чувствовать на губах застывшую судорожную улыбку .
+=== 194 | mov6 lnk10 rel2 caps0 noterm0 lcase0 q0
+EN: It never went away , that .
+RU: Она никогда не покидала его лица , никогда , сколько он себя помнит .
+=== 195 | mov48 lnk50 rel23 caps0 noterm0 lcase0 q0
+EN: He hung up his black - beetle - coloured helmet and shined it , he hung his flameproof jacket neatly ; he showered luxuriously , and then , whistling , hands in pockets , walked across the upper floor of the fire station and fell down the hole .
+RU: Он тщательно вытер и повесил на гвоздь черный блестящий шлем , аккуратно повесил рядом брезентовую куртку , с наслаждением вымылся под сильной струей душа и , насвистывая , сунув руки в карманы , пересек площадку верхнего этажа пожарной станции и скользнул в люк .
+=== 196 | mov8 lnk8 rel4 caps0 noterm1 lcase0 q0
+EN: For my wife MARGUERITE with all my love
+RU: МОЕЙ ЖЕНЕ МАРГАРЕТ С ИСКРЕННЕЙ ЛЮБОВЬЮ
+=== 197 | mov14 lnk12 rel3 caps0 noterm0 lcase0 q0
+EN: “ It is good to renew one ’ s wonder ,” said the philosopher .
+RU: " Великое дело – способность удивляться , – сказал философ . -
+=== 198 | mov11 lnk10 rel6 caps0 noterm1 lcase0 q0
+EN: “ Space travel has again made children of us all .”
+RU: Космические полеты снова сделали всех нас детьми ".
+=== 199 | mov5 lnk5 rel4 caps0 noterm1 lcase0 q0
+EN: January 1999 : ROCKET SUMMER
+RU: Январь 1999 . Ракетное лето
+=== 200 | mov43 lnk41 rel21 caps0 noterm0 lcase0 q0
+EN: One minute it was Ohio winter , with doors closed , windows locked , the panes blind with frost , icicles fringing every roof , children skiing on slopes , housewives lumbering like great black bears in their furs along the icy streets .
+RU: Только что была огайская зима : двери заперты , окна закрыты , стекла незрячие от изморози , все крыши оторочены сосульками , дети мчатся с горок на лыжах , женщины в шубах черными медведицами бредут по гололедным улицам .
+=== 201 | mov11 lnk11 rel4 caps0 noterm0 lcase0 q0
+EN: And then a long wave of warmth crossed the small town .
+RU: И вдруг могучая волна тепла прокатилась по городку ,
+=== 202 | mov18 lnk17 rel6 caps0 noterm0 lcase0 q0
+EN: A flooding sea of hot air ; it seemed as if someone had left a bakery door open .
+RU: вал горячего воздуха захлестнул его , будто нечаянно оставили открытой дверь пекарни .
+=== 208 | mov13 lnk13 rel8 caps0 noterm0 lcase0 q0
+EN: Be seated somewhere ; and until you can speak pleasantly , remain silent .
+RU: Сядь где - нибудь и , пока не научишься быть вежливой , молчи .
+=== 209 | mov14 lnk26 rel6 caps0 noterm0 lcase0 q0
+EN: A breakfast - room adjoined the drawing - room , I slipped in there .
+RU: Рядом с гостиной находилась небольшая столовая , где обычно завтракали Я тихонько шмыгнула туда .
+=== 210 | mov23 lnk20 rel7 caps0 noterm0 lcase0 q0
+EN: It contained a bookcase : I soon possessed myself of a volume , taking care that it should be one stored with pictures .
+RU: Там стоял книжный шкаф ; я выбрала себе книжку , предварительно убедившись , что в ней много картинок .
+=== 211 | mov2 lnk2 rel2 caps1 noterm1 lcase0 q0
+EN: CHAPTER I
+RU: Глава I
+=== 212 | mov10 lnk27 rel4 caps0 noterm0 lcase0 q0
+EN: There was no possibility of taking a walk that day .
+RU: В этот день нечего было и думать о прогулке .
+=== 213 | mov64 lnk81 rel60 caps0 noterm0 lcase0 q0
+EN: We had been wandering , indeed , in the leafless shrubbery an hour in the morning ; but since dinner ( Mrs . Reed , when there was no company , dined early ) the cold winter wind had brought with it clouds so sombre , and a rain so penetrating , that further out - door exercise was now out of the question .
+RU: Правда , утром мы еще побродили часок по дорожкам облетевшего сада , но после обеда ( когда не было гостей , миссис Рид кушала рано ) холодный зимний ветер нагнал угрюмые тучи и полил такой пронизывающий дождь , что и речи не могло быть ни о какой попытке выйти еще раз .
+=== 214 | mov65 lnk65 rel32 caps0 noterm0 lcase0 q0
+EN: I was glad of it : I never liked long walks , especially on chilly afternoons : dreadful to me was the coming home in the raw twilight , with nipped fingers and toes , and a heart saddened by the chidings of Bessie , the nurse , and humbled by the consciousness of my physical inferiority to Eliza , John , and Georgiana Reed .
+RU: Что же , тем лучше : я вообще не любила подолгу гулять зимой , особенно под вечер . Мне казалось просто ужасным возвращаться домой в зябких сумерках , когда пальцы на руках и ногах немеют от стужи , а сердце сжимается тоской от вечной воркотни Бесси , нашей няньки , и от унизительного сознания физического превосходства надо мной Элизы , Джона и Джоржианы Рид .
+=== 215 | mov48 lnk52 rel17 caps0 noterm0 lcase0 q0
+EN: The said Eliza , John , and Georgiana were now clustered round their mama in the drawing - room : she lay reclined on a sofa by the fireside , and with her darlings about her ( for the time neither quarrelling nor crying ) looked perfectly happy .
+RU: Вышеупомянутые Элиза , Джон и Джорджиана собрались теперь в гостиной возле своей мамы : она полулежала на диване перед камином , окруженная своими дорогими детками ( в данную минуту они не ссорились и не ревели ), и , очевидно , была безмятежно счастлива .
+=== 216 | mov94 lnk102 rel34 caps0 noterm0 lcase0 q1
+EN: Me , she had dispensed from joining the group ; saying , “ She regretted to be under the necessity of keeping me at a distance ; but that until she heard from Bessie , and could discover by her own observation , that I was endeavouring in good earnest to acquire a more sociable and childlike disposition , a more attractive and sprightly manner — something lighter , franker , more natural , as it were — she really must exclude me from privileges intended only for contented , happy , little children .
+RU: Я была освобождена от участия в этой семейной группе ; как заявила мне миссис Рид , она весьма сожалеет , но приходится отделить меня от остальных детей , по крайней мере до тех пор , пока Бесси не сообщит ей , да и она сама не увидит , что я действительно прилагаю все усилия , чтобы стать более приветливой и ласковой девочкой , более уживчивой и кроткой , пока она не заметит во мне что - то более светлое , доброе и чистосердечное ; а тем временем она вынуждена лишить меня всех радостей , которые предназначены для скромных , почтительных деток .
+=== 217 | mov11 lnk7 rel5 caps0 noterm0 lcase0 q0
+EN: “ What does Bessie say I have done ?” I asked .
+RU: — А что Бесси сказала ? Что я сделала ?
+=== 219 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Wuthering Heights
+RU: Грозовой перевал
+=== 225 | mov2 lnk2 rel1 caps1 noterm1 lcase0 q0
+EN: CHAPTER I
+RU: Глава 1
+=== 234 | mov1 lnk0 rel0 caps0 noterm1 lcase0 q0
+EN: Fact
+RU: ---
+=== 235 | mov26 lnk25 rel11 caps0 noterm0 lcase0 q0
+EN: But CERN has now broken ground on its new Antiproton Decelerator -- an advanced antimatter production facility that promises to create antimatter in much larger quantities .
+RU: Однако сейчас ЦЕРН запустил свой новый замедлитель антипротонов -- усоршенствованное устройство для производства антивещества , которое позволит значительно увеличить получаемые объемы .
+=== 236 | mov31 lnk25 rel13 caps0 noterm0 lcase0 q0
+EN: The world ' s largest scientific research facility -- Switzerland ' s CONSEIL EUROP?EN POUR LA RECHERCHE NUCL?AIRE ( CERN ) -- recently succeeded in producing the first particles of antimatter .
+RU: Крупнейшему международному научно - исследовательскому учреждению -- Европейскому центру ядерных исследований ( ЦЕРН )*- недавно удалось получить первые образцы антивещества .
+=== 243 | mov19 lnk20 rel11 caps0 noterm1 lcase0 q0
+EN: Until recently antimatter has been created only in very small amounts ( a few atoms at a time ).
+RU: До недавнего времени антивещество получали лишь в мизерных количествах ( несколько атомов за один раз ).
+=== 244 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Dan Brown
+RU: Дэн Браун
+=== 245 | mov4 lnk3 rel3 caps0 noterm1 lcase0 q0
+EN: The Da Vinci Code
+RU: Код да Винчи
+=== 247 | mov35 lnk27 rel14 caps0 noterm0 lcase0 q0
+EN: Grabbing the gilded frame , the seventy - six - year - old man heaved the masterpiece toward himself until it tore from the wall and Sauniure collapsed backward in a heap beneath the canvas .
+RU: Ухватился обеими руками за позолоченную раму и стал тянуть ее на себя , пока шедевр не сорвался со стены и не рухнул на семидесятилетнего старика Соньера , погребя его под собой .
+=== 248 | mov3 lnk8 rel3 caps1 noterm0 lcase0 q0
+EN: MORE THAN EVER .
+RU: Еще в большей степени , чем всегда .
+=== 249 | mov2 lnk2 rel1 caps1 noterm1 lcase0 q0
+EN: FACT :
+RU: Факты :
+=== 250 | mov17 lnk14 rel10 caps0 noterm0 lcase0 q0
+EN: The Priory of Sion -- a European secret society founded in 1099 -- is a real organization .
+RU: Приорат & lt ; Приорат , или синьория , -- орган городского управления ряда средневековых городов - коммун . В масонской традиции Великий приорат -- подразделение в системе руководства одной из деноминаций масонства ( Храм , Госпиталь ). -- Примеч . Ред .& gt ; Сиона -- тайное европейское общество , основанное в 1099 году , реальная организация .
+=== 251 | mov38 lnk43 rel28 caps0 noterm0 lcase0 q0
+EN: In 1975 Paris ' s Bibliotheque Nationale discovered parchments known as Les Dossiers Secrets , identifying numerous members of the Priory of Sion , including Sir Isaac Newton , Botticelli , Victor Hugo , and Leonardo da Vinci .
+RU: В 1975 году в Парижской национальной библиотеке обнаружены рукописные свитки , известные под названием " Секретные досье ", где раскрывались имена многих членов Приората Сиона , в их числе сэр Исаак Ньютон , Боттичелли , Виктор Гюго и Леонардо да Винчи .
+=== 252 | mov39 lnk44 rel20 caps0 noterm1 lcase0 q0
+EN: The Vatican prelature known as Opus Dei is a deeply devout Catholic sect that has been the topic of recent controversy due to reports of brainwashing , coercion , and a dangerous practice known as " corporal mortification ".
+RU: Личная прелатура Ватикана , известная как " Опус Деи ", является католической сектой , исповедующей глубокую набожность . Заслужила печальную известность промыванием мозгов , насилием и опасными ритуалами " умерщвления плоти ".
+=== 253 | mov21 lnk29 rel28 caps0 noterm0 lcase0 q0
+EN: Opus Dei has just completed construction of a $ 47 million World Headquarters at 243 Lexington Avenue in New York City .
+RU: Секта " Опус Деи " только что завершила строительство своей штаб - квартиры в Нью - Йорке , на Лексингтон - авеню , 243 , которое обошлось в 47 миллионов долларов .
+=== 254 | mov17 lnk14 rel13 caps0 noterm0 lcase0 q0
+EN: All descriptions of artwork , architecture , documents , and secret rituals in this novel are accurate .
+RU: В книге представлены точные описания произведений искусства , архитектуры , документов и тайных ритуалов .
+=== 255 | mov11 lnk8 rel5 caps0 noterm0 lcase0 q0
+EN: Prologue Louvre Museum , Paris 10 : 46 P . M .
+RU: Пролог Париж , Лувр 21 . 46
+=== 256 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Michael Buckley
+RU: Майкл Бакли
+=== 257 | mov3 lnk0 rel0 caps0 noterm1 lcase0 q0
+EN: The Unusual Suspects
+RU: Тайна Алой Руки
+=== 258 | mov18 lnk10 rel8 caps0 noterm0 lcase0 q0
+EN: The tunnel made a sharp turn , and around the corner Sabrina spotted a distant , flickering light .
+RU: Туннель сделал резкий поворот , и впереди забрезжил свет .
+=== 259 | mov19 lnk23 rel8 caps0 noterm0 lcase0 q0
+EN: Sabrina scrambled through the darkness armed with a shovel and using the cold , stone walls as a guide .
+RU: Сабрина , держа в руках лопату , пробиралась почти в полной темноте , на ощупь , хватаясь за холодные каменные стены .
+=== 260 | mov10 lnk14 rel4 caps0 noterm0 lcase0 q0
+EN: Each step was a challenge to her balance and senses .
+RU: Каждый шаг давался ей с трудом .
+=== 261 | mov21 lnk16 rel9 caps0 noterm0 lcase0 q0
+EN: She stumbled over jagged rocks and accidentally kicked over an abandoned tool , sending a clanging echo off the tunnel walls .
+RU: Всякий раз , когда она натыкалась на каменные выступы , на брошенные инструменты , лопата издавала резкий металлический звук , который эхом отзывался в туннеле ,
+=== 262 | mov13 lnk16 rel6 caps0 noterm0 lcase0 q0
+EN: Whatever was waiting for her in the labyrinth knew she was coming now .
+RU: что бы ни подстерегало ее во тьме , это нечто теперь наверняка знало , что она идет ,
+=== 268 | mov5 lnk4 rel4 caps1 noterm1 lcase0 q0
+EN: DOWN THE RABBIT - HOLE
+RU: ВНИЗ ПО КРОЛИЧЬЕЙ HOPE
+=== 269 | mov65 lnk56 rel24 caps0 noterm1 lcase0 q0
+EN: ALICE was beginning to get very tired of sitting by her sister on the bank and of having nothing to do : once or twice she had peeped into the book her sister was reading , but it had no pictures or conversations in it , " and what is the use of a book ," thought Alice , " without pictures or conversations ?"
+RU: Алисе наскучило сидеть с сестрой без дела на берегу реки ; разок -- другой она заглянула в книжку , которую читала сестра , но там не было ни картинок , ни разговоров . -- Что толку в книжке , -- подумала Алиса , -- если в ней нет ни картинок , ни разговоров ?
+=== 270 | mov62 lnk38 rel10 caps0 noterm0 lcase0 q0
+EN: So she was considering , in her own mind ( as well as she could , for the hot day made her feel very sleepy and stupid ), whether the pleasure of making a daisy - chain would be worth the trouble of getting up and picking the daisies , when suddenly a White Rabbit with pink eyes ran close by her .
+RU: Она сидела и размышляла , не встать ли ей и не нарвать ли цветов для венка ; мысли ее текли медленно и несвязно -- от жары ее клонило в сон . Конечно , сплести венок было бы очень приятно , но стоит ли ради этого подыматься ? Вдруг мимо пробежал кролик с красными глазами .
+=== 271 | mov164 lnk132 rel59 caps0 noterm0 lcase0 q0
+EN: There was nothing so VERY remarkable in that ; nor did Alice think it so VERY much out of the way to hear the Rabbit say to itself " Oh dear ! Oh dear ! I shall be too late !" ( when she thought it over afterwards it occurred to her that she ought to have wondered at this , but at the time it all seemed quite natural ); but , when the Rabbit actually TOOK A WATCH OUT OF ITS WAISTCOAT - POCKET , and looked at it , and then hurried on , Alice started to her feet , for it flashed across her mind that she had never before seen a rabbit with either a waistcoat - pocket , or a watch to take out of it , and burning with curiosity , she ran across the field after it , and was just in time to see it pop down a large rabbit - hole under the hedge .
+RU: Конечно , ничего удивительного в этом не было . Правда , Кролик на бегу говорил : -- Ах , боже мой ! Я опаздываю . Но и это не показалось Алисе особенно странным . ( Вспоминая об этом позже , она подумала , что ей следовало бы удивиться , однако в тот миг все казалось ей вполне естественным ). Но , когда Кролик вдруг вынул часы из жилетного кармана и , взглянув на них , помчался дальше , Алиса вскочила на ноги . Ее тут осенило : ведь никогда раньше она не видела кролика с часами , да еще с жилетным карманом в придачу ! Сгорая от любопытства , она побежала за ним по полю и только - только успела заметить , что он юркнул в нору под изгородью .
+=== 272 | mov22 lnk24 rel11 caps0 noterm0 lcase0 q0
+EN: In another moment down went Alice after it , never once considering how in the world she was to get out again .
+RU: В тот же миг Алиса юркнула за ним следом , не думая о том , как же она будет выбираться обратно .
+=== 273 | mov47 lnk49 rel17 caps0 noterm0 lcase0 q0
+EN: The rabbit - hole went straight on like a tunnel for some way , and then dipped suddenly down , so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down what seemed to be a very deep well .
+RU: Нора сначала шла прямо , ровная , как туннель , а потом вдруг круто обрывалась вниз . Не успела Алиса и глазом моргнуть , как она начала падать , словно в глубокий колодец .
+=== 274 | mov159 lnk161 rel61 caps0 noterm0 lcase0 q0
+EN: Either the well was very deep , or she fell very slowly , for she had plenty of time as she went down to look about her , and to wonder what was going to happen next . First , she tried to look down and make out what she was coming to , but it was too dark to see anything : then she looked at the sides of the well , and noticed that they were filled with cupboards and book - shelves : here and there she saw maps and pictures hung upon pegs . She took down a jar from one of the shelves as she passed : it was labeled " ORANGE MARMALADE " but to her great disappointment it was empty : she did not like to drop the jar , for fear of killing somebody underneath , so managed to put it into one of the cupboards as she fell past it .
+RU: То ли колодец был очень глубок , то ли падала она очень медленно , только времени у нее было достаточно , чтобы прийти в себя и подумать , что же будет дальше . Сначала она попыталась разглядеть , что ждет ее внизу , но там было темно , и она ничего не увидела . Тогда она принялась смотреть по сторонам . Стены колодца были уставлены шкафами и книжными полками ; кое - где висели на гвоздиках картины и карты . Пролетая мимо одной из полок , она прихватила с нее банку с вареньем . На банке написано " АПЕЛЬСИНОВОЕ ", но увы ! она оказалась пустой . Алиса побоялась бросить банку вниз -- как бы не убить кого - нибудь ! На лету она умудрилась засунуть ее в какой - то шкаф .
+=== 275 | mov66 lnk64 rel19 caps0 noterm1 lcase0 q0
+EN: " Well !" thought Alice to herself . " After such a fall as this , I shall think nothing of tumbling down - stairs ! How brave they ' ll all think me at home ! Why , I wouldn ' t say anything about it , even if I fell off the top of the house !" ( Which was very likely true .)
+RU: - Вот это упала , так упала ! -- подумала Алиса . -- Упасть с лестницы теперь для меня пара пустяков . А наши решат , что я ужасно смелая . Да свались я хоть с крыши , я бы и то не пикнула . Вполне возможно , что так оно и было бы .
+=== 276 | mov14 lnk7 rel6 caps0 noterm1 lcase0 q0
+EN: LEWIS CARROLL : THROUGH THE LOOKING - GLASS [ Gutenberg ] ( 1896 )
+RU: Льюис Кэрролл . Сквозь зеркало и что там увидела Алиса или Алиса в Зазеркалье ; Пер . -- Н . Демурова . [ Moshkow ]
+=== 277 | mov6 lnk5 rel5 caps0 noterm1 lcase0 q0
+EN: CHAPTER 1 Looking - Glass house
+RU: 1 . ЗАЗЕРКАЛЬНЫЙ ДОМ
+=== 278 | mov27 lnk42 rel36 caps0 noterm0 lcase0 q0
+EN: One thing was certain , that the WHITE kitten had had nothing to do with it : -- it was the black kitten ' s fault entirely .
+RU: Одно было совершенно ясно : БЕЛЫЙ котенок тут ни при чем ; во всем виноват черный и никто другой .
+=== 279 | mov45 lnk57 rel9 caps0 noterm0 lcase0 q0
+EN: For the white kitten had been having its face washed by the old cat for the last quarter of an hour ( and bearing it pretty well , considering ); so you see that it COULDN ' T have had any hand in the mischief .
+RU: Вот уже полчаса , как мама - кошка мыла Снежинке мордочку ( а та стойко сносила эту муку ) -- так что при всем желании Снежинка ничего не МОГЛА сделать .
+=== 280 | mov87 lnk72 rel35 caps0 noterm0 lcase0 q0
+EN: The way Dinah washed her children ' s faces was this : first she held the poor thing down by its ear with one paw , and then with the other paw she rubbed its face all over , the wrong way , beginning at the nose : and just now , as I said , she was hard at work on the white kitten , which was lying quite still and trying to purr -- no doubt feeling that it was all meant for its good .
+RU: А знаешь , как Дина умывала своих котят ? Одной лапой она хватала бедняжку за ухо и прижимала к полу , а другой терла ей всю мордочку , начиная с носа , против шерсти . Как я уже сказал , что это время она трудилась над Снежинкой , а та лежала смирно , не сопротивлялась , да еще пыталась мурлыкать -- видно , понимала , что все это делается для ее же блага .
+=== 281 | mov107 lnk135 rel29 caps0 noterm0 lcase0 q0
+EN: But the black kitten had been finished with earlier in the afternoon , and so , while Alice was sitting curled up in a corner of the great arm - chair , half talking to herself and half asleep , the kitten had been having a grand game of romps with the ball of worsted Alice had been trying to wind up , and had been rolling it up and down till it had all come undone again ; and there it was , spread over the hearth - rug , all knots and tangles , with the kitten running after its own tail in the middle .
+RU: С черненькой Китти Дина покончила раньше , и теперь , пока Алиса сидела , свернувшись калачиком на уголке просторного кресла , что - то бормоча про себя в полудреме , Китти от души забавлялась , играя с клубком шерсти , которую Алиса мотала поутру ; она весело гоняла его по полу и , конечно , размотала и запутала вконец . Нитки валялись теперь на коврике перед камином , до того спутанные , что на них страшно было смотреть , а Китти прыгала по ним , пытаясь поймать собственный хвост .
+=== 282 | mov54 lnk54 rel11 caps0 noterm1 lcase0 q0
+EN: ' Oh , you wicked little thing !' cried Alice , catching up the kitten , and giving it a little kiss to make it understand that it was in disgrace . ' Really , Dinah ought to have taught you better manners ! You OUGHT , Dinah , you know you ought !'
+RU: - Ах , Китти , до чего же ты противная ! -- сказала Алиса , поймав ее и легонько целуя в мордочку , -- для того , видно , чтобы она получше поняла , что хозяйка на нее сердится . -- Неужели Дина тебе не объясняла , как себя нужно вести ?
+=== 283 | mov22 lnk16 rel9 caps0 noterm1 lcase1 q0
+EN: she added , looking reproachfully at the old cat , and speaking in as cross a voice as she could manage --
+RU: Она взглянула с укоризной на Дину и как можно строже добавила : -- НЕХОРОШО , Дина , НЕХОРОШО !
+=== 284 | mov27 lnk27 rel20 caps0 noterm0 lcase1 q0
+EN: and then she scrambled back into the arm - chair , taking the kitten and the worsted with her , and began winding up the ball again .
+RU: А потом она опять забралась в кресло , прихватив с собой шерсть и котенка , и снова принялась за клубок .
+=== 285 | mov27 lnk27 rel8 caps0 noterm0 lcase0 q0
+EN: But she didn ' t get on very fast , as she was talking all the time , sometimes to the kitten , and sometimes to herself .
+RU: Но дело у Алисы шло медленно , потому что она все время отвлекалась -- то беседовала с Китти , а то бормотала что - то себе под нос .
+=== 287 | mov35 lnk32 rel15 caps0 noterm0 lcase0 q0
+EN: Not the simple , sensible one you tell your friends about , but the dream that ’ s so close to your heart that even as a child you hesitated to speak it out loud .
+RU: Не какое - то там простое и понятное желание , о котором вы рассказываете друзьям , а мечта , настолько сокровенная , что , даже будучи ребенком , вы боялись говорить о ней вслух .
+=== 288 | mov53 lnk86 rel20 caps0 noterm0 lcase0 q0
+EN: Imagine , for example , that you had always yearned to be a Greatcoat , one of the legendary sword - wielding magistrates who travelled from the lowliest village to the biggest city , ensuring that any man or woman , high or low , had recourse to the King ’ s Laws .
+RU: Представьте , например , что вы страстно желали стать плащеносцем , войти в число легендарных виртуозов клинка , магистратов , странствующих по городам и весям , чтобы любой человек , независимо от пола и чина , мог добиться правосудия , прибегнув к силе королевского закона .
+=== 289 | mov11 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: A protector to many – maybe even a hero to some .
+RU: Вы мечтали стать защитником для множества людей , а для некоторых даже и героем .
+=== 290 | mov42 lnk37 rel21 caps0 noterm0 lcase0 q0
+EN: You feel the thick leather coat of office around your shoulders , the deceptively light weight of its internal bone plates that shield you like armour and the dozens of hidden pockets holding your tools and tricks and esoteric pills and potions .
+RU: Ощущали тяжесть форменного кожаного плаща на плечах , обманчивую легкость внутренних костяных пластин , делающих вас неуязвимым . Представляли , что в дюжине потайных карманов у вас будут храниться всевозможные инструменты , хитроумные приспособления , редкостные пилюли и снадобья .
+=== 291 | mov34 lnk14 rel4 caps0 noterm0 lcase0 q0
+EN: You grip the sword at your side , knowing that as a Greatcoat you ’ ve been taught to fight when needed , given the training to take on any man in single combat .
+RU: Мысленно сжимали рукоять шпаги , помня о том , что плащеносец – отличный фехтовальщик и при необходимости способен поспорить в поединке с любым соперником .
+=== 292 | mov29 lnk38 rel11 caps0 noterm0 lcase0 q0
+EN: Now imagine you have attained this dream – in spite of all the improbabilities laid upon the world by the ill - intentioned actions of Gods and Saints alike .
+RU: А теперь вообразите , что ваша мечта сбылась , несмотря на то что в нашем мире , где боги и святые вечно замышляют недоброе , этого просто не могло произойти .
+=== 293 | mov34 lnk24 rel13 caps0 noterm0 lcase0 q0
+EN: So you have become a Greatcoat – in fact , dream bigger : pretend that you ’ ve been made First Cantor of the Greatcoats , with your two best friends at your side .
+RU: Итак , вы стали плащеносцем – более того , первым кантором магистратов . Рядом с вами два лучших друга .
+=== 294 | mov28 lnk19 rel14 caps0 noterm1 lcase0 q0
+EN: Now try to envision where you are , what you ’ re seeing , what you ’ re hearing , what wrong you are fighting to right —
+RU: Постарайтесь теперь представить , где вы находитесь , что видите , что слышите , с какой несправедливостью сражаетесь …
+=== 295 | mov8 lnk9 rel5 caps0 noterm0 lcase0 q0
+EN: They ’ re fucking again ,’ Brasti said .
+RU: Они опять кувыркаются , – сказал Брасти .
+=== 296 | mov6 lnk4 rel1 caps0 noterm1 lcase0 q0
+EN: The Perks of Being a Wallflower
+RU: Хорошо быть тихоней
+=== 298 | mov30 lnk29 rel16 caps0 noterm0 lcase0 q0
+EN: I am writing to you because she said you listen and understand and didn ' t try to sleep with that person at that party even though you could have .
+RU: Обращаюсь к тебе потому , что она сказала : ты способен выслушать и понять , да к тому же ты не пытался перепихнуться кое с кем тогда на тусовке , хотя мог бы .
+=== 300 | mov20 lnk16 rel9 caps0 noterm0 lcase0 q0
+EN: I will call people by different names or generic names because I don ' t want you to find me .
+RU: Людей я буду называть вымышленными именами или описательно , чтоб ты меня не определил .
+=== 301 | mov12 lnk11 rel3 caps0 noterm0 lcase0 q0
+EN: I didn ' t enclose a return address for the same reason .
+RU: С этой же целью не указываю обратный адрес .
+=== 303 | mov27 lnk25 rel14 caps0 noterm0 lcase0 q0
+EN: I just wanted to say about all those listed that there would be no book without them , and I thank them with all of my heart .
+RU: По поводу всех , кто перечислен ниже , могу только сказать , что без них не было бы этой книги . Вот те люди , которым я сердечно благодарен :
+=== 304 | mov35 lnk34 rel34 caps0 noterm1 lcase0 q0
+EN: Greer Kessel Hendricks Heather Neely Lea , Fred , and Stacy Chbosky Robbie Thompson Christopher McQuarrie Margaret Mehring Stewart Stern Kate Degenhart Mark McClain Wilson David Wilcox Kate Ward Tim Perell Jack Horner Eduardo Braniff
+RU: Грир Кессел Хендрикс Хезер Нили Ли , Фред и Стейси Чбоски Робби Томпсон Кристофер Маккуорри Маргарет Меринг Стюарт Стерн Кейт Дегенхарт Марк Макклейн Уилсон Дэвид Уилкокс Кейт Уорд Тим Перелл Джек Хорнер Эдуардо Бранифф
+=== 305 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: And finally
+RU: И наконец …
+=== 306 | mov20 lnk22 rel12 caps0 noterm0 lcase0 q0
+EN: Dr . Earl Reum for writing a beautiful poem and Patrick Comeaux for remembering it wrong when he was 14 .
+RU: доктор Эрл Ройм , написавший прекрасное стихотворение , и Патрик Комо , неточно запомнивший его в возрасте 14 лет .
+=== 307 | mov2 lnk2 rel1 caps0 noterm1 lcase0 q0
+EN: Part 1
+RU: Часть первая
+=== 308 | mov4 lnk5 rel3 caps0 noterm1 lcase0 q0
+EN: August 25 , 1991
+RU: 25 августа 1991 г .
+=== 309 | mov3 lnk3 rel2 caps0 noterm1 lcase0 q0
+EN: Dear friend ,
+RU: Дорогой друг !
+=== 310 | mov24 lnk6 rel4 caps0 noterm0 lcase0 q0
+EN: Letters to His Son by the Earl of Chesterfield , on the Fine Art of Becoming a Man of the World and a Gentleman .
+RU: Лорд Честерфилд . Письма к сыну .
+=== 311 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Letter 1
+RU: Письмо 1
+=== 312 | mov26 lnk27 rel16 caps0 noterm0 lcase0 q0
+EN: ' You seem to want that ' vivida vis animi ,' which spurs and excites most young men to please , to shine , to excel .
+RU: Тебе , по - видимому , не хватает той vivida vis animi , которая побуждает и подзадоривает большинство молодых людей нравиться , блистать , превосходить своих сверстников .
+=== 313 | mov10 lnk24 rel23 caps0 noterm0 lcase0 q0
+EN: BATH , October 9 , O . S . 1746 .
+RU: Бат , 9 октября , ст . ст . 1746 г .
+=== 314 | mov83 lnk70 rel41 caps0 noterm0 lcase0 q0
+EN: DEAR BOY : Your distresses in your journey from Heidelberg to Schaffhausen , your lying upon straw , your black bread , and your broken ' berline ,' are proper seasonings for the greater fatigues and distresses which you must expect in the course of your travels ; and , if one had a mind to moralize , one might call them the samples of the accidents , rubs , and difficulties , which every man meets with in his journey through life .
+RU: Милый мой мальчик , твои невзгоды по дороге из Гейдельберга в Шафхаузен когда тебе пришлось спать на соломе , есть черный хлеб и когда сломался твой берлин -- не что иное , как надлежащая подготовка к более значительным неприятностям и неудачам , которых следует ожидать во время путешествий ; при наличии известной склонности к морализированию можно было бы назвать их примерами несчастных случайностей , препятствий и трудностей , которые каждый человек встречает на своем жизненном пути .
+=== 315 | mov58 lnk50 rel27 caps0 noterm0 lcase0 q0
+EN: In this journey , the understanding is the ' voiture ' that must carry you through ; and in proportion as that is stronger or weaker , more or less in repair , your journey will be better or worse ; though at best you will now and then find some bad roads , and some bad inns .
+RU: В путешествии разум твой -- это тот экипаж , который должен провезти тебя сквозь все , и в соответствии с тем , надежен он или нет , в хорошем он или плохом состоянии , путешествие твое окажется лучше или хуже , однако в пути твоем тебя всегда могут подстерегать какие - нибудь ухабистые проселочные дороги и захудалые гостиницы .
+=== 316 | mov67 lnk59 rel25 caps0 noterm0 lcase0 q0
+EN: Take care , therefore , to keep that necessary ' voiture ' in perfect good repair ; examine , improve , and strengthen it every day : it is in the power , and ought to be the care , of every man to do it ; he that neglects it , deserves to feel , and certainly will feel , the fatal effects of that negligence .
+RU: Поэтому позаботься , чтобы экипаж , обойтись без которого нельзя , был в самом лучшем состоянии , осматривай его и , что ни день , приводи в порядок и укрепляй его рессоры : каждому это по силам и каждый должен об этом заботиться сам : человек который этим пренебрегает , заслуживает того , чтобы почувствовать на себе все роковые последствия своего небрежения , и не приходится сомневаться , что рано или поздно их почувствует .
+=== 317 | mov16 lnk17 rel10 caps0 noterm0 lcase0 q0
+EN: ' A propos ' of negligence : I must say something to you upon that subject .
+RU: A propos , о небрежении ; кое - что об этом я еще должен тебе сказать .
+=== 318 | mov68 lnk66 rel42 caps0 noterm0 lcase0 q0
+EN: You know I have often told you , that my affection for you was not a weak , womanish one ; and , far from blinding me , it makes me but more quick - sighted as to your faults ; those it is not only my right , but my duty to tell you of ; and it is your duty and your interest to correct them .
+RU: Как ты хорошо знаешь , я не раз говорил , что моя любовь к тебе -- отнюдь не какое - нибудь мягкое женское чувство : она ни в какой степени не ослепляет меня , напротив , она делает меня особенно чутким к твоим недостаткам ; указывать тебе на них -- не только мое право , но и моя обязанность , твоя же обязанность -- исправлять их , и это всегда будет в твоих интересах .
+=== 319 | mov78 lnk74 rel40 caps0 noterm0 lcase0 q0
+EN: In the strict scrutiny which I have made into you , I have ( thank God ) hitherto not discovered any vice of the heart , or any peculiar weakness of the head : but I have discovered laziness , inattention , and indifference ; faults which are only pardonable in old men , who , in the decline of life , when health and spirits fail , have a kind of claim to that sort of tranquility .
+RU: Тщательно проверяя тебя , я до сих пор не обнаружил , слава богу , ничего дурного в твоем сердце и никаких особых пороков в твоем уме , но я нашел в тебе леность , невнимание и равнодушие , недостатки , простительные разве только старикам , которые на склоне жизни , когда телесные и духовные силы иссякают , могут иметь известное право на подобного рода инертность .
+=== 320 | mov40 lnk36 rel25 caps0 noterm0 lcase0 q0
+EN: But a young man should be ambitious to shine , and excel ; alert , active , and indefatigable in the means of doing it ; and , like Caesar , ' Nil actum reputans , si quid superesset agendum .
+RU: У человека же молодого должно быть стремление блистать и быть всюду первым ; он должен быть насторожен , деятелен и неутомим в поисках средств , чтобы этого добиться , как Цезарь , nil actum reputans , si quid superesset agendum .
+=== 321 | mov31 lnk21 rel18 caps0 noterm0 lcase0 q0
+EN: In the cool blue twilight of two steep streets in Camden Town , the shop at the corner , a confectioner ' s , glowed like the butt of a cigar .
+RU: В холодной вечерней синеве кондитерская на углу двух крутых улиц в Кемден - тауне сверкала в темноте , как кончик раскуриваемой сигары .
+=== 322 | mov42 lnk32 rel17 caps0 noterm0 lcase0 q0
+EN: One should rather say , perhaps , like the butt of a firework , for the light was of many colours and some complexity , broken up by many mirrors and dancing on many gilt and gaily - coloured cakes and sweetmeats .
+RU: Вернее сказать , даже как целый фейерверк , потому что бесчисленные огни всех цветов радуги дробились в бесчисленных зеркалах и плясали на бесчисленных тортах и конфетах , сиявших позолоченными и многоцветными фантиками .
+=== 323 | mov67 lnk58 rel24 caps0 noterm0 lcase0 q0
+EN: Against this one fiery glass were glued the noses of many gutter - snipes , for the chocolates were all wrapped in those red and gold and green metallic colours which are almost better than chocolate itself ; and the huge white wedding - cake in the window was somehow at once remote and satisfying , just as if the whole North Pole were good to eat .
+RU: Эту ослепительную витрину облепили уличные мальчишки -- шоколадки были в тех блестящих золотых , красных и зеленых обертках , которые едва ли не соблазнительней самого шоколада , а громадный белоснежный свадебный торт в витрине был недоступен и заманчив , как будто весь Северный полюс превратился в громадный лакомый кус .
+=== 324 | mov19 lnk20 rel8 caps0 noterm0 lcase0 q0
+EN: Such rainbow provocations could naturally collect the youth of the neighbourhood up to the ages of ten or twelve .
+RU: Понятно , что столь радужные соблазны не могли не привлечь к себе всю окрестную детвору в возрасте до десяти , а то и двенадцати лет .
+=== 325 | mov32 lnk35 rel8 caps0 noterm0 lcase0 q0
+EN: But this corner was also attractive to youth at a later stage ; and a young man , not less than twenty - four , was staring into the same shop window .
+RU: Но эта угловая лавка не лишена была привлекательности и для кое - кого постарше : от витрины не отрывался молодой человек по крайней мере лет двадцати четырех от роду .
+=== 326 | mov33 lnk38 rel9 caps0 noterm0 lcase0 q0
+EN: To him , also , the shop was of fiery charm , but this attraction was not wholly to be explained by chocolates ; which , however , he was far from despising .
+RU: Лавка эта была и для него ослепительным чудом , но манили его не только шоколадки , хотя , к слову сказать , их он тоже не прочь был бы отведать .
+=== 332 | mov11 lnk12 rel8 caps0 noterm0 lcase0 q0
+EN: This is their book , dedicated to them with much affection .
+RU: Эта книга для них , посвящается им с любовью .
+=== 334 | mov4 lnk4 rel1 caps0 noterm1 lcase0 q0
+EN: Author ’ s Note
+RU: Примечание автора
+=== 335 | mov18 lnk19 rel13 caps0 noterm0 lcase0 q0
+EN: I had written this book because it was so difficult to do that the idea had fascinated me .
+RU: Я написала эту книгу потому , что это было очень трудно технически , и идея преследовала меня неотступно .
+=== 336 | mov14 lnk13 rel5 caps0 noterm0 lcase0 q0
+EN: Ten people had to die without it becoming ridiculous or the murderer being obvious .
+RU: На глазах читателя должны были произойти десять убийств , причем так , чтобы это было не смешно и не очевидно .
+=== 337 | mov22 lnk18 rel6 caps0 noterm0 lcase0 q0
+EN: I wrote the book after a tremendous amount of planning , and I was pleased with what I had made of it .
+RU: Прежде чем начать писать , я прошла через длительный период планирования , результатами которого осталась довольна .
+=== 338 | mov29 lnk25 rel8 caps0 noterm0 lcase0 q0
+EN: It was clear , straightforward , baffling , and yet had a perfectly reasonable explanation ; in fact it had to have an epilogue in order to explain it .
+RU: Вещь получилась простой , внятной и ошеломительной и в то же время имела вполне разумное объяснение ; для него , однако , потребовался эпилог .
+=== 339 | mov31 lnk29 rel15 caps0 noterm0 lcase0 q0
+EN: It was well received and reviewed , but the person who was really pleased with it was myself , for I knew better than any critic how difficult it had been .
+RU: Книгу хорошо приняли читатели и критики , но больше всего была довольна результатом я сама – ведь никто лучше меня не знал , как это было непросто .
+=== 374 | mov26 lnk28 rel26 caps0 noterm0 lcase0 q0
+EN: A very distinguished officer had committed suicide , another had suddenly resigned , anxious faces had suddenly lost their anxiety , certain military precautions were relaxed .
+RU: очень достойный офицер совершил самоубийство , а другой неожиданно подал в отставку , после чего напряжение с лиц командиров исчезло , а некоторые военные меры безопасности в гарнизоне были ослаблены .
+=== 375 | mov5 lnk4 rel4 caps0 noterm1 lcase0 q0
+EN: The Murder at the Vicarage
+RU: Убийство в доме викария
+=== 376 | mov2 lnk2 rel1 caps0 noterm1 lcase0 q0
+EN: Chapter I
+RU: Глава 1
+=== 377 | mov15 lnk13 rel5 caps0 noterm1 lcase0 q0
+EN: My wife said in a sympathetic voice : " Has he been very trying ?"
+RU: Моя жена сочувственно спросила : — Он тебя очень замучил ?
+=== 379 | mov25 lnk56 rel12 caps0 noterm0 lcase0 q0
+EN: The conversation , though in the main irrelevant to the matter in hand , yet contained one or two suggestive incidents which influenced later developments .
+RU: Беседа в общем не касалась того , о чём я собираюсь рассказать , но всё же в ней промелькнуло нечто , оказавшее влияние на последующие события .
+=== 380 | mov48 lnk47 rel15 caps0 noterm0 lcase0 q0
+EN: I had just finished carving some boiled beef ( remarkably tough by the way ) and on resuming my seat I remarked , in a spirit most unbecoming to my cloth , that any one who murdered Colonel Protheroe would be doing the world at large a service .
+RU: Разделавшись с куском варёного мяса ( надо сказать , на редкость жёсткого ), который мне пришлось разрезать как хозяину дома , я вернулся на своё место и с горячностью , отнюдь не приличествующей моему сану , заявил , что тот , кто убьёт полковника Протеро , поистине облагодетельствует мир .
+=== 382 | mov17 lnk17 rel9 caps0 noterm0 lcase0 q1
+EN: " That ' ll be remembered against you when the old boy is found bathed in blood .
+RU: — Тебе это припомнят , когда найдут старика плавающим в луже крови .
+=== 383 | mov11 lnk12 rel5 caps0 noterm0 lcase0 q0
+EN: Mary will give evidence , won ' t you , Mary ?
+RU: Вот и Мэри покажет на тебя , верно , Мэри ?
+=== 384 | mov13 lnk11 rel5 caps0 noterm1 lcase0 q1
+EN: And describe how you brandished the carving knife in a vindictive manner ."
+RU: Скажет на суде , как ты кровожадно размахивал кухонным ножом !
+=== 385 | mov44 lnk47 rel13 caps0 noterm0 lcase0 q0
+EN: Mary , who is in service at the Vicarage as a stepping - stone to better things and higher wages , merely said in a loud , businesslike voice , " Greens ," and thrust a cracked dish at him in a truculent manner .
+RU: Мэри служит у нас временно , в надежде на лучшее положение и более солидный заработок , — она громко , официальным тоном объявила : « Зелень » — и с воинственным видом брякнула треснутое блюдо под нос Деннису .
+=== 389 | mov36 lnk24 rel9 caps0 noterm0 lcase0 q0
+EN: The three of them were far enough away that I saw only the periphery of their features , but it didn ’ t matter — I knew they were different from everyone else in the park .
+RU: Девочки были далеко от меня , я видела только очертания лиц , но сразу поняла : эти трое отличаются от всех в парке .
+=== 390 | mov16 lnk11 rel9 caps0 noterm0 lcase0 q0
+EN: Families milling in a vague line , waiting for sausages and burgers from the open grill .
+RU: Семейства топтались возле гриля в ожидании сосисок и бургеров .
+=== 391 | mov25 lnk28 rel11 caps0 noterm0 lcase0 q0
+EN: Women in checked blouses scooting into their boyfriends ’ sides , kids tossing eucalyptus buttons at the feral - looking chickens that overran the strip .
+RU: Женщины в клетчатых рубашках жались к парням . Дети швырялись эвкалиптовыми пуговками в одичалых с виду кур , которые сновали между деревьями .
+=== 392 | mov19 lnk19 rel12 caps0 noterm0 lcase0 q0
+EN: These long - haired girls seemed to glide above all that was happening around them , tragic and separate .
+RU: Но эти длинноволосые девочки словно бы проплывали над всем происходящим – трагически , отстраненно .
+=== 393 | mov4 lnk5 rel3 caps0 noterm0 lcase0 q0
+EN: Like royalty in exile .
+RU: Точно королевы в изгнании .
+=== 394 | mov25 lnk45 rel13 caps0 noterm0 lcase0 q0
+EN: I studied the girls with a shameless , blatant gape : it didn ’ t seem possible that they might look over and notice me .
+RU: Я разглядывала девочек бесстыдно , откровенно , приоткрыв рот : и представить было нельзя , что они посмотрят в мою сторону и меня заметят .
+=== 395 | mov17 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: My hamburger was forgotten in my lap , the breeze blowing in minnow stink from the river .
+RU: На коленках у меня лежал позабытый гамбургер , ветерок доносил с реки уклеечную вонь .
+=== 396 | mov4 lnk3 rel2 caps1 noterm0 lcase0 q0
+EN: THE MAN FROM ARCHANGEL .
+RU: Человек из Архангельска
+=== 397 | mov75 lnk61 rel42 caps0 noterm0 lcase0 q1
+EN: On the fourth day of March , in the year 1867 , being at that time in my five - and - twentieth year , I wrote down the following words in my note - book -- the result of much mental perturbation and conflict :--" The solar system , amidst a countless number of other systems as large as itself , rolls ever silently through space in the direction of the constellation of Hercules .
+RU: 4 марта 1867 года , будучи на двадцать пятом году от роду , я записывал в своей записной книжке следующее -- результат многих умственных волнений и борьбы : " Солнечная система , посреди бесчисленного количества других систем , таких же обширных , как она , несется в вечном молчании в пространстве по направлению к созвездию Геркулеса .
+=== 398 | mov18 lnk17 rel12 caps0 noterm0 lcase0 q0
+EN: The great spheres of which it is composed spin and spin through the eternal void ceaselessly and noiselessly .
+RU: Громадные шары , из которых она состоит , вертятся в вечной пустоте непрестанно и безмолвно .
+=== 399 | mov24 lnk26 rel25 caps0 noterm0 lcase0 q0
+EN: Of these one of the smallest and most insignificant is that conglomeration of solid and of liquid particles which we have named the earth .
+RU: Из них один из самых маленьких и самых незначительных есть то скопление твёрдых и жидких частиц , которое мы назвали Землёю .
+=== 400 | mov33 lnk32 rel23 caps0 noterm0 lcase0 q0
+EN: It whirls onwards now as it has done before my birth , and will do after my death -- a revolving mystery , coming none know whence , and going none know whither .
+RU: Он несётся вперёд теперь , как он нёсся до моего рождения , и будет нестись после моей смерти -- вертящаяся тайна , пришедшая неизвестно откуда и идущая неизвестно куда .
+=== 401 | mov33 lnk31 rel25 caps0 noterm0 lcase0 q0
+EN: Upon the outer crust of this moving mass crawl many mites , of whom I , John M ` Vittie , am one , helpless , impotent , being dragged aimlessly through space .
+RU: На наружной коре этой движущейся массы пресмыкается много козявок , одна из которых я , Джон Мак - Витти , беспомощный , бессильный , бесцельно увлекаемый в пространстве .
+=== 403 | mov17 lnk17 rel10 caps0 noterm0 lcase0 q0
+EN: I thus have no thought to expend upon the vital questions which surround me on every side .
+RU: Я , таким образом , не могу тратить времени на размышление о мировых вопросах , с которыми мне приходится сталкиваться на каждом шагу .
+=== 404 | mov38 lnk40 rel23 caps0 noterm1 lcase0 q1
+EN: Yet , miserable entity as I am , I can still at times feel some degree of happiness , and am even -- save the mark !-- puffed up occasionally with a sense of my own importance ."
+RU: Между тем , такая ничтожность , как я , может ещё иногда чувствовать себя до некоторой степени счастливым и даже отметьте это ! -- по временам ощущать прилив гордости от чувства собственной значимости ".
+=== 405 | mov44 lnk46 rel32 caps0 noterm0 lcase0 q0
+EN: These words , as I have said , I wrote down in my note - book , and they reflected accurately the thoughts which I found rooted far down in my soul , ever present and unaffected by the passing emotions of the hour .
+RU: Эти слова , как я сказал , я записывал в своей записной книжке , и они точно выражали мои мысли , которые я чувствовал глубоко укоренившимися в своей душе , постоянными и не вызванными минутными преходящими эмоциями .
+=== 406 | mov8 lnk4 rel4 caps0 noterm1 lcase0 q0
+EN: The Adventure of the Bruce - Partington Plans
+RU: Чертежи Брюса - Партингтона
+=== 407 | mov20 lnk17 rel14 caps0 noterm0 lcase0 q0
+EN: In the third week of November , in the year 1895 , a dense yellow fog settled down upon London .
+RU: В предпоследнюю неделю ноября 1895 года на Лондон спустился густой желтый туман .
+=== 408 | mov27 lnk27 rel12 caps0 noterm0 lcase0 q0
+EN: From the Monday to the Thursday I doubt whether it was ever possible from our windows in Baker Street to see the loom of the opposite houses .
+RU: С понедельника до четверга из окон нашей квартиры на Бейкер - стрит невозможно было различить силуэты зданий на противоположной стороне .
+=== 409 | mov15 lnk24 rel7 caps0 noterm0 lcase0 q0
+EN: The first day Holmes had spent in cross - indexing his huge book of references .
+RU: В первый день Холмс приводил в порядок свой толстенный справочник , снабжая его перекрестными ссылками и указателем .
+=== 410 | mov25 lnk20 rel12 caps0 noterm0 lcase0 q0
+EN: The second and third had been patiently occupied upon a subject which he had recently made his hobby -- the music of the Middle Ages .
+RU: Второй и третий день были им посвящены музыке средневековья -- предмету , в недавнее время ставшему его коньком .
+=== 411 | mov53 lnk42 rel27 caps0 noterm0 lcase0 q0
+EN: But when , for the fourth time , after pushing back our chairs from breakfast we saw the greasy , heavy brown swirl still drifting past us and condensing in oily drops upon the window - panes , my comrade ' s impatient and active nature could endure this drab existence no longer .
+RU: Но когда на четвертый день мы после завтрака , отодвинув стулья , встали из - за стола и увидели , что за окном плывет все та же непроглядная , бурая мгла , маслянистыми каплями оседающая на стеклах , нетерпеливая и деятельная натура моего друга решительно отказалась влачить дольше столь унылое существование .
+=== 412 | mov27 lnk28 rel13 caps0 noterm0 lcase0 q0
+EN: He paced restlessly about our sitting - room in a fever of suppressed energy , biting his nails , tapping the furniture , and chafing against inaction .
+RU: Досадуя на бездействие , с трудом подавляя свою энергию , он расхаживал по комнате , кусал ногти и постукивал пальцами по мебели , попадавшейся на пути .
+=== 413 | mov12 lnk16 rel3 caps0 noterm0 lcase0 q0
+EN: " Nothing of interest in the paper , Watson ?" he said .
+RU: - Есть в газетах что - либо достойное внимания ? -- спросил он меня .
+=== 414 | mov15 lnk22 rel10 caps0 noterm0 lcase0 q0
+EN: I was aware that by anything of interest , Holmes meant anything of criminal interest .
+RU: Я знал , что под " достойным внимания " Холмс имеет в виду происшествия в мире преступлений .
+=== 415 | mov32 lnk31 rel13 caps0 noterm0 lcase0 q0
+EN: There was the news of a revolution , of a possible war , and of an impending change of government ; but these did not come within the horizon of my companion .
+RU: В газетах были сообщения о революции , о возможности войны , о предстоящей смене правительства , но все это находилось вне сферы интересов моего компаньона .
+=== 416 | mov9 lnk6 rel6 caps1 noterm1 lcase0 q0
+EN: THE CAPTAIN OF THE " POLE - STAR "
+RU: Капитан " Полярной Звезды "
+=== 417 | mov16 lnk14 rel7 caps0 noterm0 lcase0 q0
+EN: September 11th .-- Lat . 81 degrees 40 ' N .; long . 2 degrees E .
+RU: Одиннадцатого сентября 81 ( 40 ' сев . шир ., 2 вост . долг .)
+=== 418 | mov8 lnk8 rel8 caps0 noterm0 lcase0 q0
+EN: Still lying - to amid enormous ice fields .
+RU: Все еще лежим в дрейфе среди громадных ледяных полей .
+=== 419 | mov28 lnk28 rel9 caps0 noterm0 lcase0 q0
+EN: The one which stretches away to the north of us , and to which our ice - anchor is attached , cannot be smaller than an English county .
+RU: То из этих полей , где мы стоим на якоре , простирается к северу и не меньше целого английского графства .
+=== 420 | mov11 lnk12 rel6 caps0 noterm0 lcase0 q0
+EN: To the right and left unbroken sheets extend to the horizon .
+RU: Справа и слева к горизонту идут непрерывные снежные пространства .
+=== 421 | mov15 lnk20 rel5 caps0 noterm0 lcase0 q0
+EN: This morning the mate reported that there were signs of pack ice to the southward .
+RU: Сегодня утром штурман говорил , что по некоторым признакам можно предположить о существовании к югу от нас массы плавучего льда .
+=== 422 | mov32 lnk43 rel19 caps0 noterm0 lcase0 q0
+EN: Should this form of sufficient thickness to bar our return , we shall be in a position of danger , as the food , I hear , is already running somewhat short .
+RU: Если этот лед окажется настолько толстым , чтобы сделать невозможным наше возвращение , мы окажемся в опасном положении , так как запасы пищи , как я слышал , уже не особенно велики .
+=== 423 | mov14 lnk12 rel8 caps0 noterm0 lcase0 q0
+EN: It is late in the season , and the nights are beginning to reappear .
+RU: Уже позднее время года , и ночи начинают снова появляться .
+=== 424 | mov21 lnk20 rel17 caps0 noterm0 lcase0 q0
+EN: This morning I saw a star twinkling just over the fore - yard , the first since the beginning of may .
+RU: Сегодня утром я видел звезду , мерцавшую как раз над нашим судном , первую с начала мая .
+=== 425 | mov37 lnk37 rel23 caps0 noterm0 lcase0 q0
+EN: There is considerable discontent among the crew , many of whom are anxious to get back home to be in time for the herring season , when labour always commands a high price upon the Scotch coast .
+RU: Заметно серьезное недовольство среди судовой команды : многие из матросов сильно желают вернуться домой , чтобы поспеть вовремя к началу ловли сельдей , когда труд хорошо оплачивается на шотландском берегу .
+=== 428 | mov47 lnk38 rel20 caps0 noterm0 lcase0 q0
+EN: Old Mr . Farquhar , from whom I purchased it , had at one time an excellent general practice ; but his age , and an affliction of the nature of St . Vitus ' s dance from which he suffered , had very much thinned it .
+RU: Старый доктор некогда имел множество пациентов , но потом вследствие болезни -- он страдал чем - то вроде пляски святого Витта , -- а также преклонных лет их число заметно поуменьшилось .
+=== 429 | mov41 lnk60 rel8 caps0 noterm0 lcase0 q0
+EN: The public not unnaturally goes on the principle that he who would heal others must him - self be whole , and looks askance at the curative powers of the man whose own case is beyond the reach of his drugs .
+RU: Ведь люди , и это понятно , предпочитают лечиться у того , кто сам здоров , и мало доверяют медицинским познаниям человека , который не может исцелить даже самого себя .
+=== 431 | mov29 lnk70 rel8 caps0 noterm0 lcase0 q0
+EN: I had confidence , however , in my own youth and energy and was convinced that in a very few years the concern would be as flourishing as ever .
+RU: Но я положился на свою молодость и энергию и не сомневался , что через год - другой от пациентов не будет отбою .
+=== 432 | mov44 lnk45 rel15 caps0 noterm0 lcase0 q0
+EN: For three months after taking over the practice I was kept very closely at work and saw little of my friend Sherlock Holmes , for I was too busy to visit Baker Street , and he seldom went anywhere himself save upon professional business .
+RU: Первые три месяца , как я поселился в Паддингтоне , я был очень занят и совсем не виделся со своим другом Шерлоком Холмсом . Зайти к нему на Бейкер - стрит у меня не было времени , а сам он если и выходил куда , то только по делу .
+=== 433 | mov47 lnk35 rel20 caps0 noterm0 lcase0 q0
+EN: I was surprised , therefore , when , one morning in June , as I sat reading the British Medical Journal after breakfast , I heard a ring at the bell , followed by the high , somewhat strident tones of my old companion ' s voice .
+RU: Поэтому я очень обрадовался , когда однажды июньским утром , читая после завтрака " Британский медицинский вестник ", услыхал в передней звонок и вслед за тем резкий голос моего старого друга .
+=== 434 | mov23 lnk17 rel16 caps0 noterm0 lcase0 q1
+EN: " Ah , my dear Watson ," said he , striding into the room , " I am very delighted to see you !
+RU: - А , мой дорогой Уотсон , -- сказал он , войдя в комнату , -- рад вас видеть !
+=== 435 | mov23 lnk23 rel8 caps0 noterm0 lcase0 q0
+EN: I trust that Mrs . Watson has entirely recovered from all the little excitements connected with our adventure of the Sign of Four .
+RU: Надеюсь , миссис Уотсон уже оправилась после тех потрясений , что пришлось нам пережить в деле со " Знаком четырех ".
+=== 436 | mov3 lnk3 rel3 caps1 noterm1 lcase0 q0
+EN: JOHN BARRINGTON COWLES
+RU: Джон Баррингтон Каулз
+=== 437 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Part I
+RU: Часть I
+=== 438 | mov18 lnk9 rel7 caps0 noterm0 lcase0 q0
+EN: Cowles ' father was the colonel of a Sikh regiment and had remained in India for many years .
+RU: Отец Каулза был полковником в сигхском полку .
+=== 439 | mov26 lnk32 rel13 caps0 noterm0 lcase0 q0
+EN: It might seem rash of me to say that I ascribe the death of my poor friend , John Barrington Cowles , to any preternatural agency .
+RU: Я не хотел бы спешить с выводами и потому не стану голословно обвинять мистические силы в смерти моего бедного друга , Джона Баррингтона Каулза .
+=== 440 | mov31 lnk11 rel2 caps0 noterm0 lcase0 q0
+EN: I am aware that in the present state of public feeling a chain of evidence would require to be strong indeed before the possibility of such a conclusion could be admitted .
+RU: Без неопровержимых доказательств мне попросту не поверят , ведь общепринятый взгляд отвергает самое существование подобных сил .
+=== 441 | mov32 lnk29 rel14 caps0 noterm0 lcase0 q0
+EN: I shall therefore merely state the circumstances which led up to this sad event as concisely and as plainly as I can , and leave every reader to draw his own deductions .
+RU: Я лишь обрисую обстоятельства , приведшие к печальному событию , и сделаю это по возможности просто и сжато , а дальше пускай читатель домысливает сам .
+=== 442 | mov15 lnk20 rel8 caps0 noterm0 lcase0 q0
+EN: Perhaps there may be someone who can throw light upon what is dark to me .
+RU: Возможно , кому - то и удастся проникнуть в тайну , которая мучает меня по сей день .
+=== 444 | mov28 lnk14 rel11 caps0 noterm0 lcase0 q0
+EN: My landlady in Northumberland Street had a large house , and , being a widow without children , she gained a livelihood by providing accommodation for several students .
+RU: Я проживал на улице Нотумберленд в огромном доме ; домовладелица , вдовая и бездетная , не имея иных доходов , сдавала комнаты студентам .
+=== 445 | mov38 lnk35 rel11 caps0 noterm0 lcase0 q0
+EN: Barrington Cowles happened to have taken a bedroom upon the same floor as mine , and when we came to know each other better we shared a small sitting - room , in which we took our meals .
+RU: Баррингтон Каулз поселился по соседству , и мы сошлись коротко -- даже сняли на двоих маленькую гостиную , где обыкновенно обедали .
+=== 446 | mov21 lnk20 rel8 caps0 noterm0 lcase0 q0
+EN: In this manner we originated a friendship which was unmarred by the slightest disagreement up to the day of his death .
+RU: Так началась дружба , которая -- не омраченная ни малейшим разногласием -- длилась до самой его смерти .
+=== 447 | mov4 lnk3 rel3 caps0 noterm1 lcase0 q0
+EN: Sir Arthur Conan Doyle
+RU: Артур Конан - Дойль .
+=== 449 | mov47 lnk50 rel34 caps0 noterm0 lcase0 q0
+EN: Mr . Sherlock Holmes was always of opinion that I should publish the singular facts connected with Professor Presbury , if only to dispel once for all the ugly rumours which some twenty years ago agitated the university and were echoed in the learned societies of London .
+RU: Мистер Шерлок Холмс всегда придерживался того мнения , что мне следует опубликовать поразительные факты , связанные с делом профессора Пресбери , для того хотя бы , чтобы раз и навсегда положить конец темным слухам , которые лет двадцать назад всколыхнули университет и до сих пор повторялись на все лады в лондонских научных кругах .
+=== 450 | mov36 lnk75 rel20 caps0 noterm0 lcase0 q0
+EN: There were , however , certain obstacles in the way , and the true history of this curious case remained entombed in the tin box which contains so many records of my friend ' s adventures .
+RU: По тем или иным причинам , однако , я был долго лишен такой возможности , и подлинная история этого любопытного происшествия так и оставалась погребенной на дне сейфа вместе с многими и многими записями о приключениях моего друга .
+=== 451 | mov27 lnk38 rel15 caps0 noterm0 lcase0 q0
+EN: Now we have at last obtained permission to ventilate the facts which formed one of the very last cases handled by Holmes before his retirement from practice .
+RU: И вот мы , наконец , получили разрешение предать гласности обстоятельства этого дела , одного из самых последних , которые расследовал Холмс перед тем , как оставить практику .
+=== 452 | mov18 lnk22 rel9 caps0 noterm0 lcase0 q0
+EN: Even now a certain reticence and discretion have to be observed in laying the matter before the public .
+RU: Но и теперь еще , делая их достоянием широкой публики , приходится соблюдать известную сдержанность и осмотрительность .
+=== 453 | mov23 lnk20 rel14 caps0 noterm1 lcase0 q0
+EN: It was one Sunday evening early in September of the year 1903 that I received one of Holmes ' s laconic messages :
+RU: Как - то воскресным вечером , в начале сентября 1903 года , я получил от Холмса характерное для него лаконическое послание :
+=== 454 | mov12 lnk16 rel12 caps0 noterm0 lcase0 q0
+EN: Come at once if convenient -- if inconvenient come all the same .
+RU: " Сейчас же приходите , если можете . Если не можете , приходите все равно .
+=== 455 | mov3 lnk4 rel1 caps0 noterm0 lcase0 q0
+EN: S . H .
+RU: Ш . X .".
+=== 456 | mov10 lnk10 rel6 caps0 noterm0 lcase0 q0
+EN: The relations between us in those latter days were peculiar .
+RU: У нас с ним в ту пору установились довольно своеобразные отношения .
+=== 457 | mov43 lnk43 rel26 caps0 noterm0 lcase0 q0
+EN: In recording from time to time some of the curious experiences and interesting recollections which I associate with my long and intimate friendship with Mr . Sherlock Holmes , I have continually been faced by difficulties caused by his own aversion to publicity .
+RU: Пополняя время от времени записи о моем старом друге , мистере Шерлоке Холмсе , новыми удивительными событиями и интересными воспоминаниями , я то и дело сталкивался с трудностями , вызванными его собственным отношением к гласности .
+=== 458 | mov51 lnk67 rel18 caps0 noterm0 lcase0 q0
+EN: To his sombre and cynical spirit all popular applause was always abhorrent , and nothing amused him more at the end of a successful case than to hand over the actual exposure to some orthodox official , and to listen with a mocking smile to the general chorus of misplaced congratulation .
+RU: Этому угрюмому скептику претили шумные похвалы окружающих , и после блестящего раскрытия очередной тайны он от души развлекался , уступив свои лавры какому - нибудь служаке из Скотленд - Ярда , и с язвительной усмешкой слушал громкий хор поздравлений не по адресу .
+=== 459 | mov36 lnk33 rel16 caps0 noterm0 lcase0 q0
+EN: It was indeed this attitude upon the part of my friend and certainly not any lack of interesting material which has caused me of late years to lay very few of my records before the public .
+RU: Подобное поведение моего друга , а вовсе не отсутствие интересного материала и привело к тому , что за последние годы мне редко удавалось публиковать новые записи .
+=== 460 | mov18 lnk16 rel13 caps0 noterm0 lcase0 q0
+EN: My participation in some if his adventures was always a privilege which entailed discretion and reticence upon me .
+RU: Дело в том , что участие в некоторых его приключениях было честью , всегда требующей от меня благоразумия и сдержанности .
+=== 461 | mov36 lnk48 rel12 caps0 noterm1 lcase0 q0
+EN: It was , then , with considerable surprise that I received a telegram from Homes last Tuesday -- he has never been known to write where a telegram would serve -- in the following terms :
+RU: Представьте же мое изумление , когда в прошлый вторник я получил телеграмму от Холмса ( он никогда не посылал писем , если можно было обойтись телеграммой ). Она гласила :
+=== 462 | mov14 lnk17 rel9 caps0 noterm0 lcase0 q0
+EN: Why not tell them of the Cornish horror -- strangest case I have handled .
+RU: " Почему не написать о Корнуэльском ужасе -- самом необычном случае в моей практике ".
+=== 464 | mov47 lnk32 rel14 caps0 noterm0 lcase0 q0
+EN: It was , then , in the spring of the year 1897 that Holmes ' s iron constitution showed some symptoms of giving way in the face of constant hard work of a most exacting kind , aggravated , perhaps , by occasional indiscretions of his own .
+RU: Весной 1897 года железное здоровье Холмса несколько пошатнулось от тяжелой , напряженной работы , тем более , что сам он совершенно не щадил себя .
+=== 466 | mov52 lnk45 rel10 caps0 noterm0 lcase0 q0
+EN: The state of his health was not a matter in which he himself took the faintest interest , for his mental detachment was absolute , but he was induced at last , on the threat of being permanently disqualified from work , to give himself a complete change of scene and air .
+RU: Холмс отнесся к этому равнодушно , ибо умственная его деятельность совершенно не зависела от физического состояния , но когда врач пригрозил , что Холмс вообще не сможет работать , это убедило его наконец сменить обстановку .
+=== 467 | mov6 lnk4 rel0 caps0 noterm1 lcase0 q0
+EN: The Adventure of the Dying Detective
+RU: Шерлок Холмс при смерти
+=== 468 | mov16 lnk15 rel10 caps0 noterm0 lcase0 q0
+EN: Mrs . Hudson , the landlady of Sherlock Holmes , was a long - suffering woman .
+RU: Квартирная хозяйка Шерлока Холмса , миссис Хадсон , была настоящей мученицей .
+=== 469 | mov39 lnk36 rel20 caps0 noterm0 lcase0 q0
+EN: Not only was her first - floor flat invaded at all hours by throngs of singular and often undesirable characters but her remarkable lodger showed an eccentricity and irregularity in his life which must have sorely tried her patience .
+RU: Мало того , что второй этаж ее дома в любое время подвергался нашествию странных и зачастую малоприятных личностей , но и сам ее знаменитый квартирант своей эксцентричностью и безалаберностью жестоко испытывал терпение хозяйки .
+=== 470 | mov46 lnk45 rel23 caps0 noterm0 lcase0 q0
+EN: His incredible untidiness , his addiction to music at strange hours , his occasional revolver practice within doors , his weird and often malodorous scientific experiments , and the atmosphere of violence and danger which hung around him made him the very worst tenant in London .
+RU: Его чрезвычайная неаккуратность , привычка музицировать в самые неподходящие часы суток , иногда стрельба из револьвера в комнате , загадочные и весьма неароматичные химические опыты , которые он часто ставил , да и вся атмосфера преступлений и опасности , окружавшая его , делали Холмса едва ли не самым неудобным квартирантом в Лондоне .
+=== 471 | mov9 lnk19 rel16 caps0 noterm0 lcase0 q0
+EN: On the other hand , his payments were princely .
+RU: Но , с другой стороны , платил он по - царски .
+=== 472 | mov28 lnk25 rel12 caps0 noterm0 lcase0 q0
+EN: I have no doubt that the house might have been purchased at the price which Holmes paid for his rooms during the years that I was with him .
+RU: Я не сомневаюсь , что тех денег , которые он выплатил миссис Хадсон за годы нашей с ним дружбы , хватило бы на покупку всего ее дома .
+=== 473 | mov23 lnk24 rel7 caps0 noterm0 lcase0 q0
+EN: The landlady stood in the deepest awe of him and never dared to interfere with him , however outrageous his proceedings might seem .
+RU: Она благоговела перед Холмсом и никогда не осмеливалась перечить ему , хотя его образ жизни причинял ей много беспокойства .
+=== 474 | mov21 lnk15 rel11 caps0 noterm0 lcase0 q0
+EN: She was fond of him , too , for he had a remarkable gentleness and courtesy in his dealings with women .
+RU: Она симпатизировала ему за удивительную мягкость и вежливость в обращении с женщинами .
+=== 475 | mov14 lnk21 rel10 caps0 noterm0 lcase0 q0
+EN: He disliked and distrusted the sex , but he was always a chivalrous opponent .
+RU: Он не любил женщин и не верил им , но держался с ними всегда по - рыцарски учтиво .
+=== 476 | mov43 lnk34 rel15 caps0 noterm0 lcase0 q0
+EN: Knowing how genuine was her regard for him , I listened earnestly to her story when she came to my rooms in the second year of my married life and told me of the sad condition to which my poor friend was reduced .
+RU: Зная искреннее расположение миссис Хадсон к Холмсу , я с волнением ее выслушал , когда на второй год моей женитьбы она прибежала ко мне с известием о тяжелой болезни моего бедного друга .
+=== 477 | mov13 lnk6 rel6 caps0 noterm1 lcase0 q0
+EN: Sir Arthur Conan Doyle : The Hound of the Baskervilles [ Gutenberg ]
+RU: Артур Конан - Дойль . Собака Баскервилей ; Перевод Н . Волжиной
+=== 478 | mov6 lnk6 rel4 caps0 noterm1 lcase0 q0
+EN: Chapter 1 Mr . Sherlock Holmes
+RU: Глава I . МИСТЕР ШЕРЛОК ХОЛМС
+=== 479 | mov83 lnk93 rel33 caps0 noterm1 lcase0 q0
+EN: Mr . Sherlock Holmes , who was usually very late in the mornings , save upon those not infrequent occasions when he was up all night , was seated at the breakfast table . I stood upon the hearth - rug and picked up the stick which our visitor had left behind him the night before . It was a fine , thick piece of wood , bulbous - headed , of the sort which is known as a " Penang lawyer ."
+RU: Мистер Шерлок Холмс сидел за столом и завтракал . Обычно он вставал довольно поздно , если не считать тех нередких случаев , когда ему вовсе не приходилось ложиться . Я стоял на коврике у камина и вертел в руках палку , забытую нашим вчерашним посетителем , хорошую толстую палку с набалдашником -- из тех , что именуются " веским доказательством ".
+=== 513 | mov40 lnk36 rel17 caps0 noterm0 lcase0 q0
+EN: Oh , the vileness and utter degradation of the moment when the stale little cylinder of closely written pages , which seemed so fresh and full of promise a few days ago , is handed in by a remorseless postman !
+RU: Как это мерзко и оскорбительно , когда безжалостный почтальон вручает тебе свернутые в узкую трубку мелко исписанные и теперь уже потрепанные листки , всего несколько дней назад такие безукоризненно свежие , сулившие столько надежд !
+=== 514 | mov18 lnk18 rel12 caps0 noterm1 lcase0 q0
+EN: And what moral depravity shines through the editor ' s ridiculous plea of " want of space !"
+RU: И какая моральная низость сквозит в смехотворном доводе издателя : " из - за отсутствия места "!
+=== 515 | mov21 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: But the subject is a painful one , and a digression from the plain statement of facts which I originally contemplated .
+RU: Но тема эта слишком неприятна , к тому же уводит от задуманного мною простого изложения фактов .
+=== 516 | mov24 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: From the age of seventeen to that of three - and - twenty I was a literary volcano in a constant state of eruption .
+RU: С семнадцати и до двадцати трех лет я писал так много , что был подобен непрестанно извергающемуся вулкану .
+=== 517 | mov14 lnk15 rel11 caps0 noterm0 lcase0 q0
+EN: Poems and tales , articles and reviews , nothing came amiss to my pen .
+RU: Стихи и рассказы , статьи и обзоры -- ничто не было чуждо моему перу .
+=== 518 | mov3 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: The Musgrave Ritual
+RU: Обряд дома Месгрейвов
+=== 519 | mov69 lnk91 rel26 caps0 noterm0 lcase0 q0
+EN: An anomaly which often struck me in the character of my friend Sherlock Holmes was that , although in his methods of thought he was the neatest and most methodical of mankind , and although also he affected a certain quiet primness of dress , he was none the less in his personal habits one of the most untidy men that ever drove a fellow - lodger to distraction .
+RU: В характере моего друга Холмса меня часто поражала одна странная особенность : хотя в своей умственной работе он был точнейшим и аккуратнейшим из людей , а его одежда всегда отличалась не только опрятностью , но даже изысканностью , во всем остальном это было самое беспорядочное существо в мире , и его привычки могли свести с ума любого человека , живущего с ним под одной крышей .
+=== 520 | mov12 lnk14 rel7 caps0 noterm0 lcase0 q0
+EN: Not that I am in the least conventional in that respect myself .
+RU: Не то чтобы я сам был безупречен в этом отношении .
+=== 521 | mov31 lnk38 rel14 caps0 noterm0 lcase0 q0
+EN: The rough - and - tumble work in Afghanistan , coming on the top of natural Bohemianism of disposition , has made me rather more lax than befits a medical man .
+RU: Сумбурная работа в Афганистане , еще усилившая мое врожденное пристрастие к кочевой жизни , сделала меня более безалаберным , чем это позволительно для врача .
+=== 522 | mov62 lnk51 rel29 caps0 noterm0 lcase0 q0
+EN: But with me there is a limit , and when I find a man who keeps his cigars in the coal - scuttle , his tobacco in the toe end of a Persian slipper , and his unanswered correspondence transfixed by a jack - knife into the very centre of his wooden mantelpiece , then I begin to give myself virtuous airs .
+RU: Но все же моя неаккуратность имеет известные границы , и когда я вижу , что человек держит свои сигары в ведерке для угля , табак -- в носке персидской туфли , а письма , которые ждут ответа , прикалывает перочинным ножом к деревянной доске над камином , мне , право же , начинает казаться , будто я образец всех добродетелей .
+=== 523 | mov82 lnk96 rel48 caps0 noterm0 lcase0 q0
+EN: I have always held , too , that pistol practice should be distinctly an open - air pastime ; and when Holmes , in one of his queer humours , would sit in an armchair with his hair - trigger and a hundred Boxer cartridges and proceed to adorn the opposite wall with a patnotic V . R . done in bullet - pocks , I felt strongly that neither the atmosphere nor the appearance of our room was improved by it .
+RU: Кроме того , я всегда считал , что стрельба из пистолета , бесспорно , относится к такого рода развлечениям , которыми можно заниматься только под открытым небом . Поэтому , когда у Холмса появлялась охота стрелять и он , усевшись в кресло с револьвером и патронташем , начинал украшать противоположную стену патриотическим вензелем " V . R ." выводя его при помощи пуль , я особенно остро чувствовал , что это занятие отнюдь не улучшает ни воздух , ни внешний вид нашей квартиры .
+=== 524 | mov36 lnk37 rel22 caps0 noterm0 lcase0 q0
+EN: Our chambers were always full of chemicals and of criminal relics which had a way of wandering into unlikely positions , and of turning up in the butter - dish or in even less desirable places .
+RU: Комнаты наши вечно были полны странных предметов , связанных с химией или с какой - нибудь уголовщиной , и эти реликвии постоянно оказывались в самых неожиданных местах , например , в масленке , а то и в еще менее подходящем месте .
+=== 525 | mov7 lnk8 rel2 caps0 noterm0 lcase0 q0
+EN: But his papers were my great crux .
+RU: Однако больше всего мучили меня бумаги Холмса .
+=== 526 | mov97 lnk92 rel45 caps0 noterm0 lcase0 q0
+EN: He had a horror of destroying documents , especially those which were connected with his past cases , and yet it was only once in every year or two that he would muster energy to docket and arrange them ; for , as I have mentioned somewhere in these incoherent memoirs , tbe outbursts of passionate energy when he performed the remarkable feats with which his name is associated were followed by reactions of lethargy during which he would lie about with his violin and his books , hardly moving save from the sofa to the table .
+RU: Он терпеть не мог уничтожать документы , особенно если они были связаны с делами , в которых он когда - либо принимал участие , но вот разобрать свои бумаги и привести их в порядок -- на это у него хватало мужества не чаще одного или двух раз в год . Где - то в своих бессвязных записках я , кажется , уже говорил , что приливы кипучей энергии , которые помогали Холмсу в замечательных расследованиях , прославивших его имя , сменялись у него периодами безразличия , полного упадка сил . И тогда он по целым дням лежал на диване со своими любимыми книгами , лишь изредка поднимаясь , чтобы поиграть на скрипке .
+=== 527 | mov39 lnk62 rel41 caps0 noterm0 lcase0 q0
+EN: Thus month after month his papers accumulated until every corner of the room was stacked with bundles of manuscript which were on no account to be burned , and which could not be put away save by their owner .
+RU: Таким образом , из месяца в месяц бумаг накапливалось все больше и больше , и все углы были загромождены пачками рукописей . Жечь эти рукописи ни в коем случае не разрешалось , и никто , кроме их владельца , не имел права распоряжаться ими .
+=== 528 | mov8 lnk9 rel5 caps0 noterm0 lcase0 q0
+EN: To Sherlock Holmes she is always THE woman .
+RU: Для Шерлока Холмса она всегда оставалась " Этой Женщиной ".
+=== 529 | mov11 lnk14 rel12 caps0 noterm0 lcase0 q0
+EN: I have seldom heard him mention her under any other name .
+RU: Я редко слышал , чтобы он называл ее каким - либо другим именем .
+=== 530 | mov12 lnk10 rel9 caps0 noterm0 lcase0 q0
+EN: In his eyes she eclipses and predominates the whole of her sex .
+RU: В его глазах она затмевала всех представительниц своего пола .
+=== 531 | mov14 lnk16 rel15 caps0 noterm0 lcase0 q0
+EN: It was not that he felt any emotion akin to love for Irene Adler .
+RU: Не то чтобы он испытывал к Ирэн Адлер какое - либо чувство , близкое к любви .
+=== 532 | mov19 lnk20 rel18 caps0 noterm0 lcase0 q0
+EN: All emotions , and that one particularly , were abhorrent to his cold , precise but admirably balanced mind .
+RU: Все чувства , и особенно любовь , были ненавистны его холодному , точному , но удивительно уравновешенному уму .
+=== 533 | mov33 lnk37 rel21 caps0 noterm0 lcase0 q0
+EN: He was , I take it , the most perfect reasoning and observing machine that the world has seen , but as a lover he would have placed himself in a false position .
+RU: По - моему , он был самой совершенной мыслящей и наблюдающей машиной , какую когда - либо видел мир ; но в качестве влюбленного он оказался бы не на своем месте .
+=== 534 | mov15 lnk15 rel12 caps0 noterm0 lcase0 q0
+EN: He never spoke of the softer passions , save with a gibe and a sneer .
+RU: Он всегда говорил о нежных чувствах не иначе , как с презрительной насмешкой , с издевкой .
+=== 535 | mov20 lnk19 rel12 caps0 noterm0 lcase0 q0
+EN: They were admirable things for the observer -- excellent for drawing the veil from men ' s motives and actions .
+RU: Нежные чувства были в его глазах великолепным объектом для наблюдения , превосходным средством сорвать покров с человеческих побуждений и дел .
+=== 537 | mov34 lnk28 rel19 caps0 noterm0 lcase0 q0
+EN: Grit in a sensitive instrument , or a crack in one of his own high - power lenses , would not be more disturbing than a strong emotion in a nature such as his .
+RU: Песчинка , попавшая в чувствительный инструмент , или трещина в одной из его могучих линз -- вот что такое была бы любовь для такого человека , как Холмс .
+=== 538 | mov6 lnk2 rel2 caps1 noterm1 lcase0 q0
+EN: THE ADVENTURE OF THE SECOND STAIN
+RU: Второе пятно
+=== 539 | mov35 lnk38 rel8 caps0 noterm0 lcase0 q0
+EN: I had intended " The Adventure of the Abbey Grange " to be the last of those exploits of my friend , Mr . Sherlock Holmes , which I should ever communicate to the public .
+RU: Я думал , что больше мне не придется писать о славных подвигах моего друга Шерлока Холмса .
+=== 540 | mov54 lnk48 rel26 caps0 noterm0 lcase0 q0
+EN: This resolution of mine was not due to any lack of material , since I have notes of many hundreds of cases to which I have never alluded , nor was it caused by any waning interest on the part of my readers in the singular personality and unique methods of this remarkable man .
+RU: Не то чтобы у меня не было материалов . Напротив , я храню записи о сотнях случаев , никогда еще не упоминавшихся мною . Точно так же нельзя сказать , чтобы у читателей пропал интерес к своеобразной личности и необычным приемам работы этого замечательного человека .
+=== 541 | mov20 lnk18 rel9 caps0 noterm0 lcase0 q0
+EN: The real reason lay in the reluctance which Mr . Holmes has shown to the continued publication of his experiences .
+RU: Настоящая причина заключалась лишь в том , что Шерлок Холмс ни за что не хотел , чтобы в печати продолжали появляться рассказы о его приключениях .
+=== 542 | mov66 lnk93 rel37 caps0 noterm0 lcase0 q0
+EN: So long as he was in actual professional practice the records of his successes were of some practical value to him , but since he has definitely retired from London and betaken himself to study and bee - farming on the Sussex Downs , notoriety has become hateful to him , and he has peremptorily requested that his wishes in this matter should be strictly observed .
+RU: Пока он не отошел от дел , отчеты о его успехах представляли для него практический интерес ; когда же он окончательно покинул Лондон и посвятил себя изучению и разведению пчел на холмах Суссекса , известность стала ему ненавистна , и он настоятельно потребовал , чтобы его оставили в покое .
+=== 543 | mov91 lnk76 rel29 caps0 noterm0 lcase0 q0
+EN: It was only upon my representing to him that I had given a promise that " The Adventure of the Second Stain " should be published when the times were ripe , and pointing out to him that it is only appropriate that this long series of episodes should culminate in the most important international case which he has ever been called upon to handle , that I at last succeeded in obtaining his consent that a carefully guarded account of the incident should at last be laid before the public .
+RU: Только после того , как я напомнил ему , что я дал обещание напечатать в свое время этот рассказ , " Второе пятно ", и убедил его , что было бы очень уместно завершить весь цикл рассказов столь важным эпизодом из области международной политики — одним из самых ответственных , какими Холмсу приходилось когда - либо заниматься , — я получил от него согласие на опубликование этого дела , так строго хранимого в тайне .
+=== 545 | mov44 lnk28 rel18 caps0 noterm0 lcase0 q0
+EN: It was , then , in a year , and even in a decade , that shall be nameless , that upon one Tuesday morning in autumn we found two visitors of European fame within the walls of our humble room in Baker Street .
+RU: Однажды осенью , во вторник утром ( год и даже десятилетие не могут быть указаны ), в нашей скромной квартире на Бейкер - стрит появились два человека , пользующиеся европейской известностью .
+=== 546 | mov29 lnk33 rel26 caps0 noterm0 lcase0 q0
+EN: The one , austere , high - nosed , eagle - eyed , and dominant , was none other than the illustrious Lord Bellinger , twice Premier of Britain .
+RU: Один из них , строгий , надменный , с орлиным профилем и властным взглядом , был не кто иной , как знаменитый лорд Беллинджер , дважды занимавший пост премьер - министра Великобритании .
+=== 547 | mov4 lnk3 rel3 caps0 noterm1 lcase0 q0
+EN: Sir Arthur Conan Doyle
+RU: Артур Конан - Дойль .
+=== 548 | mov4 lnk3 rel3 caps1 noterm0 lcase0 q0
+EN: A STUDY IN SCARLET .
+RU: Этюд в багровых тонах
+=== 549 | mov19 lnk16 rel13 caps0 noterm0 lcase0 q0
+EN: The campaign brought honours and promotion to many , but for me it had nothing but misfortune and disaster .
+RU: Многим эта кампания принесла почести и повышения , мне же не досталось ничего , кроме неудач и несчастья .
+=== 550 | mov22 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: I was removed from my brigade and attached to the Berkshires , with whom I served at the fatal battle of Maiwand .
+RU: Я был переведен в Беркширский полк , с которым я участвовал в роковом сражении при Майванде .
+=== 551 | mov2 lnk2 rel2 caps1 noterm0 lcase0 q0
+EN: PART I .
+RU: ЧАСТЬ I
+=== 552 | mov2 lnk3 rel3 caps1 noterm0 lcase0 q0
+EN: CHAPTER I .
+RU: ГЛАВА I .
+=== 553 | mov4 lnk4 rel3 caps1 noterm0 lcase0 q0
+EN: MR . SHERLOCK HOLMES .
+RU: МИСТЕР ШЕРЛОК ХОЛМС
+=== 554 | mov33 lnk29 rel17 caps0 noterm0 lcase0 q0
+EN: IN the year 1878 I took my degree of Doctor of Medicine of the University of London , and proceeded to Netley to go through the course prescribed for surgeons in the army .
+RU: В 1878 году я окончил Лондонский университет , получив звание врача , и сразу же отправился в Нетли , где прошел специальный курс для военных хирургов .
+=== 555 | mov18 lnk16 rel9 caps0 noterm0 lcase0 q0
+EN: Having completed my studies there , I was duly attached to the Fifth Northumberland Fusiliers as Assistant Surgeon .
+RU: После окончания занятий я был назначен ассистентом хирурга в Пятый Нортумберлендский стрелковый полк .
+=== 556 | mov24 lnk24 rel12 caps0 noterm0 lcase0 q0
+EN: The regiment was stationed in India at the time , and before I could join it , the second Afghan war had broken out .
+RU: В то время полк стоял в Индии , и не успел я до него добраться , как вспыхнула вторая война с Афганистаном .
+=== 557 | mov26 lnk25 rel14 caps0 noterm0 lcase0 q0
+EN: On landing at Bombay , I learned that my corps had advanced through the passes , and was already deep in the enemy ' s country .
+RU: Высадившись в Бомбее , я узнал , что мой полк форсировал перевал и продвинулся далеко в глубь неприятельской территории .
+=== 558 | mov40 lnk38 rel29 caps0 noterm0 lcase0 q0
+EN: I followed , however , with many other officers who were in the same situation as myself , and succeeded in reaching Candahar in safety , where I found my regiment , and at once entered upon my new duties .
+RU: Вместе с другими офицерами , попавшими в такое же положение , я пустился вдогонку своему полку ; мне удалось благополучно добраться до Кандагара , где я наконец нашел его и тотчас же приступил к своим новым обязанностям .
+=== 559 | mov6 lnk4 rel3 caps1 noterm1 lcase0 q0
+EN: THE MAN WITH THE TWISTED LIP
+RU: Человек с рассеченной губой
+=== 560 | mov31 lnk12 rel4 caps0 noterm0 lcase0 q0
+EN: Isa Whitney , brother of the late Elias Whitney , D . D ., Principal of the Theological College of St . George ' s , was much addicted to opium .
+RU: Айза Уитни приучился курить опий .
+=== 561 | mov49 lnk47 rel16 caps0 noterm0 lcase0 q0
+EN: The habit grew upon him , as I understand , from some foolish freak when he was at college ; for having read De Quincey ' s description of his dreams and sensations , he had drenched his tobacco with laudanum in an attempt to produce the same effects .
+RU: Еще в колледже , прочитав книгу де Куинси , в которой описываются сны и ощущения курильщика опия , он начал подмешивать опий к своему табаку , чтобы пережить то , что пережил этот писатель .
+=== 563 | mov35 lnk30 rel19 caps0 noterm0 lcase0 q0
+EN: I can see him now , with yellow , pasty face , drooping lids , and pin - point pupils , all huddled in a chair , the wreck and ruin of a noble man .
+RU: Я так и вижу перед собой его желтое , одутловатое лицо , его глаза с набрякшими веками и сузившимися зрачками , его тело , бессильно лежащее в кресле ,- жалкие развалины человека .
+=== 564 | mov34 lnk28 rel14 caps0 noterm0 lcase0 q0
+EN: One night -- it was in June , ' 89 -- there came a ring to my bell , about the hour when a man gives his first yawn and glances at the clock .
+RU: Однажды вечером , в июне 1889 года , как раз в то время , когда начинаешь уже зевать и посматривать на часы , в квартире моей раздался звонок .
+=== 565 | mov26 lnk30 rel16 caps0 noterm0 lcase0 q0
+EN: I sat up in my chair , and my wife laid her needle - work down in her lap and made a little face of disappointment .
+RU: Я выпрямился в кресле , а жена , опустив свое шитье на колени , недовольно поморщилась .
+=== 566 | mov6 lnk5 rel4 caps0 noterm0 lcase0 q0
+EN: " A patient !" said she .
+RU: - Пациент ! -- сказала она .
+=== 567 | mov10 lnk9 rel7 caps0 noterm1 lcase0 q0
+EN: " You ' ll have to go out . "
+RU: - Тебе придется идти к больному .
+=== 568 | mov13 lnk15 rel7 caps0 noterm0 lcase0 q0
+EN: I groaned , for I was newly come back from a weary day .
+RU: Я вздохнул , потому что незадолго до этого вернулся домой после целого дня утомительной работы .
+=== 570 | mov1 lnk1 rel1 caps0 noterm1 lcase0 q0
+EN: 1
+RU: 1
+=== 571 | mov16 lnk8 rel7 caps0 noterm0 lcase0 q0
+EN: It was 4 : 20 p . m . on the first day of the year .
+RU: Было четыре часа двадцать минут первого дня нового года .
+=== 572 | mov16 lnk12 rel12 caps0 noterm0 lcase0 q0
+EN: The old lady had changed her mind about dying but by then it was too late .
+RU: Старая дама раздумала умирать , но было поздно .
+=== 573 | mov22 lnk21 rel17 caps0 noterm0 lcase0 q0
+EN: She had dug her fingers into the paint and plaster of the nearby wall until most of her fingernails had broken off .
+RU: Она впивалась пальцами в краску и штукатурку ближайшей стены , пока не обломала почти все ногти .
+=== 574 | mov19 lnk8 rel7 caps0 noterm0 lcase0 q0
+EN: Then she had gone for the neck , scrabbling to push the bloodied fingertips up and under the cord .
+RU: Пыталась просунуть кончики окровавленных пальцев под веревку .
+=== 575 | mov8 lnk9 rel8 caps0 noterm0 lcase0 q0
+EN: She broke four toes kicking at the walls .
+RU: Сломала четыре пальца на ногах , колотя ими по стенам .
+=== 576 | mov24 lnk26 rel17 caps0 noterm0 lcase0 q0
+EN: She had tried so hard , shown such a desperate will to live , that it made Harry Bosch wonder what had happened before .
+RU: Она изо всех сил пыталась спастись , проявляя отчаянную волю к жизни , и Гарри Босх задумался о том , что могло произойти раньше .
+=== 577 | mov29 lnk30 rel26 caps0 noterm0 lcase0 q0
+EN: Where was that determination and will and why had it deserted her until after she had put the extension cord noose around her neck and kicked over the chair ?
+RU: Где были решимость и воля , почему они покинули ее до той минуты , когда она надела на шею петлю и оттолкнула стул ногой ?
+=== 578 | mov6 lnk7 rel3 caps0 noterm0 lcase0 q0
+EN: Why had it hidden from her ?
+RU: Почему изменили ей ?
+=== 579 | mov46 lnk40 rel24 caps0 noterm0 lcase0 q0
+EN: These were not official questions that would be raised in his death report . But they were the things Bosch couldn ' t avoid thinking about as he sat in his car outside the Splendid Age Retirement Home on Sunset Boulevard east of the Hollywood Freeway .
+RU: То были неофициальные вопросы , которые требовалось затронуть в служебном отчете , однако Босх невольно задавался ими , сидя в своей машине у дома престарелых « Замечательный возраст » на бульваре Сансет , восточнее Голливудской скоростной автострады .
+=== 580 | mov8 lnk5 rel5 caps0 noterm1 lcase0 q0
+EN: Joseph Conrad : Lord Jim [ Gutenberg ]
+RU: Джозеф Конрад : Лорд Джим ; Перевод А . В . Кривцова [ Moshkow ]
+=== 581 | mov16 lnk15 rel10 caps0 noterm0 lcase0 q0
+EN: It is certain my conviction gains infinitely , the moment another soul will believe in it .
+RU: Да , моя уверенность укрепляется с того момента , когда другая душа ее разделит .
+=== 582 | mov17 lnk17 rel12 caps0 noterm0 lcase0 q0
+EN: After thinking it over for something like sixteen years , I am not so sure about that .
+RU: Поразмыслив в течение приблизительно шестнадцати лет , я не так уже в этом уверен .
+=== 583 | mov25 lnk26 rel10 caps0 noterm1 lcase0 q0
+EN: Men have been known , both in the tropics and in the temperate zone , to sit up half the night ' swapping yarns '.
+RU: Известно , что люди -- как под тропиками , так и в умеренном климате -- просиживали полночи , " рассказывая друг другу сказки ".
+=== 584 | mov1 lnk1 rel1 caps0 noterm0 lcase0 q0
+EN: Novalis .
+RU: Новалис
+=== 585 | mov4 lnk4 rel0 caps1 noterm1 lcase0 q0
+EN: AUTHOR ' S NOTE
+RU: ПРЕДИСЛОВИЕ
+=== 586 | mov19 lnk22 rel9 caps0 noterm0 lcase0 q0
+EN: When this novel first appeared in book form a notion got about that I had been bolted away with .
+RU: Когда этот роман впервые вышел отдельной книгой , стали поговаривать о том , что я переступил границу мною задуманного .
+=== 587 | mov19 lnk19 rel13 caps0 noterm0 lcase0 q0
+EN: Some reviewers maintained that the work starting as a short story had got beyond the writer ' s control .
+RU: Некоторые критики утверждали , будто произведение , начатое как новелла , ускользнуло из - под контроля автора .
+=== 588 | mov15 lnk12 rel9 caps0 noterm0 lcase0 q0
+EN: One or two discovered internal evidence of the fact , which seemed to amuse them .
+RU: Один или двое считали это очевидным и как будто этим забавлялись .
+=== 589 | mov9 lnk8 rel4 caps0 noterm0 lcase0 q0
+EN: They pointed out the limitations of the narrative form .
+RU: Они заявляли : повествовательная форма имеет свои законы .
+=== 591 | mov9 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: It was not , they said , very credible .
+RU: Это , говорили они , маловероятно .
+=== 592 | mov1 lnk1 rel1 caps0 noterm1 lcase0 q0
+EN: Applause
+RU: Аплодисменты
+=== 594 | mov13 lnk10 rel8 caps0 noterm0 lcase0 q0
+EN: What type of government , she asked , have you delegates given us ?
+RU: Какое правление , - спросила она , - уготовили нам делегаты
+=== 595 | mov15 lnk11 rel4 caps0 noterm0 lcase0 q0
+EN: " Cell phone `s no good down here at the bottom of the hill " .
+RU: — Здесь , в низине , сотовый плохо принимает сигнал .
+=== 596 | mov26 lnk21 rel8 caps0 noterm0 lcase0 q0
+EN: It was hot outside — I imagined my father snapping that I was letting the warm air in — but I left the window open anyway .
+RU: На улице было жарко – я представила , как бы на меня прикрикнул отец , мол , напустила в дом духоты , – но окно закрывать не стала .
+=== 598 | mov11 lnk11 rel5 caps0 noterm0 lcase0 q0
+EN: Or as a parent in general , you get no sleep .
+RU: Да вообще , став родителем , ты не будешь спать .
+=== 599 | mov3 lnk2 rel1 caps0 noterm0 lcase0 q0
+EN: " Great " .
+RU: — Отлично .
+=== 601 | mov17 lnk10 rel4 caps0 noterm0 lcase0 q0
+EN: Wipe your eyes and get a fresh pitcher of water and go on up Sponge her off .
+RU: — Вытри глаза , набери свежей воды в кувшин и ступай наверх .
+=== 602 | mov39 lnk30 rel22 caps0 noterm1 lcase0 q0
+EN: Admittedly their cousins the other side of the mountains were busy evolving , but their fossils are all on the other side of the mountain so we do n`t find them in the main landmass where we are digging
+RU: Их далёкие братья , живущие по другую сторону хребта , были , возможно , заняты активной эволюцией , но их окаменелости находятся с другой стороны хребта , поэтому мы не находим их в главном ареале , где ведём раскопки .
+=== 603 | mov48 lnk30 rel11 caps0 noterm0 lcase0 q0
+EN: They stayed the night on the plantation , sleeping on the floor in the parlor , luxuriating as they stretched themselves on the velvet rug , for it had been weeks since they had slept under a roof or on anything softer than pine needles and hard earth .
+RU: Отряд заночевал в Таре , разместившись в гостиной на полу , все с наслаждением вытянулись на мягком ковре — ведь из месяца в месяц они спали под открытым небом и на голой земле , хорошо еще , если усыпанной сосновыми иглами .
+=== 604 | mov10 lnk9 rel8 caps0 noterm0 lcase0 q0
+EN: " You `ve got dark glasses ? " he asked .
+RU: - У вас есть темные очки ? - спросил он .
+=== 606 | mov9 lnk7 rel3 caps0 noterm0 lcase0 q0
+EN: " That `s all I did " Brattain recounted .
+RU: - Только это я и сделал , - вспоминал Браттейн .
+=== 607 | mov9 lnk8 rel3 caps0 noterm0 lcase0 q0
+EN: You are old enough , and perhaps wise enough .
+RU: Ты хоббит бывалый , а пожалуй что , и мудрый …
+=== 608 | mov3 lnk3 rel3 caps0 noterm0 lcase0 q0
+EN: Oh , dear !
+RU: - О Боже , Боже !
+=== 609 | mov11 lnk10 rel7 caps0 noterm0 lcase0 q0
+EN: Then you quit taking notes when I came to the cabin .
+RU: Значит , вы прекратили делать записи , когда я появился в домике .
+=== 611 | mov8 lnk6 rel4 caps0 noterm0 lcase0 q0
+EN: Besides , the dogs would dig it up .
+RU: Да и собаки выроют .
+=== 612 | mov36 lnk27 rel18 caps0 noterm0 lcase0 q0
+EN: A noisy wedding party passes on the nearby road , dust swirling about them , the women all brilliantly dressed , with two men at the head of the procession blowing on long , curved horns .
+RU: По дороге мимо больницы движется шумная свадебная процессия , которую сопровождают клубы пыли . На всех женщинах яркие наряды , а двое мужчин , возглавляющих шествие , трубят в длинные изогнутые рога .
+=== 613 | mov4 lnk4 rel4 caps0 noterm0 lcase0 q0
+EN: Do let me look .
+RU: — Позвольте мне посмотреть .
+=== 614 | mov3 lnk4 rel4 caps0 noterm0 lcase0 q0
+EN: Miss Jean Louise ?
+RU: – Мисс Джин Луиза ?
+=== 615 | mov20 lnk17 rel8 caps0 noterm0 lcase0 q0
+EN: I shook my head , and when I did n`t hear Ruth say anything , turned to look at her .
+RU: Я покачала головой , а потом , не услышав ничего от Рут , обернулась к ней .
+=== 616 | mov2 lnk2 rel2 caps0 noterm1 lcase0 q0
+EN: Way forward
+RU: Путь вперед
+=== 617 | mov10 lnk5 rel1 caps0 noterm0 lcase0 q0
+EN: Rest but a moment — a fraction of a minute !
+RU: Останься спокойным только на мгновение , на несколько секунд !
+=== 618 | mov11 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: Have n`t we had enough humiliation in the last ten years ?
+RU: У нас было мало унижений за последние десять лет ?
+=== 619 | mov7 lnk7 rel7 caps0 noterm0 lcase0 q0
+EN: Resolve to buy Cosmo at earliest opportunity .
+RU: Решила при первой же возможности купить « Космо » .
+=== 653 | mov15 lnk14 rel8 caps0 noterm0 lcase0 q0
+EN: - I have brought you no dynamite , - Robert Jordan said to him evenly .
+RU: - Тебе мы ничего не принесли , - сказал Роберт Джордан ровным голосом .
+=== 654 | mov6 lnk5 rel1 caps0 noterm0 lcase0 q0
+EN: Can`t stand to hear them again .
+RU: Я просто не вынесу .
+=== 655 | mov13 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: " I `m afraid I did n`t explain that , " she smiled .
+RU: - Боюсь , я просто ничего не объяснила , - с улыбкой сказала она .
+=== 656 | mov36 lnk23 rel13 caps0 noterm0 lcase0 q0
+EN: They had had a hard year , and after the sale of part the hay and corn , the stores of food for the winter were none too pleniful , but the windmill compensated for everything .
+RU: Этот год дался им нелегко , часть сена и зерна пришлось продать , кормов на зиму было запасено негусто , зато ветряная мельница вознаграждала их за все .
+=== 657 | mov27 lnk17 rel10 caps0 noterm0 lcase0 q0
+EN: A competitor had done a cover on a computer kit called the Mark - 8 , which was a barely workable box using the anemic Intel 8008 .
+RU: Его конкурент уже осветил выход Mark - 8 несмотря на то , что машина еле работала - слабый процессор Intel 8008 ни с чем не справлялся .
+=== 658 | mov5 lnk4 rel3 caps0 noterm0 lcase0 q0
+EN: That `s what I did .
+RU: Я тоже стала это делать .
+=== 659 | mov54 lnk27 rel7 caps0 noterm0 lcase0 q0
+EN: At one time she had almost resolved on applying to him , but the idea was checked by the awkwardness of the application , and at length wholly banished by the conviction that Mr. Darcy would never have hazarded such a proposal , if he had not been well assured of his cousins`s corroboration .
+RU: В какой - то момент она и вправду вознамерилась расспросить его , но ее остановила мысль о щекотливости темы , которую нужно было затронуть , и она окончательно от этого отказалась , сообразив , что мистер Дарси едва ли рискнул бы сослаться на кузена , не будучи вполне уверен в его поддержке .
+=== 660 | mov12 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: And this was all he felt he had to say to her .
+RU: Это было всё , что он считал нужным сказать ей .
+=== 661 | mov41 lnk35 rel18 caps0 noterm0 lcase0 q0
+EN: In a place like Kenya , the individuals who have been successes and have entered the cash economy typically man - usually work in the capital or , for some specialized job , in some distant outpost like a game park .
+RU: В таком месте , как Кения , люди , достигшие успеха и пробившиеся в экономику наличных расчетов - обычно мужчины , - трудятся чаще всего в столице , или в одном из городов , или , на некоторых специализированных работах , уезжают на дальние посты вроде заповедников .
+=== 662 | mov14 lnk12 rel10 caps0 noterm0 lcase0 q0
+EN: " What in the world were you doing ? " asked the Tin Woodman .
+RU: — Что ты сделал ? — удивился Железный Дровосек .
+=== 663 | mov4 lnk7 rel7 caps0 noterm0 lcase0 q0
+EN: Raymond stared at him .
+RU: Реймонд с удивлением посмотрел на него .
+=== 664 | mov21 lnk18 rel13 caps0 noterm0 lcase0 q0
+EN: Then I will ask you to go into your room and put it on and then come out to us here .
+RU: – Тогда я попрошу вас пройти в вашу комнату , надеть халат и выйти к нам сюда .
+=== 665 | mov21 lnk8 rel7 caps0 noterm0 lcase0 q1
+EN: " Take it , " - I said , " lawful king of the Kukuanas - king by birth and victory .
+RU: — Возьми его , законный король кукуанов ! — сказал я .
+=== 666 | mov13 lnk12 rel8 caps0 noterm0 lcase0 q0
+EN: Human and herring are close to each other , squid is the outgroup .
+RU: Человек и сельдь - близко друг к другу , кальмар - поодаль .
+=== 667 | mov16 lnk13 rel9 caps0 noterm0 lcase0 q0
+EN: Hans must go to school at once - and Gretel as well - that is true .
+RU: Ханс теперь же начнет ходить в школу и Гретель тоже это верно .
+=== 668 | mov3 lnk3 rel3 caps0 noterm0 lcase0 q0
+EN: About a Welse ?
+RU: О дочке Уэлза ?
+=== 669 | mov11 lnk10 rel3 caps0 noterm0 lcase0 q0
+EN: That way I can keep thinking he is out there someplace .
+RU: Тогда смогу по-прежнему думать , что он где - то живет .
+=== 670 | mov14 lnk10 rel3 caps0 noterm0 lcase0 q0
+EN: His invitation might have passed as casual , were it not for the undertone .
+RU: Если б не призвук скрываемой ярости , предложенье могло показаться невинным .
+=== 671 | mov11 lnk9 rel8 caps0 noterm0 lcase0 q0
+EN: Brand - new chrome equipment and steel panel never been used .
+RU: Новенькое хромовое оборудование и стальная панель никогда не использовались .
+=== 672 | mov9 lnk8 rel5 caps0 noterm1 lcase0 q0
+EN: " But there I have another name . "
+RU: — Но там я ношу другое имя .
+=== 673 | mov20 lnk16 rel10 caps0 noterm0 lcase0 q0
+EN: There she was with everything before her , and his blood - some of it - in her tiny veins .
+RU: Вот она перед ним , и все у неё впереди , и его кровь — доля его крови — в её крошечных жилках .
+=== 674 | mov14 lnk12 rel10 caps0 noterm0 lcase0 q0
+EN: Turkle nodded and opened one eye and said , " That `s true " .
+RU: Теркл кивнул , открыл один глаз и сказал : — Это правда .
+=== 675 | mov12 lnk8 rel7 caps0 noterm0 lcase0 q0
+EN: I mean , he looked up at Harry and Hermione for support .
+RU: — Рон повернулся к Гарри и Гермионе , ища поддержки .
+=== 676 | mov41 lnk25 rel13 caps0 noterm0 lcase0 q0
+EN: Even Doll , who had personally favoured road - tar exposure as the cause of lung cancer , could no longer argue with his own data . In the middle of the survey , sufficiently alarmed , he gave up smoking .
+RU: Даже Долл , считавший , что причиной рака легких является гудрон на дорогах , не мог больше игнорировать свои же результаты и , встревожившись , бросил курить .
+=== 677 | mov20 lnk13 rel8 caps0 noterm0 lcase0 q1
+EN: " Please , " she said , " signaling them to sit down as they moved to the living room .
+RU: - Прошу вас , садитесь , - сказала она , когда они оказались в гостиной .
+=== 678 | mov20 lnk15 rel11 caps0 noterm0 lcase0 q0
+EN: Normally , the heart beats by releasing regular bursts of electric charge across its muscles , causing them to contract .
+RU: В норме , когда сердце бьется , в мышце происходит периодическое изменение электрического заряда , вызывающее ее сокращение .
+=== 679 | mov19 lnk14 rel4 caps0 noterm0 lcase0 q0
+EN: " Well , well , well , " said I " you will have to learn more sence " .
+RU: — Ну и ну , — сказал я . — Вам следовало быть разумнее .
+=== 680 | mov7 lnk2 rel1 caps0 noterm0 lcase0 q0
+EN: He was a horse . A horse .
+RU: Заходит в бар лошадь …
+=== 683 | mov9 lnk6 rel4 caps0 noterm0 lcase0 q0
+EN: But I think you `d better explain , Rogers .
+RU: – А пока мы ждем объяснений , Роджерс .
+=== 684 | mov5 lnk5 rel4 caps0 noterm0 lcase0 q0
+EN: No , I did not .
+RU: — Нет , не хотел .
+=== 685 | mov9 lnk8 rel3 caps0 noterm0 lcase0 q0
+EN: And she could hear nothing from their houses either .
+RU: Но и из этих двух домов не долетало ни звука .
+=== 686 | mov22 lnk16 rel6 caps0 noterm0 lcase0 q1
+EN: " According to the director , at my orders he paged his entire team to look at images I `d wired him .
+RU: - Директор сказал , что как только от нас поступили материалы , он собрал всю команду и засадил за работу .
+=== 687 | mov12 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: Winlock merely inclined his head in a grave gesture of dignified assent .
+RU: Винлок молча кивнул , показывая тем самым свое согласие .
+=== 688 | mov9 lnk8 rel8 caps0 noterm0 lcase0 q0
+EN: Philip Lombard had the habit of waking at daybreak .
+RU: Филипп Ломбард привык просыпаться на рассвете .
+=== 689 | mov11 lnk5 rel3 caps0 noterm0 lcase0 q0
+EN: " And I suppouse yours is the green one then " .
+RU: — Значит , ваше зеленое .
+=== 690 | mov12 lnk12 rel10 caps0 noterm0 lcase0 q0
+EN: " All that happens everywhere , begins here " , said Arha .
+RU: - Все , что случается в других местах , берет свое начало здесь , - сказала Арха .
+=== 691 | mov7 lnk6 rel1 caps0 noterm0 lcase0 q0
+EN: Crime belongs exclusively to the lower orders .
+RU: Преступники - всегда люди низших классов .
+=== 692 | mov17 lnk10 rel7 caps0 noterm0 lcase0 q0
+EN: She `s in the midst of this episode with you , and she talking about someone else .
+RU: — В самом разгаре свидания с вами она вспоминает кого - то другого .
+=== 693 | mov14 lnk9 rel3 caps0 noterm0 lcase0 q0
+EN: Most remarkable people , but I can`t say I feel quite with them yet .
+RU: Ну и дяди . Честно , я их немножко боюсь .
+=== 694 | mov2 lnk2 rel2 caps1 noterm1 lcase0 q0
+EN: CHAPTER FOURTEEN
+RU: ГЛАВА ЧЕТЫРНАДЦАТАЯ
+=== 696 | mov28 lnk19 rel13 caps0 noterm0 lcase0 q0
+EN: And with the Oompa - Loompas rowing faster than ever , the boat shot into the pitch - dark tunnel , and all the passengers screamed with excitement .
+RU: Умпа - лумпы налегли на весла , и лодка пулей влетела в темный туннель , а пассажиры разом вскрикнули от неожиданности .
+=== 697 | mov46 lnk32 rel24 caps0 noterm0 lcase0 q0
+EN: The other car the one going toward New York , came to rest a hundred yards beyond , and its driver hurries back to where Myrtle Wilson , her life violently extinguished , knelt in the road and mingled her thick dark blood with the dust .
+RU: Другая машина , которая шла в Нью - Йорк , затормозила , проскочив ярдов на сто , и водитель бегом кинулся назад , туда , где , скорчившись , лежала Миртл Уилсон , внезапно в грубо вырванная из жизни , и ее густая темная кровь смешивалась с дорожной пылью .
+=== 698 | mov18 lnk16 rel14 caps0 noterm0 lcase0 q0
+EN: Agusten put some more snow in his mouth and looked across the clearing where the cavalry had ridden .
+RU: Агустин положил в рот еще снегу и посмотрел в ту сторону , где скрылся кавалерийский отряд .
+=== 699 | mov1 lnk3 rel3 caps0 noterm0 lcase0 q0
+EN: Sure .
+RU: Само собой .
+=== 700 | mov4 lnk5 rel4 caps0 noterm0 lcase0 q0
+EN: Neville wrote those words .
+RU: Это письмо написал Невилл .
+=== 701 | mov18 lnk16 rel12 caps0 noterm0 lcase0 q0
+EN: It was smooth and hot and the heat went all through me and I felt warmed and cheerful .
+RU: Коньяк был крепкий , и тепло разлилось пo всему моему телу , и я согрелся и повеселел .
+=== 702 | mov26 lnk21 rel18 caps0 noterm0 lcase0 q0
+EN: We certainly did n`t think much about our lives beyond the Cottages , or about who ran them , or how they fitted into larger world .
+RU: Разумеется , мы почти не думали ни о нашей будущей жизни вне Коттеджей , ни о том , кто ими ведает и как они вписываются в большой мир .
+=== 704 | mov20 lnk16 rel11 caps0 noterm0 lcase0 q0
+EN: " I am neither square nor croocked , " said Scraps , " looking down at her plump body " .
+RU: — Но я - то не кривая и не прямая , — не унималась Лоскутушка , осматривая свою пухленькую фигурку .
+=== 705 | mov3 lnk4 rel3 caps0 noterm0 lcase0 q0
+EN: - and thee ?
+RU: - А у тебя ?
+=== 706 | mov14 lnk6 rel3 caps0 noterm0 lcase0 q0
+EN: " That `s just ridiculous , that `s not proof , " he said .
+RU: – Глупость какая , разве это чтo - то доказывает ?
+=== 707 | mov4 lnk4 rel4 caps0 noterm0 lcase0 q0
+EN: I do not know .
+RU: - Я не знаю .
+=== 708 | mov49 lnk27 rel23 caps0 noterm0 lcase0 q0
+EN: Further proof of how much the quality of our work improves when we can attach a human being to the results was seen in a study that found that simply showing radiologists a photograph of a patient led to a dramatic improvement in the accuracy of their diagnostic findings .
+RU: Еще одним доказательством того , насколько улучшится качество нашей работы , если мы сможем увидеть результаты , является исследование , выявившее , что , если просто показать рентгенологам фотографию пациента , это может привести к улучшению точности диагностических исследований .
+=== 709 | mov53 lnk35 rel23 caps0 noterm1 lcase0 q0
+EN: " Ah , Wilfred , Wilfred ! " he claimed in a lower tone , " couldst thou have ruled thine unreasonable passion , thy father had not been left in his age like the solitary oak throws out its shattered and unprotected branches against the full sweep of the tempest ! "
+RU: О Уилфред , Уилфред , - произнес он горестно , - если бы ты мог победить свою безрассудную страсть , твой отец не оставался бы на старости лет как одинокий дуб , простирающий свои поломанные и оголенные ветви навстречу налетающей буре !
+=== 710 | mov26 lnk21 rel18 caps0 noterm0 lcase0 q0
+EN: All of a sudden , I felt that with the completion of my chess problem a whole period of my life come to a satisfactory close .
+RU: Глядя на мою шахматную задачу , я вдруг почувствовал , что с окончанием работы над ней целому периоду моей жизни благополучно пришел конец .
+=== 711 | mov22 lnk12 rel9 caps0 noterm0 lcase0 q0
+EN: Only a very powerful force , before the Earth was formed , had been able to squeeze their electrically crackling protons together .
+RU: Только очень мощная сила , действовавшая в то время , когда возникала наша планета , могла втиснуть заряженные протоны в столь малый объем .
+=== 712 | mov9 lnk7 rel5 caps1 noterm1 lcase0 q0
+EN: CHAPTER I DESCRIPTION OF FARMER OAK - AN INCIDENT
+RU: ГЛАВА I ПОРТРЕТ ФЕРМЕРА ОУКА . ПРОИСШЕСТВИЕ
+=== 713 | mov36 lnk29 rel18 caps0 noterm0 lcase0 q0
+EN: For while it provided a number of rooms for wayfarers at twenty - five cents a night , and was supposed to be self - supporting , it entailed much work with hardly any more profit .
+RU: Правда , здесь было довольно много комнат , где приезжие за двадцать пять центов находили приют на ночь ( считалось , что таким образом окупается содержание дома ) однако все это требовало большого труда и приносило очень мало дохода .
+=== 714 | mov59 lnk40 rel26 caps0 noterm0 lcase0 q0
+EN: Slowly , slumped over the pommel , the half - caste became visible , the yellow canined jutting out of the open mouth really , the priest thought , he deserved his reward - seven hundred pesos was n`t so much , but he could probably live on it in that dusty hopeless village - for a whole year .
+RU: Фигура метиса , склонившегося на луку , постепенно вырисовывалась в сумерках , стали видны его желтые клыки , торчащие из разинутого рта , право , этот человек заслужил награду , подумал священник , семьсот песо не такая уж большая сумма , но ему , пожалуй , хватит , проживет на нее целый год в той пыльной , заброшенной деревушке .
+=== 715 | mov7 lnk7 rel7 caps0 noterm0 lcase0 q0
+EN: She wants to know what I know .
+RU: Она хочет знать то , что знаю я .
+=== 716 | mov5 lnk5 rel5 caps0 noterm0 lcase0 q0
+EN: He shook his head no .
+RU: Он покачал головой – нет .
+=== 717 | mov2 lnk3 rel3 caps0 noterm0 lcase0 q0
+EN: Stapleton laughed .
+RU: Стэплтон рассмеялся .
+=== 718 | mov106 lnk61 rel58 caps0 noterm1 lcase0 q1
+EN: Here I feel the shock of gleeful kinship yet I prefer two other ancestors of mine , the young explorer already mentioned andthat greater pathologist , my mother`s maternal grandfather , Nikolay Illarionovich Kozlov ( 1814 - 1889 ) , first president of the Russian Imperial Academy of Medicine and author of such papers as " On the Development of the Idea of Disease " or " On the Coarctation of Jugular Foramen the Insane " . At this convenient point , I may as well mention my own scientific papers , and especially my three favourite ones " Notes on Neotropical Plebejinae ( Psyche Vol.
+RU: Тут чувствую вспышку какого - то родства между нами , и все же гораздо ближе мне два других моих предка - уже упомянутый молодой исследователь и великий патолог , мой дед по матери , Николай Илларионович Козлов ( 1814 1889 ) первый президент Императорской медицинской академии , автор таких работ как " О развитии идеи болезни " или " Сужение яремной дыры у людей умопомешанных и самоубийц " .
+=== 719 | mov9 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: Our brains unweave them efforlessly and to astonishing effect .
+RU: Наши мозги расплетают их на удивление легко и просто .
+=== 720 | mov29 lnk20 rel17 caps0 noterm0 lcase0 q0
+EN: On that head , therefore , I shall be uniformly silent and you may assure yourself that no ungenerous reproach shall ever pass my lips when we are married .
+RU: По этому поводу я буду нем как рыба , и вы можете быть уверены , что ни один неблаговидный упрек вовеки не сорвется с моих уст .
+=== 721 | mov12 lnk6 rel2 caps0 noterm0 lcase0 q1
+EN: " Why man alive she was the administration of the whole Court !
+RU: - Да ты , наверно , ослеп , весь суд глаз отвести не мог .
+=== 723 | mov7 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: You said this was about Warren Hoyt .
+RU: — Вы сказали , это касается Уоррена Хойта .
+=== 724 | mov17 lnk12 rel7 caps0 noterm0 lcase0 q0
+EN: There `s all these customers that come in and they treat the servers and bartenders like crap .
+RU: Все клиенты , приходящие обедать , обращаются с официантами и барменами как с людьми второго сорта .
+=== 725 | mov18 lnk10 rel8 caps0 noterm0 lcase0 q0
+EN: But at the moment , right in the intense moment , I `m telling you - nobody caughts .
+RU: А вот в самый напряженный , самый решающий момент , уверяю вас , никто не кашлянет .
+=== 726 | mov7 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: These places make strange angels and curves .
+RU: Эти проезды образуют странные углы и кривые линии .
+=== 727 | mov9 lnk11 rel9 caps0 noterm0 lcase0 q0
+EN: And my guys have to put up with this .
+RU: И с такими типами мои ребята вынуждены находить общий язык .
+=== 728 | mov15 lnk12 rel8 caps0 noterm0 lcase0 q0
+EN: Reemering fears about the country`s demographic decline have fed the growing movement against legal abortion .
+RU: Нарастающий страх перед демографическим спадом дал толчок росту движения противников легальных абортов .
+=== 729 | mov20 lnk14 rel7 caps0 noterm0 lcase0 q0
+EN: That `s when the idea came to me , fully formed , as if I had thought of it myself .
+RU: Тогда - то мне разом и пришла в голову эта идея , словно бы я сама все придумала .
+=== 730 | mov6 lnk6 rel6 caps0 noterm0 lcase0 q0
+EN: I do n`t know , Ralph .
+RU: Не знаю я , Ральф .
+=== 731 | mov26 lnk19 rel19 caps0 noterm0 lcase0 q0
+EN: A young lady guest walked up to Ringo , removed a pair of nail scissors from her purse and started snipping off locks of his hair .
+RU: Молодая леди подошла к Ринго , вынула из сумочки маникюрные ножницы и начала отрезать у него локон .
+=== 732 | mov18 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: I hope it makes me drunk . I would like to be drunk and forget all of this .
+RU: Я хотела бы напиться вдрызг — так , чтобы забыть про все на свете .
+=== 733 | mov16 lnk15 rel12 caps0 noterm0 lcase0 q0
+EN: " Push the freak in , Olaf ! " , someone shouted , and everyone cheered .
+RU: — Давай толкай урода в яму , Олаф ! — раздался крик , и все одобрительно зашумели .
+=== 734 | mov25 lnk21 rel21 caps0 noterm0 lcase0 q0
+EN: When he `d finally gone I slumped on the floor , shaking with my back to the front door , chain - smoking butt ends .
+RU: Когда он наконец ушел , я опустилась на пол , подперев спиной входную дверь , и , дрожа , начала один за другим докуривать " бычки " .
+=== 735 | mov3 lnk4 rel1 caps0 noterm0 lcase0 q0
+EN: That `s right !
+RU: Сюда !
+=== 736 | mov37 lnk29 rel25 caps0 noterm0 lcase0 q0
+EN: How could wild animals " know " who their kin are , or in other words , what behavioural rules could they follow which would have the inderect effect of making them seem to know about kinship ?
+RU: Как дикие животные могли бы « знать » кто приходится им родственниками , или , иными словами , каким правилам они должны следовать в своем поведении , чтобы его косвенным эффектом была именно способность распознавать кровных родственников ?
+=== 737 | mov8 lnk5 rel2 caps0 noterm0 lcase0 q0
+EN: Was this the Bimmel`s girl time to dream ?
+RU: Может , его дочь мечтала именно в это время ?
+=== 738 | mov6 lnk5 rel3 caps0 noterm0 lcase0 q0
+EN: " Well , pick carefully " .
+RU: - Смотрите , чтобы поаккуратнее .
+=== 739 | mov19 lnk16 rel8 caps0 noterm0 lcase0 q0
+EN: If you doubt , encourage her to retract her word , and you `ll have an oppotyunity of judging !
+RU: Если сомневаешься , подбей ее взять назад свое слово , тогда тебе представится возможность в этом убедиться .
+=== 740 | mov15 lnk16 rel12 caps0 noterm0 lcase0 q0
+EN: There are no private loans to governments , but occasionally one state lends to another .
+RU: Правительства не берут взаймы у частных лиц , но при случае одно государство ссужает деньгами другое .
+=== 741 | mov1 lnk2 rel2 caps0 noterm0 lcase0 q0
+EN: Schiller .
+RU: — С Шиллером .
+=== 742 | mov37 lnk28 rel24 caps0 noterm0 lcase0 q0
+EN: Her face was very like that of the real Josie , but because there was at the eyes no kind smile , the upward curve of her lips gave her an expression I `d never seen before .
+RU: Ее лицо было очень похоже на лицо настоящей Джози , но в глазах не было доброй улыбки , и поэтому изгибающиеся кверху губы придавали лицу выражение , какого я никогда у нее не видела .
+=== 743 | mov18 lnk13 rel7 caps0 noterm0 lcase0 q0
+EN: - They looked up from the bright wash of the kitchen lights like reccoons caight in the trash .
+RU: Они выглянули из залитой светом кухни , словно два енота – из мусорного бака .
+=== 745 | mov29 lnk26 rel20 caps0 noterm0 lcase0 q0
+EN: " Your popularity in this country , whatever it may be on the other side , is greatly beyond what it ever was , " William wrote in May .
+RU: " Ваша популярность в этой стране , какой бы она ни была по другую сторону океана , намного больше , чем когда - либо прежде , - писал Уильям в мае .
+=== 746 | mov8 lnk6 rel6 caps0 noterm0 lcase0 q0
+EN: The banks would n`t open for an hour .
+RU: Банки откроются не раньше , чем через час .
+=== 747 | mov22 lnk15 rel9 caps0 noterm0 lcase0 q0
+EN: He came on into the clearing with his eyes on the ground and his shoulders hunched , as if he felt exposed .
+RU: Он вышел на просеку , потупив глаза , сгорбившись , словно его выставили напоказ .
+=== 750 | mov18 lnk10 rel9 caps0 noterm1 lcase0 q0
+EN: Then he said , " And you think you remember everyone who was there that day ? "
+RU: – Думаешь , ты помнишь всех , кто был там в тот день ?
+=== 751 | mov9 lnk3 rel1 caps0 noterm0 lcase0 q0
+EN: It was working pretty well most of the night .
+RU: Сначалo все шло гладко .
+=== 752 | mov33 lnk15 rel9 caps0 noterm0 lcase0 q0
+EN: I made sure to write all the scores on the inside back page of the booklet so that I would not be biased ( even uncounsiously ) when I read the second essay .
+RU: Результаты я записывал на предпоследней странице работы , чтобы во время чтения второго ответа меня подсознательно не сбивали уже выставленные оценки .
+=== 753 | mov28 lnk23 rel19 caps0 noterm0 lcase0 q0
+EN: Scarlett and Melanie both were thinking of Ashley , as they always did when urgent tasks or the necessity of carrying on a conservation did not divert them .
+RU: Скарлетт и Мелани думали об Эшли , что они делали всегда , если их не отвлекали повседневные заботы или необходимость поддерживать разговор .
+=== 754 | mov6 lnk8 rel8 caps0 noterm0 lcase0 q0
+EN: For years I have loved her .
+RU: Долгие годы я любил ее .
+=== 755 | mov40 lnk31 rel20 caps0 noterm0 lcase0 q0
+EN: Now the question that has occured to all of us at some point is : what would happen if you travelled out to the edge of the universe and , as it were , put your head through the curtains ?
+RU: А теперь вопрос , который в какой - то момент возникал у каждого из нас : что будет , если добраться до края Вселенной и , так сказать , высунуть голову за занавес ?
+=== 756 | mov13 lnk11 rel11 caps0 noterm0 lcase0 q0
+EN: When he brushed my nipple with his finger , I kept very still .
+RU: Когда он задел пальцем мой сосок , я замерла .
+=== 757 | mov45 lnk29 rel17 caps0 noterm0 lcase0 q0
+EN: And presently he sat down upon the table , sword in hand the air that he was making all the time began to run a little clearer , and then clearer still and then out he burst with a great voice into a Gaelic song .
+RU: Потом он уселся на стол , дирижируя себе шпагой , и мотив , который он искал , полился чуть яснее , потом еще уверенней , — и вот , на языке шотландских кельтов , Алан в полный голос запел свою песню .
+=== 758 | mov3 lnk4 rel3 caps0 noterm0 lcase0 q0
+EN: Know thy self .
+RU: Древняя мудрость гласит : « Познай себя » .
+=== 759 | mov15 lnk12 rel10 caps0 noterm0 lcase0 q0
+EN: He was very far away from me who watched him across three feet of space .
+RU: Он был очень далеко от меня , сидевшего на расстоянии трех футов .
+=== 760 | mov26 lnk18 rel14 caps0 noterm0 lcase0 q0
+EN: Not quite , of course , for Tritt had been angry and withdrawn so that interpersonal contact had weakened and the barrier of displeasure had arisen .
+RU: Не без горечи , конечно : ведь Тритт , рассердившись , замкнулся в себе , отчего взаимный контакт ослабел и возник барьер раздражения .
+=== 761 | mov9 lnk8 rel6 caps0 noterm0 lcase0 q0
+EN: It `s okay , Chrissie , let them go .
+RU: – Ничего страшного , Крисси , пусть уходят .
+=== 763 | mov4 lnk3 rel2 caps0 noterm1 lcase0 q0
+EN: " Right . "
+RU: — Ага .
+=== 764 | mov4 lnk5 rel4 caps0 noterm0 lcase0 q0
+EN: " Raspail`s lover " .
+RU: - Любовник Распейла " .
+=== 765 | mov4 lnk3 rel1 caps0 noterm0 lcase0 q0
+EN: Will that do now ?
+RU: Ну , все ?
+=== 766 | mov56 lnk42 rel38 caps0 noterm0 lcase0 q0
+EN: Soon it was over . Piglet opened the letter - box and climed in . Then , having untied himself , he began to sqeeze into the slit , through which in the old days when front doors WERE front doors , many an unexpected letter that WOL had written to himself , had come slipping .
+RU: Вскоре подъем был окончен . Пятачок открыл ящик и пролез внутрь , затем , отвязавшись , он начал протискиваться в щель , сквозь которую в добрые старые времена , когда входные двери были входными дверями , входило , бывало , много нежданных писем , которые хозяйка вдруг получала от некоей Савы .
+=== 767 | mov11 lnk12 rel8 caps0 noterm0 lcase0 q1
+EN: " Yeah , Walter , I won`t jump on you again .
+RU: - Ладно , Уолтер , я тебя лупить не буду .
+=== 768 | mov28 lnk21 rel19 caps0 noterm0 lcase0 q0
+EN: It was exactly what he would have liked to have himself , if only he had thought of it first , and had n`t gone and overslept himself .
+RU: Это было как раз то самое , что он сам мог бы проделать , приди это ему в голову первому и не проспи он так непоправимо .
+=== 769 | mov39 lnk19 rel15 caps0 noterm0 lcase0 q0
+EN: The knight seized his sword again and used it to push himself back up , but the blade sank deeply into the grass , though he pulled with all his might , he could n`t get it out again .
+RU: Крошка рыцарь поднялся на ноги , схватил рукоять меча , дёрнул , но меч глубоко ушёл в землю и , как он ни тянул , не поддавался .
+=== 770 | mov3 lnk3 rel2 caps0 noterm0 lcase0 q0
+EN: Make the light .
+RU: Зажги свет .
+=== 771 | mov9 lnk10 rel7 caps0 noterm0 lcase0 q0
+EN: " You look absolutely unchanged , " he said .
+RU: - Вы совсем не изменились , - сказал он .
+=== 772 | mov8 lnk5 rel3 caps0 noterm0 lcase0 q0
+EN: If it did , you just argued back .
+RU: Если они к чему - то и приводили , то разве что к новым ссорам .
+=== 773 | mov31 lnk18 rel17 caps0 noterm0 lcase0 q0
+EN: By the time I made it to the lobby , Pedro , the heavily accented Mexican delivery boy from Mangia , was chatting in Spanish with Eduardo near the elevator bank .
+RU: Когда я вошла в вестибюль , Педро , разносчик из « Манхьи » болтал с Эдуарде по - испански .
+=== 775 | mov12 lnk10 rel10 caps0 noterm0 lcase0 q0
+EN: In consequence he now looked at Roberta in an extremely sober manner .
+RU: Поэтому теперь он смотрел на Роберту серьезно и холодно .
+=== 777 | mov30 lnk24 rel21 caps0 noterm0 lcase0 q0
+EN: It is impossible to define these subtleties of reaction , temperament on temperament , for no one knows to what degree we are marked by the things which attract us .
+RU: Невозможно определить те тончайшие реакции , которые возникают в результате взаимодействия характеров , ибо никто не знает , в какой степени влияет на нас предмет нашего восхищения .
+=== 778 | mov24 lnk14 rel12 caps0 noterm0 lcase0 q0
+EN: However , the environment their leaders have created for them to work in makes it possible for them to do bad or evil things .
+RU: Однако созданная их лидерами рабочая среда делает возможными их плохие или злые поступки .
+=== 779 | mov9 lnk4 rel4 caps0 noterm0 lcase0 q0
+EN: Ok , I `ll put it in English units .
+RU: Специально в английских единицах .
+=== 780 | mov42 lnk32 rel32 caps0 noterm0 lcase0 q0
+EN: On the morning of November 25 , 1991 a masked man broke into the home of a newlywed couple near Springfield , Illinois , shot and killed the husband , raped the wife , shot her , and left her for dead .
+RU: Утром 25 ноября 1991 года человек в маске вломился в дом молодоженов недалеко от Спрингфилда , штат Иллинойс , застрелил мужа , изнасиловал жену , после чего выстрелил в нее и оставил умирать .
+=== 781 | mov11 lnk6 rel6 caps0 noterm0 lcase0 q0
+EN: The boys played the slot machine for what seemed like hours .
+RU: Казалось , мальчики играют уже несколько часов .
+=== 782 | mov19 lnk13 rel10 caps0 noterm0 lcase0 q0
+EN: In death , she would be treated the way she had been in life , left alone and forgotten .
+RU: В смерти она останется одинокой и всеми забытой , как в жизни .
+=== 783 | mov6 lnk4 rel3 caps0 noterm0 lcase0 q0
+EN: We ’ve wasted one wish already .
+RU: Жаль только , что желание уже потрачено .
+=== 784 | mov11 lnk5 rel2 caps0 noterm0 lcase0 q0
+EN: The littlums pushed Percival forward , then left him by himself .
+RU: Малыши вытолкали Персиваля на середину треугольника .
+=== 786 | mov21 lnk17 rel9 caps0 noterm0 lcase0 q0
+EN: Visions of bacon cheeseburgers and nonprofessionally ripped jeans and flats — oh hell , maybe even sneakers — filled my head .
+RU: В моем мозгу роились видения — бутерброды с ветчиной , обычные джинсы и туфли без каблуков — может , даже тапочки .
+=== 787 | mov13 lnk13 rel7 caps0 noterm0 lcase0 q0
+EN: And every time you go back , they take more of your company .
+RU: И каждый раз , когда вы приходите к инвесторам за деньгами , у вас забирают часть вашей компании .
+=== 788 | mov5 lnk5 rel2 caps0 noterm0 lcase0 q0
+EN: I want to watch television !
+RU: Хочу смотреть телевизор !
+=== 789 | mov4 lnk4 rel4 caps0 noterm0 lcase0 q0
+EN: Brasti waved a hand .
+RU: Брасти махнул рукой .
+=== 790 | mov7 lnk8 rel4 caps0 noterm0 lcase0 q0
+EN: I was n't one of his crowd .
+RU: Я не входила в его окружение .
+=== 791 | mov5 lnk5 rel4 caps0 noterm0 lcase0 q0
+EN: God can not answer you .
+RU: Ведь Бог тебя все равно не слышит .
+=== 792 | mov31 lnk26 rel7 caps0 noterm0 lcase0 q0
+EN: I was just about to inquire as gently as possible why she was inhaling vodka when she had an article due the next day , but the buzzer rang from downstairs .
+RU: Я как раз собиралась осторожно спросить , почему она накачивается водкой , в то время как ее ждет несделанная работа назавтра , но тут раздался звонок домофона : я нажала кнопку и соединилась с консьержем .
+=== 793 | mov20 lnk19 rel4 caps0 noterm1 lcase0 q0
+EN: " We think they ’re mean little buggers , " said Nobby . " Now , come on ! "
+RU: – Люди уже думают о них как о мелких злобных педиках , – оборвал Шноббс . – А теперь пошли отсюда !
+=== 794 | mov16 lnk12 rel6 caps0 noterm0 lcase0 q0
+EN: But to escape her of course — this unreasonable , unshakable , unchangeable demand of hers !
+RU: Но надо же спастись от нее , от этого бессмысленного , настойчивого , непреклонного требования .
+=== 795 | mov11 lnk11 rel6 caps0 noterm0 lcase0 q0
+EN: ' I want nothing : I have ordered supper at home .
+RU: - Ничего мне не нужно , я заказал ужин дома .
+=== 796 | mov10 lnk7 rel5 caps0 noterm0 lcase0 q0
+EN: Had it plucked the rose , or grasped cold steel ?
+RU: Срывала ли розы или сжимала хладную сталь ?
+=== 797 | mov35 lnk35 rel13 caps0 noterm0 lcase0 q0
+EN: That is to say , the predominant pitch of the western narrowmouth is about top C , the highest key on a piano , and the eastern predominant pitch is around the F# below that .
+RU: Другими словами , преобладающий тон западного узкорота рядом с до мажором , самой высокой тональностью на фортепиано , а у восточного преобладающий тон ниже , рядом с фа мажором .
+=== 798 | mov37 lnk39 rel29 caps0 noterm0 lcase0 q0
+EN: My enemy ’s enemy is my friend , and grasses , even when grazed , thrive when herbivores eat ( along with the grasses themselves ) other plants that would compete for soil , sun and water .
+RU: Враг моего врага - мой друг , и травы , даже будучи ощипанными , процветают , когда травоядные животные поедают ( наряду с самими травами ) другие растения , которые конкурировали бы за почву , солнце и воду .
+=== 799 | mov17 lnk4 rel2 caps0 noterm0 lcase0 q0
+EN: The ones I ’ve had the most fun in anyway and he certainly made them fun too .
+RU: Я наслаждалась жизнью , и все благодаря ему .
+=== 800 | mov11 lnk12 rel7 caps0 noterm0 lcase0 q0
+EN: But in Europe they encountered each other and mixed their genes .
+RU: Однако в Европе они встретились , и их гены перемешались .
+=== 802 | mov11 lnk7 rel4 caps0 noterm0 lcase0 q0
+EN: She punched “ hold ” and kept right on jabbing numbers .
+RU: Она нажала на кнопку и принялась стремительно набирать один номер за другим .
+=== 803 | mov38 lnk36 rel13 caps0 noterm0 lcase0 q0
+EN: Slowly , but with no doubt or hesitation whatever , and in something of a solemn expectancy , the two animals passed through the broken tumultuous water and moored their boat at the flowery margin of the island .
+RU: Медленно , но нисколечко не раздумывая и не сомневаясь , в некотором торжественном ожидании , оба зверя проплыли через встревоженную , взбаламученную воду и причалили к самой кромочке острова , покрытой цветами .
+=== 804 | mov37 lnk43 rel22 caps0 noterm0 lcase0 q0
+EN: So it makes sense to consider the Mona Lisa near the end of his career , exploring it as the culmination of a life spent perfecting an ability to stand at the intersection of art and nature .
+RU: Поэтому все-таки имеет смысл подробно говорить о " Моне Лизе " , уже дойдя до закатного периода творчества Леонардо , и рассматривать это произведение как кульминацию всей его жизни , на протяжении которой он совершенствовал умение оставаться на пересечении искусства и природы .
+=== 805 | mov24 lnk21 rel16 caps0 noterm0 lcase0 q0
+EN: A close study of high-performing organizations , the ones in which the people feel safe when they come to work , reveals something astounding .
+RU: Пристальное изучение успешных организаций , в которых люди чувствуют себя в безопасности , когда приходят на работу , показало поразительные результаты .
+=== 806 | mov6 lnk3 rel2 caps0 noterm0 lcase0 q0
+EN: Will you do it , David ?
+RU: Значит , ты согласен путешествовать , Дэви ?
+=== 807 | mov13 lnk18 rel9 caps0 noterm0 lcase0 q0
+EN: Then , finding she could not follow , he came back and whined .
+RU: Но , видя , что женщина не в силах следовать за ней , она вернулась назад и жалобно заскулила .
+=== 808 | mov28 lnk23 rel12 caps0 noterm0 lcase0 q0
+EN: What was interesting was that no comparable damage had been observed in the coat Sandra Smith had been wearing over the jumper , or on the body itself .
+RU: Любопытным было то , что никаких похожих повреждений на жакете , надетом на Сандре Смит поверх джемпера , равно как и на самом теле , обнаружено не было .
+=== 809 | mov11 lnk12 rel4 caps0 noterm1 lcase0 q0
+EN: The four came across the yard , and Grampa demanded ,
+RU: Все четверо шли через двор , и дед кричал :
+=== 810 | mov27 lnk19 rel11 caps0 noterm0 lcase0 q0
+EN: To bring the cosmos back to balance , it was necessary to torture and publicly execute the criminal , so that everyone could see the order re-established .
+RU: На заре современной Европы считалось , что убийцы нарушают космический баланс и для восстановления равновесия надо их пытать и публично казнить — пусть все видят , как восстанавливается порядок .
+=== 811 | mov4 lnk5 rel4 caps0 noterm0 lcase0 q1
+EN: “ Yes , sir .
+RU: - Да , сэр .
+=== 812 | mov10 lnk5 rel2 caps0 noterm0 lcase0 q0
+EN: Juliet keeps going on like I didn ’t even speak .
+RU: Между тем она продолжает , словно в прострации :
+=== 813 | mov10 lnk7 rel4 caps0 noterm0 lcase0 q0
+EN: Rémy did not like the way the night was progressing .
+RU: Реми совсем не нравилось , как развивались события .
+=== 814 | mov7 lnk9 rel5 caps0 noterm0 lcase0 q1
+EN: " I collect church collapses , recreationally .
+RU: - Я собираю данные о разрушениях церквей , так просто , для развлечения .
+=== 815 | mov15 lnk14 rel11 caps0 noterm0 lcase0 q0
+EN: Reepicheep , Edmund , Eustace and Caspian , glittering in mail , were with him .
+RU: С ним , блистая доспехами , находились Рипичип , Эдмунд , Юстас и Каспиан .
+=== 816 | mov8 lnk9 rel6 caps0 noterm0 lcase0 q0
+EN: They are still there in warehouses in Liverpool .
+RU: Они и по сей день там , в пакгаузах Ливерпуля .
+=== 817 | mov8 lnk7 rel3 caps0 noterm0 lcase0 q0
+EN: “ Because what you did was illegal ” .
+RU: — Поскольку твой эксперимент был незаконным .
+=== 818 | mov2 lnk6 rel5 caps0 noterm0 lcase0 q0
+EN: Probably both .
+RU: Либо и то и другое вместе .
+=== 819 | mov12 lnk10 rel7 caps0 noterm0 lcase0 q0
+EN: He pulled the cork , and tipped up the bottle and drank .
+RU: Он вытащил пробку , поднял бутылку и отхлебнул .
+=== 820 | mov31 lnk25 rel19 caps0 noterm0 lcase0 q0
+EN: Other rendezvous , such as that with the orang utans , are as near certain as it is possible to be , and there are many more in that happy category .
+RU: Другие свидания , такие как наше с орангутаном , почти бесспорны , насколько это возможно , и еще многие относятся к этой благополучной категории .
+=== 821 | mov29 lnk28 rel13 caps0 noterm1 lcase0 q0
+EN: In this connection a couple of lines from one of Swift ’s poems ( which in these backwoods I can not locate ) have stuck in my memory :
+RU: В связи с этим в моей памяти застряли две строки из стихотворения Свифта ( которого в здешней глуши мне не достать ) :
+=== 824 | mov16 lnk10 rel5 caps0 noterm0 lcase0 q0
+EN: We were stopped within 100 yards , as we came to the bridge on the Nile .
+RU: Проехав с сотню шагов , грузовик затормозил перед мостом через Нил .
+=== 825 | mov3 lnk4 rel2 caps0 noterm0 lcase0 q0
+EN: « Stolen » .
+RU: - Украли .
+=== 826 | mov6 lnk6 rel4 caps0 noterm0 lcase0 q0
+EN: The young lady is Miss Manette .
+RU: Эта молодая особа — мисс Манетт .
+=== 827 | mov9 lnk6 rel4 caps0 noterm0 lcase0 q0
+EN: I do n't know what it is about them .
+RU: Не знаю , что в них так меня привлекает ...
+=== 828 | mov19 lnk14 rel9 caps0 noterm0 lcase0 q0
+EN: And fire will lift you off my shoulders , clean , quick , sure ; nothing to rot later .
+RU: Огонь снимет вас с моих плеч быстро , чисто и наверняка , даже гнить будет нечему .
+=== 829 | mov8 lnk8 rel5 caps0 noterm0 lcase0 q0
+EN: You will not like what you find out .
+RU: То , что вам предстоит увидеть , вам не понравится .
+=== 863 | mov11 lnk11 rel5 caps0 noterm0 lcase0 q0
+EN: Greece may belong to the king , for aught we know .
+RU: Может быть , Греция принадлежит нашему королю , почем знать ?
+=== 864 | mov6 lnk5 rel3 caps0 noterm1 lcase0 q0
+EN: « Who ’s there ? »
+RU: — Кто там ?
+=== 865 | mov29 lnk18 rel8 caps0 noterm0 lcase0 q0
+EN: DABDA , moreover , is generally thought to give a better description of one ’s own preparation for dying than of one ’s mourning the demise of someone else .
+RU: К тому же ОГТДП скорее описывает подготовку человека к собственной смерти , чем оплакивание чужой .
+=== 866 | mov12 lnk11 rel7 caps0 noterm0 lcase0 q0
+EN: The latter was losing weight , looking more punchy in each fight .
+RU: Тот худел , с каждой стычкой его все больше шатало от ударов .
+=== 867 | mov3 lnk2 rel0 caps0 noterm0 lcase0 q0
+EN: Steady , now .
+RU: - Потерпите !
+=== 868 | mov2 lnk3 rel1 caps0 noterm0 lcase0 q0
+EN: Of course .
+RU: Я понимаю .
+=== 869 | mov23 lnk20 rel19 caps0 noterm0 lcase0 q0
+EN: I thought she would say no , she said , ' If he ever sees you , you will have betrayed me ’ .
+RU: Я думал , она скажет нет , но она сказала : « Если он тебя увидит , считай , что ты меня предал » .
+=== 870 | mov24 lnk21 rel13 caps0 noterm1 lcase0 q0
+EN: " The revolving blood beats against the sides of the three valves and closes them so that the blood can not descend . "
+RU: " Вращающаяся кровь бьется о стенки трех клапанов и закрывает их , и потому не может опуститься назад " .
+=== 871 | mov6 lnk8 rel5 caps0 noterm0 lcase0 q0
+EN: " Because I like you " .
+RU: — Потому что я люблю вас .
+=== 872 | mov1 lnk3 rel3 caps0 noterm0 lcase0 q0
+EN: Goodbye .
+RU: До свидания .
+=== 873 | mov18 lnk15 rel8 caps0 noterm0 lcase0 q0
+EN: He walked steadily down the street , greeting a night watchman whom he knew who was trying doors .
+RU: Он вышел на улицу и , кивнув проверявшему двери ночному сторожу , которого знал в лицо , уверенно зашагал прочь .
+=== 874 | mov31 lnk25 rel16 caps0 noterm0 lcase0 q0
+EN: When Will first told me what he wanted , he had to tell me twice , as I was quite sure I could not have heard him correctly the first time .
+RU: Когда Уилл впервые сказал мне , чего хочет , ему пришлось повторить дважды , поскольку я была совершенно уверена , что неправильно расслышала в первый раз .
+=== 875 | mov65 lnk53 rel28 caps0 noterm0 lcase0 q0
+EN: Richard thought about pointing out that anyone could have confused the National Gallery with the National Portrait Gallery , and that it was n’t she who had spent the whole day standing in the rain ( which was , in his opinion , every bit as much fun as walking around either place until his feet hurt ) , but he thought better of it .
+RU: Ричард хотел сказать , что любой может перепутать Национальную галерею с Национальной портретной галереей и что не она же простояла весь день под проливным дождем ( впрочем , он считал , что это ничуть не хуже , чем бродить по любой из означенных галерей , пока ноги не отвалятся ) , – но смолчал .
+=== 877 | mov5 lnk4 rel3 caps0 noterm0 lcase0 q0
+EN: So it ’s true then ?
+RU: – Значит , это правда ?
+=== 878 | mov12 lnk11 rel6 caps0 noterm0 lcase0 q0
+EN: ' What did he say ? ’ I hissed , suddenly suspicious .
+RU: — А что он сказал ? — с подозрением спросила я .
+=== 880 | mov32 lnk19 rel9 caps0 noterm0 lcase0 q0
+EN: The energy released will create sufficient pressure to support the star against its own gravity , giving rise to an object with a radius about five times the radius of the sun .
+RU: Высвобожденная энергия создает достаточное давление , чтобы уравновешивать созданную звездой силу тяжести и поддерживать размеры звезды с радиусом примерно в пять раз больше солнечного .
+=== 881 | mov45 lnk18 rel11 caps0 noterm0 lcase0 q0
+EN: He turns back to me , swaying , and before he can react , I ’ve already plucked the cigarette out of his mouth and I ’m kissing him , my hands cupped on either side of his face , shoving my body into his .
+RU: Пока он не успел опомниться , я выхватываю сигарету и целую его , обхватив голову руками и прижимаясь всем телом .

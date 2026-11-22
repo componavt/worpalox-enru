@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Visual state of a word chip in the puzzle.
-enum WordTokenState { normal, selected, hintCorrect, hintWrong, solved }
+enum WordTokenState { normal, selected, hintCorrect, hintWrong, solved, locked }
 
 /// Which side of the chip shows the "drop here" marker while dragging.
 enum DropSide { none, before, after }
@@ -42,6 +42,7 @@ class WordToken extends StatelessWidget {
         text = scheme.onPrimaryContainer;
       case WordTokenState.hintCorrect:
       case WordTokenState.solved:
+      case WordTokenState.locked:
         background = Colors.green[100]!;
         border = Colors.green[400]!;
         text = Colors.green[900]!;
@@ -86,12 +87,16 @@ class WordToken extends StatelessWidget {
       ),
     );
 
+    // Marker slots are ALWAYS reserved so a hover never changes the chip
+    // width (layout shifts mid-gesture caused the boundary flicker).
     final marker = Container(
       width: 4,
       height: 40,
       margin: const EdgeInsets.symmetric(horizontal: 2),
       decoration: BoxDecoration(
-        color: scheme.primary,
+        color: dropSide == DropSide.none
+            ? Colors.transparent
+            : scheme.primary,
         borderRadius: BorderRadius.circular(2),
       ),
     );
@@ -101,9 +106,9 @@ class WordToken extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (dropSide == DropSide.before) marker,
+          marker,
           chip,
-          if (dropSide == DropSide.after) marker,
+          marker,
         ],
       ),
     );
