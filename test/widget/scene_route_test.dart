@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:worpalox/app.dart';
+import 'package:worpalox/models/puzzle_state.dart';
 import 'package:worpalox/services/corpus_service.dart';
 import 'package:worpalox/widgets/block_progress.dart';
 import 'package:worpalox/widgets/word_token.dart';
@@ -18,6 +19,9 @@ Future<void> _solveCurrentPuzzle(
   WidgetTester tester,
   List<String> correct,
 ) async {
+  // Chip labels lowercase articles during play: compare via the same
+  // match keys the model uses.
+  String key(String w) => PuzzleState.puzzleMatchKey(w);
   for (var attempt = 0; attempt < correct.length * 2; attempt++) {
     if (find.text('Solved!').evaluate().isNotEmpty) return;
     final current = tester
@@ -26,8 +30,11 @@ Future<void> _solveCurrentPuzzle(
         .toList();
     var moved = false;
     for (var target = 0; target < correct.length && !moved; target++) {
-      if (current[target] == correct[target]) continue;
-      final from = current.indexWhere((w) => w == correct[target], target);
+      if (key(current[target]) == key(correct[target])) continue;
+      final from = current.indexWhere(
+        (w) => key(w) == key(correct[target]),
+        target,
+      );
       if (from == -1) continue;
       await tester.tap(find.byType(WordToken).at(from));
       await tester.pump();

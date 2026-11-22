@@ -64,8 +64,8 @@ class PuzzleState {
     state.lockingEnabled = locking;
     state._current = state._shuffled(random ?? Random());
     state.minMoves = minimalMoves(
-      state._current.map((t) => t.text).toList(),
-      state._correct,
+      [for (final t in state._current) puzzleMatchKey(t.text)],
+      [for (final t in state._correct) puzzleMatchKey(t)],
     );
     // Words that already sit in the right place after the shuffle do not
     // earn placement rewards later.
@@ -82,11 +82,22 @@ class PuzzleState {
   static List<String> tokenize(String text) =>
       text.split(RegExp(r'\s+')).where((t) => t.isNotEmpty).toList();
 
+  /// Comparison key for puzzle matching. Articles are interchangeable
+  /// (two identical "the" chips are the same word for the player), while
+  /// other case pairs (US vs us) stay distinct.
+  static String puzzleMatchKey(String text) {
+    final lower = text.toLowerCase();
+    if (const {'the', 'a', 'an'}.contains(lower)) {
+      return lower;
+    }
+    return text;
+  }
+
   List<PuzzleToken> _shuffled(Random random) {
     final base = [
       for (var i = 0; i < _correct.length; i++) PuzzleToken(i, _correct[i]),
     ];
-    if (_correct.toSet().length < 2) return base;
+    if (correctKeys.toSet().length < 2) return base;
     var result = base.toList();
     for (var attempt = 0; attempt < 100; attempt++) {
       result = base.toList()..shuffle(random);
@@ -95,9 +106,16 @@ class PuzzleState {
     return result;
   }
 
+  /// Match keys of the correct order (used by minimalMoves and shuffle
+  /// distinctness checks so duplicate articles behave like one word).
+  List<String> get correctKeys =>
+      [for (final t in _correct) puzzleMatchKey(t)];
+
   bool _matches(List<PuzzleToken> tokens) {
     for (var i = 0; i < tokens.length; i++) {
-      if (tokens[i].text != _correct[i]) return false;
+      if (puzzleMatchKey(tokens[i].text) != puzzleMatchKey(_correct[i])) {
+        return false;
+      }
     }
     return true;
   }
@@ -131,7 +149,8 @@ class PuzzleState {
   int? get newlyLockedSlot => _newlyLockedSlot;
   Duration get elapsed => (_solveTime ?? DateTime.now()).difference(_startTime);
 
-  bool isPositionCorrect(int index) => _current[index].text == _correct[index];
+  bool isPositionCorrect(int index) =>
+      puzzleMatchKey(_current[index].text) == puzzleMatchKey(_correct[index]);
 
   /// Moves the token at [from] so that it ends up at index [to].
   ///
@@ -166,7 +185,8 @@ class PuzzleState {
         _current[free[rank]] = movable[rank];
       }
       _moveCount++;
-      if (_current[to].text == _correct[to]) {
+      if (puzzleMatchKey(_current[to].text) ==
+          puzzleMatchKey(_correct[to])) {
         _lockedSlots.add(to);
         _newlyLockedSlot = to;
       }
@@ -233,17 +253,44 @@ class PuzzleState {
       for (var i = 0; i < ids.length; i++) PuzzleToken(ids[i], correct[ids[i]]),
     ];
     state.minMoves = minimalMoves(
-      state._current.map((t) => t.text).toList(),
-      state._correct,
+      [for (final t in state._current) puzzleMatchKey(t.text)],
+      [for (final t in state._correct) puzzleMatchKey(t)],
     );
     return state;
   }
 
-  /// Shuffles the words again. Counters are kept so that reshuffling cannot
-  /// be used to erase hints or moves.
+  /// Shuffles again — but ONLY the contents of the free slots. Locked
+  /// chips (objects and ids) keep their slots, so a lock can never be
+  /// silently moved into a wrong position. Clears the last lock event so
+  /// no screen re-reads an old celebration. If no distinct arrangement of
+  /// the free chips exists, the current one is kept.
   void reshuffle([Random? random]) {
+    // The lock event is consumed by the screens during the move; a stale
+    // event must never survive into the next interaction.
+    _newlyLockedSlot = null;
     if (_solved) return;
-    _current = _shuffled(random ?? Random());
+    final rng = random ?? Random();
+    _newlyLockedSlot = null;
+    final slots = freeSlots;
+    if (slots.length < 2) return;
+
+    final original = [for (final slot in slots) _current[slot]];
+    List<PuzzleToken>? chosen;
+    for (var attempt = 0; attempt < 100; attempt++) {
+      final shuffled = original.toList()..shuffle(rng);
+      final candidate = _current.toList();
+      for (var i = 0; i < slots.length; i++) {
+        candidate[slots[i]] = shuffled[i];
+      }
+      if (!_matches(candidate)) {
+        chosen = shuffled;
+        break;
+      }
+    }
+    if (chosen == null) return; // keep the previous arrangement
+    for (var i = 0; i < slots.length; i++) {
+      _current[slots[i]] = chosen[i];
+    }
   }
 
   /// Minimal number of "take one word and put it elsewhere" moves that turn

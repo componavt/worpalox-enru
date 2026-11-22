@@ -80,7 +80,9 @@ void main() {
     final first = tester.widget<WordToken>(tokens.first).word;
     final gesture = await tester.startGesture(tester.getCenter(tokens.first));
     await tester.pump(const Duration(milliseconds: 50));
-    final target = tester.getCenter(tokens.last);
+    // The right half of the last chip is the END gap under the field-level
+    // drop controller.
+    final target = tester.getCenter(tokens.last) + const Offset(18, 0);
     await gesture.moveTo(target);
     await tester.pump();
     await gesture.up();

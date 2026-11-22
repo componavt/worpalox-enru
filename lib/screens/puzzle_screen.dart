@@ -37,7 +37,6 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   PreLearnResult? _prelearn;
   SceneRun? _sceneRun;
   bool _hintsVisible = false;
-  bool _dragActive = false;
   bool _navLock = false;
   int? _selectedIndex;
   int? _lensRuIndex;
@@ -51,10 +50,15 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   int? _burstTokenId;
   int _burstSerial = 0;
 
-  // Drag-target hysteresis: keys of every chip target plus the target the
-  // marker is currently shown on.
+  // Field-level drag controller: ONE target for the whole sentence; the
+  // insertion gap is chosen from the pointer position with an 8 px
+  // hysteresis band, and the commit always uses the shown gap. Token keys
+  // provide the gap coordinates.
   final Map<int, GlobalKey> _tokenKeys = {};
-  int? _activeDragTargetId;
+
+  /// The insertion gap chosen by the drag controller. A ValueNotifier so
+  /// the markers update WITHOUT rebuilding the whole screen mid-drag.
+  final ValueNotifier<int?> _activeGap = ValueNotifier<int?>(null);
 
   @override
   void didChangeDependencies() {
@@ -85,6 +89,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   @override
   void dispose() {
     _rewardClearTimer?.cancel();
+    _activeGap.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -104,6 +109,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     // correct and immovable now.
     final lockedNow = puzzle.newlyLockedSlot != null;
 
+    _activeGap.value = null;
     setState(() {
       _selectedIndex = null;
       _hintsVisible = false;
@@ -135,7 +141,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   void _handleTap(int index) {
-    if (_puzzle!.solved) return;
+    if (_puzzle!.solved || _puzzle!.isSlotLocked(index)) return;
     final selected = _selectedIndex;
     if (selected == null) {
       setState(() => _selectedIndex = index);
@@ -160,12 +166,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   void _reshuffle() {
+    _activeGap.value = null;
     setState(() {
       _puzzle!.reshuffle();
       _selectedIndex = null;
       _hintsVisible = false;
-      _lensRuIndex = null;
-      _burstTokenId = null;
     });
   }
 
@@ -438,7 +443,26 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
   Widget _buildSentence(PuzzleState puzzle, Map<int, Set<int>> lensTargets) {
     final tokens = puzzle.tokens;
-    return Container(
+    final body = Wrap(
+      spacing: 6,
+      runSpacing: 12,
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        for (var i = 0; i < tokens.length; i++)
+          _buildToken(puzzle, tokens, i, lensTargets),
+        if (puzzle.solved && puzzle.terminalPunctuation.isNotEmpty)
+          Text(
+            puzzle.terminalPunctuation,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+      ],
+    );
+
+    final field = Container(
       width: double.infinity,
       constraints: const BoxConstraints(minHeight: 120),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
@@ -449,164 +473,149 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           color: puzzle.solved ? Colors.green[300]! : Colors.grey[300]!,
         ),
       ),
-      child: Wrap(
-        spacing: 6,
-        runSpacing: 12,
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: [
-          for (var i = 0; i < tokens.length; i++)
-            _buildToken(puzzle, tokens, i, lensTargets),
-          if (puzzle.solved && puzzle.terminalPunctuation.isNotEmpty)
-            Text(
-              puzzle.terminalPunctuation,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          if (!puzzle.solved) _buildEndZone(puzzle),
-        ],
-      ),
+      child: body,
     );
-  }
 
-  /// Drop zone at the end of the sentence: accepts any word except the one
-  /// already in the last movable slot and inserts it right before the
-  /// terminal punctuation. The punctuation itself stays static. The zone is
-  /// padded generously in every direction and reserves the marker slot up
-  /// front, so aiming near the punctuation works and nothing shifts when a
-  /// drag starts.
-  Widget _buildEndZone(PuzzleState puzzle) {
-    final lastFree = puzzle.lastFreeSlot;
+    if (puzzle.solved) return field;
+
+    // ONE drag target for the whole sentence: the insertion gap is chosen
+    // from the pointer position with hysteresis, the marker shows exactly
+    // that gap, and the commit uses the same gap. No per-chip competition,
+    // no "rejected neighbour" gap without an acceptor.
     return DragTarget<int>(
       onWillAcceptWithDetails: (details) {
         final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
-        if (from < 0 || from == lastFree) return false;
-        return _hysteresisAllows(-1, details.offset);
+        if (from < 0) return false;
+        return _computeGap(details.offset, puzzle) != null;
       },
       onAcceptWithDetails: (details) {
         final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
-        if (from >= 0 && from != lastFree) {
-          _move(from, lastFree);
-        }
+        if (from < 0) return;
+        final gap = _computeGap(details.offset, puzzle);
+        if (gap == null) return;
+        _move(from, gap);
       },
-      builder: (context, candidates, _) {
-        final hovering = candidates.isNotEmpty;
-        if (hovering) _activeDragTargetId = -1;
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Reserved marker slot: bright only while the zone is actually
-              // accepting the drag. A faint always-on line would promise a
-              // drop the zone might not take.
-              Container(
-                key: const ValueKey('end-zone-marker'),
-                width: 5,
-                height: 32,
-                margin: const EdgeInsets.only(right: 2),
-                color: hovering
-                    ? Colors.blue
-                    : _dragActive
-                        ? Colors.blue.withValues(alpha: 0.35)
-                        : Colors.transparent,
-              ),
-              Text(
-                puzzle.terminalPunctuation,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+      builder: (context, candidates, _) => field,
     );
+  }
+
+  /// Computes the insertion gap for the pointer: nearest valid gap point,
+  /// with an 8 px hysteresis band around the previously shown gap. Locked
+  /// slots and empty coordinates are not valid gaps.
+  int? _computeGap(Offset pointer, PuzzleState puzzle) {
+    final n = puzzle.tokens.length;
+    if (n == 0) return null;
+    // Candidate insertion points: (destination slot, screen point). Both
+    // edges of a chip map to a destination; "after the last chip" maps to
+    // the last free slot (destination n-1), never out of range.
+    final candidates = <({int dest, Offset point})>[];
+    for (var i = 0; i < n; i++) {
+      if (puzzle.isSlotLocked(i)) continue;
+      final box =
+          _tokenKeys[puzzle.tokens[i].id]?.currentContext?.findRenderObject()
+              as RenderBox?;
+      if (box == null || !box.attached) continue;
+      final topLeft = box.localToGlobal(Offset.zero);
+      final midY = box.size.height / 2;
+      candidates.add((dest: i, point: topLeft + Offset(-2, midY)));
+      final destAfter = i + 1 < n ? i + 1 : n - 1;
+      candidates.add(
+        (dest: destAfter, point: topLeft + Offset(box.size.width + 2, midY)),
+      );
+    }
+    if (candidates.isEmpty) return null;
+
+    int? nearest;
+    double best = double.infinity;
+    for (final c in candidates) {
+      final d = (c.point - pointer).distance;
+      if (d < best) {
+        best = d;
+        nearest = c.dest;
+      }
+    }
+    // Hysteresis: while the pointer stays within 8 px of the previously
+    // shown gap point, keep that destination even if another became
+    // marginally closer.
+    final previous = _activeGap.value;
+    if (previous != null && previous != nearest) {
+      for (final c in candidates) {
+        if (c.dest == previous && (c.point - pointer).distance <= 8) {
+          return previous;
+        }
+      }
+    }
+    return nearest;
+  }
+
+  /// During play interchangeable articles are shown lowercase (removes the
+  /// false the/The distinction); the victory card shows the original text.
+  String _chipLabel(PuzzleToken token) {
+    final lower = token.text.toLowerCase();
+    if (const {'the', 'a', 'an'}.contains(lower)) return lower;
+    return token.text;
   }
 
   Widget _buildToken(PuzzleState puzzle, List<PuzzleToken> tokens, int index,
       Map<int, Set<int>> lensTargets) {
     final token = tokens[index];
     final state = _stateFor(puzzle, index);
-    // Lens channel (amber underline), independent of the state above and
-    // addressed by token id so it follows chips through every shuffle.
     final translated = _lensRuIndex != null &&
         (lensTargets[_lensRuIndex]?.contains(token.id) ?? false);
+    final label = _chipLabel(token);
 
     if (puzzle.solved || puzzle.isSlotLocked(index)) {
       // Locked chips are green and immovable: no drag source, no target.
+      // The lens channel survives locking (the link remains meaningful).
       return withPlacementBurst(
-        chip: WordToken(word: token.text, state: state),
+        chip: WordToken(word: label, state: state, translated: translated),
         active: _burstTokenId == token.id,
         serial: _burstSerial,
       );
     }
 
-    return DragTarget<int>(
-      key: _tokenKeys.putIfAbsent(token.id, () => GlobalKey()),
-      onWillAcceptWithDetails: (d) {
-        final from = puzzle.tokens.indexWhere((t) => t.id == d.data);
-        if (from < 0 || from == index) return false;
-        // Hysteresis: while the finger stays within 8 logical pixels of the
-        // currently shown target, the marker does not jump to a neighbour.
-        return _hysteresisAllows(index, d.offset);
-      },
-      onAcceptWithDetails: (d) {
-        final from = puzzle.tokens.indexWhere((t) => t.id == d.data);
-        _move(from, index);
-      },
-      builder: (context, candidates, _) {
+    final chipKey = _tokenKeys.putIfAbsent(token.id, () => GlobalKey());
+
+    // Gap markers listen to the gap notifier directly: no full-screen
+    // rebuild while the drag is in progress.
+    return ValueListenableBuilder<int?>(
+      valueListenable: _activeGap,
+      builder: (context, gap, _) {
         var side = DropSide.none;
-        if (candidates.isNotEmpty) {
-          _activeDragTargetId = token.id;
-          final from = tokens.indexWhere((t) => t.id == candidates.first);
-          side = from > index ? DropSide.before : DropSide.after;
+        if (gap != null) {
+          if (gap == index) side = DropSide.before;
+          if (gap == index + 1) side = DropSide.after;
         }
-        final chip = withPlacementBurst(
-          chip: WordToken(
-            word: token.text,
-            state: state,
-            translated: translated,
-            dropSide: side,
+        final chip = KeyedSubtree(
+          key: chipKey,
+          child: withPlacementBurst(
+            chip: WordToken(
+              word: label,
+              state: state,
+              translated: translated,
+              dropSide: side,
+            ),
+            active: false,
+            serial: _burstSerial,
           ),
-          active: _burstTokenId == token.id,
-          serial: _burstSerial,
         );
         return Draggable<int>(
           data: token.id,
           onDragStarted: () => setState(() {
             _selectedIndex = null;
-            _dragActive = true;
           }),
-          onDragEnd: (_) => setState(() => _dragActive = false),
+          onDragEnd: (_) {},
           feedback: Material(
             color: Colors.transparent,
             elevation: 6,
             borderRadius: BorderRadius.circular(10),
-            child: WordToken(word: token.text, state: WordTokenState.selected),
+            child: WordToken(word: label, state: WordTokenState.selected),
           ),
-          childWhenDragging: WordToken(word: token.text, faded: true),
+          childWhenDragging: WordToken(word: label, faded: true),
           child: GestureDetector(onTap: () => _handleTap(index), child: chip),
         );
       },
     );
-  }
-
-  /// Keeps the shown target stable while the finger oscillates on the
-  /// boundary: the previously shown target owns an 8-logical-pixel band.
-  /// Commit always goes to exactly the target the marker shows.
-  bool _hysteresisAllows(int newTokenId, Offset globalPosition) {
-    final previous = _activeDragTargetId;
-    if (previous == null || previous == newTokenId) return true;
-    final prevBox =
-        _tokenKeys[previous]?.currentContext?.findRenderObject() as RenderBox?;
-    if (prevBox == null || !prevBox.attached) return true;
-    final bounds =
-        prevBox.localToGlobal(Offset.zero) & prevBox.size;
-    return !bounds.inflate(8).contains(globalPosition);
   }
 
   Widget _buildStatus(PuzzleState puzzle) {

@@ -14,10 +14,10 @@ Future<void> _startApp(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Level _level(int id, String english) => Level(
+Level _level(int id, String english, {String russian = 'ru'}) => Level(
   id: id,
   english: english,
-  russian: 'ru',
+  russian: russian,
   tokenCount: english.split(' ').length,
   difficulty: 'easy',
   commentaryRu: '',
@@ -61,13 +61,21 @@ void main() {
     }
     final dragged = before[dragIndex];
 
+    // The end gap under the field-level drop controller: the right half of
+    // the last chip.
+    final endPoint =
+        tester.getCenter(find.byType(WordToken).at(before.length - 1)) +
+        const Offset(18, 0);
     final gesture = await tester.startGesture(
       tester.getCenter(find.byType(WordToken).at(dragIndex)),
     );
     await tester.pump(const Duration(milliseconds: 50));
-    // The end drop zone is the last DragTarget in the sentence Wrap.
-    await gesture.moveTo(tester.getCenter(find.byType(DragTarget<int>).last));
+    await gesture.moveTo(endPoint);
     await tester.pump();
+    for (final w in tester.widgetList<WordToken>(find.byType(WordToken))) {
+      // ignore: avoid_print
+      print('PROBE ${w.word} side=${w.dropSide} translated=${w.translated}');
+    }
     await gesture.up();
     await tester.pumpAndSettle();
 
@@ -86,11 +94,10 @@ void main() {
     final movesBefore = _movesText(tester);
     expect(movesBefore, isNotNull);
 
-    final gesture = await tester.startGesture(
-      tester.getCenter(find.byType(WordToken).at(before.length - 1)),
-    );
+    final lastCenter = tester.getCenter(find.byType(WordToken).at(before.length - 1));
+    final gesture = await tester.startGesture(lastCenter);
     await tester.pump(const Duration(milliseconds: 50));
-    await gesture.moveTo(tester.getCenter(find.byType(DragTarget<int>).last));
+    await gesture.moveTo(lastCenter + const Offset(18, 0));
     await tester.pump();
     await gesture.up();
     await tester.pumpAndSettle();
@@ -114,7 +121,7 @@ void main() {
 
     final corpus = CorpusService()
       ..setLevels([
-        _level(901, 'Pemberley blushed yesterday enormously .'),
+        _level(901, 'Pemberley blushed yesterday enormously .', russian: 'Пемберли вчера покраснела .'),
       ]);
     await tester.pumpWidget(WorpaloxApp(corpusService: corpus));
     await tester.pumpAndSettle();
@@ -124,18 +131,27 @@ void main() {
     await tester.pumpAndSettle();
     // Empty prelearn pairs auto-skip straight to the puzzle.
 
-    // Sanity: the dot really is on another row than the first token.
+    // Sanity: with the narrow viewport the sentence wraps — the last chip
+    // is on another row than the first one.
     final firstTokenTop = tester.getTopLeft(find.byType(WordToken).first).dy;
-    final dotTop = tester.getTopLeft(find.text('.')).dy;
-    expect(dotTop, greaterThan(firstTokenTop));
+    final lastChipTop = tester.getTopLeft(find.byType(WordToken).last).dy;
+    expect(lastChipTop, greaterThan(firstTokenTop));
 
     final dragged = _words(tester).first;
+    final lastCenter = tester.getCenter(find.byType(WordToken).last);
+    // The center of the last chip maps to the END gap (its after-point is
+    // nearer than the before-chip point).
+    final endPoint = lastCenter;
     final gesture = await tester.startGesture(
       tester.getCenter(find.byType(WordToken).first),
     );
     await tester.pump(const Duration(milliseconds: 50));
-    await gesture.moveTo(tester.getCenter(find.text('.')));
+    await gesture.moveTo(endPoint);
     await tester.pump();
+    for (final w in tester.widgetList<WordToken>(find.byType(WordToken))) {
+      // ignore: avoid_print
+      print('PROBE2 ${w.word} side=${w.dropSide} translated=${w.translated}');
+    }
     await gesture.up();
     await tester.pumpAndSettle();
 
@@ -150,17 +166,15 @@ void main() {
     expect(movesAfterFirst || find.text('Solved!').evaluate().isNotEmpty,
         isTrue);
 
-    // A small vertical offset must still hit the padded drop zone. Skipped
-    // when the first drop already solved the sentence.
+    // A small vertical offset must still hit the end gap. Skipped when the
+    // first drop already solved the sentence.
     if (find.text('Solved!').evaluate().isEmpty) {
       final second = _words(tester).first;
       final gesture2 = await tester.startGesture(
         tester.getCenter(find.byType(WordToken).first),
       );
       await tester.pump(const Duration(milliseconds: 50));
-      await gesture2.moveTo(
-        tester.getCenter(find.text('.')) + const Offset(0, 8),
-      );
+      await gesture2.moveTo(endPoint + const Offset(0, 8));
       await tester.pump();
       await gesture2.up();
       await tester.pumpAndSettle();

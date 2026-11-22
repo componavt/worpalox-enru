@@ -68,7 +68,7 @@ void main() {
       isTrue,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'The'))
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'the'))
           .translated,
       isFalse,
     );
