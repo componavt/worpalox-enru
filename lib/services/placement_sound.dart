@@ -1,5 +1,6 @@
+import 'package:flutter/foundation.dart' show debugPrint;
+
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// One selectable sound of the test Sound Lab (Kenney "Interface Sounds",
@@ -40,7 +41,11 @@ abstract class PlacementAudio {
   Future<void> playCorrectPlacement();
 }
 
-class SoundService extends ChangeNotifier implements PlacementAudio {
+class SoundService implements PlacementAudio {
+  /// Test hook: when set, the confirmed sound is handed here instead of
+  /// the player (no platform channels in tests).
+  void Function(PlacementSound sound, double volume)? onEmit;
+
   static const _prefKey = 'placement_sound_id';
   static const _cooldown = Duration(milliseconds: 150);
   static const _volume = 0.22;
@@ -64,7 +69,6 @@ class SoundService extends ChangeNotifier implements PlacementAudio {
   Future<void> loadPreference() async {
     final prefs = await SharedPreferences.getInstance();
     _selectedId = prefs.getString(_prefKey) ?? offSoundId;
-    notifyListeners();
   }
 
   @override
@@ -75,7 +79,6 @@ class SoundService extends ChangeNotifier implements PlacementAudio {
     if (id == offSoundId) {
       await stopPreview();
     }
-    notifyListeners();
   }
 
   @override
@@ -106,9 +109,14 @@ class SoundService extends ChangeNotifier implements PlacementAudio {
     _busy = true;
     _lastPlay = now;
     try {
-      await _player.play(AssetSource(sound.asset), volume: _volume);
-      // Give the short sample time to finish before the next placement.
-      await Future<void>.delayed(_cooldown);
+      final emit = onEmit;
+      if (emit != null) {
+        emit(sound, _volume);
+      } else {
+        await _player.play(AssetSource(sound.asset), volume: _volume);
+        // Give the short sample time to finish before the next placement.
+        await Future<void>.delayed(_cooldown);
+      }
     } catch (e) {
       debugPrint('play failed: $e');
     } finally {

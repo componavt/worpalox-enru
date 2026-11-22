@@ -15,7 +15,7 @@ plugins {
 
 android {
     namespace = "com.componavt.worpalox"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36 // plugin chain (audioplayers, shared_preferences) requires 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -75,8 +77,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     _puzzle = PuzzleState(level: level);
   }
 
+  Timer? _rewardClearTimer;
+
   @override
   void dispose() {
+    _rewardClearTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
   }
@@ -117,7 +122,8 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     // instead of hanging there until the end of the level.
     if (reward > 0) {
       final tick = _rewardTick;
-      Future.delayed(const Duration(milliseconds: 1500), () {
+      _rewardClearTimer?.cancel();
+      _rewardClearTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted && _rewardTick == tick) {
           setState(() => _lastReward = 0);
         }
@@ -316,7 +322,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             const SizedBox(height: 16),
             _buildRussianClue(puzzle, lensTargets),
             const SizedBox(height: 20),
-            _buildSentence(puzzle),
+            _buildSentence(puzzle, lensTargets),
             const SizedBox(height: 12),
             _buildStatus(puzzle),
             const SizedBox(height: 16),
@@ -370,7 +376,6 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       ..removeWhere((t) => t.isEmpty);
     // A word is anything containing a letter (Dart \w is ASCII-only and
     // would misclassify every Cyrillic word as punctuation).
-    final letter = RegExp(r'[A-Za-zА-Яа-яЁё]');
     final terminalMarks = {'.', '!', '?', '…', '...', '?!', '!?'};
     final last = words.length - 1;
     final hasSeparateMark =
@@ -432,7 +437,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     return WordTokenState.normal;
   }
 
-  Widget _buildSentence(PuzzleState puzzle) {
+  Widget _buildSentence(PuzzleState puzzle, Map<int, Set<int>> lensTargets) {
     final tokens = puzzle.tokens;
     return Container(
       width: double.infinity,

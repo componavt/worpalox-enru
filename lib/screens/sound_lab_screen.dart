@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/level.dart';
-import '../services/corpus_service.dart';
 import '../services/placement_sound.dart';
 
 /// Test-only sound laboratory: compare the Kenney CC0 candidates, pick the
@@ -52,7 +51,9 @@ class _SoundLabScreenState extends State<SoundLabScreen> {
               trailing: audio.selectedId == sound.id
                   ? const Icon(Icons.check)
                   : const Icon(Icons.circle_outlined),
-              onTap: () => audio.select(sound.id),
+              onTap: () => audio
+                .select(sound.id)
+                .then((_) => mounted ? setState(() {}) : null),
             ),
           const Divider(),
           ListTile(
@@ -61,7 +62,9 @@ class _SoundLabScreenState extends State<SoundLabScreen> {
             trailing: audio.selectedId == offSoundId
                 ? const Icon(Icons.check)
                 : const Icon(Icons.circle_outlined),
-            onTap: () => audio.select(offSoundId),
+            onTap: () => audio
+                .select(offSoundId)
+                .then((_) => mounted ? setState(() {}) : null),
           ),
           const SizedBox(height: 16),
           FilledButton.icon(

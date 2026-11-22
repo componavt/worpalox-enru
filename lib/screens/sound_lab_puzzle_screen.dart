@@ -5,6 +5,7 @@ import '../models/puzzle_state.dart';
 import '../services/placement_sound.dart';
 import '../widgets/placement_burst.dart';
 import '../widgets/word_token.dart';
+import 'sound_lab_screen.dart' show soundLabLevel;
 
 /// Fixed-order test puzzle for the Sound Lab: one move ("The" to the front)
 /// places a chip correctly without solving the sentence, so the tester
@@ -22,7 +23,6 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
 
   late PuzzleState _puzzle;
   int? _selectedIndex;
-  int? _lensRuIndex;
   final Set<int> _celebratedTokenIds = {};
   int? _burstTokenId;
   int _burstSerial = 0;
@@ -40,7 +40,6 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
         order: _startOrder,
       );
       _selectedIndex = null;
-      _lensRuIndex = null;
       _burstTokenId = null;
       _celebratedTokenIds.clear();
     });
@@ -64,7 +63,6 @@ class _SoundLabPuzzleScreenState extends State<SoundLabPuzzleScreen> {
 
     setState(() {
       _selectedIndex = null;
-      _lensRuIndex = null;
       _burstTokenId = shouldCelebrate ? moved.id : null;
       if (shouldCelebrate) _burstSerial++;
     });

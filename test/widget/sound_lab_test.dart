@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import 'package:worpalox/screens/sound_lab_puzzle_screen.dart';
 import 'package:worpalox/services/placement_sound.dart';
+import 'package:worpalox/widgets/word_token.dart';
 
 /// Records gameplay sound requests instead of playing anything.
 class FakePlacementAudio implements PlacementAudio {
   int playCalls = 0;
+  @override
   String selectedId = offSoundId;
 
   @override
@@ -44,8 +47,12 @@ Future<void> _makeWrongMove(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Widget _wrap(PlacementAudio audio) =>
-    Provider<PlacementAudio>.value(value: audio, child: const SoundLabPuzzleScreen());
+Widget _wrap(PlacementAudio audio) => MaterialApp(
+  home: Provider<PlacementAudio>.value(
+    value: audio,
+    child: const SoundLabPuzzleScreen(),
+  ),
+);
 
 void main() {
   testWidgets('one correct placement triggers exactly one sound call', (
@@ -68,13 +75,34 @@ void main() {
     expect(fake.playCalls, 0);
   });
 
-  testWidgets('Off never calls the sound', (tester) async {
-    final fake = FakePlacementAudio();
-    await fake.select(offSoundId);
-    await tester.pumpWidget(_wrap(fake));
+  testWidgets('Off never emits a sound (real service gate)', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    final service = SoundService();
+    await service.loadPreference();
+    var emitted = 0;
+    service.onEmit = (_, _) => emitted++;
+    await tester.pumpWidget(_wrap(service));
 
+    // The default choice is Off.
+    expect(service.selectedId, offSoundId);
     await _makeCorrectMove(tester);
-    expect(fake.playCalls, 0);
+    expect(emitted, 0);
+  });
+
+  testWidgets('real service emits one sound per correct placement', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+    final service = SoundService();
+    await service.loadPreference();
+    var emitted = 0;
+    service.onEmit = (_, _) => emitted++;
+    await tester.pumpWidget(_wrap(service));
+
+    await service.select('drop_001');
+    expect(service.selectedId, 'drop_001');
+    await _makeCorrectMove(tester);
+    expect(emitted, 1);
   });
 
   testWidgets('Reset allows celebrating the same chip again', (tester) async {
