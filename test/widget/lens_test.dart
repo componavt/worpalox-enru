@@ -58,36 +58,43 @@ void main() {
     await tester.pumpAndSettle();
     await _openPuzzle(tester);
 
-    // Tap the Russian clue word Двери: only the doors chip turns amber.
+    // Tap the Russian clue word Двери: only the doors chip turns amber
+    // (translated is an independent channel, the state stays positional).
     await tester.tap(find.text('Двери'));
     await tester.pump();
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'doors')).state,
-      WordTokenState.translate,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'doors'))
+          .translated,
+      isTrue,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'The')).state,
-      WordTokenState.normal,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'The'))
+          .translated,
+      isFalse,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'flew')).state,
-      WordTokenState.normal,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'flew'))
+          .translated,
+      isFalse,
     );
 
     // Tap распахнулись: both chips of the many-to-one group light up.
     await tester.tap(find.text('распахнулись'));
     await tester.pump();
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'doors')).state,
-      WordTokenState.normal,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'doors'))
+          .translated,
+      isFalse,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'flew')).state,
-      WordTokenState.translate,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'flew'))
+          .translated,
+      isTrue,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'open')).state,
-      WordTokenState.translate,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'open'))
+          .translated,
+      isTrue,
     );
 
     // A move (tap-tap: select a chip, then tap the place for it) closes
@@ -96,10 +103,10 @@ void main() {
     await tester.pump();
     await tester.tap(find.byType(WordToken).at(1));
     await tester.pumpAndSettle();
-    final states = tester
+    final translated = tester
         .widgetList<WordToken>(find.byType(WordToken))
-        .map((w) => w.state);
-    expect(states, everyElement(isNot(WordTokenState.translate)));
+        .map((w) => w.translated);
+    expect(translated, everyElement(isFalse));
   });
 
   testWidgets('apostrophe-folded alignment lights the merged chip', (
@@ -126,12 +133,13 @@ void main() {
     expect(
       tester.widget<WordToken>(
         find.widgetWithText(WordToken, "Jane's"),
-      ).state,
-      WordTokenState.translate,
+      ).translated,
+      isTrue,
     );
     expect(
-      tester.widget<WordToken>(find.widgetWithText(WordToken, 'lips')).state,
-      WordTokenState.normal,
+      tester.widget<WordToken>(find.widgetWithText(WordToken, 'lips'))
+          .translated,
+      isFalse,
     );
   });
 

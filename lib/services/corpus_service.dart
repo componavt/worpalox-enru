@@ -21,6 +21,7 @@ class CorpusService {
   final DifficultyService _difficultyService = DifficultyService();
   final Random _random;
 
+  List<Level> _allLevels = [];
   List<Level> _playableLevels = [];
   List<String> _vocabulary = [];
   bool _loaded = false;
@@ -51,14 +52,16 @@ class CorpusService {
     _loaded = true;
   }
 
-  /// Replaces the level set (used by [load] and by tests).
+  /// Replaces the level set (used by [load] and by tests). Story-only
+  /// levels stay addressable by id but never enter the random pool.
   void setLevels(List<Level> levels) {
-    _playableLevels = levels
+    _allLevels = levels
         .where((l) => l.tokenCount >= minTokens && l.tokenCount <= maxTokens)
         // A puzzle needs at least two distinguishable movable words;
         // otherwise a shuffle can look solved without being solved.
         .where((l) => PuzzleState.movableTokens(l.english).toSet().length >= 2)
         .toList();
+    _playableLevels = _allLevels.where((l) => !l.storyOnly).toList();
     final seen = <String>{};
     _vocabulary = [
       for (final level in levels)
@@ -69,6 +72,16 @@ class CorpusService {
   }
 
   List<Level> get playableLevels => List.unmodifiable(_playableLevels);
+
+  /// Finds a level by id across the full valid set, including story-only
+  /// levels (scene routes may address them even though they are never
+  /// chosen by the random Play flow).
+  Level? levelById(int id) {
+    for (final level in _allLevels) {
+      if (level.id == id) return level;
+    }
+    return null;
+  }
 
   /// Lower-case English words from all pre-learning pairs. Used as
   /// distractors in the Learn Words stage.

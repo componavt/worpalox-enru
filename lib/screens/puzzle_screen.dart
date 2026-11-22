@@ -7,9 +7,11 @@ import '../models/route_arguments.dart';
 import '../models/score_result.dart';
 import '../services/corpus_service.dart';
 import '../services/persistence_service.dart';
+import '../services/placement_sound.dart';
 import '../services/scoring_service.dart';
 import '../services/session_block.dart';
 import '../widgets/block_progress.dart';
+import '../widgets/placement_burst.dart';
 import '../widgets/word_token.dart';
 
 /// Stage 2 of a round: restore the English word order using the Russian
@@ -41,6 +43,13 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   String? _saveError;
   int _lastReward = 0;
   int _rewardTick = 0;
+
+  // Placement celebration: one flash per chip that the PLAYER moved into
+  // its correct place for the first time in this run. Keyed by token id,
+  // independent of the score bookkeeping above.
+  final Set<int> _celebratedTokenIds = {};
+  int? _burstTokenId;
+  int _burstSerial = 0;
 
   @override
   void didChangeDependencies() {
@@ -76,8 +85,23 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
   void _move(int from, int to) {
     final puzzle = _puzzle!;
+    final tokens = puzzle.tokens;
+    if (from < 0 || from >= tokens.length) return;
+
+    final moved = tokens[from];
+    final wasCorrect = puzzle.isPositionCorrect(from);
     final reward = puzzle.moveToken(from, to);
     if (reward < 0) return;
+
+    // Celebrate the chip the PLAYER placed: it must have moved from a
+    // wrong position into a right one, for the first time in this run.
+    // Text-based checks match what the player sees (duplicate chips).
+    final shouldCelebrate =
+        !puzzle.solved &&
+        !wasCorrect &&
+        puzzle.isPositionCorrect(to) &&
+        _celebratedTokenIds.add(moved.id);
+
     setState(() {
       _selectedIndex = null;
       _hintsVisible = false;
@@ -86,7 +110,24 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         _lastReward = reward * ScoringService.placementPoints;
         _rewardTick++;
       }
+      _burstTokenId = shouldCelebrate ? moved.id : null;
+      if (shouldCelebrate) _burstSerial++;
     });
+    // The +N badge is temporary: it disappears shortly after the move
+    // instead of hanging there until the end of the level.
+    if (reward > 0) {
+      final tick = _rewardTick;
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (mounted && _rewardTick == tick) {
+          setState(() => _lastReward = 0);
+        }
+      });
+    }
+
+    if (shouldCelebrate) {
+      // Fire and forget: audio failure must never interrupt the puzzle.
+      context.read<PlacementAudio>().playCorrectPlacement();
+    }
     if (puzzle.solved) _onSolved();
   }
 
@@ -121,6 +162,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       _selectedIndex = null;
       _hintsVisible = false;
       _lensRuIndex = null;
+      _burstTokenId = null;
     });
   }
 
@@ -128,9 +170,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     final puzzle = _puzzle!;
     final prelearn = _prelearn;
     final persistence = context.read<PersistenceService>();
-    // A solved phrase fills one segment of the current block, even if
-    // saving the profile stats fails below.
-    context.read<SessionBlock>().registerSolved();
+    // A solved phrase fills one segment of the current block in the
+    // regular Play flow only; scenes have their own progress. Stats are
+    // still saved below in both modes.
+    if (_sceneRun == null) {
+      context.read<SessionBlock>().registerSolved();
+    }
 
     try {
       final before = await persistence.loadActiveProfile();
@@ -243,6 +288,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     final block = context.watch<SessionBlock>();
+    final lensTargets = _lensTargets(puzzle);
 
     return Scaffold(
       appBar: AppBar(
@@ -268,7 +314,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
               total: SessionBlock.blockSize,
             ),
             const SizedBox(height: 16),
-            _buildRussianClue(puzzle),
+            _buildRussianClue(puzzle, lensTargets),
             const SizedBox(height: 20),
             _buildSentence(puzzle),
             const SizedBox(height: 12),
@@ -285,13 +331,78 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     );
   }
 
-  Widget _buildRussianClue(PuzzleState puzzle) {
+  /// ru clue index -> set of linked chip ids. Computed once per build.
+  Map<int, Set<int>> _lensTargets(PuzzleState puzzle) {
+    final targets = <int, Set<int>>{};
+    for (final link in puzzle.level.alignment?.links ?? const []) {
+      (targets[link.ru] ??= <int>{}).add(link.en);
+    }
+    return targets;
+  }
+
+  Widget _buildClueToken(String word, int index, Map<int, Set<int>> targets,
+      bool lensAvailable) {
+    final hasLinks = lensAvailable && targets.containsKey(index);
+    final active = hasLinks && _lensRuIndex == index;
+    return GestureDetector(
+      onTap: hasLinks
+          ? () => setState(() {
+                _lensRuIndex = active ? null : index;
+              })
+          : null,
+      child: Text(
+        word,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontWeight: FontWeight.bold,
+          color: active ? Colors.orange[800] : Colors.deepPurple[700],
+          decoration: hasLinks ? TextDecoration.underline : null,
+          decorationColor: active ? Colors.orange[400] : Colors.deepPurple[200],
+          decorationThickness: 1.5,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRussianClue(PuzzleState puzzle,
+      Map<int, Set<int>> lensTargets) {
     final lensAvailable = puzzle.level.alignment != null && !puzzle.solved;
     final words = puzzle.level.russian.split(RegExp(r'\s+'))
       ..removeWhere((t) => t.isEmpty);
     // A word is anything containing a letter (Dart \w is ASCII-only and
     // would misclassify every Cyrillic word as punctuation).
     final letter = RegExp(r'[A-Za-zА-Яа-яЁё]');
+    final terminalMarks = {'.', '!', '?', '…', '...', '?!', '!?'};
+    final last = words.length - 1;
+    final hasSeparateMark =
+        words.length > 1 && terminalMarks.contains(words[last]);
+    final lastWord = hasSeparateMark ? last - 1 : last;
+
+    // The clue keeps its original token indices: only DISPLAY changes. The
+    // last word and its terminal mark are glued into one element so the
+    // mark never sits alone with a gap on a wrapped line.
+    Widget clueToken(int i) => _buildClueToken(words[i], i, lensTargets,
+        lensAvailable);
+    final children = <Widget>[
+      for (var i = 0; i <= lastWord; i++)
+        if (hasSeparateMark && i == lastWord)
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              clueToken(i),
+              Text(
+                words[last],
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurple[700],
+                ),
+              ),
+            ],
+          )
+        else
+          clueToken(i),
+    ];
 
     return Container(
       width: double.infinity,
@@ -305,56 +416,14 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         runSpacing: 6,
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
-        children: [
-          for (var i = 0; i < words.length; i++)
-            if (!lensAvailable || !letter.hasMatch(words[i]))
-              Text(
-                words[i],
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple[700],
-                ),
-              )
-            else
-              GestureDetector(
-                onTap: () => setState(() {
-                  _lensRuIndex = _lensRuIndex == i ? null : i;
-                }),
-                child: Text(
-                  words[i],
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: _lensRuIndex == i
-                        ? Colors.orange[800]
-                        : Colors.deepPurple[700],
-                    decoration: _lensRuIndex == i
-                        ? TextDecoration.underline
-                        : null,
-                  ),
-                ),
-              ),
-        ],
+        children: children,
       ),
     );
-  }
-
-  /// The lens is a semantic channel: it shows which English chips correspond
-  /// to the tapped Russian word, never where those chips belong.
-  Set<int> _lensLinksFor(PuzzleState puzzle, int ruIndex) {
-    final links = puzzle.level.alignment?.links ?? const [];
-    return links.where((l) => l.ru == ruIndex).map((l) => l.en).toSet();
   }
 
   WordTokenState _stateFor(PuzzleState puzzle, int index) {
     if (puzzle.solved) return WordTokenState.solved;
     if (_selectedIndex == index) return WordTokenState.selected;
-    // Alignment links address chips by PuzzleToken.id (the correct-order
-    // position), so the lens follows chips through every shuffle.
-    if (_lensRuIndex != null &&
-        _lensLinksFor(puzzle, _lensRuIndex!)
-            .contains(puzzle.tokens[index].id)) {
-      return WordTokenState.translate;
-    }
     if (_hintsVisible) {
       return puzzle.isPositionCorrect(index)
           ? WordTokenState.hintCorrect
@@ -383,7 +452,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           for (var i = 0; i < tokens.length; i++)
-            _buildToken(puzzle, tokens, i),
+            _buildToken(puzzle, tokens, i, lensTargets),
           if (puzzle.solved && puzzle.terminalPunctuation.isNotEmpty)
             Text(
               puzzle.terminalPunctuation,
@@ -452,9 +521,14 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     );
   }
 
-  Widget _buildToken(PuzzleState puzzle, List<PuzzleToken> tokens, int index) {
+  Widget _buildToken(PuzzleState puzzle, List<PuzzleToken> tokens, int index,
+      Map<int, Set<int>> lensTargets) {
     final token = tokens[index];
     final state = _stateFor(puzzle, index);
+    // Lens channel (amber underline), independent of the state above and
+    // addressed by token id so it follows chips through every shuffle.
+    final translated = _lensRuIndex != null &&
+        (lensTargets[_lensRuIndex]?.contains(token.id) ?? false);
 
     if (puzzle.solved) {
       return WordToken(word: token.text, state: state);
@@ -473,7 +547,16 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           final from = tokens.indexWhere((t) => t.id == candidates.first);
           side = from > index ? DropSide.before : DropSide.after;
         }
-        final chip = WordToken(word: token.text, state: state, dropSide: side);
+        final chip = withPlacementBurst(
+          chip: WordToken(
+            word: token.text,
+            state: state,
+            translated: translated,
+            dropSide: side,
+          ),
+          active: _burstTokenId == token.id,
+          serial: _burstSerial,
+        );
         return Draggable<int>(
           data: token.id,
           onDragStarted: () => setState(() {
@@ -607,7 +690,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    puzzle.level.russian,
+                    formatResultSentence(puzzle.level.russian),
                     style: theme.textTheme.bodyLarge?.copyWith(
                       color: Colors.grey[700],
                     ),
@@ -670,10 +753,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
               icon: const Icon(Icons.arrow_forward),
               label: Text(
                 _sceneRun != null
-                    ? (context.watch<SessionBlock>().isBlockComplete ||
-                              _sceneRun!.index + 1 >= _sceneRun!.levels.length
-                          ? 'Finish scene'
-                          : 'Next phrase')
+                    ? (_sceneRun!.index + 1 >= _sceneRun!.levels.length
+                        ? 'Finish scene'
+                        : 'Next phrase')
                     : context.watch<SessionBlock>().isBlockComplete
                     ? 'See block results'
                     : 'Next sentence',
@@ -709,4 +791,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       ),
     );
   }
+}
+
+/// Strips the horizontal gap before a separately written terminal mark
+/// when a sentence is DISPLAYED (data and chip indices stay untouched).
+String formatResultSentence(String raw) {
+  final text = raw.trimRight();
+  final separatedMark = RegExp(r'[ \t\u00A0]+(\.\.\.|…|\?!|!\?|[.!?])$');
+  return text.replaceFirstMapped(separatedMark, (m) => m.group(1)!);
 }

@@ -25,6 +25,7 @@ class _StoryScreenState extends State<StoryScreen> {
 
   StoryScene? _scene;
   String? _error;
+  bool _starting = false;
 
   @override
   void initState() {
@@ -50,21 +51,30 @@ class _StoryScreenState extends State<StoryScreen> {
   }
 
   void _startScene() {
+    // One start at a time: the Home lock does not cover this screen.
+    if (_starting) return;
     final scene = _scene!;
+    if (scene.puzzleSteps.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('This scene has no puzzles yet')),
+      );
+      return;
+    }
     final corpus = context.read<CorpusService>();
     final levels = <Level>[];
     for (final step in scene.puzzleSteps) {
-      final matches = corpus.playableLevels
-          .where((l) => l.id == step.levelId)
-          .toList();
-      if (matches.isEmpty) {
+      // Story-only levels stay addressable by id even though they never
+      // enter the random Play pool.
+      final level = corpus.levelById(step.levelId ?? -1);
+      if (level == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Level ${step.levelId} is not available')),
         );
         return;
       }
-      levels.add(matches.first);
+      levels.add(level);
     }
+    _starting = true;
     Navigator.pushReplacementNamed(
       context,
       '/puzzle',

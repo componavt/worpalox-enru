@@ -96,6 +96,15 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
     }
   }
 
+  /// Opens the test-only sound laboratory.
+  void _handleSoundLab() {
+    if (_navLock) return;
+    Navigator.pushNamed(context, '/soundLab').whenComplete(() {
+      if (mounted) setState(() => _navLock = false);
+    });
+    setState(() => _navLock = true);
+  }
+
   /// Opens the story scene. The lock releases when the player comes back.
   void _handleStory() {
     if (_navLock) return;
@@ -269,6 +278,16 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
                           _loadError == null && !_navLock ? _handleStory : null,
                       icon: const Icon(Icons.auto_stories),
                       label: const Text('Story', style: TextStyle(fontSize: 16)),
+                    ),
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      onPressed:
+                          _loadError == null && !_navLock
+                              ? _handleSoundLab
+                              : null,
+                      icon: const Icon(Icons.graphic_eq),
+                      label: const Text('Sound Lab',
+                          style: TextStyle(fontSize: 16)),
                     ),
                     const SizedBox(height: 32),
                     Text(

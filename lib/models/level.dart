@@ -44,6 +44,10 @@ class Level {
   final List<PrelearnPair> prelearnPairs;
   final LevelAlignment? alignment;
 
+  /// Story-only levels are addressed by scene routes but never enter the
+  /// random Play pool.
+  final bool storyOnly;
+
   const Level({
     required this.id,
     required this.english,
@@ -53,6 +57,7 @@ class Level {
     required this.commentaryRu,
     required this.prelearnPairs,
     this.alignment,
+    this.storyOnly = false,
   });
 
   factory Level.fromJson(Map<String, dynamic> json) {
@@ -78,6 +83,7 @@ class Level {
       alignment: json['alignment'] == null
           ? null
           : LevelAlignment.fromJson(json['alignment'] as Map<String, dynamic>),
+      storyOnly: json['storyOnly'] as bool? ?? false,
     );
   }
 
@@ -90,6 +96,7 @@ class Level {
     'commentaryRu': commentaryRu,
     'prelearnPairs': prelearnPairs.map((p) => p.toJson()).toList(),
     'alignment': alignment?.toJson(),
+    'storyOnly': storyOnly,
   };
 }
 

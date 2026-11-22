@@ -6,9 +6,12 @@ import 'screens/home_screen.dart';
 import 'screens/prelearn_screen.dart';
 import 'screens/puzzle_screen.dart';
 import 'screens/scene_complete_screen.dart';
+import 'screens/sound_lab_puzzle_screen.dart';
+import 'screens/sound_lab_screen.dart';
 import 'screens/story_screen.dart';
 import 'services/corpus_service.dart';
 import 'services/persistence_service.dart';
+import 'services/placement_sound.dart';
 import 'services/scoring_service.dart';
 import 'services/session_block.dart';
 
@@ -20,12 +23,14 @@ class WorpaloxApp extends StatelessWidget {
   final CorpusService? corpusService;
   final PersistenceService? persistenceService;
   final SessionBlock? sessionBlock;
+  final PlacementAudio? placementAudio;
 
   const WorpaloxApp({
     super.key,
     this.corpusService,
     this.persistenceService,
     this.sessionBlock,
+    this.placementAudio,
   });
 
   @override
@@ -37,6 +42,13 @@ class WorpaloxApp extends StatelessWidget {
         Provider(create: (_) => ScoringService()),
         ChangeNotifierProvider<SessionBlock>(
           create: (_) => sessionBlock ?? SessionBlock(),
+        ),
+        Provider<PlacementAudio>(
+          create: (_) {
+            final service = placementAudio ?? SoundService();
+            if (service is SoundService) service.loadPreference();
+            return service;
+          },
         ),
       ],
       child: MaterialApp(
@@ -60,6 +72,8 @@ class WorpaloxApp extends StatelessWidget {
           '/sceneComplete': (context) => const SceneCompleteScreen(
             titleRu: 'Сцена завершена',
           ),
+          '/soundLab': (context) => const SoundLabScreen(),
+          '/soundLabPuzzle': (context) => const SoundLabPuzzleScreen(),
         },
       ),
     );

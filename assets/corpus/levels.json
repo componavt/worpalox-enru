@@ -719,6 +719,7 @@
       }
     ],
     "tokenCount": 9,
-    "alignment": null
+    "alignment": null,
+    "storyOnly": true
   }
 ]

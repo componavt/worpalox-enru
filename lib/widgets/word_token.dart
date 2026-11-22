@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Visual state of a word chip in the puzzle.
-enum WordTokenState { normal, selected, hintCorrect, hintWrong, solved, translate }
+enum WordTokenState { normal, selected, hintCorrect, hintWrong, solved }
 
 /// Which side of the chip shows the "drop here" marker while dragging.
 enum DropSide { none, before, after }
@@ -12,12 +12,17 @@ class WordToken extends StatelessWidget {
   final DropSide dropSide;
   final bool faded;
 
+  /// Translation lens: an independent amber channel that combines with any
+  /// [state] (a chip can be amber-underlined and red-framed at once).
+  final bool translated;
+
   const WordToken({
     super.key,
     required this.word,
     this.state = WordTokenState.normal,
     this.dropSide = DropSide.none,
     this.faded = false,
+    this.translated = false,
   });
 
   @override
@@ -44,13 +49,12 @@ class WordToken extends StatelessWidget {
         background = Colors.red[50]!;
         border = Colors.red[300]!;
         text = Colors.red[900]!;
-      case WordTokenState.translate:
-        // Translation lens: amber frame, a different channel from the
-        // green/red positional hint.
-        background = Colors.orange[50]!;
-        border = Colors.orange[400]!;
-        text = Colors.orange[900]!;
-        underline = Colors.orange[400]!;
+    }
+
+    // Translation lens channel: amber underline, independent of the
+    // positional frame above.
+    if (translated) {
+      underline = Colors.orange[400]!;
     }
 
     final chip = AnimatedContainer(

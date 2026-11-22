@@ -138,6 +138,47 @@ class PuzzleState {
     if (!_solved) _hintCount++;
   }
 
+  /// A deterministic start order for the Sound Lab test puzzle: [order] is
+  /// the initial display arrangement (same words as the level, any order,
+  /// duplicates resolved left to right). No shuffling, no pre-earned
+  /// placement rewards.
+  factory PuzzleState.fixed({
+    required Level level,
+    required List<String> order,
+  }) {
+    final tokens = tokenize(level.english);
+    var terminal = '';
+    if (tokens.length > 1 && _terminalMarks.contains(tokens.last)) {
+      terminal = tokens.removeLast();
+    }
+    final state = PuzzleState._(level, tokens, terminal);
+    final correct = state._correct;
+    final used = List<bool>.filled(correct.length, false);
+    final ids = <int>[];
+    for (final word in order) {
+      var idx = -1;
+      for (var i = 0; i < correct.length; i++) {
+        if (!used[i] && correct[i] == word) {
+          idx = i;
+          break;
+        }
+      }
+      if (idx == -1) {
+        throw ArgumentError.value(order, 'order', 'does not match level words');
+      }
+      used[idx] = true;
+      ids.add(idx);
+    }
+    state._current = [
+      for (var i = 0; i < ids.length; i++) PuzzleToken(ids[i], correct[ids[i]]),
+    ];
+    state.minMoves = minimalMoves(
+      state._current.map((t) => t.text).toList(),
+      state._correct,
+    );
+    return state;
+  }
+
   /// Shuffles the words again. Counters are kept so that reshuffling cannot
   /// be used to erase hints or moves.
   void reshuffle([Random? random]) {
