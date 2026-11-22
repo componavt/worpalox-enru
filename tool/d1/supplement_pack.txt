@@ -1,0 +1,135 @@
+=== 218 | EN30 RU21 mov29 lnk24 rel5 m2o0 o2m4 unp6 inv[]
+EN: “ Jane , I don ’ t like cavillers or questioners ; besides , there is something truly forbidding in a child taking up her elders in that manner .
+RU: — Джен , я не выношу придирок и допросов ; это просто возмутительно , когда ребенок так разговаривает со старшими .
+=== 246 | EN30 RU26 mov29 lnk25 rel14 m2o4 o2m3 unp9 inv[24<23]
+EN: Renowned curator Jacques Sauniure staggered through the vaulted archway of the museum ' s Grand Gallery . He lunged for the nearest painting he could see , a Caravaggio .
+RU: Знаменитый куратор Жак Соньер , пошатываясь , прошел под сводчатой аркой Большой галереи и устремился к первой попавшейся ему на глаза картине , полотну Караваджо .
+=== 286 | EN18 RU15 mov17 lnk19 rel7 m2o2 o2m2 unp1 inv[]
+EN: Pretend , just for a moment , that you have attained your most deep - seated desire .
+RU: Представьте себе , хотя бы на мгновение , что ваше самое заветное желание исполнилось .
+=== 297 | EN3 RU3 mov3 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: For my family
+RU: Посвящается моей семье
+=== 299 | EN33 RU28 mov32 lnk33 rel11 m2o5 o2m7 unp9 inv[5<1]
+EN: Please don ' t try to figure out who she is because then you might figure out who I am , and I really don ' t want you to do that .
+RU: Не старайся , пожалуйста , вычислить , кто она такая , а то , чего доброго , вычислишь и меня , а мне это ни к чему .
+=== 302 | EN1 RU1 mov1 lnk1 rel1 m2o0 o2m0 unp0 inv[]
+EN: Acknowledgements
+RU: Благодарности
+=== 333 | EN19 RU16 mov18 lnk20 rel4 m2o2 o2m5 unp5 inv[]
+EN: Nine little nigger boys sat up very late ; One overslept himself , and then there were Eight .
+RU: Девять негритят уселись под откосом , Один заснул и не проснулся – их осталось восемь .
+=== 373 | EN19 RU13 mov18 lnk14 rel3 m2o0 o2m2 unp5 inv[]
+EN: There had been a week - a week of curious tensity . And then certain things had happened .
+RU: Неделя прошла в напряженном ожидании , а потом произошло сразу несколько событий :
+=== 378 | EN28 RU33 mov27 lnk24 rel8 m2o3 o2m3 unp7 inv[]
+EN: It is difficult to know quite where to begin this story , but I have fixed my choice on a certain Wednesday at luncheon at the Vicarage .
+RU: Немалого труда стоило мне выбрать день и час , с которого надо начать рассказ , но я наконец остановил свой выбор на одной из сред , когда мы собрались ко второму завтраку .
+=== 381 | EN9 RU10 mov9 lnk10 rel10 m2o1 o2m0 unp0 inv[8<7]
+EN: My young nephew , Dennis , said instantly :
+RU: Мой юный племянник , Деннис , тут же выпалил :
+=== 402 | EN71 RU65 mov70 lnk64 rel48 m2o3 o2m7 unp10 inv[5<2 6<2 7<2 9<2]
+EN: Yet such is the state of things amongst us that the little energy and glimmering of reason which I possess is entirely taken up with the labours which are necessary in order to procure certain metallic disks , wherewith I may purchase the chemical elements necessary to build up my ever - wasting tissues , and keep a roof over me to shelter me from the inclemency of the weather .
+RU: Однако положение вещей у нас таково , что небольшую дозу энергии и проблески разума , которыми я обладаю , всецело отнимает у меня труд , который необходим , чтобы приобрести известные металлические кружки , посредством которых я могу купить химические элементы , необходимые для возобновления моих постоянно разрушающихся тканей , и иметь над своей головой крышу , которая защищала бы меня от суровости погоды .
+=== 426 | EN7 RU2 mov7 lnk1 rel1 m2o0 o2m0 unp6 inv[]
+EN: The Stock - Broker ' s Clerk
+RU: Приключения клерка
+=== 427 | EN14 RU12 mov13 lnk11 rel9 m2o0 o2m2 unp3 inv[]
+EN: Shortly after my marriage I had bought a connection in the Paddington district .
+RU: Вскоре после женитьбы я купил в Паддингтоне практику у доктора Фаркера .
+=== 430 | EN31 RU39 mov30 lnk35 rel16 m2o5 o2m6 unp5 inv[]
+EN: Thus as my predecessor weakened his practice declined , until when I purchased it from him it had sunk from twelve hundred to little more than three hundred a year .
+RU: И чем хуже становилось здоровье моего предшественника , тем в больший упадок приходила его практика , и к тому моменту , когда я купил ее , она приносила вместо прежних тысячи двухсот немногим больше трехсот фунтов в год .
+=== 443 | EN19 RU15 mov18 lnk17 rel7 m2o0 o2m2 unp2 inv[4<1 5<1 16<12]
+EN: I first met Barrington Cowles when I went up to Edinburgh University to take out medical classes there .
+RU: С Баррингтоном Каулзом я познакомился в Эдинбурге , когда учился на медицинском отделении университета .
+=== 448 | EN6 RU3 mov6 lnk3 rel1 m2o1 o2m0 unp4 inv[]
+EN: The Adventure of the Creeping Man
+RU: Человек на четвереньках
+=== 463 | EN66 RU46 mov65 lnk78 rel19 m2o12 o2m15 unp18 inv[36<34 43<34]
+EN: I have no idea what backward sweep of memory had brought the matter fresh to his mind , or what freak had caused him to desire that I should recount it ; but I hasten , before another cancelling telegram may arrive , to hunt out the notes which give me the exact details of the case and to lay the narrative before my readers .
+RU: Я решительно не понимал , что воскресило в памяти Холмса это событие или какая причуда побудила его телеграфировать мне , однако , опасаясь , как бы он не передумал , я тут же разыскал записи с точными подробностями происшествия и спешу представить читателям мой рассказ .
+=== 465 | EN53 RU56 mov52 lnk63 rel30 m2o7 o2m14 unp6 inv[19<16 24<22 24<23]
+EN: In March of that year Dr . Moore Agar , of Harley Street , whose dramatic introduction to Holmes I may some day recount , gave positive injunctions that the famous private agent lay aside all his cases and surrender himself to complete rest if he wished to avert an absolute breakdown .
+RU: В марте месяце доктор Мур Эгер с Харли - стрит , который познакомился с Холмсом при самых драматических обстоятельствах , о чем я расскажу как - нибудь в другой раз , категорически заявил , что знаменитому сыщику необходимо временно оставить всякую работу и как следует отдохнуть , если он не хочет окончательно подорвать свое здоровье .
+=== 536 | EN34 RU32 mov33 lnk41 rel16 m2o5 o2m8 unp2 inv[]
+EN: But for the trained resoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results .
+RU: Но для изощренного мыслителя допустить такое вторжение чувства в свой утонченный и великолепно налаженный внутренний мир означало бы внести туда смятение , которое свело бы на нет все завоевания его мысли .
+=== 544 | EN30 RU22 mov29 lnk26 rel18 m2o1 o2m5 unp5 inv[13<7 14<7 13<8 14<8 13<11 14<11 19<18 28]
+EN: If in telling the story I seem to be somewhat vague in certain details , the public will readily understand that there is an excellent reason for my reticence .
+RU: Если некоторые детали моего рассказа и покажутся туманными , читатели легко поймут , что для моей сдержанности есть достаточно веская причина .
+=== 562 | EN50 RU36 mov49 lnk40 rel22 m2o1 o2m6 unp11 inv[3<1 4<1 6<1 7<1 4<3 6<3 7<3 43<42 44<42 ]
+EN: He found , as so many more have done , that the practice is easier to attain than to get rid of , and for many years he continued to be a slave to the drug , an object of mingled horror and pity to his friends and relatives .
+RU: Как и многие другие , он скоро убедился , что начать курить гораздо легче , чем бросить , и в продолжение многих лет был рабом своей страсти , внушая сожаление и ужас всем своим друзьям .
+=== 569 | EN6 RU5 mov6 lnk6 rel6 m2o0 o2m1 unp0 inv[]
+EN: Michael Connelly -- City Of Bones
+RU: Майкл Коннелли -- Город костей
+=== 590 | EN23 RU21 mov22 lnk24 rel14 m2o4 o2m5 unp3 inv[21<19 22<19 21<20 22<20]
+EN: They argued that no man could have been expected to talk all that time , and other men to listen so long .
+RU: Они утверждали , что ни один человек не может говорить так долго , а остальные не могут так долго слушать .
+=== 593 | EN20 RU23 mov19 lnk20 rel11 m2o1 o2m2 unp1 inv[]
+EN: " Be warned , Potter , any more nighttime wanderings and I will personally make sure you are expelled .
+RU: Имейте в виду , Поттер , – еще одна ночная прогулка , и я лично прослежу за тем , чтобы вас исключили .
+=== 597 | EN13 RU10 mov12 lnk8 rel4 m2o0 o2m1 unp5 inv[]
+EN: " Risk ! " says he , and then sat silent again .
+RU: — Риск ! — Стряпчий хмыкнул и опять помолчал .
+=== 600 | EN24 RU20 mov23 lnk21 rel17 m2o0 o2m1 unp3 inv[]
+EN: Another was achieved in the fall of 1997 , when the administration was compelled to withdraw its proposed " Fast Track " legislation .
+RU: Другая была одержана осенью 1997 года , когда администрацию вынудили отказаться от предложенного ею законодательства « Fast Track » .
+=== 605 | EN8 RU8 mov7 lnk6 rel5 m2o0 o2m0 unp2 inv[]
+EN: " No alibi , " murmured Raymond .
+RU: – Нет алиби , – повторил Реймонд .
+=== 610 | EN4 RU2 mov3 lnk3 rel1 m2o0 o2m1 unp1 inv[]
+EN: I feel depressed .
+RU: Подавлена .
+=== 681 | EN150 RU137 mov149 lnk104 rel65 m2o3 o2m9 unp49 inv[5<3 6<3 5<4 6<4 71<68 72<68 73<68 75<68 ]
+EN: There was no answer from outside , so Rikki - Tikki knew Nagaina had gone away . Nag coiled himself down , coil by coil jar , round the bulge at the bottom of the water - and Rikki - Tikki stayed still as death . After an hour he began to move , muscle by muscle , toward the jar . Nag was asleep , and Rikki - Tikki looked at his big back , wondering which would be best place for a good hold . If I do n`t break his back at the first jump , " said Rikki , " he can still fight and if he fights , - O , Rikki ! " He looked at the thickness of the neck below the hood , but that was too much for him and a bite near the tail would only make Nag Savage .
+RU: Снаружи не послышалось ответа , и Рикки - Тикки понял , что Нагена уползла . Наг принялся укладываться в большой кувшин , обвивая кольцами своего тела выпуклость на его дне , а Рикки - Тикки сидел тихо , как смерть . Прошел час , мангуст медленно , напрягая одну мышцу за другой , двинулся к кувшину . Наг спал , и , глядя на его широкую спину , Рикки спрашивал себя , в каком месте лучше всего схватить кобру зубами . " Если при первом же прыжке я не переломлю ему хребта ,- подумал Рикки ,- он будет биться , а борьба с Нагом ... О Рикки !" Он измерил взглядом толщину змеиной шеи , но она была слишком широка для него , укусив же кобру подле хвоста , он только привел бы ее в бешенство .
+=== 682 | EN15 RU15 mov14 lnk15 rel11 m2o0 o2m0 unp0 inv[]
+EN: It was their delight , their folly , their anodyne , their intellectual stimulant .
+RU: Это была их услада , их безумство , их отдохновение , их интеллектуальный возбудитель .
+=== 695 | EN8 RU7 mov7 lnk7 rel4 m2o0 o2m0 unp1 inv[]
+EN: We `ve enjoyed having you , father .
+RU: Мы были рады вам , отец .
+=== 703 | EN17 RU18 mov16 lnk11 rel8 m2o0 o2m1 unp6 inv[8<7]
+EN: And somehow the animals passed down information not carried in their genes but gained through experience .
+RU: Животные передали детям не только ту информацию , которую получили по наследству , но и жизненный опыт .
+=== 722 | EN43 RU43 mov42 lnk30 rel23 m2o1 o2m0 unp14 inv[3<1 5<1 6<1 3<2 5<2 6<2 5<3 6<3 6<5 23<1]
+EN: Another soldier appeared to her left , closing in . Macri knew she had little time . She banked into the crowd again . Yanking a blank cartridge from her case , she slapped it into the camera . Then she prayed .
+RU: Слева от нее возник еще один солдат . Макри , понимая , что в ее распоряжении совсем мало времени , снова нырнула в толпу . Она выхватила из кофра чистую пленку и сунула ее в камеру . Теперь ей оставалось только молиться .
+=== 744 | EN11 RU10 mov10 lnk9 rel5 m2o0 o2m0 unp2 inv[]
+EN: " You have a nice family , " he said .
+RU: – Прекрасная у тебя семья , - заметил он .
+=== 748 | EN12 RU9 mov11 lnk4 rel1 m2o1 o2m0 unp9 inv[]
+EN: I do n`t even think she knows she `s doing it .
+RU: И вряд ли сознает это . — Джулиет .
+=== 749 | EN70 RU60 mov69 lnk37 rel30 m2o0 o2m4 unp33 inv[10<7 11<7 12<7]
+EN: I do n`t know if the constables were still looking for us or if they knew we were part of a caravan now and I did n`t want to deal with all the problems of jurisdiction posed by the market laws either way , we encountered no resistance , and for the first time that day , it looked as if we might be moving in the right direction .
+RU: Не знаю , искали ли нас констебли , а может быть , они знали , что мы присоединились к каравану , и просто не хотели вмешиваться в дела , связанные с торговыми законами , но , так или иначе , никто нам не помешал , и впервые за весь этот день мы наконец - то двигались в верном направлении .
+=== 762 | EN2 RU2 mov1 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: Eh ?
+RU: А ?
+=== 774 | EN15 RU13 mov14 lnk7 rel7 m2o0 o2m1 unp8 inv[9<3 9<5 9<6]
+EN: And when you `re getting into it the correct way , it feels correct .
+RU: И так же безошибочно вы определяете , когда получилось угадать нужную деталь .
+=== 776 | EN29 RU34 mov28 lnk24 rel14 m2o1 o2m2 unp7 inv[19<18]
+EN: There remained , of course , the ancient tradition concerning the high king at Fornost , or Norbury as they called it , away north of the Shire .
+RU: Издревле помнилось , конечно , что был когда - то великий князь в Форносте , или , как переиначили хоббиты , в Северне , где - то там - к северу от Хоббитании .
+=== 785 | EN6 RU8 mov5 lnk6 rel3 m2o0 o2m1 unp0 inv[]
+EN: Just after speaking to you .
+RU: После того , как поговорила с вами .
+=== 801 | EN28 RU21 mov27 lnk21 rel10 m2o1 o2m2 unp8 inv[]
+EN: Thacker wanted to build his own version of a personal computer , and he realized that Lampson and Kay also had the same general goal in mind .
+RU: Текер мечтал создать свой персональный компьютер и в какой-то момент понял , что Лэмпсон и Кей хотят примерно того же .
+=== 822 | EN18 RU14 mov17 lnk13 rel6 m2o2 o2m2 unp7 inv[]
+EN: " If this is so , whose interest is it that , the letter should come out ?
+RU: — Если так , то в чьих же интересах раскрыть содержание этого письма ?
+=== 823 | EN10 RU7 mov9 lnk8 rel1 m2o0 o2m1 unp2 inv[]
+EN: The next day ’s paper had these additional particulars .
+RU: Назавтра газета принесла следующие дополнительные сообщения :
+=== 876 | EN3 RU3 mov2 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: I run !
+RU: Я бегу .
+=== 879 | EN6 RU6 mov5 lnk5 rel4 m2o0 o2m1 unp1 inv[]
+EN: So thank you , Monochrom .
+RU: Спасибо , « Монохром » .

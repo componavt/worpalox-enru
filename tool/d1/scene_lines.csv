@@ -1,0 +1,17 @@
+line_id,role,source_guess,source_conf,translation_ok,prev_story_line,link,link_codes,quote_prev,quote_this,start_reason,confidence,note
+199,HEADING,The Martian Chronicles,high,ok,,START,,,,HEADING,high,January 1999: ROCKET SUMMER
+203,BODY,The Martian Chronicles,high,ok,,START,,,The heat pulsed,SCENE_START,high,
+204,BODY,The Martian Chronicles,high,ok,203,STRONG,TIME|SETTING,The heat pulsed,The icicles dropped,,high,
+205,BODY,The Martian Chronicles,high,ok,204,STRONG,CAUSE|TIME,dropped,flew open,,high,
+148,BODY,Dorothy and the Wizard in Oz,high,ok,,START,,,,SCENE_START,high,chapter opening
+149,BODY,Dorothy and the Wizard in Oz,high,ok,148,STRONG,ENT|TIME,Frisco,Hugson,,high,same train
+150,BODY,Dorothy and the Wizard in Oz,high,ok,149,STRONG,ENT|TIME,train,conductor,,high,
+151,DIALOGUE,Dorothy and the Wizard in Oz,high,ok,150,STRONG,DIAL,called out,Hugson ' s Siding,,high,conductor call
+346,BODY,The Murder of Roger Ackroyd,high,loose,,START,,,,SCENE_START,high,chapter opening
+348,BODY,The Murder of Roger Ackroyd,high,ok,346,STRONG,TIME,next few weeks,16th 17th September,,high,dates
+349,BODY,The Murder of Roger Ackroyd,high,ok,348,STRONG,TIME,September,Friday the 17th,,high,dates continue
+350,BODY,The Murder of Roger Ackroyd,high,loose,349,STRONG,CAUSE|TIME,sent for,nothing to be done,,high,
+351,BODY,The Murder of Roger Ackroyd,high,ok,350,STRONG,CAUSE|TIME,done,dead some hours,,high,
+386,BODY,,low,ok,,START,,,,SCENE_START,high,park scene opener
+387,BODY,,low,ok,386,STRONG,COREF|ENT,LOOKED UP,I noticed,,high,same narrator
+393,BODY,,low,ok,392,STRONG,COREF,these long haired girls,Like royalty in exile,,high,metaphor about the girls

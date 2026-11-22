@@ -96,6 +96,15 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
     }
   }
 
+  /// Opens the story scene. The lock releases when the player comes back.
+  void _handleStory() {
+    if (_navLock) return;
+    Navigator.pushNamed(context, '/story').whenComplete(() {
+      if (mounted) setState(() => _navLock = false);
+    });
+    setState(() => _navLock = true);
+  }
+
   /// Asks for a profile name. Returns null if the dialog was dismissed.
   Future<String?> _askNewProfileName({bool firstLaunch = false}) {
     final controller = TextEditingController(
@@ -253,6 +262,13 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
                           vertical: 16,
                         ),
                       ),
+                    ),
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      onPressed:
+                          _loadError == null && !_navLock ? _handleStory : null,
+                      icon: const Icon(Icons.auto_stories),
+                      label: const Text('Story', style: TextStyle(fontSize: 16)),
                     ),
                     const SizedBox(height: 32),
                     Text(

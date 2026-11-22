@@ -1,0 +1,18 @@
+trap_id,line_id,kind,rule_code,verdict,pairs,full_order,trigger_tokens,source,likelihood,severity,explanation_ru,wrong_example_en,confidence,review_status
+T0001,205,ORDER,PREFIX_VS_PARTICLE,TRAP,4<3,,4|3,BOTH,2,2,"Русская приставка стоит перед корнем, английская частица — после глагола: flew open.",The doors open flew .,high,approved
+T0002,350,ORDER,SVO_RIGID,TRAP,3<2,,3|2,LLM,2,2,В русском «ничего было нельзя» подлежащее-слово идёт раньше; в английском was идёт раньше nothing.,There nothing was to be done .,medium,draft
+T0003,351,ORDER,AUX_PERFECT,TRAP,4<3,,4|3,BOTH,2,2,В русском «была мертва» причастие раньше; в английском had стоит перед been/dead.,She dead been some hours .,high,approved
+T0004,357,ORDER,ADV_PLACEMENT,TRAP,4<3,,4|3,BOTH,2,2,«Уже расположились» — already тянется в начало; в английском already идёт после were.,Most people already were seated .,high,approved
+T0005,359,ORDER,ADV_PLACEMENT,TRAP,6<5,,6|5,LLM,2,2,«Слегка искривились» — слегка хочется поставить раньше глагола.,Jane ' s lips slightly twisted .,medium,draft
+T0006,483,ORDER,QUESTION_ORDER,TRAP,3<2,,3|2,LLM,3,2,Русский вопрос без инверсии: How you knew — пропущен и смещён did.,How you did know what I was doing ?,high,approved
+T0007,628,ORDER,AUX_PERFECT,TRAP,3<2,,3|2,LLM,2,2,«Там не бывал» — there раньше been; в английском been идёт раньше there.,Never there been myself .,medium,draft
+T0008,842,ORDER,QUESTION_ORDER,TRAP,3<2,,3|2,LLM,2,2,"Когда он придет — When he coming, вспомогательный 's теряет позицию.",When he 's coming ?,high,approved
+T0009,844,ORDER,GEN_VS_POSS,TRAP,9<7,,9|7,LLM,2,2,«Призрак Ленина» — главное слово раньше; в английском Lenin 's стоит раньше ghost.,That question haunts Red Square like ghost Lenin 's .,medium,draft
+T0010,848,ORDER,ADV_PLACEMENT,TRAP,4<3,,4|3,LLM,2,2,«Без малого семьдесят» — nearly хочется раньше was.,Mr. Wilkes nearly was seventy .,medium,draft
+T0011,816,ORDER,ADV_PLACEMENT,TRAP,4<3,,4|3,LLM,2,2,«Они там до сих пор» — there раньше still.,They are there still in warehouses in Liverpool .,medium,draft
+T0012,754,ORDER,AUX_PERFECT,TRAP,5<4,,5|4,LLM,2,2,«Долгие годы любил» — loved раньше have.,For years I loved have her .,high,approved
+T0013,837,ORDER,SVO_RIGID,TRAP,2<1,,2|1,LLM,1,2,«Пока тебя не сменят — сиди» — until раньше stay.,Until you are relieved stay .,low,draft
+T0014,263,ORDER,SVO_RIGID,TRAP,5<3,,5|3,LLM,2,2,«Вернуться она не могла» — turn раньше she.,"Unfortunately turn she , couldn ' t back .",medium,draft
+T0015,360,ORDER,SVO_RIGID,TRAP,8<2,,8|2,LLM,1,2,«Хорошо знакомы» — so well раньше knew.,She so well knew that particular type of voice .,low,draft
+A0001,387,ORDER,ADV_PLACEMENT,ACCEPTABLE,,5<1 5<2,,LLM,0,1,"«Сначала я заметила» — First, I noticed... звучит естественно.","First I noticed their hair , long and uncombed .",high,approved
+A0002,222,ORDER,SVO_RIGID,ACCEPTABLE,,4<1 5<2 4<3 5<3,the answer was a nod,,LLM,0,1,«Ответом был кивок» — The answer was a nod — законная альтернатива.,The answer was a nod .,high,approved

@@ -1,0 +1,51 @@
+line_id,verdict_summary,confidence
+115,no convincing trap; word order matches Russian,high
+148,no convincing trap; calque order equals correct,high
+151,quoted station name; no order trap,high
+162,dialogue inversion said he matches Russian pattern,medium
+163,elliptical question; no order trap,medium
+164,loose translation; order not teachable,medium
+204,shattering to melt: no realistic inversion,medium
+205,trap recorded: PREFIX_VS_PARTICLE,high
+222,acceptable alternative recorded,high
+231,"exclamation fragment; article use, not order",medium
+239,there-is construction matches Russian closely,high
+240,highly unstable: adverb order matches,high
+263,trap recorded: SVO_RIGID,medium
+329,name frame matches Russian word order,medium
+350,trap recorded: SVO_RIGID,medium
+351,trap recorded: AUX_PERFECT,high
+357,trap recorded: ADV_PLACEMENT,high
+359,trap recorded: ADV_PLACEMENT,medium
+360,trap recorded (weak): SVO_RIGID,low
+363,proper noun; no order trap,medium
+387,acceptable alternative recorded,high
+393,in exile matches в изгнании,high
+483,trap recorded: QUESTION_ORDER,high
+605,quoted fragment; order matches,medium
+623,once again she was looking: order matches,medium
+628,trap recorded: AUX_PERFECT,medium
+630,"article trap candidate, not order",medium
+634,no order trap; article the,high
+635,particle up: correct order matches Russian,medium
+715,what I know clause matches,medium
+716,head no tail matches Russian,high
+754,trap recorded: AUX_PERFECT,high
+785,fragment; order matches,medium
+788,want to watch: order matches,high
+789,"article a missing in Russian, not order",high
+790,was n't placement matches,high
+814,church collapses compound noun; no order trap,medium
+816,trap recorded: ADV_PLACEMENT,medium
+817,what you did was illegal: order matches,medium
+826,"copula is dropped in Russian, not order",high
+829,find out particle; weak candidate rejected,low
+832,moment frame; weak candidate rejected,high
+834,I knew it: order matches,high
+837,weak trap recorded: SVO_RIGID,medium
+842,trap recorded: QUESTION_ORDER,high
+844,trap recorded: GEN_VS_POSS,medium
+847,"negation form, not order",high
+848,trap recorded: ADV_PLACEMENT,medium
+852,be prepared: no order trap,high
+861,began checking matches начал изучать,high

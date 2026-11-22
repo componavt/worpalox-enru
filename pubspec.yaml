@@ -22,3 +22,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/corpus/levels.json
+    - assets/scenes/rocket_summer_01.json

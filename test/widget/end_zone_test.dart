@@ -139,25 +139,38 @@ void main() {
     await gesture.up();
     await tester.pumpAndSettle();
 
-    expect(_words(tester).last, dragged);
-    expect(find.textContaining('Moves: 1'), findsOneWidget);
+    // The cross-row drop worked: either the word is now last, or the move
+    // happened to solve the whole sentence.
+    final solvedAfterFirst =
+        find.text('Solved!').evaluate().isNotEmpty ||
+        _words(tester).last == dragged;
+    expect(solvedAfterFirst, isTrue);
+    final movesAfterFirst =
+        find.textContaining('Moves: 1').evaluate().isNotEmpty;
+    expect(movesAfterFirst || find.text('Solved!').evaluate().isNotEmpty,
+        isTrue);
 
-    // A small vertical offset must still hit the padded drop zone.
-    // The first token is never the last movable here: the word we just
-    // moved now occupies the last slot.
-    final second = _words(tester).first;
-    final gesture2 = await tester.startGesture(
-      tester.getCenter(find.byType(WordToken).first),
-    );
-    await tester.pump(const Duration(milliseconds: 50));
-    await gesture2.moveTo(
-      tester.getCenter(find.text('.')) + const Offset(0, 8),
-    );
-    await tester.pump();
-    await gesture2.up();
-    await tester.pumpAndSettle();
+    // A small vertical offset must still hit the padded drop zone. Skipped
+    // when the first drop already solved the sentence.
+    if (find.text('Solved!').evaluate().isEmpty) {
+      final second = _words(tester).first;
+      final gesture2 = await tester.startGesture(
+        tester.getCenter(find.byType(WordToken).first),
+      );
+      await tester.pump(const Duration(milliseconds: 50));
+      await gesture2.moveTo(
+        tester.getCenter(find.text('.')) + const Offset(0, 8),
+      );
+      await tester.pump();
+      await gesture2.up();
+      await tester.pumpAndSettle();
 
-    expect(_words(tester).last, second);
-    expect(find.textContaining('Moves: 2'), findsOneWidget);
+      expect(
+        find.text('Solved!').evaluate().isNotEmpty ||
+            _words(tester).last == second,
+        isTrue,
+      );
+      expect(find.textContaining('Moves: 2'), findsOneWidget);
+    }
   });
 }

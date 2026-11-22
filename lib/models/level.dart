@@ -1,3 +1,38 @@
+/// One editor-confirmed word correspondence imported from the corpus
+/// alignment, expressed on the actual game tokens: [en] is a 0-based index
+/// of a movable English chip in its correct order, [ru] is a 0-based index
+/// of a word in the Russian clue (punctuation excluded).
+class AlignmentLink {
+  final int en;
+  final int ru;
+
+  const AlignmentLink({required this.en, required this.ru});
+
+  factory AlignmentLink.fromJson(Map<String, dynamic> json) =>
+      AlignmentLink(en: json['en'] as int, ru: json['ru'] as int);
+
+  Map<String, dynamic> toJson() => {'en': en, 'ru': ru};
+}
+
+/// Editor-approved correspondences for one level. Only confirmed links
+/// travel here; the lens reads them, quiz cards are curated separately.
+class LevelAlignment {
+  final List<AlignmentLink> links;
+
+  const LevelAlignment({required this.links});
+
+  factory LevelAlignment.fromJson(Map<String, dynamic> json) =>
+      LevelAlignment(
+        links: (json['links'] as List)
+            .map((e) => AlignmentLink.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
+
+  Map<String, dynamic> toJson() => {
+    'links': links.map((l) => l.toJson()).toList(),
+  };
+}
+
 /// Represents a single playable level derived from the corpus.
 class Level {
   final int id;
@@ -7,7 +42,7 @@ class Level {
   final String difficulty;
   final String commentaryRu;
   final List<PrelearnPair> prelearnPairs;
-  final String? alignment;
+  final LevelAlignment? alignment;
 
   const Level({
     required this.id,
@@ -40,7 +75,9 @@ class Level {
       difficulty: json['difficulty'] as String? ?? 'medium',
       commentaryRu: json['commentaryRu'] as String? ?? '',
       prelearnPairs: prelearnPairs,
-      alignment: json['alignment'] as String?,
+      alignment: json['alignment'] == null
+          ? null
+          : LevelAlignment.fromJson(json['alignment'] as Map<String, dynamic>),
     );
   }
 
@@ -52,7 +89,7 @@ class Level {
     'difficulty': difficulty,
     'commentaryRu': commentaryRu,
     'prelearnPairs': prelearnPairs.map((p) => p.toJson()).toList(),
-    'alignment': alignment,
+    'alignment': alignment?.toJson(),
   };
 }
 

@@ -1,0 +1,61 @@
+level_id,corpus_line,en_index,en_token,ru_index,ru_token,talp_kind,verdict,note
+101,205,2,doors,1,Двери,reliable,confirmed,
+101,205,3,flew,2,распахнулись,reliable,confirmed,part of idiom flew open
+101,205,4,open,2,распахнулись,reliable,confirmed,part of idiom flew open
+101,205,5,.,3,.,reliable,confirmed,"punctuation, excluded from game"
+102,115,1,This,1,Это,reliable,confirmed,
+102,115,3,not,2,не,reliable,confirmed,
+102,115,5,mistake,3,ошибка,reliable,confirmed,
+102,115,6,.,4,.,reliable,confirmed,punctuation
+103,222,5,answer,2,ответ,reliable,rejected,"nod corresponds to кивнул, not ответ; Russian line is a paraphrase"
+103,222,6,.,6,.,reliable,confirmed,punctuation
+103,222,2,nod,5,кивнул,probable,confirmed,probable link is the correct one
+104,350,6,done,9,сделать,reliable,confirmed,EN side only
+104,350,3,nothing,10,ничего,reliable,confirmed,EN side only
+104,350,2,was,11,было,reliable,confirmed,EN side only
+104,350,7,.,13,–,probable,rejected,dash is non-terminal punctuation
+104,350,4,to,9,сделать,probable,uncertain,to be vs сделать
+104,350,5,be,9,сделать,probable,uncertain,to be vs сделать
+105,351,1,She,1,она,reliable,confirmed,
+105,351,3,been,2,была,reliable,confirmed,had been merged
+105,351,4,dead,3,мертва,reliable,confirmed,
+105,351,5,some,5,несколько,reliable,confirmed,
+105,351,6,hours,6,часов,reliable,confirmed,
+105,351,7,.,7,.,reliable,confirmed,punctuation
+105,351,2,had,2,была,probable,confirmed,had merges into была
+106,357,4,already,2,уже,reliable,confirmed,
+106,357,6,.,6,.,reliable,confirmed,punctuation
+106,357,5,seated,3,расположились,probable,confirmed,seated vs расположились
+106,357,5,seated,5,креслах,probable,rejected,seated is not креслах
+106,357,5,seated,4,в,probable,rejected,seated is not в
+106,357,2,people,1,Многие,probable,confirmed,"people vs многие, partial"
+106,357,1,Most,1,Многие,probable,confirmed,"most vs многие, partial"
+106,357,3,were,5,креслах,probable,rejected,
+106,357,3,were,4,в,probable,rejected,
+106,357,3,were,3,расположились,probable,rejected,
+107,832,1,He,1,Он,reliable,confirmed,
+107,832,5,moment,2,мгновение,reliable,confirmed,
+107,832,6,.,4,.,reliable,confirmed,punctuation
+107,832,3,for,2,мгновение,probable,rejected,for is not мгновение
+107,832,2,hesitated,3,помедлил,probable,confirmed,
+107,832,4,a,2,мгновение,probable,rejected,a is not мгновение
+108,239,1,There,1,Здесь,reliable,confirmed,
+108,239,3,",",3,",",reliable,confirmed,punctuation
+108,239,4,however,4,однако,reliable,confirmed,
+108,239,5,",",5,",",reliable,confirmed,punctuation
+108,239,6,one,6,одно,reliable,confirmed,
+108,239,8,...,8,...,reliable,confirmed,punctuation
+108,239,2,is,2,есть,probable,confirmed,
+108,239,7,catch,7,обстоятельство,probable,confirmed,
+120,359,4,lips,1,Губы,reliable,confirmed,possessive phrase lips
+120,359,1,Jane,2,Джейн,reliable,confirmed,Jane
+120,359,6,slightly,3,слегка,reliable,confirmed,slightly
+120,359,5,twisted,4,искривились,reliable,confirmed,twisted
+120,359,7,.,5,.,reliable,confirmed,punctuation
+120,359,3,s,2,Джейн,probable,confirmed,clitic s
+120,359,2,',2,Джейн,probable,confirmed,clitic '
+122,861,3,began,2,начал,reliable,confirmed,
+122,861,6,map,4,карту,reliable,confirmed,
+122,861,7,.,5,.,reliable,confirmed,punctuation
+122,861,2,guard,1,Гвардеец,probable,confirmed,guard vs гвардеец
+122,861,4,checking,3,изучать,probable,confirmed,"checking vs изучать, slight semantic gap"

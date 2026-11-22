@@ -5,6 +5,8 @@ import 'screens/block_complete_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/prelearn_screen.dart';
 import 'screens/puzzle_screen.dart';
+import 'screens/scene_complete_screen.dart';
+import 'screens/story_screen.dart';
 import 'services/corpus_service.dart';
 import 'services/persistence_service.dart';
 import 'services/scoring_service.dart';
@@ -54,6 +56,10 @@ class WorpaloxApp extends StatelessWidget {
           '/prelearn': (context) => const PreLearnScreen(),
           '/puzzle': (context) => const PuzzleScreen(),
           '/blockComplete': (context) => const BlockCompleteScreen(),
+          '/story': (context) => const StoryScreen(),
+          '/sceneComplete': (context) => const SceneCompleteScreen(
+            titleRu: 'Сцена завершена',
+          ),
         },
       ),
     );

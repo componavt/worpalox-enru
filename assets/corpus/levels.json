@@ -16,7 +16,22 @@
         "ru": "распахнулись"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 1,
+          "ru": 0
+        },
+        {
+          "en": 2,
+          "ru": 1
+        },
+        {
+          "en": 3,
+          "ru": 1
+        }
+      ]
+    }
   },
   {
     "id": 102,
@@ -35,7 +50,22 @@
         "ru": "не"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 0,
+          "ru": 0
+        },
+        {
+          "en": 2,
+          "ru": 1
+        },
+        {
+          "en": 4,
+          "ru": 2
+        }
+      ]
+    }
   },
   {
     "id": 103,
@@ -92,7 +122,34 @@
         "ru": "часов"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 0,
+          "ru": 0
+        },
+        {
+          "en": 2,
+          "ru": 1
+        },
+        {
+          "en": 3,
+          "ru": 2
+        },
+        {
+          "en": 4,
+          "ru": 4
+        },
+        {
+          "en": 5,
+          "ru": 5
+        },
+        {
+          "en": 1,
+          "ru": 1
+        }
+      ]
+    }
   },
   {
     "id": 106,
@@ -130,7 +187,22 @@
         "ru": "мгновение"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 0,
+          "ru": 0
+        },
+        {
+          "en": 4,
+          "ru": 1
+        },
+        {
+          "en": 1,
+          "ru": 2
+        }
+      ]
+    }
   },
   {
     "id": 108,
@@ -149,7 +221,30 @@
         "ru": "обстоятельство"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 0,
+          "ru": 0
+        },
+        {
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "en": 5,
+          "ru": 5
+        },
+        {
+          "en": 1,
+          "ru": 1
+        },
+        {
+          "en": 6,
+          "ru": 6
+        }
+      ]
+    }
   },
   {
     "id": 109,
@@ -377,7 +472,26 @@
         "ru": "искривились"
       }
     ],
-    "alignment": null
+    "alignment": {
+      "links": [
+        {
+          "en": 1,
+          "ru": 0
+        },
+        {
+          "en": 0,
+          "ru": 1
+        },
+        {
+          "en": 3,
+          "ru": 2
+        },
+        {
+          "en": 2,
+          "ru": 3
+        }
+      ]
+    }
   },
   {
     "id": 121,
@@ -586,6 +700,25 @@
         "ru": "пока не"
       }
     ],
+    "alignment": null
+  },
+  {
+    "id": 140,
+    "english": "The icicles dropped , shattering , to melt .",
+    "russian": "Сосульки срывались с крыш , разбивались и таяли .",
+    "difficulty": "medium",
+    "commentaryRu": "Обратите внимание: shattering — причастие, вставленное между запятыми.",
+    "prelearnPairs": [
+      {
+        "en": "icicles",
+        "ru": "сосульки"
+      },
+      {
+        "en": "melt",
+        "ru": "таять"
+      }
+    ],
+    "tokenCount": 9,
     "alignment": null
   }
 ]

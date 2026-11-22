@@ -1,0 +1,900 @@
+=== 1 | EN2 RU3 mov2 lnk3 rel0 m2o1 o2m0 unp0 inv[]
+EN: Operating instructions
+RU: инструкция по эксплуатации
+=== 2 | EN3 RU6 mov3 lnk4 rel2 m2o2 o2m0 unp1 inv[]
+EN: Dear customer ,
+RU: Уважаемый покупатель ! Уважаемая покупательница !
+=== 3 | EN12 RU10 mov11 lnk7 rel6 m2o0 o2m0 unp5 inv[8<6 8<7]
+EN: We would like to thank and congratulate you for your choice .
+RU: Благодарим вас за покупку и поздравляем с правильным выбором .
+=== 4 | EN40 RU38 mov39 lnk36 rel19 m2o3 o2m3 unp7 inv[24<23]
+EN: This practical modern appliance has been made using materials of the highest quality , which have been put through the strictest of Quality Controls during manufacture and meticulously tested to ensure that they meet all of your cooking demands .
+RU: Этот практичный , современный и удобный прибор изготовлен из высококачественных материалов , прошедших строгий контроль качества на протяжении всего процесса производства и тщательно протестированных , чтобы наш прибор мог удовлетворить всем вашим требованиям к идеальному приготовлению пищи .
+=== 5 | EN24 RU23 mov23 lnk28 rel12 m2o3 o2m5 unp2 inv[9<7 10<7 11<7 9<8 10<8 11<8 20<19]
+EN: We kindly ask you to read and follow these simple instructions in order to guarantee first - class results from the very start .
+RU: Убедительно просим вас ознакомиться с этими простыми указаниями и придерживаться их , чтобы с первого же использования варочной панели получить великолепный результат .
+=== 6 | EN23 RU21 mov22 lnk21 rel11 m2o0 o2m2 unp2 inv[8<6 8<7]
+EN: This booklet contains important information not only concerning use , but also concerning your own personal safety and maintenance of the appliance .
+RU: Здесь содержится важная информация , касающаяся не только использования варочной панели , но и вашей безопасности и ухода за прибором .
+=== 7 | EN13 RU10 mov12 lnk10 rel5 m2o1 o2m1 unp4 inv[11<10 12<10]
+EN: Our products need to be carefully packed to protect them during transportation .
+RU: Во время транспортировки электроприборов им необходима надежная защитная упаковка .
+=== 8 | EN18 RU16 mov17 lnk10 rel3 m2o1 o2m1 unp10 inv[]
+EN: All the material used for packing is considered essential for this purpose and is also completely recyclable .
+RU: Мы сводим ее к абсолютно необходимому минимуму , и все упаковочные материалы могут быть переработаны .
+=== 9 | EN21 RU23 mov20 lnk24 rel6 m2o4 o2m4 unp4 inv[]
+EN: You too can contribut towards protecting the environment by disposing of this material at your nearest recyclable refuse collection point .
+RU: Как и мы , вы можете помочь делу охраны природы : поместите упаковку в ближайший к вашему дому контейнер для подобных материалов .
+=== 10 | EN12 RU16 mov11 lnk11 rel4 m2o0 o2m3 unp1 inv[]
+EN: Do not dispose of used cooking oil down the kitchen sink .
+RU: Не выливайте использованное растительное масло в раковину , так как оно очень вредит окружающей среде .
+=== 11 | EN6 RU10 mov5 lnk2 rel2 m2o0 o2m0 unp4 inv[]
+EN: Drugs are a community issue .
+RU: В современном мире много молодых людей соприкасается с наркотиками .
+=== 12 | EN25 RU15 mov24 lnk4 rel2 m2o0 o2m0 unp21 inv[]
+EN: Talking openly and honestly about drugs with your family , particularly your children , is one step you can take to prevent drug problems .
+RU: Родителям может быть очень сложно понять , каким образом лучше всего решать эту проблему .
+=== 13 | EN21 RU14 mov20 lnk1 rel1 m2o0 o2m0 unp20 inv[]
+EN: At some time in our lives our families or friends may be touched by drugs or crimes linked to them .
+RU: Родителям , живущим в многонациональном и многоязычном обществе , может приходиться еще сложнее .
+=== 14 | EN35 RU22 mov34 lnk5 rel3 m2o0 o2m1 unp30 inv[]
+EN: The more you know , the easier it is to talk with your children about drugs . It may also help you recognise and prevent drug use early on and to start finding solutions .
+RU: Один из лучших способов защитить вашего ребенка -- это самому ознакомиться с информацией о наркотиках и обсудить эти темы с детьми .
+=== 15 | EN35 RU26 mov34 lnk26 rel21 m2o0 o2m3 unp9 inv[]
+EN: This booklet gives you general information about drugs and alcohol , ideas about how to discuss the issue as a family , cope with situations that may arise and where to turn for help .
+RU: Этот буклет даст вам общую информацию о наркотиках и алкоголе , подскажет , как обсуждать эти проблемы в вашей семье и куда обращаться за помощью .
+=== 16 | EN4 RU4 mov3 lnk4 rel3 m2o0 o2m0 unp0 inv[]
+EN: What are drugs ?
+RU: Что такое наркотики ?
+=== 17 | EN21 RU25 mov20 lnk21 rel16 m2o2 o2m1 unp2 inv[]
+EN: Drugs are substances that can change how the mind and body works by altering mood and affecting thinking and reflexes .
+RU: Наркотики -- это вещества , которые могут изменить функционирование вашего мозга и тела резкими сменами настроений , а также влиянием на мышление и рефлексы .
+=== 18 | EN15 RU14 mov14 lnk16 rel9 m2o1 o2m1 unp0 inv[7<5]
+EN: All drugs , whether legal or illegal , have the potential to cause harm .
+RU: Все наркотики , как запрещенные , так и разрешенные , могут наносить вред .
+=== 19 | EN49 RU34 mov48 lnk32 rel19 m2o1 o2m0 unp19 inv[7<6 10<6 10<7 10<9]
+EN: Illegal drugs include cannabis ( marijuana , pot , weed ), ecstasy ( pills , E , eccy ), amphetamines ( speed , ice ), LSD ( acid , trips ), ketamine ( Special K ), GHB ( liquid E , GBH , fantasy ), cocaine and heroin .
+RU: Запрещенные наркотики включают в себя гашиш (« трава », марихуана , ганжа , дурь ), экстази , амфетамины (« спид »), ЛСД , кетамин (" Спешл Кей "), GHB , кокаин и героин .
+=== 20 | EN32 RU30 mov31 lnk32 rel23 m2o1 o2m3 unp1 inv[27<26]
+EN: It ' s important to remember that legal drugs like alcohol , tobacco , medications and caffeine ( for instance ' energy drinks ' and caffeine tablets ) are potentially harmful .
+RU: Важно помнить , что разрешенные наркотики , такие как алкоголь , табак , медикаменты и кофеин ( например , « энергетический напиток » или таблетки кофеина ), потенциально вредны .
+=== 21 | EN5 RU2 mov5 lnk5 rel1 m2o0 o2m1 unp0 inv[]
+EN: IN THE WAKE OF IRAQ
+RU: ПОСЛЕ ИРАКА
+=== 22 | EN1 RU1 mov1 lnk1 rel1 m2o0 o2m0 unp0 inv[]
+EN: CONTENTS
+RU: СОДЕРЖАНИЕ
+=== 23 | EN1 RU1 mov1 lnk1 rel1 m2o0 o2m0 unp0 inv[]
+EN: Debate
+RU: Дебаты
+=== 24 | EN11 RU11 mov10 lnk9 rel5 m2o1 o2m0 unp3 inv[10<9]
+EN: How effective a tool is preemption in addressing WMD proliferation ?
+RU: Насколько эффективно упреждение в качестве средства борьбы с распространением ОМП ?
+=== 25 | EN5 RU5 mov5 lnk5 rel5 m2o0 o2m0 unp0 inv[]
+EN: Max Boot versus Harald M?ller
+RU: Макс Бут против Гаральда Мюллера
+=== 26 | EN2 RU3 mov2 lnk3 rel1 m2o1 o2m0 unp0 inv[]
+EN: Book review
+RU: Рецензия на книги
+=== 27 | EN2 RU3 mov2 lnk2 rel0 m2o0 o2m0 unp0 inv[]
+EN: Revolutionary writing
+RU: Книги о революции
+=== 28 | EN2 RU2 mov2 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: Rebuilding relationships
+RU: Перестраивая отношения
+=== 29 | EN19 RU22 mov18 lnk18 rel15 m2o2 o2m0 unp3 inv[11<10]
+EN: Sir Timothy Garden examines the political impact of the Iraq campaign and ways forward for all institutions involved .
+RU: Сэр Тимоти Гарден рассматривает политические последствия военной кампании в Ираке и пути продвижения вперед для всех вовлеченных в нее международных организаций .
+=== 30 | EN2 RU2 mov2 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: Rethinking NATO
+RU: Переосмысливая НАТО
+=== 31 | EN16 RU15 mov15 lnk13 rel12 m2o1 o2m0 unp4 inv[9<8 15<14]
+EN: Tom Donnelly assesses the impact of the Iraq campaign on NATO from a US perspective .
+RU: Том Доннелли оценивает воздействие военной кампании в Ираке на НАТО с точки зрения США .
+=== 32 | EN4 RU3 mov4 lnk3 rel2 m2o0 o2m0 unp1 inv[]
+EN: The road to Kabul
+RU: Дорога в Кабул
+=== 33 | EN22 RU21 mov21 lnk23 rel14 m2o2 o2m2 unp2 inv[14<10]
+EN: Diego A . Ruiz Palmer analyses the background to NATO ’ s seminal decision to take responsibility for peacekeeping in Afghanistan .
+RU: Диего А . Руис - Пальмер анализирует значимость новаторского решения НАТО взять на себя ответственность за миротворческую операцию в Афганистане .
+=== 148 | EN9 RU6 mov8 lnk7 rel5 m2o0 o2m1 unp2 inv[]
+EN: The train from ' Frisco was very late .
+RU: Ночной из Фриско сильно запаздывал .
+=== 149 | EN48 RU38 mov47 lnk40 rel21 m2o2 o2m10 unp10 inv[]
+EN: It should have arrived at Hugson ' s Siding at midnight , but it was already five o ' clock and the gray dawn was breaking in the east when the little train slowly rumbled up to the open shed that served for the station - house .
+RU: Обычно он прибывал в Хагсонский тупик к полуночи , но на этот раз лишь в пять часов утра , когда небо на востоке начало уже светлеть , маленький поезд медленно подполз к платформе , служившей местным вокзалом .
+=== 150 | EN15 RU7 mov15 lnk8 rel2 m2o0 o2m2 unp7 inv[]
+EN: As it came to a stop the conductor called out in a loud voice :
+RU: Заскрипели тормоза . Кондуктор громко выкрикнул :
+=== 151 | EN6 RU4 mov6 lnk5 rel3 m2o0 o2m1 unp1 inv[]
+EN: " Hugson ' s Siding !"
+RU: — Хагсонский тупик !
+=== 152 | EN50 RU32 mov49 lnk33 rel21 m2o1 o2m3 unp19 inv[25<21 26<21 27<21 34<31 35<31 36<31 38<3]
+EN: At once a little girl rose from her seat and walked to the door of the car , carrying a wicker suit - case in one hand and a round bird - cage covered up with newspapers in the other , while a parasol was tucked under her arm .
+RU: Юная пассажирка поднялась с места и заторопилась к выходу . В одной руке у нее был плетеный саквояж , в другой — прикрытая газетой птичья клетка , под мышкой зажат зонтик .
+=== 153 | EN30 RU22 mov29 lnk24 rel8 m2o3 o2m3 unp9 inv[]
+EN: The conductor helped her off the car and then the engineer started his train again , so that it puffed and groaned and moved slowly away up the track .
+RU: Кондуктор помог ей выйти из вагона , машинист снова развел пары , состав застонал , запыхтел и потащился по рельсам дальше .
+=== 154 | EN4 RU5 mov4 lnk5 rel3 m2o1 o2m0 unp0 inv[4<1 4<2]
+EN: L . Frank Baum
+RU: Баум Л . Б .
+=== 155 | EN5 RU4 mov5 lnk5 rel1 m2o1 o2m1 unp1 inv[]
+EN: The Patchwork Girl of Oz
+RU: Лоскутушка из страны Оз
+=== 156 | EN26 RU19 mov25 lnk22 rel11 m2o3 o2m4 unp7 inv[]
+EN: Where ' s the jam then ?" inquired Ojo , standing on a stool so he could look through all the shelves of the cupboard .
+RU: А как насчет джема ? — осведомился Оджо , встав на табуретку , чтобы лучше видеть полки буфета .
+=== 157 | EN2 RU2 mov2 lnk1 rel0 m2o0 o2m0 unp1 inv[]
+EN: Chapter One
+RU: 1 .
+=== 158 | EN4 RU4 mov4 lnk4 rel2 m2o0 o2m0 unp0 inv[]
+EN: Ojo and Unc Nunkie
+RU: ОДЖО И ДЯДЯ НАНДИ
+=== 159 | EN13 RU12 mov12 lnk8 rel5 m2o0 o2m0 unp5 inv[]
+EN: " Where ' s the butter , Unc Nunkie ?" asked Ojo .
+RU: — А где масло , дядя Нанди ? — спросил Оджо .
+=== 160 | EN12 RU11 mov11 lnk10 rel7 m2o0 o2m1 unp2 inv[]
+EN: Unc looked out of the window and stroked his long beard .
+RU: Дядя Нанди выглянул из окна , погладил свою длинную бороду .
+=== 161 | EN12 RU10 mov11 lnk10 rel4 m2o2 o2m1 unp4 inv[]
+EN: Then he turned to the Munchkin boy and shook his head .
+RU: Потом посмотрел на юного жителя Страны Жевунов и покачал головой
+=== 162 | EN8 RU7 mov7 lnk8 rel3 m2o0 o2m1 unp0 inv[]
+EN: " Isn ' t ," said he .
+RU: « Нету .» — сказал он .
+=== 163 | EN7 RU4 mov6 lnk6 rel2 m2o0 o2m1 unp1 inv[]
+EN: " Isn ' t any butter ?
+RU: — Нет масла ?
+=== 164 | EN8 RU3 mov7 lnk2 rel2 m2o0 o2m0 unp6 inv[]
+EN: That ' s too bad , Unc .
+RU: — Плохо .
+=== 165 | EN24 RU19 mov23 lnk20 rel13 m2o2 o2m2 unp6 inv[]
+EN: In the Country of the Gillikins , which is at the North of the Land of Oz , lived a youth called Tip .
+RU: В Стране Гилликинов , той , что лежит на севере Страны Оз , жил мальчик по имени Тип .
+=== 166 | EN42 RU39 mov41 lnk53 rel8 m2o6 o2m9 unp23 inv[5<2 6<2 11<2 12<2]
+EN: There was more to his name than that , for old Mombi often declared that his whole name was Tippetarius ; but no one was expected to say such a long word when " Tip " would do just as well .
+RU: Его настоящее имя , как уверяла старая Момби , было гораздо длиннее -- Типпетариус , однако не всякий и выговорит : " Тип - пе - та - ри - ус ", поэтому все звали паренька просто Тип .
+=== 167 | EN42 RU28 mov41 lnk43 rel24 m2o8 o2m9 unp11 inv[7<3]
+EN: This boy remembered nothing of his parents , for he had been brought when quite young to be reared by the old woman known as Mombi , whose reputation , I am sorry to say , was none of the best .
+RU: Своих родителей он не помнил , ибо еще во младенчестве был взят на воспитание старухой Момби , чья репутация , надо признаться , была не из лучших .
+=== 168 | EN23 RU15 mov22 lnk16 rel2 m2o2 o2m4 unp11 inv[]
+EN: For the Gillikin people had reason to suspect her of indulging in magical arts , and therefore hesitated to associate with her .
+RU: Местные жители ее сторонились , подозревая -- и не без основания -- в колдовстве .
+=== 169 | EN31 RU22 mov30 lnk18 rel7 m2o0 o2m3 unp13 inv[]
+EN: Mombi was not exactly a Witch , because the Good Witch who ruled that part of the Land of Oz had forbidden any other Witch to exist in her dominions .
+RU: Момби , впрочем , проявила осторожность : добрая волшебница , правительница тех краев , строго запретила в своих владениях всякое колдовство .
+=== 170 | EN32 RU13 mov31 lnk8 rel6 m2o1 o2m1 unp25 inv[]
+EN: So Tip ' s guardian , however much she might aspire to working magic , realized it was unlawful to be more than a Sorceress , or at most a Wizardess .
+RU: Так что опекунша Типа больше действовала как обычная гадалка или как ворожея .
+=== 171 | EN19 RU12 mov18 lnk9 rel6 m2o0 o2m0 unp10 inv[7<6 9<6]
+EN: Tip was made to carry wood from the forest , that the old woman might boil her pot .
+RU: Обязанностью мальчика было носить из лесу дрова для очага на кухне .
+=== 172 | EN33 RU23 mov32 lnk27 rel18 m2o1 o2m4 unp7 inv[28<22 29<22 30<22 28<23 29<23 30<23 28<2]
+EN: He also worked in the corn - fields , hoeing and husking ; and he fed the pigs and milked the four - horned cow that was Mombi ' s especial pride .
+RU: Кроме того , он работал в поле , мотыжил и молотил кукурузу , кормил свиней и доил любимицу Момби , четырехрогую корову .
+=== 173 | EN21 RU19 mov20 lnk28 rel4 m2o9 o2m6 unp5 inv[]
+EN: But you must not suppose he worked all the time , for he felt that would be bad for him .
+RU: Не подумайте только , что он работал без отдыха день и ночь , надрывая здоровье , о нет !
+=== 174 | EN30 RU33 mov29 lnk27 rel20 m2o4 o2m2 unp7 inv[24<23]
+EN: When sent to the forest Tip often climbed trees for birds ' eggs or amused himself chasing the fleet white rabbits or fishing in the brooks with bent pins .
+RU: Отправившись за дровами в лес , Тип весело проводил время : лазил по деревьям в поисках птичьих яиц , гонялся за быстроногими белыми кроликами , ловил в ручьях рыбу на гнутую булавку .
+=== 175 | EN18 RU14 mov17 lnk16 rel9 m2o2 o2m3 unp4 inv[5<2 5<4]
+EN: It was a quiet morning , the town covered over with darkness and at ease in bed .
+RU: Утро было тихое , город , окутанный тьмой , мирно нежился в постели .
+=== 176 | EN25 RU16 mov24 lnk21 rel9 m2o4 o2m3 unp8 inv[22<15 22<16 22<18]
+EN: Summer gathered in the weather , the wind had the proper touch , the breathing of the world was long and warm and slow .
+RU: Пришло лето , и ветер был летний — теплое дыхание мира , неспешное и ленивое .
+=== 177 | EN12 RU11 mov11 lnk7 rel5 m2o0 o2m0 unp5 inv[5<3]
+EN: He would freeze , gladly , in the hoarfrosted icehouse door .
+RU: А как приятно будет померзнуть , забравшись в заиндевелый ледник ,
+=== 178 | EN34 RU28 mov33 lnk29 rel18 m2o2 o2m4 unp7 inv[]
+EN: You had only to rise , lean from your window , and know that this indeed was the first real time of freedom and living , this was the first morning of summer .
+RU: Стоит лишь встать , высунуться в окошко , и тотчас поймешь : вот она начинается , настоящая свобода и жизнь , вот оно , первое утро лета .
+=== 179 | EN19 RU24 mov18 lnk25 rel7 m2o3 o2m6 unp3 inv[]
+EN: Douglas Spaulding , twelve , freshly wakened , let summer idle him on its early - morning stream .
+RU: Дуглас Сполдинг , двенадцати лет от роду , только что открыл глаза и , как в теплую речку , погрузился в предрассветную безмятежность .
+=== 180 | EN31 RU39 mov30 lnk30 rel8 m2o3 o2m6 unp10 inv[23<10 24<10 28<10 29<10 23<14 24<14 28<1]
+EN: Lying in his third - story cupola bedroom , he felt the tall power it gave him , riding high in the June wind , the grandest tower in town .
+RU: Он лежал в сводчатой комнатке на четвертом этаже — во всем городе не было башни выше , — и оттого , что он парил так высоко в воздухе вместе с июньским ветром , в нем рождалась чудодейственная сила .
+=== 340 | EN3 RU4 mov3 lnk2 rel2 m2o0 o2m0 unp1 inv[]
+EN: From An Autobiography
+RU: Из « Автобиографии »
+=== 341 | EN21 RU13 mov20 lnk19 rel9 m2o0 o2m4 unp2 inv[]
+EN: Ten little nigger boys went out to dine ; One choked his little self , and then there were Nine .
+RU: Десять негритят решили пообедать , Один внезапно подавился – их осталось девять .
+=== 342 | EN2 RU1 mov2 lnk1 rel1 m2o0 o2m0 unp1 inv[]
+EN: The Letter
+RU: Письмо
+=== 343 | EN25 RU23 mov24 lnk16 rel8 m2o1 o2m1 unp10 inv[18<10 19<10 20<10]
+EN: In June 1935 I came back to Britain for six months on business while my wife stayed in South America to manage the farm .
+RU: В июне 1935 года я приехал в Англию со своего ранчо в Южной Америке , чтобы провести на родине около шести недель .
+=== 344 | EN21 RU17 mov20 lnk16 rel10 m2o0 o2m2 unp5 inv[]
+EN: To Punkie who likes an orthodox detective story , murder , inquest , and suspicion falling on everyone in turn !
+RU: Посвящается Пинки , любительнице традиционных детективов с убийствами , расследованиями и подозрениями , падающими на каждого !
+=== 345 | EN1 RU2 mov1 lnk1 rel1 m2o0 o2m0 unp0 inv[]
+EN: One
+RU: Глава 1
+=== 346 | EN20 RU20 mov19 lnk16 rel11 m2o0 o2m2 unp4 inv[]
+EN: I am not going to pretend that at that moment I foresaw the events of the next few weeks .
+RU: Не хочу притворяться , что в тот момент я предвидел все события , которые последовали в следующие несколько дней –
+=== 347 | EN7 RU3 mov7 lnk7 rel3 m2o0 o2m2 unp0 inv[]
+EN: DR . SHEPPARD AT THE BREAKFAST TABLE
+RU: Доктор Шеппард завтракает
+=== 348 | EN17 RU14 mov16 lnk13 rel9 m2o0 o2m1 unp4 inv[16<7 16<10 16<12 16<13]
+EN: Mrs . Ferrars died on the night of the 16th – 17th September — a Thursday .
+RU: Миссис Феррарс скончалась в четверг , в ночь с 16 на 17 сентября .
+=== 349 | EN17 RU14 mov16 lnk16 rel10 m2o1 o2m3 unp2 inv[14<5 16<5 14<6 16<6 14<7 16<7 14<8 16<8 ]
+EN: I was sent for at eight o ’ clock on the morning of Friday the 17th .
+RU: За мною прислали в пятницу , 17 сентября , в восемь часов утра .
+=== 350 | EN7 RU13 mov6 lnk6 rel3 m2o0 o2m1 unp1 inv[3<2 6<2 6<3]
+EN: There was nothing to be done .
+RU: К тому моменту , как я появился , сделать ничего было нельзя –
+=== 351 | EN7 RU7 mov6 lnk7 rel6 m2o0 o2m1 unp0 inv[]
+EN: She had been dead some hours .
+RU: она была мертва уже несколько часов .
+=== 352 | EN15 RU7 mov14 lnk14 rel3 m2o5 o2m2 unp6 inv[12<10]
+EN: It was just a few minutes after nine when I reached home once more .
+RU: Домой я вернулся в начале десятого .
+=== 353 | EN43 RU33 mov42 lnk37 rel23 m2o2 o2m4 unp9 inv[6<4 6<5 16<12]
+EN: I opened the front door with my latchkey , and purposely delayed a few moments in the hall , hanging up my hat and the light overcoat that I had deemed a wise precaution against the chill of an early autumn morning .
+RU: Открыл входную дверь своим ключом и намеренно задержался в прихожей на несколько минут , вешая на вешалку шляпу и легкое пальто , которое предусмотрительно надел для защиты от прохлады раннего осеннего утра .
+=== 354 | EN12 RU11 mov11 lnk12 rel11 m2o1 o2m1 unp1 inv[]
+EN: To tell the truth , I was considerably upset and worried .
+RU: Сказать по правде , я был здорово расстроен и обеспокоен .
+=== 355 | EN37 RU33 mov36 lnk40 rel18 m2o8 o2m8 unp7 inv[10<8 10<9 34<30]
+EN: The September sun beat down hotly on Le Bourget aerodrome as the passengers crossed the ground and climbed into the air liner " Prometheus ," due to depart for Croydon in a few minutes ' time .
+RU: Жаркое сентябрьское солнце заливало лучами аэродром Ле - Бурже . Группа пассажиров шла по летному полю , чтобы подняться на борт авиалайнера « Прометей », вылетавшего через несколько минут курсом на Кройдон .
+=== 356 | EN44 RU34 mov43 lnk39 rel17 m2o2 o2m5 unp8 inv[]
+EN: Jane Grey was among the last to enter and take her seat , No . 16 . Some of the passengers had already passed on through the center door past the tiny pantry kitchen and the two wash rooms to the front car .
+RU: Джейн Грей одной из последних взошла по трапу и заняла свое место – № 16 . Некоторые из пассажиров прошли через центральную дверь и крошечную буфетную , мимо двух туалетов в передний салон .
+=== 357 | EN6 RU6 mov5 lnk10 rel2 m2o2 o2m4 unp0 inv[]
+EN: Most people were already seated .
+RU: Многие уже расположились в креслах .
+=== 358 | EN29 RU15 mov28 lnk16 rel10 m2o1 o2m2 unp14 inv[27<18 27<23 27<24 27<25 27<26]
+EN: On the opposite side of the gangway there was a good deal of chatter - a rather shrill , high - pitched woman ' s voice dominating it .
+RU: С противоположной стороны прохода доносился оживленный разговор , в котором доминировал пронзительный женский голос .
+=== 359 | EN7 RU5 mov6 lnk7 rel5 m2o0 o2m1 unp0 inv[4<1 6<5]
+EN: Jane ' s lips twisted slightly .
+RU: Губы Джейн слегка искривились .
+=== 360 | EN10 RU8 mov9 lnk12 rel3 m2o3 o2m3 unp1 inv[7<1]
+EN: She knew that particular type of voice so well .
+RU: Такого рода голоса были ей хорошо знакомы .
+=== 361 | EN12 RU13 mov12 lnk10 rel2 m2o2 o2m2 unp4 inv[]
+EN: " My dear , it ' s extraordinary - no idea ...
+RU: – Моя дорогая … это замечательно … не представляю , где это .
+=== 362 | EN5 RU4 mov5 lnk4 rel2 m2o0 o2m0 unp1 inv[]
+EN: Where do you say ?...
+RU: Как вы говорите ?
+=== 363 | EN4 RU6 mov4 lnk4 rel3 m2o0 o2m0 unp0 inv[]
+EN: Juan les Pins ?...
+RU: Жуан - ле - Пен ?..
+=== 364 | EN4 RU3 mov4 lnk3 rel2 m2o0 o2m0 unp1 inv[]
+EN: Oh , yes ...
+RU: О да .
+=== 365 | EN7 RU6 mov7 lnk5 rel4 m2o0 o2m1 unp2 inv[]
+EN: AN IMPORTANT PASSENGER ON THE TAURUS EXPRESS
+RU: Важный пассажир « Таврского экспресса »
+=== 366 | EN33 RU41 mov32 lnk23 rel20 m2o0 o2m3 unp10 inv[16<13 18<13 20<13 16<14 18<14 20<14 27<2]
+EN: It was five o ' clock on a winter ' s morning in Syria . Alongside the platform at Aleppo stood the train grandly designated in railway guides as the Taurus Express .
+RU: I Около пяти часов зимнего утра вдоль платформы станции Алеппо , что в Сирии , стоял поезд , который все железнодорожные справочники называли « Таврским [ 1 - Таврские горы – гряда на юге Турции в провинции Анталия .] экспрессом ».
+=== 367 | EN19 RU19 mov18 lnk19 rel8 m2o3 o2m1 unp3 inv[]
+EN: It consisted of a kitchen and dining - car , a sleeping - car and two local coaches .
+RU: Он состоял из вагона - кухни , вагона - ресторана , международного спального и двух вагонов местного назначения .
+=== 368 | EN52 RU51 mov51 lnk37 rel22 m2o2 o2m3 unp17 inv[50<48 51<48 51<50]
+EN: By the step leading up into the sleeping - car stood a young French lieutenant , resplendent in uniform , conversing with a small man muffled up to the ears of whom nothing was visible but a pink - tipped nose and the two points of an upward - curled moustache .
+RU: Около ступенек , ведущих в спальный вагон , стоял молодой французский лейтенант , одетый в роскошную форму , и общался с невысоким сухощавым человечком , закутанным от холода так , что его совершенно невозможно было разглядеть , за исключением красного носа и торчащих усов , кончики которых были закручены вверх .
+=== 369 | EN29 RU23 mov28 lnk56 rel11 m2o13 o2m11 unp2 inv[]
+EN: It was freezingly cold , and this job of seeing off a distinguished stranger was not one to be envied , but Lieutenant Dubosc performed his part manfully .
+RU: Холод пробирал до костей , и эти проводы важного иностранца были совсем не подарком , однако лейтенант Дюбоск стоически переносил все невзгоды .
+=== 370 | EN10 RU11 mov9 lnk8 rel2 m2o0 o2m1 unp2 inv[]
+EN: Graceful phrases fell from his lips in polished French .
+RU: Он автоматически произносил подходящие моменту фразы на изысканном французском языке ,
+=== 371 | EN43 RU51 mov42 lnk32 rel14 m2o2 o2m4 unp13 inv[19<14 21<14 23<14 24<14 25<14 37<28 37<3]
+EN: Not that he knew what it was all about . There had been rumours , of course , as there always were in such cases . The General ' s - his General ' s - temper had grown worse and worse .
+RU: но при этом совершенно не представлял себе , в чем , собственно , была причина приезда незнакомца , хотя , как всегда в подобных случаях , слухов по городу ходило множество . Лейтенант знал только , что в последнее время характер генерала , его генерала , портился с каждым днем .
+=== 372 | EN18 RU13 mov17 lnk16 rel8 m2o0 o2m4 unp2 inv[16<13 17<13 16<14 17<14]
+EN: And then there had come this Belgian stranger - all the way from England , it seemed .
+RU: А потом появился этот бельгиец – похоже , что прямо из Англии .
+=== 480 | EN73 RU58 mov72 lnk57 rel32 m2o0 o2m4 unp16 inv[13<10 13<12 39<16 41<16 39<17 41<17 39<1]
+EN: Just under the head was a broad silver band nearly an inch across . " To James Mortimer , M . R . C . S ., from his friends of the C . C . H .," was engraved upon it , with the date " 1884 ." It was just such a stick as the old - fashioned family practitioner used to carry -- dignified , solid , and reassuring .
+RU: Чуть ниже набалдашника было врезано серебряное кольцо шириной около дюйма . На кольце было начертано : " Джеймсу Мортимеру , Ч . К . X . О ., от его друзей по ЧКЛ " и дата : " 1884 ". В прежние времена с такими палками -- солидными , увесистыми , надежными -- ходили почтенные домашние врачи .
+=== 481 | EN12 RU13 mov12 lnk12 rel9 m2o1 o2m0 unp2 inv[]
+EN: " Well , Watson , what do you make of it ?"
+RU: - Ну - с , Уотсон , какого вы мнения о ней ?
+=== 482 | EN20 RU18 mov19 lnk20 rel12 m2o2 o2m5 unp2 inv[18<14]
+EN: Holmes was sitting with his back to me , and I had given him no sign of my occupation .
+RU: Холмс сидел спиной ко мне , и я думал , что мои манипуляции остаются для него незаметными .
+=== 483 | EN10 RU9 mov9 lnk8 rel8 m2o0 o2m1 unp2 inv[]
+EN: " How did you know what I was doing ?
+RU: - Откуда вы знаете , чем я занят ?
+=== 484 | EN12 RU10 mov12 lnk13 rel5 m2o2 o2m3 unp1 inv[]
+EN: I believe you have eyes in the back of your head ."
+RU: Можно подумать , что у вас глаза на затылке !
+=== 485 | EN45 RU38 mov44 lnk45 rel23 m2o5 o2m11 unp10 inv[19<13 20<13 21<13 22<13 19<16 20<16 21<1]
+EN: " I have , at least , a well - polished , silver - plated coffee - pot in front of me ," said he . " But , tell me , Watson , what do you make of our visitor ' s stick ?
+RU: - Чего нет , того нет , зато передо мной стоит начищенный до блеска серебряный кофейник , -- ответил он . -- Нет , в самом деле , Уотсон , что вы скажете о палке нашего посетителя ?
+=== 486 | EN25 RU30 mov24 lnk29 rel11 m2o5 o2m5 unp3 inv[10<2 11<2 16<2 10<5 11<5 16<5 10<6 11<6 ]
+EN: Since we have been so unfortunate as to miss him and have no notion of his errand , this accidental souvenir becomes of importance .
+RU: Мы с вами прозевали его и не знаем , зачем он приходил . А раз уж нам так не повезло , придется обратить особое внимание на этот случайный сувенир .
+=== 487 | EN4 RU2 mov4 lnk3 rel1 m2o0 o2m1 unp1 inv[]
+EN: A CASE OF IDENTITY
+RU: Установление личности
+=== 488 | EN39 RU38 mov38 lnk29 rel23 m2o0 o2m1 unp10 inv[26<6 28<6 30<6 31<6 32<6 36<6 37<6 38<6 ]
+EN: " My dear fellow ," said Sherlock Holmes as we sat on either side of the fire in his lodgings at Baker Street , " life is infinitely stranger than anything which the mind of man could invent .
+RU: - Мой дорогой друг , жизнь несравненно причудливее , чем все , что способно создать воображение человеческое , -- сказал Шерлок Холмс , когда мы с ним сидели у камина в его квартире на Бейкер - стрит .
+=== 489 | EN16 RU20 mov15 lnk19 rel6 m2o4 o2m3 unp4 inv[]
+EN: We would not dare to conceive the things which are really mere commonplaces of existence .
+RU: - Нам и в голову не пришли бы многие вещи , которые в действительности представляют собою нечто совершенно банальное .
+=== 490 | EN82 RU77 mov82 lnk81 rel54 m2o8 o2m10 unp13 inv[9<4 10<4 11<4 9<5 10<5 11<5 9<6 10<6 11<]
+EN: If we could fly out of that window hand in hand , hover over this great city , gently remove the roofs , and peep in at the queer things which are going on , the strange coincidences , the plannings , the cross - purposes , the wonderful chains of events , working through generation , and leading to the most outre results , it would make all fiction with its conventionalities and foreseen conclusions most stale and unprofitable . "
+RU: Если бы мы с вами могли , взявшись за руки , вылететь из окна и , витая над этим огромным городом , приподнять крыши и заглянуть внутрь домов , то по сравнению с открывшимися нам необычайными совпадениями , замыслами , недоразумениями , непостижимыми событиями , которые , прокладывая себе путь сквозь многие поколения , приводят к совершенно невероятным результатам , вся изящная словесность с ее условностями и заранее предрешенными развязками показалась бы нам плоской и тривиальной .
+=== 491 | EN13 RU13 mov12 lnk10 rel8 m2o1 o2m1 unp4 inv[12<11]
+EN: " And yet I am not convinced of it ," I answered .
+RU: - И все же вы меня не убедили , -- отвечал я .
+=== 492 | EN23 RU21 mov22 lnk21 rel10 m2o5 o2m3 unp7 inv[22<20]
+EN: " The cases which come to light in the papers are , as a rule , bald enough , and vulgar enough .
+RU: - Дела , о которых мы читаем в газетах , как правило , представлены в достаточно откровенном и грубом виде .
+=== 493 | EN30 RU25 mov30 lnk17 rel11 m2o0 o2m0 unp13 inv[]
+EN: We have in our police reports realism pushed to its extreme limits , and yet the result is , it must be confessed , neither fascinating nor artistic . "
+RU: Натурализм в полицейских отчетах доведен до крайних пределов , но это отнюдь не значит , что они хоть сколько - нибудь привлекательны или художественны .
+=== 494 | EN18 RU21 mov17 lnk18 rel8 m2o2 o2m0 unp4 inv[4<3 13<3 14<3 13<4 14<4 13<6 14<6]
+EN: " A certain selection and discretion must be used in producing a realistic effect ," remarked Holmes .
+RU: - Для того , чтобы добиться подлинно реалистического эффекта , необходим тщательный отбор , известная сдержанность , -- заметил Холмс .
+=== 495 | EN41 RU35 mov40 lnk32 rel21 m2o5 o2m4 unp14 inv[]
+EN: " This is wanting in the police report , where more stress is laid , perhaps , upon the platitudes of the magistrate than upon the details , which to an observer contain the vital essence of the whole matter .
+RU: - А этого как раз и не хватает в полицейских отчетах , где гораздо больше места отводится пошлым сентенциям мирового судьи , нежели подробностям , в которых для внимательного наблюдателя и содержится существо дела .
+=== 496 | EN13 RU10 mov13 lnk11 rel4 m2o0 o2m2 unp2 inv[]
+EN: Depend upon it , there is nothing so unnatural as the commonplace ."
+RU: Поверьте , нет ничего более неестественного , чем банальность .
+=== 497 | EN5 RU4 mov4 lnk3 rel2 m2o0 o2m0 unp2 inv[4<3]
+EN: THE GREAT KEINPLATZ EXPERIMENT .
+RU: Необычайный эксперимент в Кайнплатце
+=== 498 | EN40 RU38 mov39 lnk45 rel25 m2o9 o2m7 unp4 inv[20<15 21<15 22<15 23<15]
+EN: Of all the sciences which have puzzled the sons of men , none had such an attraction for the learned Professor von Baumgarten as those which relate to psychology and the ill - defined relations between mind and matter .
+RU: Из всех наук , над коими бились умы сынов человеческих , ни одна не занимала ученого профессора фон Баумгартена столь сильно , как та , что имеет дело с психологией и недостаточно изученными взаимоотношениями духа и материи .
+=== 499 | EN49 RU33 mov48 lnk49 rel28 m2o6 o2m8 unp6 inv[16<14]
+EN: A celebrated anatomist , a profound chemist , and one of the first physiologists in Europe , it was a relief for him to turn from these subjects and to bring his varied knowledge to bear upon the study of the soul and the mysterious relationship of spirits .
+RU: Прославленный анатом , глубокий знаток химии и один из первых европейских физиологов , он без сожаления оставил все эти науки и направил свои разносторонние познания на изучение души и таинственных духовных взаимосвязей .
+=== 500 | EN53 RU50 mov52 lnk47 rel32 m2o3 o2m7 unp13 inv[9<5 9<6 9<7 9<8 46<44 47<44 48<44 47<46 ]
+EN: At first , when as a young man he began to dip into the secrets of mesmerism , his mind seemed to be wandering in a strange land where all was chaos and darkness , save that here and there some great unexplainable and disconnected fact loomed out in front of him .
+RU: Вначале , когда он , будучи еще молодым человеком , пытался проникнуть в тайны месмеризма , мысль его , казалось , плутала в загадочном мире , где все было хаос и тьма и лишь иногда возникал немаловажный факт , но не связанный с другими и не находящий себе объяснения .
+=== 501 | EN44 RU48 mov43 lnk42 rel37 m2o1 o2m4 unp5 inv[4<3 6<3 7<3 6<4 7<4 15<11 16<11 17<11 15]
+EN: As the years passed , however , and as the worthy Professor ' s stock of knowledge increased , for knowledge begets knowledge as money bears interest , much which had seemed strange and unaccountable began to take another shape in his eyes .
+RU: Однако , по мере того как шли годы и багаж знаний достойного профессора приумножался -- ибо знание порождает знание , как деньги наращивают проценты , -- многое из того , что прежде казалось странным и необъяснимым , начинало принимать в его глазах иную , более ясную форму .
+=== 502 | EN22 RU25 mov21 lnk26 rel14 m2o4 o2m4 unp0 inv[4<1 20<19]
+EN: New trains of reasoning became familiar to him , and he perceived connecting links where all had been incomprehensible and startling .
+RU: Мысль ученого потекла по новым путям , и он стал усматривать связующие звенья там , где когда - то все было туманно и непостижимо .
+=== 503 | EN39 RU40 mov38 lnk40 rel23 m2o6 o2m3 unp6 inv[18<15 21<15 22<15 23<15 18<16 21<16 22<1]
+EN: By experiments which extended over twenty years , he obtained a basis of facts upon which it was his ambition to build up a new exact science which should embrace mesmerism , spiritualism , and all cognate subjects .
+RU: Более двадцати лет проделывая эксперимент за экспериментом , он накопил достаточно неоспоримых фактов , и у него возникла честолюбивая мечта создать на их основе новую точную науку , которая явилась бы синтезом месмеризма , спиритуализма и других родственных учений .
+=== 504 | EN61 RU48 mov60 lnk55 rel34 m2o5 o2m10 unp12 inv[18<17 29<26 29<27 59<48 60<48 59<53 60<5]
+EN: In this he was much helped by his intimate knowledge of the more intricate parts of animal physiology which treat of nerve currents and the working of the brain ; for Alexis von Baumgarten was Regius Professor of Physiology at the University of Keinplatz , and had all the resources of the laboratory to aid him in his profound researches .
+RU: В этом ему чрезвычайно помогало доскональное знание того сложного раздела физиологии животных , который посвящен изучению нервной системы и мозговой деятельности , ибо Алексис фон Баумгартен , профессор , возглавляющий кафедру в университете Кайнплатца , располагал для своих глубоких научных исследований всем необходимым , что дает лаборатория .
+=== 505 | EN25 RU30 mov24 lnk29 rel16 m2o5 o2m3 unp1 inv[]
+EN: Professor von Baumgarten was tall and thin , with a hatchet face and steel - grey eyes , which were singularly bright and penetrating .
+RU: Профессор фон Баумгартен был высокого роста и худощав , лицо у него было продолговатое , с острыми чертами , а глаза -- цвета стали , необычайно яркие и проницательные .
+=== 506 | EN40 RU44 mov39 lnk47 rel16 m2o7 o2m8 unp3 inv[]
+EN: Much thought had furrowed his forehead and contracted his heavy eyebrows , so that he appeared to wear a perpetual frown , which often misled people as to his character , for though austere he was tender - hearted .
+RU: Постоянная работа мысли избороздила его лоб морщинами , свела в одну линию густые , нависшие брови , и потому казалось , что профессор всегда нахмурен . Это многих вводило в заблуждение относительно характера профессора , который при всей своей суровости обладал мягким сердцем .
+=== 507 | EN3 RU2 mov3 lnk2 rel2 m2o0 o2m0 unp1 inv[]
+EN: A LITERARY MOSAIC
+RU: Литературная мозаика
+=== 508 | EN22 RU20 mov21 lnk23 rel12 m2o3 o2m3 unp2 inv[]
+EN: From my boyhood I have had an intense and overwhelming conviction that my real vocation lay in the direction of literature .
+RU: С отроческих лет во мне жила твердая , несокрушимая уверенность в том , что мое истинное призвание -- литература .
+=== 509 | EN39 RU45 mov38 lnk49 rel16 m2o6 o2m6 unp8 inv[11<1 12<1 13<1 14<1 16<1 11<4 12<4 13<4 ]
+EN: From the great sea - serpent to the nebular hypothesis , I was ready to write on anything or everything , and I can safely say that I seldom handled a subject without throwing new lights upon it .
+RU: Я готов был писать что угодно и о чем угодно , начиная с морской змеи и кончая небулярной космогонической теорией , и смело могу сказать , что , затрагивая тот или иной вопрос , я почти всегда старался осветить его с новой точки зрения .
+=== 510 | EN20 RU22 mov19 lnk21 rel1 m2o2 o2m7 unp5 inv[]
+EN: I have , however , had a most unaccountable difficulty in getting any responsible person to share my views .
+RU: Но найти сведущего человека , который проявил бы ко мне участие , оказалось , как это ни странно , невероятно трудным .
+=== 511 | EN104 RU82 mov103 lnk122 rel43 m2o19 o2m22 unp13 inv[82<80]
+EN: It is true that private friends have sometimes , after listening to my effusions , gone the length of remarking , " Really , Smith , that ' s not half bad !" or , " You take my advice , old boy , and send that to some magazine !" but I have never on these occasions had the moral courage to inform my adviser that the article in question had been sent to well - nigh every publisher in London , and had come back again with a rapidity and precision which spoke well for the efficiency of our postal arrangements .
+RU: Правда , близкие друзья , ознакомившись с моими вдохновенными творениями , случалось , говорили : " А знаешь , Смит , не так уж плохо !" или " Послушай моего совета , дружище , отправь это в какой - нибудь журнал ", -- и у меня не хватало мужества признаться , что мои опусы побывали чуть ли не у всех лондонских издателей , всякий раз возвращаясь с необычайной быстротой и пунктуальностью и тем наглядно показывая исправную и четкую работу нашей почты .
+=== 512 | EN19 RU21 mov18 lnk21 rel16 m2o2 o2m3 unp0 inv[4<2 4<3 9<8]
+EN: Had my manuscripts been paper boomerangs they could not have returned with greater accuracy to their unhappy dispatcher .
+RU: Будь мои рукописи бумажными бумерангами , они не могли бы с большей точностью попадать обратно в руки пославшего их неудачника .
+=== 620 | EN20 RU22 mov19 lnk15 rel9 m2o0 o2m1 unp5 inv[]
+EN: I am careful and conscientious over them , but no one is better aware than myself of their deficiencies .
+RU: Я готовлю свои проповеди с превеликой тщательностью и ответственностью , но , увы , никто лучше меня не видит их недостатков .
+=== 621 | EN26 RU28 mov25 lnk25 rel16 m2o2 o2m0 unp3 inv[]
+EN: I use Apple Inc. frequently as an example simply because they have broad recognition and their products are easy to grasp and compare to others .
+RU: Я часто использую компанию Apple в качестве примера , просто потому что они имеют всеобщее признание и их продукты можно с легкостью взять и сравнить с другими .
+=== 622 | EN19 RU20 mov18 lnk14 rel8 m2o0 o2m1 unp5 inv[]
+EN: And what is the probability that the treatment will cause severe side effects that outweigh any possible benefits ?
+RU: И какова вероятность того , что лечение не вызовет серьезных побочных эффектов , перевешивающих любую потенциальную пользу от него ?
+=== 623 | EN9 RU8 mov8 lnk7 rel5 m2o0 o2m1 unp2 inv[]
+EN: Once again she was looking at her hands .
+RU: — И опять уставилась на свои руки .
+=== 624 | EN65 RU42 mov64 lnk30 rel19 m2o0 o2m1 unp35 inv[17<15 53<51 54<51 53<52 54<52 59<58]
+EN: He wished he had promised the priest nothing , but he was going to keep his word - because it would be a triumph for that old corrupt God - ridden world if it could show itself superior on any point - whether of courage , truthfulness , justice ... Nobody answered his knock : he stood darkly in the patio like a petitioner .
+RU: Напрасно он пообещал священнику , но слово надо сдержать , не то этот дряхлый , развращенный , пропитанный Богом мир одержит хоть недолгую , но победу , на его стук никто не ответил , он стоял в темноте двора как проситель .
+=== 625 | EN6 RU5 mov5 lnk5 rel2 m2o0 o2m0 unp1 inv[]
+EN: We just can`t see it .
+RU: Их просто не видно .
+=== 626 | EN36 RU32 mov36 lnk27 rel11 m2o0 o2m2 unp9 inv[10<9]
+EN: " If we `re lucky , " Granny Reida said through winded breaths , " that thing will be too afraid of Elvis to come after us . " " And if we are n`t "
+RU: — Если повезет , — сказала бабушка Рельда на бегу , еле переводя дух , — это чудище побоится Эльвиса и не станет нас преследовать . — А если не повезет ?
+=== 627 | EN21 RU15 mov20 lnk15 rel10 m2o0 o2m1 unp6 inv[]
+EN: After months of grinding away at enemy positions across the country , the Russian strategy has begun to bear fruit .
+RU: После месяцев вгрызания в позиции противника по всей стране российская стратегия начала приносить плоды .
+=== 628 | EN5 RU6 mov4 lnk5 rel1 m2o0 o2m0 unp0 inv[]
+EN: Never been there myself .
+RU: — Я там не бывал .
+=== 629 | EN20 RU23 mov19 lnk14 rel4 m2o1 o2m0 unp8 inv[]
+EN: Well , - said Billy`s father , manfully kicking a pebble into space , " there it is " .
+RU: - М - да - аа - сказал отец Билли и мужественно метнул в пропасть камешек носком ботинка .- Вот оно как ...
+=== 630 | EN4 RU4 mov3 lnk3 rel1 m2o0 o2m0 unp1 inv[]
+EN: An odd thought .
+RU: — Оригинальная идея .
+=== 631 | EN23 RU24 mov22 lnk18 rel13 m2o0 o2m1 unp5 inv[]
+EN: On 21 December 1932 , Stalin through Kaganovich affirmed the annual grain requisition quota for Soviet Ukraine to be reached by 1993 .
+RU: 21 декабря 1932 года Сталин через Кагановича подтвердил , что годовой план хлебозаготовок для Советской Украины должен быть выполнен до января 1933 года .
+=== 632 | EN19 RU15 mov18 lnk15 rel8 m2o0 o2m1 unp4 inv[]
+EN: When we closed the door behind us the Professor said , " So much is already done " .
+RU: Когда мы заперли за собою дверь , профессор сказал : - Многое уже сделано .
+=== 633 | EN9 RU10 mov8 lnk7 rel4 m2o0 o2m0 unp2 inv[]
+EN: This move was unexpected , and proportionately disconcerting .
+RU: Это было так неожиданно , что несколько огорошило Батшебу .
+=== 634 | EN7 RU6 mov6 lnk6 rel2 m2o0 o2m0 unp1 inv[]
+EN: I glanced at the bond agreement .
+RU: Я посмотрела на залоговое соглашение .
+=== 635 | EN5 RU4 mov4 lnk5 rel4 m2o0 o2m1 unp0 inv[]
+EN: I took it up .
+RU: Я подняла его .
+=== 636 | EN12 RU9 mov11 lnk9 rel4 m2o0 o2m2 unp3 inv[]
+EN: The more general moral of the Brine Shrimp`s Tale is this .
+RU: Более общая мораль " Рассказа Артемии " такова .
+=== 637 | EN11 RU8 mov10 lnk6 rel1 m2o0 o2m1 unp5 inv[]
+EN: " But let us speak no more of business " .
+RU: — Ну , а теперь оставимте дела .
+=== 638 | EN7 RU10 mov7 lnk3 rel1 m2o0 o2m0 unp4 inv[]
+EN: " What are you doing ? "
+RU: — Почему ты остановился ? — тотчас спросила она .
+=== 639 | EN10 RU10 mov9 lnk7 rel2 m2o0 o2m1 unp3 inv[]
+EN: " Good thing not everyone `s like Kenny " .
+RU: – Хорошо , что не все похожи на Кенни .
+=== 640 | EN14 RU13 mov13 lnk12 rel7 m2o0 o2m0 unp2 inv[]
+EN: At twenty-one minutes to midnight they vanish and the age of mammals begins .
+RU: За 21 минуту до полуночи они исчезают , и наступает век млекопитающих .
+=== 641 | EN3 RU3 mov2 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: MacQueen considered .
+RU: Маккуин задумался .
+=== 642 | EN15 RU20 mov14 lnk12 rel4 m2o0 o2m1 unp3 inv[2<1]
+EN: Perhaps this was partly because there were so many pigs and so many dogs .
+RU: Отчасти это , наверное , объяснялось тем , что уж очень много и тех и других развелось на ферме .
+=== 643 | EN10 RU8 mov9 lnk7 rel3 m2o0 o2m0 unp3 inv[]
+EN: These observation reach to the core of the MAI .
+RU: Эти наблюдения попадают в самую суть МСИ .
+=== 644 | EN67 RU62 mov66 lnk48 rel31 m2o0 o2m1 unp19 inv[23<22]
+EN: From his earliest boyhood , he was absolutely fearless , but was squemish and wary of " natural history " , could not make himself touch wriggly things , could not amusing emprisoned tickle of a small frog groping about in one `s fist like a person , or the discreet , pleasantly cool , rhutmically undulting caress of a caterpillar ascending one `s bare shin .
+RU: С самого раннего детства он был абсолютно бесстрашен , но брезглив , недоверчив по части " естественной истории " не мог заставить себя прикоснуться ни к единой извивающейся твари , не переносил забавной щекотки пойманного в кулак лягушонка , тычущегося там , точно маленький человечек , или деликатной , приятно прохладной , ритмично волнообразной ласки гусеницы , всползающей по голой голени .
+=== 645 | EN14 RU13 mov14 lnk10 rel7 m2o2 o2m0 unp6 inv[]
+EN: " No , as you say , it is a theory only . "
+RU: – Как вы сказали сами , это версия , всего лишь версия .
+=== 646 | EN21 RU14 mov20 lnk13 rel9 m2o0 o2m1 unp8 inv[7<4]
+EN: Unconsciosly , a concert will be connected to a brush and a roulette game will be connected to a hat .
+RU: Неосознанно найдётся связь между концертом и щёткой и между русской рулеткой и шляпой .
+=== 647 | EN4 RU4 mov3 lnk3 rel1 m2o0 o2m0 unp1 inv[]
+EN: Those are forests .
+RU: Вот это леса !
+=== 648 | EN9 RU8 mov8 lnk5 rel2 m2o0 o2m0 unp4 inv[]
+EN: You saw her leaving , did n`t you ?
+RU: Вы ведь предсказали , что она уйдёт !
+=== 649 | EN22 RU11 mov21 lnk10 rel4 m2o2 o2m2 unp14 inv[]
+EN: What if you ... postulate ... that he `s making a drop off and a new abduction on the same trip ?
+RU: - А если допустить , что он пытается запутать следы ?
+=== 650 | EN23 RU19 mov23 lnk17 rel9 m2o0 o2m1 unp6 inv[13<6 16<6]
+EN: Cranly , picking up the broken stave of a cask from the grass at his feet , turned swiftly and said sternly :
+RU: Крэнли схватил валявшуюся в траве у него под ногами сломанную бочарную доску , быстро обернулся и грозно сказал :
+=== 651 | EN20 RU22 mov19 lnk14 rel7 m2o0 o2m0 unp6 inv[]
+EN: I know what that means to Mr. Stener and the Republican party and your interests in case I fail .
+RU: Я понимаю , как мое банкротство может отразиться и на Стинере , и на республиканской партии , и на ваших интересах .
+=== 652 | EN40 RU21 mov39 lnk22 rel14 m2o1 o2m1 unp19 inv[]
+EN: In their haste to assign great importance to international competition , my critics , like the inventors of perpetual motion machines , have failed to realize that there are conservation principles that any story about the economy must honor .
+RU: В попытках преувеличить важность международной конкуренции мои критики , в духе изобретателей вечного двигателя , забыли о существовании законов сохранения .
+=== 830 | EN33 RU27 mov32 lnk26 rel18 m2o1 o2m2 unp8 inv[9<3 11<3 9<4 11<4 9<6 11<6 30<20 30<21 3]
+EN: Moreover , different species of snakes have different numbers of vertebrae , which means that vertebral number must have changed in evolution since their common ancestor , and quite often at that .
+RU: Кроме того , число позвонков различается у различных видов змей , что означает , что количество позвонков весьма часто менялось в эволюции змей от их предков .
+=== 831 | EN33 RU19 mov32 lnk16 rel10 m2o0 o2m2 unp17 inv[24<9 26<9 24<10 26<10]
+EN: They had a large canvas bag , which tied up at the mouth with strings : into this they slipped the guinea-pig , head first , and then sat upon it ) .
+RU: Служители взяли большой мешок , сунули туда свинку вниз головой , завязали мешок и сели на него ) .
+=== 832 | EN6 RU4 mov5 lnk6 rel3 m2o0 o2m1 unp0 inv[]
+EN: He hesitated for a moment .
+RU: Он мгновение помедлил .
+=== 833 | EN44 RU27 mov43 lnk24 rel11 m2o0 o2m3 unp20 inv[]
+EN: The cavalcade , having moved rapidly on , was even then far in advance ; but it did not take the Sawhorse long to catch up with it , and presently the Scarecrow was riding in his accustomed place behind Ozma ’s chariot .
+RU: К тому времени процессия уже успела удалиться довольно далеко , но Конь быстро наверстал упущенное , и Страшила снова занял свое обычное место за колесницей Озмы .
+=== 834 | EN4 RU5 mov3 lnk3 rel3 m2o0 o2m0 unp1 inv[]
+EN: I knew it .
+RU: Я так и знала .
+=== 835 | EN25 RU22 mov24 lnk20 rel14 m2o1 o2m1 unp6 inv[]
+EN: To get a broader picture of the woman ’s cellular makeup , her doctors took samples of her muscle , ovaries , and skin .
+RU: Чтобы получить более полное представление о клеточном составе организма , врачи взяли на исследование образцы ее мышц , яичников и кожи .
+=== 836 | EN10 RU11 mov9 lnk9 rel7 m2o0 o2m0 unp1 inv[]
+EN: See headline , click hyperlink , receive super-cute reward .
+RU: Вы видите заголовок , нажимаете гиперссылку и получаете милую награду .
+=== 837 | EN6 RU8 mov5 lnk5 rel3 m2o0 o2m0 unp1 inv[]
+EN: Stay until you are relieved .
+RU: Сиди там , пока тебя не сменят .
+=== 838 | EN6 RU6 mov5 lnk4 rel4 m2o0 o2m0 unp2 inv[]
+EN: Julia was a beautiful person .
+RU: У Джулии была красивая душа .
+=== 839 | EN5 RU5 mov4 lnk4 rel3 m2o0 o2m0 unp1 inv[]
+EN: Play by the rules .
+RU: Будем играть по правилам .
+=== 840 | EN37 RU33 mov37 lnk33 rel22 m2o1 o2m3 unp5 inv[35<34]
+EN: He said , " When I leave office , I ’m going to spend my time writing a book on why Jesus Christ rose again , and why it ’s so important to believe that . "
+RU: Он сказал : " Когда я оставлю свою должность , я буду проводить своё время за написанием книги о том , почему Иисус Христос воскрес и почему так важно этому верить . "
+=== 841 | EN27 RU19 mov26 lnk24 rel10 m2o3 o2m4 unp8 inv[]
+EN: Slowly , for a long , long while , we stumbled , utterly exhausted , along this new tunnel , Sir Henry now leading the way .
+RU: Медленно , в течение долгого-долгого времени , мы ковыляли , еле волоча ноги , по этому новому туннелю .
+=== 842 | EN5 RU4 mov4 lnk4 rel4 m2o0 o2m0 unp1 inv[]
+EN: When ’s he coming ?
+RU: Когда он придет ?
+=== 843 | EN6 RU8 mov5 lnk7 rel3 m2o2 o2m2 unp1 inv[]
+EN: From the Town House Studios .
+RU: - Из студии " Таун Хаус " .
+=== 844 | EN10 RU10 mov9 lnk12 rel9 m2o2 o2m3 unp0 inv[9<7]
+EN: That question haunts Red Square like Lenin ’s ghost .
+RU: Этот вопрос витает над Красной площадью подобно призраку Ленина .
+=== 845 | EN16 RU9 mov15 lnk10 rel6 m2o0 o2m2 unp6 inv[]
+EN: Researchers could work for years on finding the right combination of drugs and schedules " .
+RU: Исследователи трудились годами , подбирая верные комбинации " .
+=== 846 | EN31 RU28 mov30 lnk22 rel17 m2o0 o2m1 unp9 inv[]
+EN: The suave priest , her uncle , seated in his armchair , would hold the page at arm ’s length , read it smiling and approve of the literary form .
+RU: Сладкоречивый священник , ее дядя , сидя в кресле и держа перед собой листок на вытянутой руке , прочтет их , улыбаясь , и одобрит литературную форму .
+=== 847 | EN7 RU6 mov6 lnk6 rel3 m2o0 o2m0 unp1 inv[]
+EN: I ’m no good in science .
+RU: Я к наукам не способен .
+=== 848 | EN6 RU8 mov5 lnk7 rel5 m2o1 o2m0 unp0 inv[]
+EN: Mr. Wilkes was nearly seventy .
+RU: Мистеру Уилксу было без малого семьдесят лет .
+=== 849 | EN3 RU4 mov2 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: Oh dear .
+RU: О , боже .
+=== 850 | EN3 RU3 mov2 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: Like Mosel .
+RU: Вроде Мозеля .
+=== 851 | EN2 RU4 mov1 lnk2 rel1 m2o0 o2m0 unp0 inv[]
+EN: Knowledge ?
+RU: Или за информацией ?
+=== 852 | EN6 RU5 mov5 lnk6 rel3 m2o0 o2m1 unp0 inv[]
+EN: I want to be prepared .
+RU: Я должна быть готова .
+=== 853 | EN18 RU15 mov17 lnk20 rel12 m2o6 o2m4 unp4 inv[]
+EN: By the end of the war , Gottesman lost his entire family and even lost his name .
+RU: К концу войны Готтесман потерял не только всю семью , но и свое имя .
+=== 854 | EN11 RU12 mov10 lnk13 rel8 m2o3 o2m4 unp1 inv[]
+EN: I dream of you being shot down before my eyes .
+RU: Мне все снится , что тебя убивают у меня на глазах .
+=== 855 | EN20 RU25 mov19 lnk19 rel8 m2o3 o2m1 unp6 inv[]
+EN: It is not uncommon for twentysomething clients to come to therapy hoping I can help them increase their confidence .
+RU: Молодые люди двадцати с лишним лет часто приходят на сеансы психотерапии в надежде на то , что я помогу им обрести уверенность в себе .
+=== 856 | EN19 RU16 mov18 lnk19 rel16 m2o5 o2m4 unp5 inv[16<15 17<15 18<15]
+EN: Darwin took de Vries on a tour of his garden , handing him a peach along the way .
+RU: Дарвин провел для де Фриза экскурсию по своему саду , предложив по дороге угоститься персиком .
+=== 857 | EN34 RU30 mov33 lnk23 rel7 m2o4 o2m4 unp18 inv[2<1 5<1]
+EN: Elizabeth , however astonished , was at least more prepared for an interview than before , and resolved to appear and to speak with calmness , if he really intended to meet them .
+RU: И , несмотря на свое удивление , Элизабет смогла собраться с мыслями , чтобы говорить с ним , если он в самом деле к ним подойдет , достаточно спокойно .
+=== 858 | EN22 RU15 mov21 lnk15 rel8 m2o2 o2m3 unp9 inv[]
+EN: While conducting his meta-analysis on homeopathy , he also conducted a meta-analysis for a whole variety of new , conventional pharmaceuticals .
+RU: Одновременно с метаанализом испытаний гомеопатии она провела метаанализ испытаний целого ряда новых фармацевтических препаратов .
+=== 859 | EN27 RU21 mov26 lnk23 rel13 m2o0 o2m2 unp4 inv[10<9 11<9]
+EN: ‘ I have yet to see , ’ he suddenly quoted , ‘ the children of the righteous forsaken or their seed begging for bread ’ .
+RU: " Увижу я еще , — вдруг процитировал он , — детей праведника покинутыми и потомков его просящими хлеба " .
+=== 860 | EN42 RU40 mov41 lnk29 rel14 m2o3 o2m3 unp16 inv[]
+EN: Your thanks for my present , as you call it , exceed the value of the present ; but the use , which you assure me that you will make of it , is the thanks which I desire to receive .
+RU: Ты так благодаришь меня за мой подарок , а он , право же , того не стоит ; ты заверяешь меня , что он тебе будет полезен -- это и есть та благодарность , которую я жду от тебя .
+=== 861 | EN7 RU5 mov6 lnk5 rel3 m2o0 o2m0 unp2 inv[]
+EN: The guard began checking the map .
+RU: Гвардеец начал изучать карту .
+=== 862 | EN31 RU23 mov30 lnk20 rel14 m2o0 o2m2 unp11 inv[14<13]
+EN: Then I guess , Jack Seward , that poor pretty creature that we all love has had put into her veins within that time the blood of four strong men .
+RU: Значит , в вены этого бедного создания , которое все мы так любим , за это время вкачали кровь четырех здоровых людей .
+=== 46 | EN8 RU10 mov7 lnk8 rel7 m2o0 o2m0 unp0 inv[]
+EN: Part 1 If Not Later , When ?
+RU: Часть 1 . Если не после , то когда ?
+=== 47 | EN3 RU2 mov3 lnk2 rel0 m2o0 o2m0 unp1 inv[]
+EN: “ Later !”
+RU: После !
+=== 48 | EN6 RU4 mov5 lnk3 rel2 m2o0 o2m0 unp3 inv[]
+EN: This summer ’ s houseguest .
+RU: Наш летний гость .
+=== 49 | EN3 RU3 mov2 lnk3 rel2 m2o0 o2m0 unp0 inv[]
+EN: Another bore .
+RU: Очередной зануда .
+=== 50 | EN46 RU41 mov45 lnk43 rel19 m2o7 o2m4 unp12 inv[6<3 15<3 15<6 15<7]
+EN: Then , almost without thinking , and with his back already turned to the car , he waves the back of his free hand and utters a careless Later ! to another passenger in the car who has probably split the fare from the station .
+RU: В следующий миг , уже отходя от машины , почти непроизвольно и не оборачиваясь , он взмахивает свободной рукой и бросает беспечное После ! оставшемуся в такси попутчику , по - видимому , разделившему с ним стоимость поездки от станции .
+=== 95 | EN3 RU3 mov3 lnk3 rel3 m2o0 o2m0 unp0 inv[]
+EN: PRIDE AND PREJUDICE
+RU: Гордость и предубеждение
+=== 96 | EN16 RU14 mov15 lnk13 rel7 m2o0 o2m2 unp3 inv[7<2 14<2 7<3 14<3 6<5 7<5 14<5 7<6 14<6 ]
+EN: " You want to tell me , and I have no objection to hearing it .
+RU: — Готов вас выслушать , если вам очень хочется мне об этом сказать .
+=== 97 | EN5 RU6 mov4 lnk7 rel1 m2o2 o2m3 unp1 inv[]
+EN: This was invitation enough .
+RU: Большего от него не требовалось .
+=== 98 | EN2 RU2 mov2 lnk2 rel1 m2o0 o2m0 unp0 inv[]
+EN: Chapter 1
+RU: ГЛАВА I
+=== 99 | EN26 RU15 mov25 lnk27 rel9 m2o7 o2m5 unp6 inv[]
+EN: It is a truth universally acknowledged , that a single man in possession of a good fortune , must be in want of a wife .
+RU: Все знают , что молодой человек , располагающий средствами , должен подыскивать себе жену .
+=== 113 | EN2 RU2 mov2 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: Against stupidity
+RU: ПРОТИВ ГЛУПОСТИ
+=== 114 | EN7 RU6 mov6 lnk6 rel5 m2o0 o2m0 unp1 inv[]
+EN: The story starts with section 6 .
+RU: Повествование начинается с главы 6 .
+=== 115 | EN6 RU4 mov5 lnk4 rel4 m2o0 o2m0 unp2 inv[]
+EN: This is not a mistake .
+RU: Это не ошибка .
+=== 116 | EN7 RU9 mov6 lnk8 rel2 m2o2 o2m1 unp1 inv[]
+EN: I have my own subtle reasoning .
+RU: У меня есть на то свои глубокие причины .
+=== 117 | EN10 RU11 mov9 lnk12 rel6 m2o2 o2m1 unp0 inv[]
+EN: So just read and , I hope , enjoy .
+RU: А потому спокойно читайте и ( надеюсь ) получайте удовольствие .
+=== 203 | EN11 RU8 mov10 lnk9 rel3 m2o0 o2m1 unp2 inv[]
+EN: The heat pulsed among the cottages and bushes and children .
+RU: Зной омывал дома , кусты , детей .
+=== 204 | EN9 RU9 mov8 lnk10 rel5 m2o1 o2m1 unp1 inv[]
+EN: The icicles dropped , shattering , to melt .
+RU: Сосульки срывались с крыш , разбивались и таяли .
+=== 205 | EN5 RU3 mov4 lnk4 rel4 m2o0 o2m1 unp1 inv[]
+EN: The doors flew open .
+RU: Двери распахнулись .
+=== 206 | EN2 RU2 mov2 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: CHARLOTTE BRONTE
+RU: Шарлотта Бронте
+=== 207 | EN2 RU2 mov2 lnk2 rel1 m2o0 o2m0 unp0 inv[]
+EN: JANE EYRE
+RU: ДЖЕН ЭЙР
+=== 220 | EN2 RU2 mov2 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: Emily Bronte
+RU: Эмилия Бронте
+=== 221 | EN8 RU7 mov7 lnk8 rel4 m2o0 o2m1 unp0 inv[]
+EN: ' Mr . Heathcliff ?' I said .
+RU: - Мистер Хитклиф ?- спросил я .
+=== 222 | EN6 RU6 mov5 lnk3 rel2 m2o0 o2m0 unp3 inv[]
+EN: A nod was the answer .
+RU: В ответ он молча кивнул .
+=== 223 | EN11 RU10 mov10 lnk11 rel9 m2o0 o2m1 unp0 inv[]
+EN: ' Mr . Lockwood , your new tenant , sir .
+RU: - Мистер Локвуд , ваш новый жилец , сэр .
+=== 224 | EN45 RU39 mov45 lnk37 rel15 m2o5 o2m5 unp13 inv[]
+EN: I do myself the honour of calling as soon as possible after my arrival , to express the hope that I have not inconvenienced you by my perseverance in soliciting the occupation of Thrushcross Grange : I heard yesterday you had had some thoughts ...
+RU: Почел за честь тотчас же по приезде выразить вам свою надежду , что я не причинил вам беспокойства , так настойчиво добиваясь позволения поселиться на Мысе Скворцов : я слышал вчера , что у вас были некоторые колебания ...
+=== 226 | EN2 RU2 mov1 lnk2 rel2 m2o0 o2m0 unp0 inv[]
+EN: 1801 .
+RU: 1801 .
+=== 227 | EN21 RU17 mov20 lnk18 rel12 m2o1 o2m3 unp4 inv[3<2]
+EN: I have just returned from a visit to my landlord -- the solitary neighbour that I shall be troubled with .
+RU: Я только что вернулся от своего хозяина -- единственного соседа , который будет мне здесь докучать .
+=== 228 | EN7 RU4 mov6 lnk4 rel2 m2o0 o2m0 unp3 inv[]
+EN: This is certainly a beautiful country !
+RU: Место поистине прекрасное !
+=== 229 | EN25 RU17 mov24 lnk27 rel11 m2o5 o2m4 unp3 inv[24<22 24<23]
+EN: In all England , I do not believe that I could have fixed on a situation so completely removed from the stir of society .
+RU: Во всей Англии едва ли я сыскал бы уголок , так идеально удаленный от светской суеты .
+=== 230 | EN25 RU24 mov24 lnk24 rel12 m2o1 o2m3 unp4 inv[6<3 23<22]
+EN: A perfect misanthropist ' s heaven : and Mr . Heathcliff and I are such a suitable pair to divide the desolation between us .
+RU: Совершенный рай для мизантропа ; а мистер Хитклиф и я -- оба мы прямо созданы для того , чтобы делить между собой уединение .
+=== 231 | EN4 RU3 mov3 lnk3 rel1 m2o0 o2m0 unp1 inv[]
+EN: A capital fellow !
+RU: Превосходный человек !
+=== 232 | EN51 RU50 mov50 lnk51 rel34 m2o5 o2m5 unp8 inv[17<16 18<16 35<31 38<31 40<31 41<31 35<3]
+EN: He little imagined how my heart warmed towards him when I beheld his black eyes withdraw so suspiciously under their brows , as I rode up , and when his fingers sheltered themselves , with a jealous resolution , still further in his waistcoat , as I announced my name .
+RU: Он и не представляет себе , какую теплоту я почувствовал в сердце , увидав , что его черные глаза так недоверчиво ушли под брови , когда я подъехал на коне , и что он с настороженной решимостью еще глубже засунул пальцы за жилет , когда я назвал свое имя .
+=== 233 | EN9 RU15 mov9 lnk9 rel9 m2o0 o2m0 unp0 inv[]
+EN: Dan Brown : Angels and Demons [ Aldebaran ]
+RU: Дэн Браун : Ангелы и демоны ; Перевод : Г . Косов [ Aldebaran ]
+=== 237 | EN25 RU22 mov24 lnk19 rel13 m2o2 o2m2 unp8 inv[]
+EN: Antimatter is identical to physical matter except that it is composed of particles whose electric charges are OPPOSITE to those found in normal matter .
+RU: Антивещество идентично обычному веществу , за исключением того , что его частицы имеют электрические заряды , противоположные зарядам знакомой нам материи .
+=== 238 | EN48 RU66 mov47 lnk65 rel40 m2o13 o2m5 unp3 inv[7<6 8<6 9<6 8<7 9<7 44<41 46<41 47<41 44]
+EN: Antimatter is the most powerful energy source known to man . It releases energy with 100 percent efficiency ( nuclear fission is 1 . 5 percent efficient ). Antimatter creates no pollution or radiation , and a droplet could power New York City for a full day .
+RU: Антивещество представляет собой самый мощный из известных человечеству источников энергии . Оно высвобождает ее со 100 - процентной эффективностью ( коэффициент полезного действия ядерной цепной реакции составляет 1 , 5 процента ). При этом не происходит ни загрязнения окружающей среды , ни заражения ее радиоактивным излучением . Крошечная капля антивещества могла бы в течение целого дня обеспечивать энергией такой город , как Нью - Йорк .
+=== 239 | EN8 RU8 mov8 lnk8 rel6 m2o0 o2m0 unp0 inv[]
+EN: There is , however , one catch ...
+RU: Здесь есть , однако , одно обстоятельство ...
+=== 240 | EN5 RU4 mov4 lnk4 rel3 m2o0 o2m0 unp1 inv[]
+EN: Antimatter is highly unstable .
+RU: Антивещество крайне нестабильно .
+=== 241 | EN14 RU12 mov13 lnk14 rel6 m2o2 o2m2 unp2 inv[]
+EN: It ignites when it comes in contact with absolutely anything ... even air .
+RU: Оно высвобождает энергию при любом малейшем контакте ... даже с воздухом .
+=== 242 | EN25 RU21 mov24 lnk35 rel17 m2o7 o2m5 unp3 inv[]
+EN: A single gram of antimatter contains the energy of a 20 - kiloton nuclear bomb -- the size of the bomb dropped on Hiroshima .
+RU: Один грамм антивещества заключает в себе энергию 20 - килотонной атомной бомбы -- такой , какая была сброшена на Хиросиму .
+=== 263 | EN9 RU8 mov8 lnk11 rel8 m2o3 o2m3 unp1 inv[]
+EN: Unfortunately , she couldn ' t turn back .
+RU: вернуться она , увы , не могла .
+=== 264 | EN16 RU25 mov15 lnk19 rel16 m2o2 o2m1 unp1 inv[3<1 4<1 5<1 7<1 8<1 4<3 5<3 7<3 8<3 13<1]
+EN: Her family was somewhere in the twisting maze and no one else could help them .
+RU: Ведь где - то там , в извивающемся лабиринте , были ее родные , и помочь им , кроме нее , не мог никто .
+=== 265 | EN8 RU12 mov7 lnk7 rel7 m2o0 o2m0 unp1 inv[5<3 5<4]
+EN: Sabrina prayed they were all still alive .
+RU: Сабрина лишь молила о том , чтобы все они были живы .
+=== 266 | EN10 RU13 mov10 lnk7 rel6 m2o1 o2m0 unp4 inv[3<1]
+EN: Carroll , Lewis : Alice in Wonderland ( 1865 )
+RU: Льюис Кэрролл . Приключения Алисы в стране чудес ; перевод Н . Демуровой
+=== 267 | EN3 RU3 mov2 lnk3 rel3 m2o0 o2m0 unp0 inv[]
+EN: CHAPTER I .
+RU: Глава I .
+=== 327 | EN22 RU19 mov21 lnk15 rel10 m2o0 o2m1 unp7 inv[11<8 12<8 11<10 12<10]
+EN: He was a tall , burly , red - haired young man , with a resolute face but a listless manner .
+RU: Это был рослый , крепкий юноша с рыжими волосами и решительным , но каким - то безучастным видом .
+=== 328 | EN58 RU45 mov57 lnk44 rel30 m2o2 o2m7 unp16 inv[3<1 3<2 51<49]
+EN: He carried under his arm a flat , grey portfolio of black - and - white sketches , which he had sold with more or less success to publishers ever since his uncle ( who was an admiral ) had disinherited him for Socialism , because of a lecture which he had delivered against that economic theory .
+RU: Под мышкой он держал папку с рисунками , которые запродал по сходной цене издателям , после того как дядя ( который был адмиралом ) лишил его наследства за сочувствие социализму , тогда как на самом деле он выступил с докладом против этой экономической теории .
+=== 329 | EN7 RU6 mov6 lnk7 rel4 m2o0 o2m1 unp0 inv[]
+EN: His name was John Turnbull Angus .
+RU: Прозывался юноша Джон Тэрнбул Энгус .
+=== 330 | EN40 RU32 mov39 lnk43 rel34 m2o7 o2m8 unp11 inv[]
+EN: Entering at last , he walked through the confectioner ' s shop to the back room , which was a sort of pastry - cook restaurant , merely raising his hat to the young lady who was serving there .
+RU: Войдя наконец в лавку , он направился к двери за стойкой , через которую попал в своего рода кафе - кондитерскую , и едва приподнял шляпу , здороваясь с молоденькой официанткой .
+=== 331 | EN4 RU3 mov4 lnk3 rel3 m2o0 o2m0 unp1 inv[]
+EN: To Carlo and Mary
+RU: Карло и Мэри
+=== 386 | EN16 RU13 mov15 lnk16 rel6 m2o2 o2m5 unp2 inv[]
+EN: I LOOKED UP because of the laughter , and kept looking because of the girls .
+RU: Я обернулась , услышав смех , и не отвернулась , увидев девочек .
+=== 387 | EN10 RU10 mov9 lnk10 rel10 m2o0 o2m0 unp0 inv[5<1 5<2 5<3 5<4]
+EN: I noticed their hair first , long and uncombed .
+RU: Сначала я заметила их волосы , длинные и нечесаные .
+=== 388 | EN7 RU8 mov6 lnk10 rel4 m2o2 o2m3 unp1 inv[]
+EN: Then their jewelry catching the sun .
+RU: Затем – солнечные зайчики на их украшениях .
+=== 389 | EN37 RU24 mov36 lnk24 rel9 m2o2 o2m4 unp15 inv[]
+EN: The three of them were far enough away that I saw only the periphery of their features , but it didn ’ t matter — I knew they were different from everyone else in the park .
+RU: Девочки были далеко от меня , я видела только очертания лиц , но сразу поняла : эти трое отличаются от всех в парке .
+=== 390 | EN17 RU10 mov16 lnk11 rel9 m2o2 o2m2 unp8 inv[]
+EN: Families milling in a vague line , waiting for sausages and burgers from the open grill .
+RU: Семейства топтались возле гриля в ожидании сосисок и бургеров .
+=== 391 | EN26 RU23 mov25 lnk28 rel11 m2o4 o2m3 unp5 inv[]
+EN: Women in checked blouses scooting into their boyfriends ’ sides , kids tossing eucalyptus buttons at the feral - looking chickens that overran the strip .
+RU: Женщины в клетчатых рубашках жались к парням . Дети швырялись эвкалиптовыми пуговками в одичалых с виду кур , которые сновали между деревьями .
+=== 392 | EN20 RU15 mov19 lnk19 rel12 m2o2 o2m4 unp3 inv[]
+EN: These long - haired girls seemed to glide above all that was happening around them , tragic and separate .
+RU: Но эти длинноволосые девочки словно бы проплывали над всем происходящим – трагически , отстраненно .
+=== 393 | EN5 RU5 mov4 lnk5 rel3 m2o0 o2m0 unp0 inv[]
+EN: Like royalty in exile .
+RU: Точно королевы в изгнании .
+=== 394 | EN26 RU25 mov25 lnk45 rel13 m2o8 o2m5 unp2 inv[25<24]
+EN: I studied the girls with a shameless , blatant gape : it didn ’ t seem possible that they might look over and notice me .
+RU: Я разглядывала девочек бесстыдно , откровенно , приоткрыв рот : и представить было нельзя , что они посмотрят в мою сторону и меня заметят .
+=== 395 | EN18 RU15 mov17 lnk16 rel10 m2o1 o2m1 unp3 inv[4<2 5<2 7<2 5<4 7<4 15<14 17<14]
+EN: My hamburger was forgotten in my lap , the breeze blowing in minnow stink from the river .
+RU: На коленках у меня лежал позабытый гамбургер , ветерок доносил с реки уклеечную вонь .
+=== 573 | EN23 RU17 mov22 lnk21 rel17 m2o2 o2m5 unp4 inv[20<19 21<19 22<19]
+EN: She had dug her fingers into the paint and plaster of the nearby wall until most of her fingernails had broken off .
+RU: Она впивалась пальцами в краску и штукатурку ближайшей стены , пока не обломала почти все ногти .
+=== 574 | EN20 RU8 mov19 lnk8 rel7 m2o1 o2m0 unp13 inv[]
+EN: Then she had gone for the neck , scrabbling to push the bloodied fingertips up and under the cord .
+RU: Пыталась просунуть кончики окровавленных пальцев под веревку .
+=== 575 | EN9 RU11 mov8 lnk9 rel8 m2o1 o2m0 unp2 inv[]
+EN: She broke four toes kicking at the walls .
+RU: Сломала четыре пальца на ногах , колотя ими по стенам .
+=== 576 | EN25 RU25 mov24 lnk26 rel17 m2o4 o2m6 unp5 inv[]
+EN: She had tried so hard , shown such a desperate will to live , that it made Harry Bosch wonder what had happened before .
+RU: Она изо всех сил пыталась спастись , проявляя отчаянную волю к жизни , и Гарри Босх задумался о том , что могло произойти раньше .
+=== 577 | EN30 RU25 mov29 lnk30 rel26 m2o4 o2m7 unp6 inv[24<21]
+EN: Where was that determination and will and why had it deserted her until after she had put the extension cord noose around her neck and kicked over the chair ?
+RU: Где были решимость и воля , почему они покинули ее до той минуты , когда она надела на шею петлю и оттолкнула стул ногой ?
+=== 661 | EN42 RU48 mov41 lnk35 rel18 m2o2 o2m2 unp9 inv[]
+EN: In a place like Kenya , the individuals who have been successes and have entered the cash economy typically man - usually work in the capital or , for some specialized job , in some distant outpost like a game park .
+RU: В таком месте , как Кения , люди , достигшие успеха и пробившиеся в экономику наличных расчетов - обычно мужчины , - трудятся чаще всего в столице , или в одном из городов , или , на некоторых специализированных работах , уезжают на дальние посты вроде заповедников .
+=== 662 | EN15 RU10 mov14 lnk12 rel10 m2o2 o2m3 unp5 inv[7<6]
+EN: " What in the world were you doing ? " asked the Tin Woodman .
+RU: — Что ты сделал ? — удивился Железный Дровосек .
+=== 663 | EN5 RU7 mov4 lnk7 rel7 m2o2 o2m2 unp0 inv[]
+EN: Raymond stared at him .
+RU: Реймонд с удивлением посмотрел на него .
+=== 664 | EN22 RU18 mov21 lnk18 rel13 m2o0 o2m3 unp4 inv[]
+EN: Then I will ask you to go into your room and put it on and then come out to us here .
+RU: – Тогда я попрошу вас пройти в вашу комнату , надеть халат и выйти к нам сюда .
+=== 665 | EN22 RU12 mov21 lnk8 rel7 m2o0 o2m0 unp14 inv[8<7 11<7 12<7 15<7 11<8 12<8 15<8]
+EN: " Take it , " - I said , " lawful king of the Kukuanas - king by birth and victory .
+RU: — Возьми его , законный король кукуанов ! — сказал я .
+=== 713 | EN37 RU40 mov36 lnk29 rel18 m2o2 o2m7 unp10 inv[]
+EN: For while it provided a number of rooms for wayfarers at twenty - five cents a night , and was supposed to be self - supporting , it entailed much work with hardly any more profit .
+RU: Правда , здесь было довольно много комнат , где приезжие за двадцать пять центов находили приют на ночь ( считалось , что таким образом окупается содержание дома ) однако все это требовало большого труда и приносило очень мало дохода .
+=== 714 | EN60 RU60 mov59 lnk40 rel26 m2o0 o2m5 unp20 inv[28<27 31<27 33<27 31<28 33<28 58<50 59<5]
+EN: Slowly , slumped over the pommel , the half - caste became visible , the yellow canined jutting out of the open mouth really , the priest thought , he deserved his reward - seven hundred pesos was n`t so much , but he could probably live on it in that dusty hopeless village - for a whole year .
+RU: Фигура метиса , склонившегося на луку , постепенно вырисовывалась в сумерках , стали видны его желтые клыки , торчащие из разинутого рта , право , этот человек заслужил награду , подумал священник , семьсот песо не такая уж большая сумма , но ему , пожалуй , хватит , проживет на нее целый год в той пыльной , заброшенной деревушке .
+=== 715 | EN8 RU9 mov7 lnk7 rel7 m2o0 o2m0 unp1 inv[7<6]
+EN: She wants to know what I know .
+RU: Она хочет знать то , что знаю я .
+=== 716 | EN6 RU6 mov5 lnk5 rel5 m2o0 o2m0 unp1 inv[]
+EN: He shook his head no .
+RU: Он покачал головой – нет .
+=== 717 | EN3 RU3 mov2 lnk3 rel3 m2o0 o2m0 unp0 inv[]
+EN: Stapleton laughed .
+RU: Стэплтон рассмеялся .
+=== 752 | EN34 RU22 mov33 lnk15 rel9 m2o1 o2m0 unp20 inv[8<1 8<5 26<21 30<21 32<21 33<21 30<26 32]
+EN: I made sure to write all the scores on the inside back page of the booklet so that I would not be biased ( even uncounsiously ) when I read the second essay .
+RU: Результаты я записывал на предпоследней странице работы , чтобы во время чтения второго ответа меня подсознательно не сбивали уже выставленные оценки .
+=== 753 | EN29 RU23 mov28 lnk23 rel19 m2o0 o2m1 unp6 inv[13<12 26<17 27<17 28<17 26<19 27<19 28<1]
+EN: Scarlett and Melanie both were thinking of Ashley , as they always did when urgent tasks or the necessity of carrying on a conservation did not divert them .
+RU: Скарлетт и Мелани думали об Эшли , что они делали всегда , если их не отвлекали повседневные заботы или необходимость поддерживать разговор .
+=== 754 | EN7 RU6 mov6 lnk8 rel8 m2o2 o2m2 unp1 inv[]
+EN: For years I have loved her .
+RU: Долгие годы я любил ее .
+=== 755 | EN41 RU34 mov40 lnk31 rel20 m2o1 o2m3 unp12 inv[38<37]
+EN: Now the question that has occured to all of us at some point is : what would happen if you travelled out to the edge of the universe and , as it were , put your head through the curtains ?
+RU: А теперь вопрос , который в какой - то момент возникал у каждого из нас : что будет , если добраться до края Вселенной и , так сказать , высунуть голову за занавес ?
+=== 756 | EN14 RU10 mov13 lnk11 rel11 m2o0 o2m1 unp3 inv[8<4 8<5]
+EN: When he brushed my nipple with his finger , I kept very still .
+RU: Когда он задел пальцем мой сосок , я замерла .
+=== 786 | EN22 RU22 mov21 lnk17 rel9 m2o1 o2m1 unp7 inv[20<8 20<9 20<10 20<11 20<16]
+EN: Visions of bacon cheeseburgers and nonprofessionally ripped jeans and flats — oh hell , maybe even sneakers — filled my head .
+RU: В моем мозгу роились видения — бутерброды с ветчиной , обычные джинсы и туфли без каблуков — может , даже тапочки .
+=== 787 | EN14 RU19 mov13 lnk13 rel7 m2o0 o2m2 unp1 inv[]
+EN: And every time you go back , they take more of your company .
+RU: И каждый раз , когда вы приходите к инвесторам за деньгами , у вас забирают часть вашей компании .
+=== 788 | EN6 RU4 mov5 lnk5 rel2 m2o0 o2m1 unp1 inv[]
+EN: I want to watch television !
+RU: Хочу смотреть телевизор !
+=== 789 | EN5 RU4 mov4 lnk4 rel4 m2o0 o2m0 unp1 inv[]
+EN: Brasti waved a hand .
+RU: Брасти махнул рукой .
+=== 790 | EN8 RU7 mov7 lnk8 rel4 m2o0 o2m1 unp0 inv[]
+EN: I was n't one of his crowd .
+RU: Я не входила в его окружение .
+=== 791 | EN6 RU8 mov5 lnk5 rel4 m2o0 o2m0 unp1 inv[5<3]
+EN: God can not answer you .
+RU: Ведь Бог тебя все равно не слышит .
+=== 814 | EN8 RU14 mov7 lnk9 rel5 m2o1 o2m0 unp0 inv[]
+EN: " I collect church collapses , recreationally .
+RU: - Я собираю данные о разрушениях церквей , так просто , для развлечения .
+=== 815 | EN16 RU15 mov15 lnk14 rel11 m2o0 o2m0 unp2 inv[12<1 14<1 15<1 12<2 14<2 15<2 12<3 14<3 ]
+EN: Reepicheep , Edmund , Eustace and Caspian , glittering in mail , were with him .
+RU: С ним , блистая доспехами , находились Рипичип , Эдмунд , Юстас и Каспиан .
+=== 816 | EN9 RU11 mov8 lnk9 rel6 m2o1 o2m0 unp2 inv[]
+EN: They are still there in warehouses in Liverpool .
+RU: Они и по сей день там , в пакгаузах Ливерпуля .
+=== 817 | EN9 RU7 mov8 lnk7 rel3 m2o0 o2m1 unp2 inv[]
+EN: “ Because what you did was illegal ” .
+RU: — Поскольку твой эксперимент был незаконным .
+=== 818 | EN3 RU7 mov2 lnk6 rel5 m2o1 o2m0 unp0 inv[]
+EN: Probably both .
+RU: Либо и то и другое вместе .
+=== 824 | EN17 RU12 mov16 lnk10 rel5 m2o0 o2m1 unp7 inv[]
+EN: We were stopped within 100 yards , as we came to the bridge on the Nile .
+RU: Проехав с сотню шагов , грузовик затормозил перед мостом через Нил .
+=== 825 | EN4 RU3 mov3 lnk4 rel2 m2o0 o2m1 unp0 inv[]
+EN: « Stolen » .
+RU: - Украли .
+=== 826 | EN7 RU7 mov6 lnk6 rel4 m2o0 o2m0 unp1 inv[]
+EN: The young lady is Miss Manette .
+RU: Эта молодая особа — мисс Манетт .
+=== 827 | EN10 RU10 mov9 lnk6 rel4 m2o0 o2m0 unp4 inv[]
+EN: I do n't know what it is about them .
+RU: Не знаю , что в них так меня привлекает ...
+=== 828 | EN20 RU17 mov19 lnk14 rel9 m2o0 o2m0 unp6 inv[11<10 12<10 12<11]
+EN: And fire will lift you off my shoulders , clean , quick , sure ; nothing to rot later .
+RU: Огонь снимет вас с моих плеч быстро , чисто и наверняка , даже гнить будет нечему .
+=== 829 | EN9 RU11 mov8 lnk8 rel5 m2o0 o2m1 unp1 inv[6<1 6<3 6<4]
+EN: You will not like what you find out .
+RU: То , что вам предстоит увидеть , вам не понравится .
+=== 863 | EN12 RU11 mov11 lnk11 rel5 m2o1 o2m2 unp2 inv[]
+EN: Greece may belong to the king , for aught we know .
+RU: Может быть , Греция принадлежит нашему королю , почем знать ?
+=== 56 | EN55 RU53 mov54 lnk49 rel29 m2o2 o2m3 unp8 inv[]
+EN: I shut my eyes , say the word , and I ’ m back in Italy , so many years ago , walking down the tree - lined driveway , watching him step out of the cab , billowy blue shirt , wide - open collar , sunglasses , straw hat , skin everywhere .
+RU: Я закрываю глаза , произношу это слово , и вот я снова в Италии , как много лет назад , шагаю по обсаженной деревьями подъездной аллее и вижу , как он выходит из такси . Свободная голубая рубашка - парус с распахнутым воротом , солнечные очки , соломенная шляпа , оголенная кожа .
+=== 76 | EN1 RU1 mov1 lnk1 rel1 m2o0 o2m0 unp0 inv[]
+EN: 1
+RU: 1
+=== 105 | EN17 RU20 mov16 lnk12 rel7 m2o1 o2m1 unp6 inv[]
+EN: " Do you not want to know who has taken it ? cried his wife impatiently .
+RU: — А хотелось бы вам знать , кто будет нашим новым соседом ? — с нетерпением спросила его жена .
+=== 107 | EN3 RU2 mov3 lnk2 rel2 m2o0 o2m0 unp1 inv[3<2]
+EN: The Gods Themselves
+RU: Сами боги
+=== 185 | EN11 RU12 mov10 lnk13 rel3 m2o3 o2m2 unp1 inv[]
+EN: He would be clothed in trees and bushes and rivers .
+RU: Его не вытащить из лесу , из кустов , из речки .

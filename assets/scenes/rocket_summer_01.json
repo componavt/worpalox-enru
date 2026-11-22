@@ -1,0 +1,25 @@
+{
+  "id": "rocket_summer_01",
+  "titleRu": "Ракетное лето",
+  "steps": [
+    {
+      "kind": "context",
+      "sourceLineIds": [
+        201,
+        203
+      ],
+      "textRu": "По зимнему городку прокатилась неожиданная волна тепла.",
+      "textKind": "editorial_summary"
+    },
+    {
+      "kind": "puzzle",
+      "sourceLineId": 204,
+      "levelId": 140
+    },
+    {
+      "kind": "puzzle",
+      "sourceLineId": 205,
+      "levelId": 101
+    }
+  ]
+}

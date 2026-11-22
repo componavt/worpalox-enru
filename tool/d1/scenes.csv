@@ -1,0 +1,6 @@
+scene_id,source_guess,line_first,line_last,n_lines,n_play,title_ru,summary_ru,characters,self_contained,orderable,best_use,grade,review_status
+S0001,The Martian Chronicles,203,205,3,2,Ракетное лето,Зимой в городке вдруг наступает волна тепла; двери распахиваются,,1,1,STORY_MODE,B,approved
+S0002,Dorothy and the Wizard in Oz,148,153,6,2,Поезд из Фриско,Ночной поезд сильно опаздывает; пассажирка выходит у тупика,"conductor, little girl",1,0,STORY_MODE,B,needs_source_check
+S0003,The Murder of Roger Ackroyd,346,354,8,2,Смерть миссис Феррарс,Доктор Шеппард узнаёт о смерти миссис Феррарс,"Dr Sheppard, Mrs Ferrars",1,1,STORY_MODE,A,approved
+S0004,,386,395,10,3,Девочки в парке,Рассказчик замечает трёх необычных девочек на пикнике,"narrator, three girls",1,0,STORY_MODE,B,approved
+S0005,appliance manual,8,10,3,0,(rejected),Упаковка и утилизация — rejected candidate,,0,0,,C,rejected

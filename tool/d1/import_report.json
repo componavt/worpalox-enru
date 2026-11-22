@@ -1,0 +1,87 @@
+{
+  "approved": [
+    {
+      "level": 101,
+      "corpus_line": 205,
+      "links": 3
+    },
+    {
+      "level": 102,
+      "corpus_line": 115,
+      "links": 3
+    },
+    {
+      "level": 105,
+      "corpus_line": 351,
+      "links": 6
+    },
+    {
+      "level": 107,
+      "corpus_line": 832,
+      "links": 3
+    },
+    {
+      "level": 108,
+      "corpus_line": 239,
+      "links": 5
+    },
+    {
+      "level": 120,
+      "corpus_line": 359,
+      "links": 4
+    }
+  ],
+  "unmapped": [
+    {
+      "level": 101,
+      "link": "5-3",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 102,
+      "link": "6-4",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 105,
+      "link": "7-7",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 107,
+      "link": "6-4",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 107,
+      "link": "3-2",
+      "reason": "verdict rejected: for is not мгновение"
+    },
+    {
+      "level": 107,
+      "link": "4-2",
+      "reason": "verdict rejected: a is not мгновение"
+    },
+    {
+      "level": 108,
+      "link": "3-3",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 108,
+      "link": "5-5",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 108,
+      "link": "8-8",
+      "reason": "punctuation excluded from the lens"
+    },
+    {
+      "level": 120,
+      "link": "7-5",
+      "reason": "punctuation excluded from the lens"
+    }
+  ],
+  "skipped_levels": []
+}

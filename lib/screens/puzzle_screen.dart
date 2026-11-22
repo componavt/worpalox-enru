@@ -31,10 +31,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
   PuzzleState? _puzzle;
   PreLearnResult? _prelearn;
+  SceneRun? _sceneRun;
   bool _hintsVisible = false;
   bool _dragActive = false;
   bool _navLock = false;
   int? _selectedIndex;
+  int? _lensRuIndex;
   ScoreResult? _scoreResult;
   String? _saveError;
   int _lastReward = 0;
@@ -49,6 +51,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     if (args is PreLearnResult) {
       _prelearn = args;
       level = args.level;
+    } else if (args is SceneRun) {
+      _sceneRun = args;
+      level = args.levels[args.index];
     } else if (args is Level) {
       level = args;
     }
@@ -76,6 +81,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     setState(() {
       _selectedIndex = null;
       _hintsVisible = false;
+      _lensRuIndex = null;
       if (reward > 0) {
         _lastReward = reward * ScoringService.placementPoints;
         _rewardTick++;
@@ -114,6 +120,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       _puzzle!.reshuffle();
       _selectedIndex = null;
       _hintsVisible = false;
+      _lensRuIndex = null;
     });
   }
 
@@ -185,6 +192,24 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     if (_navLock) return;
     _navLock = true;
     try {
+      // Scene run: the next step is the next scene puzzle or the finale.
+      final run = _sceneRun;
+      if (run != null) {
+        if (run.index + 1 < run.levels.length) {
+          Navigator.pushReplacementNamed(
+            context,
+            '/puzzle',
+            arguments: SceneRun(
+              scene: run.scene,
+              levels: run.levels,
+              index: run.index + 1,
+            ),
+          );
+        } else {
+          Navigator.pushReplacementNamed(context, '/sceneComplete');
+        }
+        return;
+      }
       // The block is finished: show the explicit finish line instead of
       // silently starting phrase six.
       if (context.read<SessionBlock>().isBlockComplete) {
@@ -221,7 +246,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(PuzzleScreen.title),
+        title: _sceneRun != null
+            ? Text(
+                '${_sceneRun!.scene.titleRu} · '
+                '${_sceneRun!.index + 1}/${_sceneRun!.levels.length}',
+              )
+            : const Text(PuzzleScreen.title),
         leading: IconButton(
           icon: const Icon(Icons.home),
           tooltip: 'Back to menu',
@@ -256,6 +286,13 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   Widget _buildRussianClue(PuzzleState puzzle) {
+    final lensAvailable = puzzle.level.alignment != null && !puzzle.solved;
+    final words = puzzle.level.russian.split(RegExp(r'\s+'))
+      ..removeWhere((t) => t.isEmpty);
+    // A word is anything containing a letter (Dart \w is ASCII-only and
+    // would misclassify every Cyrillic word as punctuation).
+    final letter = RegExp(r'[A-Za-zА-Яа-яЁё]');
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -263,20 +300,61 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         color: Colors.deepPurple[50],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Text(
-        puzzle.level.russian,
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-          fontWeight: FontWeight.bold,
-          color: Colors.deepPurple[700],
-        ),
-        textAlign: TextAlign.center,
+      child: Wrap(
+        spacing: 6,
+        runSpacing: 6,
+        alignment: WrapAlignment.center,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          for (var i = 0; i < words.length; i++)
+            if (!lensAvailable || !letter.hasMatch(words[i]))
+              Text(
+                words[i],
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurple[700],
+                ),
+              )
+            else
+              GestureDetector(
+                onTap: () => setState(() {
+                  _lensRuIndex = _lensRuIndex == i ? null : i;
+                }),
+                child: Text(
+                  words[i],
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: _lensRuIndex == i
+                        ? Colors.orange[800]
+                        : Colors.deepPurple[700],
+                    decoration: _lensRuIndex == i
+                        ? TextDecoration.underline
+                        : null,
+                  ),
+                ),
+              ),
+        ],
       ),
     );
+  }
+
+  /// The lens is a semantic channel: it shows which English chips correspond
+  /// to the tapped Russian word, never where those chips belong.
+  Set<int> _lensLinksFor(PuzzleState puzzle, int ruIndex) {
+    final links = puzzle.level.alignment?.links ?? const [];
+    return links.where((l) => l.ru == ruIndex).map((l) => l.en).toSet();
   }
 
   WordTokenState _stateFor(PuzzleState puzzle, int index) {
     if (puzzle.solved) return WordTokenState.solved;
     if (_selectedIndex == index) return WordTokenState.selected;
+    // Alignment links address chips by PuzzleToken.id (the correct-order
+    // position), so the lens follows chips through every shuffle.
+    if (_lensRuIndex != null &&
+        _lensLinksFor(puzzle, _lensRuIndex!)
+            .contains(puzzle.tokens[index].id)) {
+      return WordTokenState.translate;
+    }
     if (_hintsVisible) {
       return puzzle.isPositionCorrect(index)
           ? WordTokenState.hintCorrect
@@ -591,7 +669,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
               onPressed: _navLock ? null : _handleNext,
               icon: const Icon(Icons.arrow_forward),
               label: Text(
-                context.watch<SessionBlock>().isBlockComplete
+                _sceneRun != null
+                    ? (context.watch<SessionBlock>().isBlockComplete ||
+                              _sceneRun!.index + 1 >= _sceneRun!.levels.length
+                          ? 'Finish scene'
+                          : 'Next phrase')
+                    : context.watch<SessionBlock>().isBlockComplete
                     ? 'See block results'
                     : 'Next sentence',
               ),

@@ -1,0 +1,12 @@
+rule_code,name_ru,ru_pattern_ru,en_pattern_ru,order_playable,cefr,skill_code,exemplar_line_ids
+PREFIX_VS_PARTICLE,Приставка и частица,приставка стоит перед корнем,частица стоит после глагола,yes,A2,phrasal_verb,205
+SVO_RIGID,Твёрдый порядок слов,порядок слов относительно свободен,SVO порядок обязателен,yes,A1,word_order,
+ADV_PLACEMENT,Место наречия,наречие часто идёт до или после свободно,частотное наречие стоит после вспомогательного глагола,yes,A2,adverbs,"357,848,816"
+QUESTION_ORDER,Порядок в вопросе,порядок как в утверждении,инверсия со вспомогательным глаголом,yes,A1,questions,"483,842"
+GEN_VS_POSS,Родительный падеж,принадлежность через родительный падеж после главного слова,притяжательная форма или of перед главным словом,yes,A2,possessives,844
+AUX_PERFECT,Вспомогательный в перфекте,перфект без вспомогательного: причастие/наречие раньше,have/has/had стоит перед причастием,yes,A2,perfect,"351,754,628"
+NEG_PLACEMENT,Место отрицания,не перед глаголом,not после вспомогательного,yes,A1,negation,
+LOC_FIRST_EXISTENTIAL,Обстоятельство в начале,В комнате стоит стол,There is a table in the room,yes,A2,existentials,
+ADJ_ORDER,Порядок прилагательных,порядок прилагательных свободен,opinion-size-age-colour,yes,B1,adjectives,
+ARTICLE,Артикль,артиклей нет,нужен артикль,no,A1,articles,
+AUX_DO,Вспомогательный do,вспомогательный глагол не нужен,do/does/did обязателен,no,A1,questions,

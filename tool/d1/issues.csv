@@ -1,0 +1,33 @@
+line_id,kind,note
+11,content,EN and RU are different statements
+12,content,RU different content
+13,content,RU different content
+14,content,two sentences in one line
+47,content,"mov 3, untranslatable pun После"
+105,content,"mov 16, RU asks a different question"
+221,content,"mov 7, RU broken dash"
+263,content,"mov 8, RU lowercase start"
+333,content,nursery rhyme with offensive historical term
+341,content,"nursery rhyme with offensive historical term, mov 20"
+343,content,EN six months RU около шести недель
+362,content,"game level 111 source, translation questionable"
+388,content,"mov 6, EN is a sentence fragment"
+427,content,"mov 13, RU adds Фаркера"
+625,content,"backtick apostrophe, mov 5"
+626,content,"mov 36, backticks, unfinished quote"
+629,content,"backticks, RU adds tail"
+631,content,EN 1993 RU января 1933
+633,content,"mov 8, RU imports Батшеба from elsewhere"
+638,content,"EN What are you doing, RU Почему ты остановился"
+639,content,"backticks, mov 9"
+644,content,"mov 66, backticks, EN typos (squemish)"
+646,content,"EN typo Unconsciosly, mov 20"
+648,content,"EN didnt you, RU предсказали"
+681,content,"mov 149, several sentences in one line"
+695,content,"mov 7, backtick apostrophe"
+748,content,"mov 11, RU drops half, backticks"
+749,content,"mov 69, backticks, one long run-on sentence"
+774,content,RU paraphrases a different idea
+838,content,"mov 5, EN person RU душа"
+851,content,"mov 1, RU asks a different question"
+858,content,"EN he, RU она"
