@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'screens/block_complete_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/prelearn_screen.dart';
 import 'screens/puzzle_screen.dart';
 import 'services/corpus_service.dart';
 import 'services/persistence_service.dart';
 import 'services/scoring_service.dart';
+import 'services/session_block.dart';
 
 /// Lets the home screen refresh its stats when the player returns to it.
 final RouteObserver<ModalRoute<void>> routeObserver =
@@ -15,8 +17,14 @@ final RouteObserver<ModalRoute<void>> routeObserver =
 class WorpaloxApp extends StatelessWidget {
   final CorpusService? corpusService;
   final PersistenceService? persistenceService;
+  final SessionBlock? sessionBlock;
 
-  const WorpaloxApp({super.key, this.corpusService, this.persistenceService});
+  const WorpaloxApp({
+    super.key,
+    this.corpusService,
+    this.persistenceService,
+    this.sessionBlock,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +33,9 @@ class WorpaloxApp extends StatelessWidget {
         Provider(create: (_) => corpusService ?? CorpusService()),
         Provider(create: (_) => persistenceService ?? PersistenceService()),
         Provider(create: (_) => ScoringService()),
+        ChangeNotifierProvider<SessionBlock>(
+          create: (_) => sessionBlock ?? SessionBlock(),
+        ),
       ],
       child: MaterialApp(
         title: 'WORPALOX',
@@ -42,6 +53,7 @@ class WorpaloxApp extends StatelessWidget {
           '/': (context) => const HomeScreen(),
           '/prelearn': (context) => const PreLearnScreen(),
           '/puzzle': (context) => const PuzzleScreen(),
+          '/blockComplete': (context) => const BlockCompleteScreen(),
         },
       ),
     );

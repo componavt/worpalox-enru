@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import '../models/level.dart';
 import '../models/route_arguments.dart';
 import '../services/corpus_service.dart';
+import '../services/session_block.dart';
+import '../widgets/block_progress.dart';
 
 /// Stage 1 of a round: quick multiple-choice warm-up on words from the
 /// sentence that follows in the puzzle.
@@ -127,6 +129,13 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
         padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
+            BlockProgress(
+              solved: context
+                  .watch<SessionBlock>()
+                  .solvedInBlock,
+              total: SessionBlock.blockSize,
+            ),
+            const SizedBox(height: 16),
             LinearProgressIndicator(value: progress),
             const SizedBox(height: 8),
             Text(

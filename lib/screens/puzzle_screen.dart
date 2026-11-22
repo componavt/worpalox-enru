@@ -8,6 +8,8 @@ import '../models/score_result.dart';
 import '../services/corpus_service.dart';
 import '../services/persistence_service.dart';
 import '../services/scoring_service.dart';
+import '../services/session_block.dart';
+import '../widgets/block_progress.dart';
 import '../widgets/word_token.dart';
 
 /// Stage 2 of a round: restore the English word order using the Russian
@@ -30,6 +32,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   PuzzleState? _puzzle;
   PreLearnResult? _prelearn;
   bool _hintsVisible = false;
+  bool _dragActive = false;
   int? _selectedIndex;
   ScoreResult? _scoreResult;
   String? _saveError;
@@ -117,6 +120,9 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     final puzzle = _puzzle!;
     final prelearn = _prelearn;
     final persistence = context.read<PersistenceService>();
+    // A solved phrase fills one segment of the current block, even if
+    // saving the profile stats fails below.
+    context.read<SessionBlock>().registerSolved();
 
     try {
       final before = await persistence.loadActiveProfile();
@@ -173,6 +179,12 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   Future<void> _handleNext() async {
+    // The block is finished: show the explicit finish line instead of
+    // silently starting phrase six.
+    if (context.read<SessionBlock>().isBlockComplete) {
+      Navigator.pushReplacementNamed(context, '/blockComplete');
+      return;
+    }
     final corpus = context.read<CorpusService>();
     final profile = await context
         .read<PersistenceService>()
@@ -196,6 +208,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
     if (puzzle == null) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
+    final block = context.watch<SessionBlock>();
 
     return Scaffold(
       appBar: AppBar(
@@ -211,6 +224,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            BlockProgress(
+              solved: block.solvedInBlock,
+              total: SessionBlock.blockSize,
+            ),
+            const SizedBox(height: 16),
             _buildRussianClue(puzzle),
             const SizedBox(height: 20),
             _buildSentence(puzzle),
@@ -279,13 +297,68 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         children: [
           for (var i = 0; i < tokens.length; i++)
             _buildToken(puzzle, tokens, i),
-          if (puzzle.terminalPunctuation.isNotEmpty)
+          if (puzzle.solved && puzzle.terminalPunctuation.isNotEmpty)
             Text(
               puzzle.terminalPunctuation,
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+          if (!puzzle.solved) _buildEndZone(puzzle),
         ],
       ),
+    );
+  }
+
+  /// Drop zone at the end of the sentence: accepts any word except the one
+  /// already in the last movable slot and inserts it right before the
+  /// terminal punctuation. The punctuation itself stays static.
+  Widget _buildEndZone(PuzzleState puzzle) {
+    final lastIndex = puzzle.tokens.length - 1;
+    return DragTarget<int>(
+      onWillAcceptWithDetails: (details) {
+        final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
+        return from >= 0 && from != lastIndex;
+      },
+      onAcceptWithDetails: (details) {
+        final from = puzzle.tokens.indexWhere((t) => t.id == details.data);
+        if (from >= 0 && from != lastIndex) {
+          _move(from, lastIndex);
+        }
+      },
+      builder: (context, candidates, _) {
+        final hovering = candidates.isNotEmpty;
+        return Padding(
+          padding: const EdgeInsets.only(left: 4, right: 12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Thin marker while dragging, brighter when hovered: shows
+              // where the sentence can be closed without revealing answers.
+              if (_dragActive)
+                Container(
+                  width: 3,
+                  height: 32,
+                  margin: const EdgeInsets.only(right: 2),
+                  decoration: BoxDecoration(
+                    color: hovering
+                        ? Colors.blue
+                        : Colors.blue.withValues(alpha: 0.35),
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              Text(
+                puzzle.terminalPunctuation,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -313,7 +386,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
         final chip = WordToken(word: token.text, state: state, dropSide: side);
         return Draggable<int>(
           data: token.id,
-          onDragStarted: () => setState(() => _selectedIndex = null),
+          onDragStarted: () => setState(() {
+            _selectedIndex = null;
+            _dragActive = true;
+          }),
+          onDragEnd: (_) => setState(() => _dragActive = false),
           feedback: Material(
             color: Colors.transparent,
             elevation: 6,
