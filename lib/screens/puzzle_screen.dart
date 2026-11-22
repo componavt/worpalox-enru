@@ -33,6 +33,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   PreLearnResult? _prelearn;
   bool _hintsVisible = false;
   bool _dragActive = false;
+  bool _navLock = false;
   int? _selectedIndex;
   ScoreResult? _scoreResult;
   String? _saveError;
@@ -179,25 +180,33 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   }
 
   Future<void> _handleNext() async {
-    // The block is finished: show the explicit finish line instead of
-    // silently starting phrase six.
-    if (context.read<SessionBlock>().isBlockComplete) {
-      Navigator.pushReplacementNamed(context, '/blockComplete');
-      return;
+    // A double-tap must not push the next route twice while the profile is
+    // being read asynchronously.
+    if (_navLock) return;
+    _navLock = true;
+    try {
+      // The block is finished: show the explicit finish line instead of
+      // silently starting phrase six.
+      if (context.read<SessionBlock>().isBlockComplete) {
+        Navigator.pushReplacementNamed(context, '/blockComplete');
+        return;
+      }
+      final corpus = context.read<CorpusService>();
+      final profile = await context
+          .read<PersistenceService>()
+          .loadActiveProfile();
+      if (!mounted) return;
+      final next = profile != null
+          ? corpus.getNextLevelForProfile(profile)
+          : null;
+      if (next == null) {
+        Navigator.pop(context);
+        return;
+      }
+      Navigator.pushReplacementNamed(context, '/prelearn', arguments: next);
+    } finally {
+      if (mounted) setState(() => _navLock = false);
     }
-    final corpus = context.read<CorpusService>();
-    final profile = await context
-        .read<PersistenceService>()
-        .loadActiveProfile();
-    if (!mounted) return;
-    final next = profile != null
-        ? corpus.getNextLevelForProfile(profile)
-        : null;
-    if (next == null) {
-      Navigator.pop(context);
-      return;
-    }
-    Navigator.pushReplacementNamed(context, '/prelearn', arguments: next);
   }
 
   // ---------------------------------------------------------------- UI
@@ -313,7 +322,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
   /// Drop zone at the end of the sentence: accepts any word except the one
   /// already in the last movable slot and inserts it right before the
-  /// terminal punctuation. The punctuation itself stays static.
+  /// terminal punctuation. The punctuation itself stays static. The zone is
+  /// padded generously in every direction and reserves the marker slot up
+  /// front, so aiming near the punctuation works and nothing shifts when a
+  /// drag starts.
   Widget _buildEndZone(PuzzleState puzzle) {
     final lastIndex = puzzle.tokens.length - 1;
     return DragTarget<int>(
@@ -330,24 +342,24 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
       builder: (context, candidates, _) {
         final hovering = candidates.isNotEmpty;
         return Padding(
-          padding: const EdgeInsets.only(left: 4, right: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Thin marker while dragging, brighter when hovered: shows
-              // where the sentence can be closed without revealing answers.
-              if (_dragActive)
-                Container(
-                  width: 3,
-                  height: 32,
-                  margin: const EdgeInsets.only(right: 2),
-                  decoration: BoxDecoration(
-                    color: hovering
-                        ? Colors.blue
-                        : Colors.blue.withValues(alpha: 0.35),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
+              // Reserved marker slot: bright only while the zone is actually
+              // accepting the drag. A faint always-on line would promise a
+              // drop the zone might not take.
+              Container(
+                key: const ValueKey('end-zone-marker'),
+                width: 5,
+                height: 32,
+                margin: const EdgeInsets.only(right: 2),
+                color: hovering
+                    ? Colors.blue
+                    : _dragActive
+                        ? Colors.blue.withValues(alpha: 0.35)
+                        : Colors.transparent,
+              ),
               Text(
                 puzzle.terminalPunctuation,
                 style: const TextStyle(
@@ -422,13 +434,15 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           style: TextStyle(color: Colors.grey[700]),
         ),
         const SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        // Wrap instead of Row: on narrow screens the chips would overflow.
+        Wrap(
+          spacing: 8,
+          runSpacing: 4,
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Chip(label: Text('Moves: ${puzzle.moveCount}')),
-            const SizedBox(width: 8),
             Chip(label: Text('Hints: ${puzzle.hintCount}')),
-            const SizedBox(width: 8),
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 250),
               transitionBuilder: (child, anim) =>
@@ -574,9 +588,13 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             ],
             const SizedBox(height: 16),
             FilledButton.icon(
-              onPressed: _handleNext,
+              onPressed: _navLock ? null : _handleNext,
               icon: const Icon(Icons.arrow_forward),
-              label: const Text('Next sentence'),
+              label: Text(
+                context.watch<SessionBlock>().isBlockComplete
+                    ? 'See block results'
+                    : 'Next sentence',
+              ),
               style: FilledButton.styleFrom(
                 backgroundColor: Colors.green[700],
                 padding: const EdgeInsets.symmetric(

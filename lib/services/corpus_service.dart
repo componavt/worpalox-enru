@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../models/level.dart';
 import '../models/player_profile.dart';
+import '../models/puzzle_state.dart';
 import 'difficulty_service.dart';
 
 /// Loads playable levels and selects the next one adaptively.
@@ -54,6 +55,9 @@ class CorpusService {
   void setLevels(List<Level> levels) {
     _playableLevels = levels
         .where((l) => l.tokenCount >= minTokens && l.tokenCount <= maxTokens)
+        // A puzzle needs at least two distinguishable movable words;
+        // otherwise a shuffle can look solved without being solved.
+        .where((l) => PuzzleState.movableTokens(l.english).toSet().length >= 2)
         .toList();
     final seen = <String>{};
     _vocabulary = [

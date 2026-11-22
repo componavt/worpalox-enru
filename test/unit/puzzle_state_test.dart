@@ -104,11 +104,16 @@ void main() {
       expect(p.moveCount, 1);
     });
 
-    test('minimalMoves equals length minus longest ordered subsequence', () {
+    test('minimalMoves equals length minus longest common subsequence', () {
       expect(PuzzleState.minimalMoves(['A', 'B', 'C'], ['A', 'B', 'C']), 0);
       expect(PuzzleState.minimalMoves(['C', 'A', 'B'], ['A', 'B', 'C']), 1);
       expect(PuzzleState.minimalMoves(['C', 'B', 'A'], ['A', 'B', 'C']), 2);
       expect(PuzzleState.minimalMoves(['B', 'A', 'B'], ['B', 'B', 'A']), 1);
+      // Duplicates: one move of the first A turns ABAB into BABA.
+      expect(
+        PuzzleState.minimalMoves(['A', 'B', 'A', 'B'], ['B', 'A', 'B', 'A']),
+        1,
+      );
     });
 
     test('a solve with minMoves moves is possible', () {

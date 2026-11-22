@@ -6,6 +6,7 @@ import '../models/player_profile.dart';
 import '../services/corpus_service.dart';
 import '../services/difficulty_service.dart';
 import '../services/persistence_service.dart';
+import '../services/session_block.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
   int _totalLevels = 0;
   String? _loadError;
   bool _loaded = false;
+  bool _navLock = false;
 
   @override
   void initState() {
@@ -58,28 +60,40 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
   }
 
   Future<void> _handlePlay() async {
-    final corpusService = context.read<CorpusService>();
-    final persistenceService = context.read<PersistenceService>();
+    // A double-tap must not push the game route twice while the profile is
+    // being read asynchronously.
+    if (_navLock) return;
+    _navLock = true;
+    try {
+      final corpusService = context.read<CorpusService>();
+      final persistenceService = context.read<PersistenceService>();
 
-    var profile = await persistenceService.loadActiveProfile();
-    if (profile == null) {
+      var profile = await persistenceService.loadActiveProfile();
+      if (profile == null) {
+        if (!mounted) return;
+        final name = await _askNewProfileName(firstLaunch: true);
+        if (name == null) return;
+        profile = await persistenceService.createProfile(name);
+        await _loadData();
+      }
+
+      final nextLevel = corpusService.getNextLevelForProfile(profile);
       if (!mounted) return;
-      final name = await _askNewProfileName(firstLaunch: true);
-      if (name == null) return;
-      profile = await persistenceService.createProfile(name);
-      await _loadData();
+      if (nextLevel == null) {
+        _showMessage(
+          'No levels available',
+          corpusService.loadError ?? 'The level list is empty.',
+        );
+        return;
+      }
+      // A fresh Play always starts a fresh block: the counter must never
+      // leak from a previous session or a different profile.
+      context.read<SessionBlock>().startNextBlock();
+      await Navigator.pushNamed(context, '/prelearn', arguments: nextLevel);
+    } finally {
+      // The future completes when the player returns to the menu.
+      if (mounted) setState(() => _navLock = false);
     }
-
-    final nextLevel = corpusService.getNextLevelForProfile(profile);
-    if (!mounted) return;
-    if (nextLevel == null) {
-      _showMessage(
-        'No levels available',
-        corpusService.loadError ?? 'The level list is empty.',
-      );
-      return;
-    }
-    Navigator.pushNamed(context, '/prelearn', arguments: nextLevel);
   }
 
   /// Asks for a profile name. Returns null if the dialog was dismissed.
@@ -229,7 +243,8 @@ class _HomeScreenState extends State<HomeScreen> with RouteAware {
                       const SizedBox(height: 32),
                     ],
                     FilledButton.icon(
-                      onPressed: _loadError == null ? _handlePlay : null,
+                      onPressed:
+                          _loadError == null && !_navLock ? _handlePlay : null,
                       icon: const Icon(Icons.play_arrow),
                       label: const Text('Play', style: TextStyle(fontSize: 18)),
                       style: FilledButton.styleFrom(

@@ -8,11 +8,11 @@ import 'package:worpalox/models/stats.dart';
 import 'package:worpalox/services/corpus_service.dart';
 import 'package:worpalox/services/persistence_service.dart';
 
-Level _lvl(int id, {String difficulty = 'easy'}) => Level(
+Level _lvl(int id, {String difficulty = 'easy', String? english}) => Level(
   id: id,
-  english: 'one two three four .',
+  english: english ?? 'one two three four .',
   russian: 'ru',
-  tokenCount: 5,
+  tokenCount: (english ?? 'one two three four .').split(' ').length,
   difficulty: difficulty,
   commentaryRu: '',
   prelearnPairs: [PrelearnPair(en: 'Word$id', ru: 'r$id')],
@@ -64,6 +64,16 @@ void main() {
         stats: Stats(recentLevelIds: [1]),
       );
       expect(corpus.getNextLevelForProfile(profile)!.id, 1);
+    });
+
+    test('rejects levels with fewer than two distinguishable movable words', () {
+      final corpus = CorpusService()
+        ..setLevels([
+          _lvl(1, english: 'no no no .'), // one distinct movable word
+          _lvl(2, english: 'no , no , no .'), // 'no' and ',' are movable
+          _lvl(3, english: 'the doors flew open .'),
+        ]);
+      expect(corpus.playableLevels.map((l) => l.id), [2, 3]);
     });
   });
 

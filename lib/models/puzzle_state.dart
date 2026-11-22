@@ -146,44 +146,35 @@ class PuzzleState {
   }
 
   /// Minimal number of "take one word and put it elsewhere" moves that turn
-  /// [current] into [correct]: length minus the longest subsequence that is
-  /// already in the right relative order.
+  /// [current] into [correct]: length minus the longest common subsequence
+  /// of the two texts. Keeping an LCS in place and moving every other word
+  /// achieves exactly this count, and fewer moves cannot keep more words.
+  /// The previous greedy-pairing + LIS approach overcounted duplicates:
+  /// A B A B -> B A B A needs one move, not two.
   static int minimalMoves(List<String> current, List<String> correct) {
     if (current.length != correct.length || current.isEmpty) return 0;
-    // Map each current word to a target index; duplicates are assigned in
-    // order of appearance, which is optimal for equal words.
-    final used = List<bool>.filled(correct.length, false);
-    final targets = <int>[];
-    for (final word in current) {
-      var idx = -1;
-      for (var j = 0; j < correct.length; j++) {
-        if (!used[j] && correct[j] == word) {
-          idx = j;
-          break;
-        }
-      }
-      if (idx == -1) return current.length;
-      used[idx] = true;
-      targets.add(idx);
-    }
-    // Longest increasing subsequence (patience sorting).
-    final tails = <int>[];
-    for (final t in targets) {
-      var lo = 0, hi = tails.length;
-      while (lo < hi) {
-        final mid = (lo + hi) >> 1;
-        if (tails[mid] < t) {
-          lo = mid + 1;
-        } else {
-          hi = mid;
-        }
-      }
-      if (lo == tails.length) {
-        tails.add(t);
-      } else {
-        tails[lo] = t;
+    final n = current.length;
+    // lcs[i][j] = LCS length of current[0..i) and correct[0..j).
+    final lcs = List.generate(n + 1, (_) => List<int>.filled(n + 1, 0));
+    for (var i = 1; i <= n; i++) {
+      for (var j = 1; j <= n; j++) {
+        lcs[i][j] = current[i - 1] == correct[j - 1]
+            ? lcs[i - 1][j - 1] + 1
+            : max(lcs[i - 1][j], lcs[i][j - 1]);
       }
     }
-    return current.length - tails.length;
+    return n - lcs[n][n];
+  }
+
+  /// Game tokens of [english] without the terminal punctuation: exactly the
+  /// words the player rearranges. Corpus validation uses this to reject
+  /// levels with fewer than two distinguishable movable words, where a
+  /// shuffle can look solved without being solved.
+  static List<String> movableTokens(String english) {
+    final tokens = tokenize(english);
+    if (tokens.length > 1 && _terminalMarks.contains(tokens.last)) {
+      tokens.removeLast();
+    }
+    return tokens;
   }
 }

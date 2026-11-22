@@ -139,7 +139,7 @@ class _PreLearnScreenState extends State<PreLearnScreen> {
             LinearProgressIndicator(value: progress),
             const SizedBox(height: 8),
             Text(
-              'Word ${_currentIndex + 1} of ${_questions.length}',
+              'Vocabulary: word ${_currentIndex + 1} of ${_questions.length}',
               style: TextStyle(color: Colors.grey[600]),
             ),
             const SizedBox(height: 24),
